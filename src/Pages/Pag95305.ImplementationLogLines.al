@@ -1,0 +1,85 @@
+
+
+page 95305 "Implementation Log Lines"
+{
+    PageType = ListPart;
+    SourceTable = "Audit Implementation Log Line";
+
+    layout
+    {
+        area(content)
+        {
+            repeater(Group)
+            {
+                field("Document Type"; Rec."Document Type")
+                {
+                    ApplicationArea = Basic;
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the Document Type field.';
+                }
+                field("Document No."; Rec."Document No.")
+                {
+                    ApplicationArea = Basic;
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the Document No. field.';
+                }
+                field("Entry No."; Rec."Entry No.")
+                {
+                    ApplicationArea = Basic;
+                    ToolTip = 'Specifies the value of the Entry No. field.';
+                }
+                field(Description; Rec.Description)
+                {
+                    ApplicationArea = Basic;
+                    ToolTip = 'Specifies the value of the Description field.';
+                }
+                field("Auditee Implementation Status"; Rec."Auditee Implementation Status")
+                {
+                    ApplicationArea = Basic;
+                    Caption = 'Implementation Status';
+                    ToolTip = 'Specifies the value of the Implementation Status field.';
+                }
+                field("Auditee % Complete"; Rec."Auditee % Complete")
+                {
+                    ApplicationArea = Basic;
+                    Caption = '% Complete';
+                    ToolTip = 'Specifies the value of the % Complete field.';
+                }
+                field("Auditee Comments"; Rec."Auditee Comments")
+                {
+                    ApplicationArea = Basic;
+                    Caption = 'Comments';
+                    ToolTip = 'Specifies the value of the Comments field.';
+                }
+                field("Actual Date Done"; Rec."Actual Date Done")
+                {
+                    ApplicationArea = Basic;
+                    ToolTip = 'Specifies the value of the Actual Date Done field.';
+                }
+                field("Requested Revised Date"; Rec."Requested Revised Date")
+                {
+                    ApplicationArea = Basic;
+                    ToolTip = 'Specifies the value of the Requested Revised Date field.';
+                }
+                field("Final Audit Report ID"; Rec."Final Audit Report ID")
+                {
+                    ApplicationArea = Basic;
+                    ToolTip = 'Specifies the value of the Final Audit Report ID field.';
+                }
+                field("Engagement ID"; Rec."Engagement ID")
+                {
+                    ApplicationArea = Basic;
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the Engagement ID field.';
+                }
+            }
+        }
+    }
+
+    actions
+    {
+    }
+}
+
+#pragma implicitwith restore
+

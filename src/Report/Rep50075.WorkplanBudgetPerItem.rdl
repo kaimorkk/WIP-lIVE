@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyEmail">
+          <DataField>CompanyEmail</DataField>
+        </Field>
+        <Field Name="CompanyPhoneNo">
+          <DataField>CompanyPhoneNo</DataField>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="GeographicalLocation">
+          <DataField>GeographicalLocation</DataField>
+        </Field>
+        <Field Name="SpendingUnit">
+          <DataField>SpendingUnit</DataField>
+        </Field>
+        <Field Name="Year_Reporting_Code">
+          <DataField>Year_Reporting_Code</DataField>
+        </Field>
+        <Field Name="PreparedByName">
+          <DataField>PreparedByName</DataField>
+        </Field>
+        <Field Name="PreparedByDesignation">
+          <DataField>PreparedByDesignation</DataField>
+        </Field>
+        <Field Name="PreparedDateTime">
+          <DataField>PreparedDateTime</DataField>
+        </Field>
+        <Field Name="PreparedBySignature">
+          <DataField>PreparedBySignature</DataField>
+        </Field>
+        <Field Name="ApprovedByName">
+          <DataField>ApprovedByName</DataField>
+        </Field>
+        <Field Name="ApprovedByDesignation">
+          <DataField>ApprovedByDesignation</DataField>
+        </Field>
+        <Field Name="ApprovedDateTime">
+          <DataField>ApprovedDateTime</DataField>
+        </Field>
+        <Field Name="ApprovedBySignature">
+          <DataField>ApprovedBySignature</DataField>
+        </Field>
+        <Field Name="Number">
+          <DataField>Number</DataField>
+        </Field>
+        <Field Name="GLAccountCode">
+          <DataField>GLAccountCode</DataField>
+        </Field>
+        <Field Name="GLAccountDescription">
+          <DataField>GLAccountDescription</DataField>
+        </Field>
+        <Field Name="Quarter1Amounts">
+          <DataField>Quarter1Amounts</DataField>
+        </Field>
+        <Field Name="Quarter1AmountsFormat">
+          <DataField>Quarter1AmountsFormat</DataField>
+        </Field>
+        <Field Name="Quarter2Amounts">
+          <DataField>Quarter2Amounts</DataField>
+        </Field>
+        <Field Name="Quarter2AmountsFormat">
+          <DataField>Quarter2AmountsFormat</DataField>
+        </Field>
+        <Field Name="Quarter3Amounts">
+          <DataField>Quarter3Amounts</DataField>
+        </Field>
+        <Field Name="Quarter3AmountsFormat">
+          <DataField>Quarter3AmountsFormat</DataField>
+        </Field>
+        <Field Name="Quarter4Amounts">
+          <DataField>Quarter4Amounts</DataField>
+        </Field>
+        <Field Name="Quarter4AmountsFormat">
+          <DataField>Quarter4AmountsFormat</DataField>
+        </Field>
+        <Field Name="TotalBudgetAmounts">
+          <DataField>TotalBudgetAmounts</DataField>
+        </Field>
+        <Field Name="TotalBudgetAmountsFormat">
+          <DataField>TotalBudgetAmountsFormat</DataField>
+        </Field>
+        <Field Name="Comments">
+          <DataField>Comments</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

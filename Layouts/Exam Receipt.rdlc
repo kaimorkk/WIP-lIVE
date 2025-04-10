@@ -1,0 +1,2033 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>d2984cfa-e98e-45c0-9985-4a9d2a35cb41</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix4">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.69559in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.45948in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox55">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Paper</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox55</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox56">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Amount</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox56</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Paper_StudentProcessingLines">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Paper_StudentProcessingLines.Value+"   "+Fields!Description_StudentProcessingLines.Value</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Paper_StudentProcessingLines</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Amount_StudentProcessingLines">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Amount_StudentProcessingLines.Value</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>n2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Amount_StudentProcessingLines</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.41667in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox61">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox61</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox62">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>n2</Format>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox62</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">********Total Amount</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Sum(Fields!Amount_StudentProcessingLines.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>n2</Format>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.03125in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox12">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value EvaluationMode="Auto">Transaction Type Student Processing Lines</Value>
+                                <Style>
+                                  <FontFamily>Segoe UI</FontFamily>
+                                  <FontSize>9pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox12</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BottomBorder>
+                            <Color>Black</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </BottomBorder>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>1.58447in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox58">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value EvaluationMode="Auto">Level</Value>
+                                    <Style>
+                                      <FontFamily>Segoe UI</FontFamily>
+                                      <FontSize>9pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox58</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BottomBorder>
+                                <Color>Black</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </BottomBorder>
+                              <BackgroundColor>White</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="TransactionType_StudentProcessingLines">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!TransactionType_StudentProcessingLines.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!TransactionType_StudentProcessingLines.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.03125in</Size>
+                    <CellContents>
+                      <Textbox Name="TransactionType_StudentProcessingLines">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value EvaluationMode="Auto">=Fields!TransactionType_StudentProcessingLines.Value</Value>
+                                <Style>
+                                  <FontFamily>Segoe UI</FontFamily>
+                                  <FontSize>9pt</FontSize>
+                                  <FontWeight>Normal</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>TransactionType_StudentProcessingLines</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="Part_StudentProcessingLines">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Part_StudentProcessingLines.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Part_StudentProcessingLines.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixHeader>
+                        <Size>1.58447in</Size>
+                        <CellContents>
+                          <Textbox Name="Part_StudentProcessingLines">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value EvaluationMode="Auto">=Fields!Part_StudentProcessingLines.Value</Value>
+                                    <Style>
+                                      <FontFamily>Segoe UI</FontFamily>
+                                      <FontSize>9pt</FontSize>
+                                      <FontWeight>Normal</FontWeight>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Part_StudentProcessingLines</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BackgroundColor>White</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember>
+                          <Group Name="Details" />
+                        </TablixMember>
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.03125in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox14">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value EvaluationMode="Auto" />
+                                <Style>
+                                  <FontFamily>Segoe UI</FontFamily>
+                                  <FontSize>11pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <TextDecoration>None</TextDecoration>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox14</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>1.58447in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox60">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value xml:space="preserve" EvaluationMode="Auto"> </Value>
+                                    <Style>
+                                      <FontFamily>Segoe UI</FontFamily>
+                                      <FontSize>11pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                      <TextDecoration>None</TextDecoration>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox60</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BackgroundColor>White</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.03125in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox15">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value EvaluationMode="Auto" />
+                                <Style>
+                                  <FontFamily>Segoe UI</FontFamily>
+                                  <FontSize>11pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <TextDecoration>None</TextDecoration>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox15</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>1.58447in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox7">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value EvaluationMode="Auto" />
+                                    <Style>
+                                      <FontFamily>Segoe UI</FontFamily>
+                                      <FontSize>11pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                      <TextDecoration>None</TextDecoration>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox7</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BackgroundColor>White</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.03125in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox16">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value EvaluationMode="Auto" />
+                                <Style>
+                                  <FontFamily>Segoe UI</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                  <TextDecoration>None</TextDecoration>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox16</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>1.58447in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox4">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value EvaluationMode="Auto" />
+                                    <Style>
+                                      <FontFamily>Segoe UI</FontFamily>
+                                      <FontWeight>Bold</FontWeight>
+                                      <TextDecoration>None</TextDecoration>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox4</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BackgroundColor>White</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>3.905in</Top>
+            <Left>0.65976in</Left>
+            <Height>1.41667in</Height>
+            <Width>6.77079in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Line Name="Line1">
+            <Top>1.86111in</Top>
+            <Left>0.09723in</Left>
+            <Height>0in</Height>
+            <Width>7.90624in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Color>Black</Color>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Black</Color>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Black</Color>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Black</Color>
+              </RightBorder>
+            </Style>
+          </Line>
+          <Textbox Name="Textbox111">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!CompanyAddress.Value</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">  </Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!CompanyAddress2.Value+"-"+Fields!CompanyPostCode.Value + "  " + Fields!CompanyCity.Value</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">   </Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">="Tel: " + Fields!CompanyPhone.Value</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">    </Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">="Email: " + Fields!CompanyEmail.Value</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">  </Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">="Website: " + Fields!CompanyWebsite.Value</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>1.54167in</Top>
+            <Height>0.25in</Height>
+            <Width>8.20486in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line3">
+            <Top>5.42015in</Top>
+            <Left>0.09723in</Left>
+            <Height>0in</Height>
+            <Width>7.90624in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Color>Black</Color>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Black</Color>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Black</Color>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Black</Color>
+              </RightBorder>
+            </Style>
+          </Line>
+          <Image Name="Image1">
+            <Source>Database</Source>
+            <Value>=First(Fields!Logo.Value, "DataSet_Result")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.10889in</Top>
+            <Left>3.31247in</Left>
+            <Height>0.98139in</Height>
+            <Width>1.38194in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">OFFICIAL RECEIPT</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>16pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>1.15055in</Top>
+            <Height>0.37723in</Height>
+            <Width>8.20486in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Received From:    </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!StudentName_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">                           </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!PostCode_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto"> </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Address_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">                           </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Address2_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">                           </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!City_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>1.97444in</Top>
+            <Left>0.63666in</Left>
+            <Height>1.51389in</Height>
+            <Width>2.61331in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Receipt No/Reference No:</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!BookingReceiptNo_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Pay Mode:    </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Paymode.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">    Bank Name:</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!BankName.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Date:</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!TodayDate.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <Format>d MMMM, yyyy</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Registration No:</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!StudentRegNo_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Examination:</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!ExaminationDescription_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>1.97444in</Top>
+            <Left>3.86062in</Left>
+            <Height>1.51389in</Height>
+            <Width>3.56993in</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line4">
+            <Top>3.73833in</Top>
+            <Left>0.09723in</Left>
+            <Height>0in</Height>
+            <Width>7.90624in</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Color>Black</Color>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Black</Color>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Black</Color>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Black</Color>
+              </RightBorder>
+            </Style>
+          </Line>
+          <Textbox Name="Textbox10">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">SERVED  BY</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>5.48959in</Top>
+            <Left>5.40109in</Left>
+            <Height>0.17708in</Height>
+            <Width>0.73845in</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox11">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!CreatedBy_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>5.48959in</Top>
+            <Left>6.12782in</Left>
+            <Height>0.17708in</Height>
+            <Width>1.46762in</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>6.13891in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>8.20486in</Width>
+      <Page>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>8.27in</PageWidth>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="PaymentInstructions">
+          <DataField>PaymentInstructions</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="Description1">
+          <DataField>Description1</DataField>
+        </Field>
+        <Field Name="Amount1">
+          <DataField>Amount1</DataField>
+        </Field>
+        <Field Name="Amount1Format">
+          <DataField>Amount1Format</DataField>
+        </Field>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="CompanyPostCode">
+          <DataField>CompanyPostCode</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompanyFax">
+          <DataField>CompanyFax</DataField>
+        </Field>
+        <Field Name="CompanyEmail">
+          <DataField>CompanyEmail</DataField>
+        </Field>
+        <Field Name="CompanyWebsite">
+          <DataField>CompanyWebsite</DataField>
+        </Field>
+        <Field Name="TodayDate">
+          <DataField>TodayDate</DataField>
+        </Field>
+        <Field Name="Paymode">
+          <DataField>Paymode</DataField>
+        </Field>
+        <Field Name="BankName">
+          <DataField>BankName</DataField>
+        </Field>
+        <Field Name="No_StudentProcessingHeader">
+          <DataField>No_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Date_StudentProcessingHeader">
+          <DataField>Date_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DocumentType_StudentProcessingHeader">
+          <DataField>DocumentType_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="StudentNo_StudentProcessingHeader">
+          <DataField>StudentNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="StudentName_StudentProcessingHeader">
+          <DataField>StudentName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="FirstName_StudentProcessingHeader">
+          <DataField>FirstName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="MiddleName_StudentProcessingHeader">
+          <DataField>MiddleName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Surname_StudentProcessingHeader">
+          <DataField>Surname_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="IDNumberPassportNo_StudentProcessingHeader">
+          <DataField>IDNumberPassportNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationID_StudentProcessingHeader">
+          <DataField>ExaminationID_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationDescription_StudentProcessingHeader">
+          <DataField>ExaminationDescription_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationCenterCode_StudentProcessingHeader">
+          <DataField>ExaminationCenterCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationCenter_StudentProcessingHeader">
+          <DataField>ExaminationCenter_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="HighestAcademicQCode_StudentProcessingHeader">
+          <DataField>HighestAcademicQCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="HighestAcademicQualification_StudentProcessingHeader">
+          <DataField>HighestAcademicQualification_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Gender_StudentProcessingHeader">
+          <DataField>Gender_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DateofBirth_StudentProcessingHeader">
+          <DataField>DateofBirth_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Disabled_StudentProcessingHeader">
+          <DataField>Disabled_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="NCPWDNo_StudentProcessingHeader">
+          <DataField>NCPWDNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationDate_StudentProcessingHeader">
+          <DataField>RegistrationDate_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CreatedBy_StudentProcessingHeader">
+          <DataField>CreatedBy_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CreatedOn_StudentProcessingHeader">
+          <DataField>CreatedOn_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_StudentProcessingHeader">
+          <DataField>ApprovalStatus_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CurrencyCode_StudentProcessingHeader">
+          <DataField>CurrencyCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Address_StudentProcessingHeader">
+          <DataField>Address_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Address2_StudentProcessingHeader">
+          <DataField>Address2_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="City_StudentProcessingHeader">
+          <DataField>City_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CountryRegionCode_StudentProcessingHeader">
+          <DataField>CountryRegionCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PhoneNo_StudentProcessingHeader">
+          <DataField>PhoneNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PostCode_StudentProcessingHeader">
+          <DataField>PostCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="County_StudentProcessingHeader">
+          <DataField>County_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Email_StudentProcessingHeader">
+          <DataField>Email_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="NoSeries_StudentProcessingHeader">
+          <DataField>NoSeries_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Created_StudentProcessingHeader">
+          <DataField>Created_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Portal_StudentProcessingHeader">
+          <DataField>Portal_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ReasonforRejection_StudentProcessingHeader">
+          <DataField>ReasonforRejection_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Amount_StudentProcessingHeader">
+          <DataField>Amount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Amount_StudentProcessingHeaderFormat">
+          <DataField>Amount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="ExaminationCyce_StudentProcessingHeader">
+          <DataField>ExaminationCyce_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Type_StudentProcessingHeader">
+          <DataField>Type_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationAmount_StudentProcessingHeader">
+          <DataField>RegistrationAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationAmount_StudentProcessingHeaderFormat">
+          <DataField>RegistrationAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="RegistrationReceiptNo_StudentProcessingHeader">
+          <DataField>RegistrationReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="BookingAmount_StudentProcessingHeader">
+          <DataField>BookingAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="BookingAmount_StudentProcessingHeaderFormat">
+          <DataField>BookingAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="BookingReceiptNo_StudentProcessingHeader">
+          <DataField>BookingReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExemptionAmount_StudentProcessingHeader">
+          <DataField>ExemptionAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExemptionAmount_StudentProcessingHeaderFormat">
+          <DataField>ExemptionAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="ExemptionReceiptNo_StudentProcessingHeader">
+          <DataField>ExemptionReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationInvoiceNo_StudentProcessingHeader">
+          <DataField>RegistrationInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="BookingInvoiceNo_StudentProcessingHeader">
+          <DataField>BookingInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExemptionInvoiceNo_StudentProcessingHeader">
+          <DataField>ExemptionInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="StudentRegNo_StudentProcessingHeader">
+          <DataField>StudentRegNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Section_StudentProcessingHeader">
+          <DataField>Section_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Part_StudentProcessingHeader">
+          <DataField>Part_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Paper_StudentProcessingHeader">
+          <DataField>Paper_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WorkType_StudentProcessingHeader">
+          <DataField>WorkType_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Posted_StudentProcessingHeader">
+          <DataField>Posted_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="TypeCode_StudentProcessingHeader">
+          <DataField>TypeCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApplicationInvoice_StudentProcessingHeader">
+          <DataField>ApplicationInvoice_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApplicationAmount_StudentProcessingHeader">
+          <DataField>ApplicationAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApplicationAmount_StudentProcessingHeaderFormat">
+          <DataField>ApplicationAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="ApplicationReceipt_StudentProcessingHeader">
+          <DataField>ApplicationReceipt_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="TotalWithdrawalAmount_StudentProcessingHeader">
+          <DataField>TotalWithdrawalAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="TotalWithdrawalAmount_StudentProcessingHeaderFormat">
+          <DataField>TotalWithdrawalAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="PreferredExamCenter_StudentProcessingHeader">
+          <DataField>PreferredExamCenter_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PreferredExamCenterName_StudentProcessingHeader">
+          <DataField>PreferredExamCenterName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalApplicationNo_StudentProcessingHeader">
+          <DataField>WithdrawalApplicationNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Age_StudentProcessingHeader">
+          <DataField>Age_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalCode_StudentProcessingHeader">
+          <DataField>WithdrawalCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalReason_StudentProcessingHeader">
+          <DataField>WithdrawalReason_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Image_StudentProcessingHeader">
+          <DataField>Image_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PostedBy_StudentProcessingHeader">
+          <DataField>PostedBy_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PostedOn_StudentProcessingHeader">
+          <DataField>PostedOn_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationProjectCode_StudentProcessingHeader">
+          <DataField>ExaminationProjectCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationProjectName_StudentProcessingHeader">
+          <DataField>ExaminationProjectName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalRefundAmount_StudentProcessingHeader">
+          <DataField>WithdrawalRefundAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalRefundAmount_StudentProcessingHeaderFormat">
+          <DataField>WithdrawalRefundAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="DeffermentCharge_StudentProcessingHeader">
+          <DataField>DeffermentCharge_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DeffermentCharge_StudentProcessingHeaderFormat">
+          <DataField>DeffermentCharge_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="TrainingInstitutionCode_StudentProcessingHeader">
+          <DataField>TrainingInstitutionCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="TrainingInstitution_StudentProcessingHeader">
+          <DataField>TrainingInstitution_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="QualificationCode_StudentProcessingHeader">
+          <DataField>QualificationCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="QualificationType_StudentProcessingHeader">
+          <DataField>QualificationType_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Qualification_StudentProcessingHeader">
+          <DataField>Qualification_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Remarks_StudentProcessingHeader">
+          <DataField>Remarks_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CaseCode_StudentProcessingHeader">
+          <DataField>CaseCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CaseDescription_StudentProcessingHeader">
+          <DataField>CaseDescription_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CaseVerdict_StudentProcessingHeader">
+          <DataField>CaseVerdict_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="VerdictDescription_StudentProcessingHeader">
+          <DataField>VerdictDescription_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DisciplinaryCommitee_StudentProcessingHeader">
+          <DataField>DisciplinaryCommitee_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CommiteeName_StudentProcessingHeader">
+          <DataField>CommiteeName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PreviousCaseNo_StudentProcessingHeader">
+          <DataField>PreviousCaseNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ReinstatementCommitee_StudentProcessingHeader">
+          <DataField>ReinstatementCommitee_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ReinstatementName_StudentProcessingHeader">
+          <DataField>ReinstatementName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CaseStatus_StudentProcessingHeader">
+          <DataField>CaseStatus_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CollectionDate_StudentProcessingHeader">
+          <DataField>CollectionDate_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CollectedByName_StudentProcessingHeader">
+          <DataField>CollectedByName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CollectedByIDNo_StudentProcessingHeader">
+          <DataField>CollectedByIDNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CollectedByEmail_StudentProcessingHeader">
+          <DataField>CollectedByEmail_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="IssuedByOfficer_StudentProcessingHeader">
+          <DataField>IssuedByOfficer_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="IssuedByOfficerName_StudentProcessingHeader">
+          <DataField>IssuedByOfficerName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CertificateNo_StudentProcessingHeader">
+          <DataField>CertificateNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="IssuedByUserID_StudentProcessingHeader">
+          <DataField>IssuedByUserID_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CertificateType_StudentProcessingHeader">
+          <DataField>CertificateType_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RemarkAmount_StudentProcessingHeader">
+          <DataField>RemarkAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RemarkAmount_StudentProcessingHeaderFormat">
+          <DataField>RemarkAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="RemarkReceiptNo_StudentProcessingHeader">
+          <DataField>RemarkReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RemarkInvoiceNo_StudentProcessingHeader">
+          <DataField>RemarkInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PaymentReferenceNo_StudentProcessingHeader">
+          <DataField>PaymentReferenceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PaymentEvidence_StudentProcessingHeader">
+          <DataField>PaymentEvidence_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="AdministrativeFees_StudentProcessingHeader">
+          <DataField>AdministrativeFees_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="AdministrativeFees_StudentProcessingHeaderFormat">
+          <DataField>AdministrativeFees_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="PaymentCreated_StudentProcessingHeader">
+          <DataField>PaymentCreated_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PayMode_StudentProcessingHeader">
+          <DataField>PayMode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ContactFullName_StudentProcessingHeader">
+          <DataField>ContactFullName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ContactEmail_StudentProcessingHeader">
+          <DataField>ContactEmail_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ContactPhoneNo_StudentProcessingHeader">
+          <DataField>ContactPhoneNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ContactRelationship_StudentProcessingHeader">
+          <DataField>ContactRelationship_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="SourceofInformation_StudentProcessingHeader">
+          <DataField>SourceofInformation_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="InformationSourceName_StudentProcessingHeader">
+          <DataField>InformationSourceName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="BirthCertificateNo_StudentProcessingHeader">
+          <DataField>BirthCertificateNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DisabilityType_StudentProcessingHeader">
+          <DataField>DisabilityType_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DisabilityName_StudentProcessingHeader">
+          <DataField>DisabilityName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RenewalAmount_StudentProcessingHeader">
+          <DataField>RenewalAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RenewalAmount_StudentProcessingHeaderFormat">
+          <DataField>RenewalAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="RenewalReceiptNo_StudentProcessingHeader">
+          <DataField>RenewalReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RenewalInvoiceNo_StudentProcessingHeader">
+          <DataField>RenewalInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ActivationAmount_StudentProcessingHeader">
+          <DataField>ActivationAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ActivationAmount_StudentProcessingHeaderFormat">
+          <DataField>ActivationAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="ActivationReceiptNo_StudentProcessingHeader">
+          <DataField>ActivationReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ActivationInvoiceNo_StudentProcessingHeader">
+          <DataField>ActivationInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="LastModifiedDateTime_StudentProcessingHeader">
+          <DataField>LastModifiedDateTime_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="LastDateModified_StudentProcessingHeader">
+          <DataField>LastDateModified_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Submitted_StudentProcessingHeader">
+          <DataField>Submitted_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CommiiteeReferenceNo_StudentProcessingHeader">
+          <DataField>CommiiteeReferenceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CertificateDispatchMethod_StudentProcessingHeader">
+          <DataField>CertificateDispatchMethod_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ReinstatementAmount_StudentProcessingHeader">
+          <DataField>ReinstatementAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ReinstatementAmount_StudentProcessingHeaderFormat">
+          <DataField>ReinstatementAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="ReinstatementReceiptNo_StudentProcessingHeader">
+          <DataField>ReinstatementReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ReinstatementInvoiceNo_StudentProcessingHeader">
+          <DataField>ReinstatementInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="TransactionType_StudentProcessingLines">
+          <DataField>TransactionType_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="BookingHeaderNo_StudentProcessingLines">
+          <DataField>BookingHeaderNo_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="LineNo_StudentProcessingLines">
+          <DataField>LineNo_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="CourseId_StudentProcessingLines">
+          <DataField>CourseId_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Section_StudentProcessingLines">
+          <DataField>Section_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Part_StudentProcessingLines">
+          <DataField>Part_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Paper_StudentProcessingLines">
+          <DataField>Paper_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Description_StudentProcessingLines">
+          <DataField>Description_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="CurrencyCode_StudentProcessingLines">
+          <DataField>CurrencyCode_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Amount_StudentProcessingLines">
+          <DataField>Amount_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Amount_StudentProcessingLinesFormat">
+          <DataField>Amount_StudentProcessingLinesFormat</DataField>
+        </Field>
+        <Field Name="AmountLCY_StudentProcessingLines">
+          <DataField>AmountLCY_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="AmountLCY_StudentProcessingLinesFormat">
+          <DataField>AmountLCY_StudentProcessingLinesFormat</DataField>
+        </Field>
+        <Field Name="RegistrationNo_StudentProcessingLines">
+          <DataField>RegistrationNo_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Name_StudentProcessingLines">
+          <DataField>Name_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="PreferredExamCenter_StudentProcessingLines">
+          <DataField>PreferredExamCenter_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="SittingCycle_StudentProcessingLines">
+          <DataField>SittingCycle_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Year_StudentProcessingLines">
+          <DataField>Year_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Blocked_StudentProcessingLines">
+          <DataField>Blocked_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Type_StudentProcessingLines">
+          <DataField>Type_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Exempted_StudentProcessingLines">
+          <DataField>Exempted_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="BookingType_StudentProcessingLines">
+          <DataField>BookingType_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="DocumentType_StudentProcessingLines">
+          <DataField>DocumentType_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="PaperMarks_StudentProcessingLines">
+          <DataField>PaperMarks_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="PaperMarks_StudentProcessingLinesFormat">
+          <DataField>PaperMarks_StudentProcessingLinesFormat</DataField>
+        </Field>
+        <Field Name="MarkerNo_StudentProcessingLines">
+          <DataField>MarkerNo_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="MarkerName_StudentProcessingLines">
+          <DataField>MarkerName_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="CheckerNo_StudentProcessingLines">
+          <DataField>CheckerNo_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="CheckerName_StudentProcessingLines">
+          <DataField>CheckerName_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="StudentNo_StudentProcessingLines">
+          <DataField>StudentNo_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="LastModifiedDateTime_StudentProcessingLines">
+          <DataField>LastModifiedDateTime_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="LastDateModified_StudentProcessingLines">
+          <DataField>LastDateModified_StudentProcessingLines</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

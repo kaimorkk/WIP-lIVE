@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ReportForNavId_1">
+          <DataField>ReportForNavId_1</DataField>
+        </Field>
+        <Field Name="image1">
+          <DataField>image1</DataField>
+        </Field>
+        <Field Name="name">
+          <DataField>name</DataField>
+        </Field>
+        <Field Name="EntryNo_PCE">
+          <DataField>EntryNo_PCE</DataField>
+        </Field>
+        <Field Name="NOANo_PCE">
+          <DataField>NOANo_PCE</DataField>
+        </Field>
+        <Field Name="ProfessionalOpinionNo_PCE">
+          <DataField>ProfessionalOpinionNo_PCE</DataField>
+        </Field>
+        <Field Name="EvaluationReportNo_PCE">
+          <DataField>EvaluationReportNo_PCE</DataField>
+        </Field>
+        <Field Name="IFSCode_PCE">
+          <DataField>IFSCode_PCE</DataField>
+        </Field>
+        <Field Name="PRNNo_PCE">
+          <DataField>PRNNo_PCE</DataField>
+        </Field>
+        <Field Name="PurchaseAgreementType_PCE">
+          <DataField>PurchaseAgreementType_PCE</DataField>
+        </Field>
+        <Field Name="PurchaseAgreementNo_PCE">
+          <DataField>PurchaseAgreementNo_PCE</DataField>
+        </Field>
+        <Field Name="CreatedBy_PCE">
+          <DataField>CreatedBy_PCE</DataField>
+        </Field>
+        <Field Name="CreatedOn_PCE">
+          <DataField>CreatedOn_PCE</DataField>
+        </Field>
+        <Field Name="Archived_PCE">
+          <DataField>Archived_PCE</DataField>
+        </Field>
+        <Field Name="AwardedBidderNo_PCE">
+          <DataField>AwardedBidderNo_PCE</DataField>
+        </Field>
+        <Field Name="AwardedBidderName_PCE">
+          <DataField>AwardedBidderName_PCE</DataField>
+        </Field>
+        <Field Name="AwardedBidSum_PCE">
+          <DataField>AwardedBidSum_PCE</DataField>
+        </Field>
+        <Field Name="AwardedBidSum_PCEFormat">
+          <DataField>AwardedBidSum_PCEFormat</DataField>
+        </Field>
+        <Field Name="TenderName_PCE">
+          <DataField>TenderName_PCE</DataField>
+        </Field>
+        <Field Name="AwardedBidNo_PCE">
+          <DataField>AwardedBidNo_PCE</DataField>
+        </Field>
+        <Field Name="ArchivedOn_PCE">
+          <DataField>ArchivedOn_PCE</DataField>
+        </Field>
+        <Field Name="ArchivedBy_PCE">
+          <DataField>ArchivedBy_PCE</DataField>
+        </Field>
+        <Field Name="ProcurementMethod">
+          <DataField>ProcurementMethod</DataField>
+        </Field>
+        <Field Name="TenderOpeningDate">
+          <DataField>TenderOpeningDate</DataField>
+        </Field>
+        <Field Name="EvaluationCompletionDate">
+          <DataField>EvaluationCompletionDate</DataField>
+        </Field>
+        <Field Name="DateofNotificationofAward">
+          <DataField>DateofNotificationofAward</DataField>
+        </Field>
+        <Field Name="DateofSigningContract">
+          <DataField>DateofSigningContract</DataField>
+        </Field>
+        <Field Name="ContractExpiryDate">
+          <DataField>ContractExpiryDate</DataField>
+        </Field>
+        <Field Name="SNo">
+          <DataField>SNo</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

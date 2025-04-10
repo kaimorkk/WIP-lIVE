@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Design_No">
+          <DataField>Design_No</DataField>
+        </Field>
+        <Field Name="Member_No">
+          <DataField>Member_No</DataField>
+        </Field>
+        <Field Name="Design_Approval_Stage">
+          <DataField>Design_Approval_Stage</DataField>
+        </Field>
+        <Field Name="Approver_Name">
+          <DataField>Approver_Name</DataField>
+        </Field>
+        <Field Name="Date_Submitted">
+          <DataField>Date_Submitted</DataField>
+        </Field>
+        <Field Name="Job_Title">
+          <DataField>Job_Title</DataField>
+        </Field>
+        <Field Name="Project_Code">
+          <DataField>Project_Code</DataField>
+        </Field>
+        <Field Name="Project_Name">
+          <DataField>Project_Name</DataField>
+        </Field>
+        <Field Name="Land___location">
+          <DataField>Land___location</DataField>
+        </Field>
+        <Field Name="Tender_No">
+          <DataField>Tender_No</DataField>
+        </Field>
+        <Field Name="Project_Sum">
+          <DataField>Project_Sum</DataField>
+        </Field>
+        <Field Name="Project_SumFormat">
+          <DataField>Project_SumFormat</DataField>
+        </Field>
+        <Field Name="Certified_Amount">
+          <DataField>Certified_Amount</DataField>
+        </Field>
+        <Field Name="Certified_AmountFormat">
+          <DataField>Certified_AmountFormat</DataField>
+        </Field>
+        <Field Name="First_Moeity_Amount">
+          <DataField>First_Moeity_Amount</DataField>
+        </Field>
+        <Field Name="First_Moeity_AmountFormat">
+          <DataField>First_Moeity_AmountFormat</DataField>
+        </Field>
+        <Field Name="Second_Moeity_Amount">
+          <DataField>Second_Moeity_Amount</DataField>
+        </Field>
+        <Field Name="Second_Moeity_AmountFormat">
+          <DataField>Second_Moeity_AmountFormat</DataField>
+        </Field>
+        <Field Name="ContractAgreementDate_Practical_Completion">
+          <DataField>ContractAgreementDate_Practical_Completion</DataField>
+        </Field>
+        <Field Name="DateofTakingOver_Practical_Completion">
+          <DataField>DateofTakingOver_Practical_Completion</DataField>
+        </Field>
+        <Field Name="EODliabilityPeriod_Practical_Completion">
+          <DataField>EODliabilityPeriod_Practical_Completion</DataField>
+        </Field>
+        <Field Name="IntendedCompletionDate_Practical_Completion">
+          <DataField>IntendedCompletionDate_Practical_Completion</DataField>
+        </Field>
+        <Field Name="CompletionDate_Practical_Completion">
+          <DataField>CompletionDate_Practical_Completion</DataField>
+        </Field>
+        <Field Name="Comments_Practical_Completion">
+          <DataField>Comments_Practical_Completion</DataField>
+        </Field>
+        <Field Name="Contractor_Practical_Completion">
+          <DataField>Contractor_Practical_Completion</DataField>
+        </Field>
+        <Field Name="Project_Manager">
+          <DataField>Project_Manager</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>baa33321-56d4-4a54-98ee-eaa581e7f1d1</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">ACCREDIATION CERTIFICATE</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>1.20708in</Top>
+            <Left>0.22917in</Left>
+            <Height>0.73959in</Height>
+            <Width>7.80083in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Image Name="Image1">
+            <Source>Database</Source>
+            <Value>=First(Fields!Logo.Value, "DataSet_Result")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.03in</Top>
+            <Left>3.16542in</Left>
+            <Height>1.0625in</Height>
+            <Width>1.91667in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">The Board of  KASNEB , at its 32ND     meeting held on  </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Globals!ExecutionTime</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <Format>M/d/yyyy</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">,   accredited </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Name_AccreditationApplication.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>Blue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>20pt</FontSize>
+                      <Color>DarkBlue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">for</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>20pt</FontSize>
+                      <Color>DarkBlue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!VerdictDescription_AccreditationApplication.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>Blue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>20pt</FontSize>
+                      <Color>DarkBlue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>20pt</FontSize>
+                      <Color>DarkBlue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>20pt</FontSize>
+                      <Color>DarkBlue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>2.01958in</Top>
+            <Left>0.22917in</Left>
+            <Height>2.75in</Height>
+            <Width>7.78125in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>8.83208in</Top>
+            <Height>1.00125in</Height>
+            <Width>8.23041in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>Red</BackgroundColor>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">This certificate is valid until  </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=DateAdd("yyyy",4,Today())</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <Format>M/d/yyyy</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto"> </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <Format>M/d/yyyy</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">unless suspended, cancelled or withdrawn by KASNEB as a result of failure to comply with the provisions of the stated Standards and Guidelines.</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>4.83902in</Top>
+            <Left>0.24875in</Left>
+            <Height>1.06598in</Height>
+            <Width>7.78125in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox5">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto"> </Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">………………..……………………. 
+CEO</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">
+</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox5</rd:DefaultName>
+            <Top>7.2175in</Top>
+            <Left>5.88542in</Left>
+            <Height>1.20833in</Height>
+            <Width>2.125in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Image Name="Image2">
+            <Source>Database</Source>
+            <Value>=First(Fields!RubberStamp.Value, "DataSet_Result")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Sizing>FitProportional</Sizing>
+            <Top>6.93625in</Top>
+            <Left>0.62375in</Left>
+            <Height>1.48958in</Height>
+            <Width>1.89583in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+        </ReportItems>
+        <Height>10.20833in</Height>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+            <Width>1.25pt</Width>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
+      </Body>
+      <Width>8.23041in</Width>
+      <Page>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>8.27in</PageWidth>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="SerialNo">
+          <DataField>SerialNo</DataField>
+        </Field>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+        </Field>
+        <Field Name="RubberStamp">
+          <DataField>RubberStamp</DataField>
+        </Field>
+        <Field Name="ApplicationNo_AccreditationApplication">
+          <DataField>ApplicationNo_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="No_AccreditationApplication">
+          <DataField>No_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="Name_AccreditationApplication">
+          <DataField>Name_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="Address_AccreditationApplication">
+          <DataField>Address_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="Address2_AccreditationApplication">
+          <DataField>Address2_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="City_AccreditationApplication">
+          <DataField>City_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="Contact_AccreditationApplication">
+          <DataField>Contact_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="PhoneNo_AccreditationApplication">
+          <DataField>PhoneNo_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="Country_AccreditationApplication">
+          <DataField>Country_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="Email_AccreditationApplication">
+          <DataField>Email_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="ApplicationType_AccreditationApplication">
+          <DataField>ApplicationType_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="NoSeries_AccreditationApplication">
+          <DataField>NoSeries_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="PostCode_AccreditationApplication">
+          <DataField>PostCode_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="County_AccreditationApplication">
+          <DataField>County_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="CreatedBy_AccreditationApplication">
+          <DataField>CreatedBy_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="CreatedOn_AccreditationApplication">
+          <DataField>CreatedOn_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="ReceiptNo_AccreditationApplication">
+          <DataField>ReceiptNo_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="InvoiceNo_AccreditationApplication">
+          <DataField>InvoiceNo_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="InvoiceAmount_AccreditationApplication">
+          <DataField>InvoiceAmount_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="InvoiceAmount_AccreditationApplicationFormat">
+          <DataField>InvoiceAmount_AccreditationApplicationFormat</DataField>
+        </Field>
+        <Field Name="ReceiptAmount_AccreditationApplication">
+          <DataField>ReceiptAmount_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="ReceiptAmount_AccreditationApplicationFormat">
+          <DataField>ReceiptAmount_AccreditationApplicationFormat</DataField>
+        </Field>
+        <Field Name="Status_AccreditationApplication">
+          <DataField>Status_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="ApplicationTypeName_AccreditationApplication">
+          <DataField>ApplicationTypeName_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="ApplicationFeeLCY_AccreditationApplication">
+          <DataField>ApplicationFeeLCY_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="ApplicationFeeLCY_AccreditationApplicationFormat">
+          <DataField>ApplicationFeeLCY_AccreditationApplicationFormat</DataField>
+        </Field>
+        <Field Name="CurrencyCode_AccreditationApplication">
+          <DataField>CurrencyCode_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="ApplicationFee_AccreditationApplication">
+          <DataField>ApplicationFee_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="ApplicationFee_AccreditationApplicationFormat">
+          <DataField>ApplicationFee_AccreditationApplicationFormat</DataField>
+        </Field>
+        <Field Name="Published_AccreditationApplication">
+          <DataField>Published_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="RejectionReason_AccreditationApplication">
+          <DataField>RejectionReason_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="PaymentReferenceNo_AccreditationApplication">
+          <DataField>PaymentReferenceNo_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="PaymentDocument_AccreditationApplication">
+          <DataField>PaymentDocument_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="InstitutionTypeCode_AccreditationApplication">
+          <DataField>InstitutionTypeCode_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="InstitutionType_AccreditationApplication">
+          <DataField>InstitutionType_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="InvoiceAmountLCY_AccreditationApplication">
+          <DataField>InvoiceAmountLCY_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="InvoiceAmountLCY_AccreditationApplicationFormat">
+          <DataField>InvoiceAmountLCY_AccreditationApplicationFormat</DataField>
+        </Field>
+        <Field Name="ReceiptAmountLCY_AccreditationApplication">
+          <DataField>ReceiptAmountLCY_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="ReceiptAmountLCY_AccreditationApplicationFormat">
+          <DataField>ReceiptAmountLCY_AccreditationApplicationFormat</DataField>
+        </Field>
+        <Field Name="VerdictCode_AccreditationApplication">
+          <DataField>VerdictCode_AccreditationApplication</DataField>
+        </Field>
+        <Field Name="VerdictDescription_AccreditationApplication">
+          <DataField>VerdictDescription_AccreditationApplication</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

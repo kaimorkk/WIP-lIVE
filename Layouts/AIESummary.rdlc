@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Quarter">
+          <DataField>Quarter</DataField>
+        </Field>
+        <Field Name="QuarterEndDate">
+          <DataField>QuarterEndDate</DataField>
+        </Field>
+        <Field Name="QuarterStartDate">
+          <DataField>QuarterStartDate</DataField>
+        </Field>
+        <Field Name="BudgetCode">
+          <DataField>BudgetCode</DataField>
+        </Field>
+        <Field Name="AmounttoAuthorize">
+          <DataField>AmounttoAuthorize</DataField>
+        </Field>
+        <Field Name="AmounttoAuthorizeFormat">
+          <DataField>AmounttoAuthorizeFormat</DataField>
+        </Field>
+        <Field Name="PVPreparedBy">
+          <DataField>PVPreparedBy</DataField>
+        </Field>
+        <Field Name="PVPreparedByDesignation">
+          <DataField>PVPreparedByDesignation</DataField>
+        </Field>
+        <Field Name="PVPreparedBySignature">
+          <DataField>PVPreparedBySignature</DataField>
+        </Field>
+        <Field Name="PVPreparedDate">
+          <DataField>PVPreparedDate</DataField>
+        </Field>
+        <Field Name="PVCheckedBy">
+          <DataField>PVCheckedBy</DataField>
+        </Field>
+        <Field Name="PVCheckedByDesignation">
+          <DataField>PVCheckedByDesignation</DataField>
+        </Field>
+        <Field Name="PVCheckedBySignature">
+          <DataField>PVCheckedBySignature</DataField>
+        </Field>
+        <Field Name="PVCheckedByDate">
+          <DataField>PVCheckedByDate</DataField>
+        </Field>
+        <Field Name="PVApprovedBy">
+          <DataField>PVApprovedBy</DataField>
+        </Field>
+        <Field Name="PVApprovedByByDesignation">
+          <DataField>PVApprovedByByDesignation</DataField>
+        </Field>
+        <Field Name="PVApprovedBySignature">
+          <DataField>PVApprovedBySignature</DataField>
+        </Field>
+        <Field Name="PVApprovedByDate">
+          <DataField>PVApprovedByDate</DataField>
+        </Field>
+        <Field Name="AmounttoAuthorize_AuthIncExpendHeader">
+          <DataField>AmounttoAuthorize_AuthIncExpendHeader</DataField>
+        </Field>
+        <Field Name="AmounttoAuthorize_AuthIncExpendHeaderFormat">
+          <DataField>AmounttoAuthorize_AuthIncExpendHeaderFormat</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code_AuthIncExpendHeader">
+          <DataField>GlobalDimension1Code_AuthIncExpendHeader</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_AuthIncExpendHeader">
+          <DataField>GlobalDimension2Code_AuthIncExpendHeader</DataField>
+        </Field>
+        <Field Name="No_AuthIncExpendHeader">
+          <DataField>No_AuthIncExpendHeader</DataField>
+        </Field>
+        <Field Name="DimName">
+          <DataField>DimName</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

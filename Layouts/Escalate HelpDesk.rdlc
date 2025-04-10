@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="JobNo_ICTHelpdesk">
+          <DataField>JobNo_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="AssignedTo_ICTHelpdesk">
+          <DataField>AssignedTo_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="AssignedDate_ICTHelpdesk">
+          <DataField>AssignedDate_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="AssignedTime_ICTHelpdesk">
+          <DataField>AssignedTime_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="Department_ICTHelpdesk">
+          <DataField>Department_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="DepartmentName_ICTHelpdesk">
+          <DataField>DepartmentName_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="PhysicalStation_ICTHelpdesk">
+          <DataField>PhysicalStation_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="NatureofService_ICTHelpdesk">
+          <DataField>NatureofService_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="EXT_ICTHelpdesk">
+          <DataField>EXT_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="RequestingOfficer_ICTHelpdesk">
+          <DataField>RequestingOfficer_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="RequestingOfficerName_ICTHelpdesk">
+          <DataField>RequestingOfficerName_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="Phone_ICTHelpdesk">
+          <DataField>Phone_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="Email_ICTHelpdesk">
+          <DataField>Email_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="RequestDate_ICTHelpdesk">
+          <DataField>RequestDate_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="RequestTime_ICTHelpdesk">
+          <DataField>RequestTime_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="ComputernotStartingup_ICTHelpdesk">
+          <DataField>ComputernotStartingup_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="KeyboardMouseFailure_ICTHelpdesk">
+          <DataField>KeyboardMouseFailure_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="PrinterFailure_ICTHelpdesk">
+          <DataField>PrinterFailure_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="UPSFailure_ICTHelpdesk">
+          <DataField>UPSFailure_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="LCDMonitorFailure_ICTHelpdesk">
+          <DataField>LCDMonitorFailure_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="StorageDeviceFailure_ICTHelpdesk">
+          <DataField>StorageDeviceFailure_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="HardwareInstallation_ICTHelpdesk">
+          <DataField>HardwareInstallation_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="OthersspecifyHW_ICTHelpdesk">
+          <DataField>OthersspecifyHW_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="ComputerRunningLoadingSlow_ICTHelpdesk">
+          <DataField>ComputerRunningLoadingSlow_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="NetworkAccessProblems_ICTHelpdesk">
+          <DataField>NetworkAccessProblems_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="AntivirusInefficiency_ICTHelpdesk">
+          <DataField>AntivirusInefficiency_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="Applications_ICTHelpdesk">
+          <DataField>Applications_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="SoftwareInstallation_ICTHelpdesk">
+          <DataField>SoftwareInstallation_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="OthersspecifySW_ICTHelpdesk">
+          <DataField>OthersspecifySW_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="Diagnosis_ICTHelpdesk">
+          <DataField>Diagnosis_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="ActionTaken_ICTHelpdesk">
+          <DataField>ActionTaken_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="AttendedBy_ICTHelpdesk">
+          <DataField>AttendedBy_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="AttendedDate_ICTHelpdesk">
+          <DataField>AttendedDate_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="AttendedTime_ICTHelpdesk">
+          <DataField>AttendedTime_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="TechnicalStaffRemarks_ICTHelpdesk">
+          <DataField>TechnicalStaffRemarks_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="RequestingOfficerRemarks_ICTHelpdesk">
+          <DataField>RequestingOfficerRemarks_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="AttendedbyName_ICTHelpdesk">
+          <DataField>AttendedbyName_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="Status_ICTHelpdesk">
+          <DataField>Status_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="NoSeries_ICTHelpdesk">
+          <DataField>NoSeries_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="ICTIssueCategory_ICTHelpdesk">
+          <DataField>ICTIssueCategory_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="EscalatedTo_ICTHelpdesk">
+          <DataField>EscalatedTo_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="EscalatedBy_ICTHelpdesk">
+          <DataField>EscalatedBy_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="EscalatedDate_ICTHelpdesk">
+          <DataField>EscalatedDate_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="EscalatedTime_ICTHelpdesk">
+          <DataField>EscalatedTime_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="RequesterFeedback_ICTHelpdesk">
+          <DataField>RequesterFeedback_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="Reopened_ICTHelpdesk">
+          <DataField>Reopened_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="ReopenedBy_ICTHelpdesk">
+          <DataField>ReopenedBy_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="FeedBackGiven_ICTHelpdesk">
+          <DataField>FeedBackGiven_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code_ICTHelpdesk">
+          <DataField>GlobalDimension1Code_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_ICTHelpdesk">
+          <DataField>GlobalDimension2Code_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="ShortcutDimension1Code_ICTHelpdesk">
+          <DataField>ShortcutDimension1Code_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="RegionName_ICTHelpdesk">
+          <DataField>RegionName_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="ConstituencyName_ICTHelpdesk">
+          <DataField>ConstituencyName_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="Descriptionoftheissue_ICTHelpdesk">
+          <DataField>Descriptionoftheissue_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="EmployeeNo_ICTHelpdesk">
+          <DataField>EmployeeNo_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="AscalationDetails_ICTHelpdesk">
+          <DataField>AscalationDetails_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="AssignedToEmpNo_ICTHelpdesk">
+          <DataField>AssignedToEmpNo_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="EscalatedToEmpNo_ICTHelpdesk">
+          <DataField>EscalatedToEmpNo_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="SolvedTime_ICTHelpdesk">
+          <DataField>SolvedTime_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="IctHeadEscalation_ICTHelpdesk">
+          <DataField>IctHeadEscalation_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="ITEscalationDetails_ICTHelpdesk">
+          <DataField>ITEscalationDetails_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="ITEscalationTime_ICTHelpdesk">
+          <DataField>ITEscalationTime_ICTHelpdesk</DataField>
+        </Field>
+        <Field Name="HelpDeskCategory_ICTHelpdesk">
+          <DataField>HelpDeskCategory_ICTHelpdesk</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

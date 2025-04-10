@@ -1,0 +1,2611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>b48dddd9-7232-4f19-8f80-519068a47a36</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="Code_BidTabulationHeader">
+          <DataField>Code_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentType_BidTabulationHeader">
+          <DataField>DocumentType_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="IFSCode_BidTabulationHeader">
+          <DataField>IFSCode_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentDate_BidTabulationHeader">
+          <DataField>DocumentDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinalEvaluationReportID_BidTabulationHeader">
+          <DataField>FinalEvaluationReportID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Description_BidTabulationHeader">
+          <DataField>Description_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="TenderName_BidTabulationHeader">
+          <DataField>TenderName_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="RaisedBy_BidTabulationHeader">
+          <DataField>RaisedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Name_BidTabulationHeader">
+          <DataField>Name_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="TenderCommitteeRole_BidTabulationHeader">
+          <DataField>TenderCommitteeRole_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DesignationTitle_BidTabulationHeader">
+          <DataField>DesignationTitle_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AnnualProcurementPlanID_BidTabulationHeader">
+          <DataField>AnnualProcurementPlanID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanDate_BidTabulationHeader">
+          <DataField>ProcurementPlanDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinancialYearCode_BidTabulationHeader">
+          <DataField>FinancialYearCode_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanLineNo_BidTabulationHeader">
+          <DataField>ProcurementPlanLineNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanEntryNo_BidTabulationHeader">
+          <DataField>ProcurementPlanEntryNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_BidTabulationHeader">
+          <DataField>AvailableProcurementBudget_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_BidTabulationHeaderFormat">
+          <DataField>AvailableProcurementBudget_BidTabulationHeaderFormat</DataField>
+        </Field>
+        <Field Name="BudgetNarration_BidTabulationHeader">
+          <DataField>BudgetNarration_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningDate_BidTabulationHeader">
+          <DataField>BidOpeningDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="EvaluationCompletionDate_BidTabulationHeader">
+          <DataField>EvaluationCompletionDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AppointedBidOpeningComm_BidTabulationHeader">
+          <DataField>AppointedBidOpeningComm_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AppointedBidEvaluationCom_BidTabulationHeader">
+          <DataField>AppointedBidEvaluationCom_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PrimaryRegion_BidTabulationHeader">
+          <DataField>PrimaryRegion_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_BidTabulationHeader">
+          <DataField>ApprovalStatus_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProfessionalOpinionID_BidTabulationHeader">
+          <DataField>ProfessionalOpinionID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidNo_BidTabulationHeader">
+          <DataField>AwardedBidNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidderNo_BidTabulationHeader">
+          <DataField>AwardedBidderNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidderName_BidTabulationHeader">
+          <DataField>AwardedBidderName_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardTenderSumIncTaxes_BidTabulationHeader">
+          <DataField>AwardTenderSumIncTaxes_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardTenderSumIncTaxes_BidTabulationHeaderFormat">
+          <DataField>AwardTenderSumIncTaxes_BidTabulationHeaderFormat</DataField>
+        </Field>
+        <Field Name="AwardAcceptanceDeadline_BidTabulationHeader">
+          <DataField>AwardAcceptanceDeadline_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardAcceptanceResponse_BidTabulationHeader">
+          <DataField>AwardAcceptanceResponse_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="MinContractHolding_BidTabulationHeader">
+          <DataField>MinContractHolding_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="EarliestContractIssuanceDt_BidTabulationHeader">
+          <DataField>EarliestContractIssuanceDt_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidderNoAResponseType_BidTabulationHeader">
+          <DataField>BidderNoAResponseType_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidderNoAResponseDate_BidTabulationHeader">
+          <DataField>BidderNoAResponseDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofPostAwardDisputes_BidTabulationHeader">
+          <DataField>NoofPostAwardDisputes_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentStatus_BidTabulationHeader">
+          <DataField>DocumentStatus_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoSeries_BidTabulationHeader">
+          <DataField>NoSeries_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedBy_BidTabulationHeader">
+          <DataField>CreatedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedDate_BidTabulationHeader">
+          <DataField>CreatedDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedTime_BidTabulationHeader">
+          <DataField>CreatedTime_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Posted_BidTabulationHeader">
+          <DataField>Posted_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PostedBy_BidTabulationHeader">
+          <DataField>PostedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PostedDate_BidTabulationHeader">
+          <DataField>PostedDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinancialEvaluationID_BidTabulationHeader">
+          <DataField>FinancialEvaluationID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="GeneralProcurementRemarks_BidTabulationHeader">
+          <DataField>GeneralProcurementRemarks_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Noofsubmittedbids_BidTabulationHeader">
+          <DataField>Noofsubmittedbids_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofOpenedBidsTech_BidTabulationHeader">
+          <DataField>NoofOpenedBidsTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofOpenedBidsFinance_BidTabulationHeader">
+          <DataField>NoofOpenedBidsFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofResponsiveTech_BidTabulationHeader">
+          <DataField>NoofResponsiveTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofnonResponsiveTech_BidTabulationHeader">
+          <DataField>NoofnonResponsiveTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofResponsiveFinance_BidTabulationHeader">
+          <DataField>NoofResponsiveFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofnonResponsiveFinance_BidTabulationHeader">
+          <DataField>NoofnonResponsiveFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningRegisterTech_BidTabulationHeader">
+          <DataField>BidOpeningRegisterTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningRegisterFinance_BidTabulationHeader">
+          <DataField>BidOpeningRegisterFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementOfficerLicenseNo_BidTabulationHeader">
+          <DataField>ProcurementOfficerLicenseNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementMethod_BidTabulationHeader">
+          <DataField>ProcurementMethod_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcessType_BidTabulationHeader">
+          <DataField>ProcessType_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="IFPCode_BidTabulationHeader">
+          <DataField>IFPCode_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PrequalificationCategory_BidTabulationHeader">
+          <DataField>PrequalificationCategory_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CategoryName_BidTabulationHeader">
+          <DataField>CategoryName_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Code_BidOpeningRegister">
+          <DataField>Code_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="IFSCode_BidOpeningRegister">
+          <DataField>IFSCode_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="Description_BidOpeningRegister">
+          <DataField>Description_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="TenderName_BidOpeningRegister">
+          <DataField>TenderName_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="BidOpeningDate_BidOpeningRegister">
+          <DataField>BidOpeningDate_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="BidOpeningStartTime_BidOpeningRegister">
+          <DataField>BidOpeningStartTime_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="BidOpeningEndDate_BidOpeningRegister">
+          <DataField>BidOpeningEndDate_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="BidOpeningEndTime_BidOpeningRegister">
+          <DataField>BidOpeningEndTime_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="PrebidPurchaserCode_BidOpeningRegister">
+          <DataField>PrebidPurchaserCode_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="NoofIntentionToBidVendor_BidOpeningRegister">
+          <DataField>NoofIntentionToBidVendor_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="NoofSubmittedBids_BidOpeningRegister">
+          <DataField>NoofSubmittedBids_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="NoofSubmittedBids_BidOpeningRegisterFormat">
+          <DataField>NoofSubmittedBids_BidOpeningRegisterFormat</DataField>
+        </Field>
+        <Field Name="NoSeries_BidOpeningRegister">
+          <DataField>NoSeries_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="CreatedBy_BidOpeningRegister">
+          <DataField>CreatedBy_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="CreatedDate_BidOpeningRegister">
+          <DataField>CreatedDate_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="CreatedTime_BidOpeningRegister">
+          <DataField>CreatedTime_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="PrimaryRegion_BidOpeningRegister">
+          <DataField>PrimaryRegion_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="AppointedBidOpeningCom_BidOpeningRegister">
+          <DataField>AppointedBidOpeningCom_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="BidEnvelopType_BidOpeningRegister">
+          <DataField>BidEnvelopType_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="BidUnsealingType_BidOpeningRegister">
+          <DataField>BidUnsealingType_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="FinalOpeningDone_BidOpeningRegister">
+          <DataField>FinalOpeningDone_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="TenderEvaluationDeadline_BidOpeningRegister">
+          <DataField>TenderEvaluationDeadline_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="BidRegisterNo_BidOpeningRegister">
+          <DataField>BidRegisterNo_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="RequiredBidSecurityAmount_BidOpeningRegister">
+          <DataField>RequiredBidSecurityAmount_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="RequiredBidSecurityAmount_BidOpeningRegisterFormat">
+          <DataField>RequiredBidSecurityAmount_BidOpeningRegisterFormat</DataField>
+        </Field>
+        <Field Name="BidOpeningVenue_BidOpeningRegister">
+          <DataField>BidOpeningVenue_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="DocumentStatus_BidOpeningRegister">
+          <DataField>DocumentStatus_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="Posted_BidOpeningRegister">
+          <DataField>Posted_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="PostedBy_BidOpeningRegister">
+          <DataField>PostedBy_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="PostedDate_BidOpeningRegister">
+          <DataField>PostedDate_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="Type_BidOpeningRegister">
+          <DataField>Type_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="OpeningPerson1_BidOpeningRegister">
+          <DataField>OpeningPerson1_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="OpeningPerson2_BidOpeningRegister">
+          <DataField>OpeningPerson2_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="OpeningPerson3_BidOpeningRegister">
+          <DataField>OpeningPerson3_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="OpeningPerson4_BidOpeningRegister">
+          <DataField>OpeningPerson4_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_BidOpeningRegister">
+          <DataField>ApprovalStatus_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="OpeningPerson5_BidOpeningRegister">
+          <DataField>OpeningPerson5_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="ProcessType_BidOpeningRegister">
+          <DataField>ProcessType_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="IFPCode_BidOpeningRegister">
+          <DataField>IFPCode_BidOpeningRegister</DataField>
+        </Field>
+        <Field Name="Code_PrequalificationScoreHeader">
+          <DataField>Code_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="DocumentDate_PrequalificationScoreHeader">
+          <DataField>DocumentDate_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="PrequalificationEvaluationTe_PrequalificationScoreHeader">
+          <DataField>PrequalificationEvaluationTe_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="EvaluationLead_PrequalificationScoreHeader">
+          <DataField>EvaluationLead_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="EvaluationLeadName_PrequalificationScoreHeader">
+          <DataField>EvaluationLeadName_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="PrequalificationResponseNo_PrequalificationScoreHeader">
+          <DataField>PrequalificationResponseNo_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="VendorNo_PrequalificationScoreHeader">
+          <DataField>VendorNo_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="VendorName_PrequalificationScoreHeader">
+          <DataField>VendorName_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="IFPNo_PrequalificationScoreHeader">
+          <DataField>IFPNo_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="ProcurementCategory_PrequalificationScoreHeader">
+          <DataField>ProcurementCategory_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="CategoryName_PrequalificationScoreHeader">
+          <DataField>CategoryName_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="Description_PrequalificationScoreHeader">
+          <DataField>Description_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="PrimaryResponsibilityCenter_PrequalificationScoreHeader">
+          <DataField>PrimaryResponsibilityCenter_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="SystemEvaluationScore_PrequalificationScoreHeader">
+          <DataField>SystemEvaluationScore_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="SystemEvaluationScore_PrequalificationScoreHeaderFormat">
+          <DataField>SystemEvaluationScore_PrequalificationScoreHeaderFormat</DataField>
+        </Field>
+        <Field Name="FinalEvaluationScore_PrequalificationScoreHeader">
+          <DataField>FinalEvaluationScore_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="FinalEvaluationScore_PrequalificationScoreHeaderFormat">
+          <DataField>FinalEvaluationScore_PrequalificationScoreHeaderFormat</DataField>
+        </Field>
+        <Field Name="FinalEvaluationDecision_PrequalificationScoreHeader">
+          <DataField>FinalEvaluationDecision_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="EvaluationCommitteeRemarks_PrequalificationScoreHeader">
+          <DataField>EvaluationCommitteeRemarks_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="NoSeries_PrequalificationScoreHeader">
+          <DataField>NoSeries_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="CreatedBy_PrequalificationScoreHeader">
+          <DataField>CreatedBy_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="CreatedDate_PrequalificationScoreHeader">
+          <DataField>CreatedDate_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="CreatedTime_PrequalificationScoreHeader">
+          <DataField>CreatedTime_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="EvaluationCommittee_PrequalificationScoreHeader">
+          <DataField>EvaluationCommittee_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="Type_PrequalificationScoreHeader">
+          <DataField>Type_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="EvaluationVenue_PrequalificationScoreHeader">
+          <DataField>EvaluationVenue_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="Posted_PrequalificationScoreHeader">
+          <DataField>Posted_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="Postingdate_PrequalificationScoreHeader">
+          <DataField>Postingdate_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="PostedBy_PrequalificationScoreHeader">
+          <DataField>PostedBy_PrequalificationScoreHeader</DataField>
+        </Field>
+        <Field Name="TemplateID_BidEvaluationCriteriaGroup">
+          <DataField>TemplateID_BidEvaluationCriteriaGroup</DataField>
+        </Field>
+        <Field Name="CriteriaGroupID_BidEvaluationCriteriaGroup">
+          <DataField>CriteriaGroupID_BidEvaluationCriteriaGroup</DataField>
+        </Field>
+        <Field Name="EvaluationType_BidEvaluationCriteriaGroup">
+          <DataField>EvaluationType_BidEvaluationCriteriaGroup</DataField>
+        </Field>
+        <Field Name="Description_BidEvaluationCriteriaGroup">
+          <DataField>Description_BidEvaluationCriteriaGroup</DataField>
+        </Field>
+        <Field Name="TotalWeight_BidEvaluationCriteriaGroup">
+          <DataField>TotalWeight_BidEvaluationCriteriaGroup</DataField>
+        </Field>
+        <Field Name="TotalWeight_BidEvaluationCriteriaGroupFormat">
+          <DataField>TotalWeight_BidEvaluationCriteriaGroupFormat</DataField>
+        </Field>
+        <Field Name="DocumentNo_BidEvaluationCriteriaGroup">
+          <DataField>DocumentNo_BidEvaluationCriteriaGroup</DataField>
+        </Field>
+        <Field Name="NoofScoredCriteriaGroups_BidEvaluationCriteriaGroup">
+          <DataField>NoofScoredCriteriaGroups_BidEvaluationCriteriaGroup</DataField>
+        </Field>
+        <Field Name="NoofCriteriaCroups_BidEvaluationCriteriaGroup">
+          <DataField>NoofCriteriaCroups_BidEvaluationCriteriaGroup</DataField>
+        </Field>
+        <Field Name="Code_RequestForInformation">
+          <DataField>Code_RequestForInformation</DataField>
+        </Field>
+        <Field Name="Description_RequestForInformation">
+          <DataField>Description_RequestForInformation</DataField>
+        </Field>
+        <Field Name="TenderSummary_RequestForInformation">
+          <DataField>TenderSummary_RequestForInformation</DataField>
+        </Field>
+        <Field Name="PrimaryTargetVendorCluster_RequestForInformation">
+          <DataField>PrimaryTargetVendorCluster_RequestForInformation</DataField>
+        </Field>
+        <Field Name="DocumentDate_RequestForInformation">
+          <DataField>DocumentDate_RequestForInformation</DataField>
+        </Field>
+        <Field Name="ExternalDocumentNo_RequestForInformation">
+          <DataField>ExternalDocumentNo_RequestForInformation</DataField>
+        </Field>
+        <Field Name="PeriodStartDate_RequestForInformation">
+          <DataField>PeriodStartDate_RequestForInformation</DataField>
+        </Field>
+        <Field Name="PeriodEndDate_RequestForInformation">
+          <DataField>PeriodEndDate_RequestForInformation</DataField>
+        </Field>
+        <Field Name="Status_RequestForInformation">
+          <DataField>Status_RequestForInformation</DataField>
+        </Field>
+        <Field Name="Name_RequestForInformation">
+          <DataField>Name_RequestForInformation</DataField>
+        </Field>
+        <Field Name="Name2_RequestForInformation">
+          <DataField>Name2_RequestForInformation</DataField>
+        </Field>
+        <Field Name="Address_RequestForInformation">
+          <DataField>Address_RequestForInformation</DataField>
+        </Field>
+        <Field Name="Address2_RequestForInformation">
+          <DataField>Address2_RequestForInformation</DataField>
+        </Field>
+        <Field Name="PostCode_RequestForInformation">
+          <DataField>PostCode_RequestForInformation</DataField>
+        </Field>
+        <Field Name="City_RequestForInformation">
+          <DataField>City_RequestForInformation</DataField>
+        </Field>
+        <Field Name="CountryRegionCode_RequestForInformation">
+          <DataField>CountryRegionCode_RequestForInformation</DataField>
+        </Field>
+        <Field Name="PhoneNo_RequestForInformation">
+          <DataField>PhoneNo_RequestForInformation</DataField>
+        </Field>
+        <Field Name="EMail_RequestForInformation">
+          <DataField>EMail_RequestForInformation</DataField>
+        </Field>
+        <Field Name="TenderBoxLocationCode_RequestForInformation">
+          <DataField>TenderBoxLocationCode_RequestForInformation</DataField>
+        </Field>
+        <Field Name="PrequalificationChargeCode_RequestForInformation">
+          <DataField>PrequalificationChargeCode_RequestForInformation</DataField>
+        </Field>
+        <Field Name="Published_RequestForInformation">
+          <DataField>Published_RequestForInformation</DataField>
+        </Field>
+        <Field Name="Createdby_RequestForInformation">
+          <DataField>Createdby_RequestForInformation</DataField>
+        </Field>
+        <Field Name="SubmissionStartDate_RequestForInformation">
+          <DataField>SubmissionStartDate_RequestForInformation</DataField>
+        </Field>
+        <Field Name="SubmissionStartTime_RequestForInformation">
+          <DataField>SubmissionStartTime_RequestForInformation</DataField>
+        </Field>
+        <Field Name="SubmissionEndDate_RequestForInformation">
+          <DataField>SubmissionEndDate_RequestForInformation</DataField>
+        </Field>
+        <Field Name="SubmissionEndTime_RequestForInformation">
+          <DataField>SubmissionEndTime_RequestForInformation</DataField>
+        </Field>
+        <Field Name="NoofSubmission_RequestForInformation">
+          <DataField>NoofSubmission_RequestForInformation</DataField>
+        </Field>
+        <Field Name="EnforceMandatoryEReceipt_RequestForInformation">
+          <DataField>EnforceMandatoryEReceipt_RequestForInformation</DataField>
+        </Field>
+        <Field Name="ProcurementDocumentTemplate_RequestForInformation">
+          <DataField>ProcurementDocumentTemplate_RequestForInformation</DataField>
+        </Field>
+        <Field Name="DisplayScoringCriteriaVendo_RequestForInformation">
+          <DataField>DisplayScoringCriteriaVendo_RequestForInformation</DataField>
+        </Field>
+        <Field Name="RFIScoringTemplate_RequestForInformation">
+          <DataField>RFIScoringTemplate_RequestForInformation</DataField>
+        </Field>
+        <Field Name="CreatedDateTime_RequestForInformation">
+          <DataField>CreatedDateTime_RequestForInformation</DataField>
+        </Field>
+        <Field Name="SummarizedTermsConditions_RequestForInformation">
+          <DataField>SummarizedTermsConditions_RequestForInformation</DataField>
+        </Field>
+        <Field Name="NoSeries_RequestForInformation">
+          <DataField>NoSeries_RequestForInformation</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code_RequestForInformation">
+          <DataField>GlobalDimension1Code_RequestForInformation</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_RequestForInformation">
+          <DataField>GlobalDimension2Code_RequestForInformation</DataField>
+        </Field>
+        <Field Name="GlobalDimension3Code_RequestForInformation">
+          <DataField>GlobalDimension3Code_RequestForInformation</DataField>
+        </Field>
+        <Field Name="County_RequestForInformation">
+          <DataField>County_RequestForInformation</DataField>
+        </Field>
+        <Field Name="DocumentType_RequestForInformation">
+          <DataField>DocumentType_RequestForInformation</DataField>
+        </Field>
+        <Field Name="AssignedProcurementOfficer_RequestForInformation">
+          <DataField>AssignedProcurementOfficer_RequestForInformation</DataField>
+        </Field>
+        <Field Name="ProcurementType_RequestForInformation">
+          <DataField>ProcurementType_RequestForInformation</DataField>
+        </Field>
+        <Field Name="SolicitationType_RequestForInformation">
+          <DataField>SolicitationType_RequestForInformation</DataField>
+        </Field>
+        <Field Name="ResponsibilityCentre_RequestForInformation">
+          <DataField>ResponsibilityCentre_RequestForInformation</DataField>
+        </Field>
+        <Field Name="ChargeAmountLCY_RequestForInformation">
+          <DataField>ChargeAmountLCY_RequestForInformation</DataField>
+        </Field>
+        <Field Name="ChargeAmountLCY_RequestForInformationFormat">
+          <DataField>ChargeAmountLCY_RequestForInformationFormat</DataField>
+        </Field>
+        <Field Name="ChargeBankCode_RequestForInformation">
+          <DataField>ChargeBankCode_RequestForInformation</DataField>
+        </Field>
+        <Field Name="BankName_RequestForInformation">
+          <DataField>BankName_RequestForInformation</DataField>
+        </Field>
+        <Field Name="AccountHolderName_RequestForInformation">
+          <DataField>AccountHolderName_RequestForInformation</DataField>
+        </Field>
+        <Field Name="ChargeBankBranch_RequestForInformation">
+          <DataField>ChargeBankBranch_RequestForInformation</DataField>
+        </Field>
+        <Field Name="ChargeBankACNo_RequestForInformation">
+          <DataField>ChargeBankACNo_RequestForInformation</DataField>
+        </Field>
+        <Field Name="DateTimePublished_RequestForInformation">
+          <DataField>DateTimePublished_RequestForInformation</DataField>
+        </Field>
+        <Field Name="RFIDocumentStatus_RequestForInformation">
+          <DataField>RFIDocumentStatus_RequestForInformation</DataField>
+        </Field>
+        <Field Name="EvaluationCommittee_RequestForInformation">
+          <DataField>EvaluationCommittee_RequestForInformation</DataField>
+        </Field>
+        <Field Name="DimensionSetID_RequestForInformation">
+          <DataField>DimensionSetID_RequestForInformation</DataField>
+        </Field>
+        <Field Name="Constituency_RequestForInformation">
+          <DataField>Constituency_RequestForInformation</DataField>
+        </Field>
+        <Field Name="DateFilter_RequestForInformation">
+          <DataField>DateFilter_RequestForInformation</DataField>
+        </Field>
+        <Field Name="Type_RequestForInformation">
+          <DataField>Type_RequestForInformation</DataField>
+        </Field>
+        <Field Name="LinkedtoIFPNo_RequestForInformation">
+          <DataField>LinkedtoIFPNo_RequestForInformation</DataField>
+        </Field>
+        <Field Name="ResponsibilityCenterdescr_RequestForInformation">
+          <DataField>ResponsibilityCenterdescr_RequestForInformation</DataField>
+        </Field>
+        <Field Name="Constituencydescription_RequestForInformation">
+          <DataField>Constituencydescription_RequestForInformation</DataField>
+        </Field>
+        <Field Name="OpeningCommittee_RequestForInformation">
+          <DataField>OpeningCommittee_RequestForInformation</DataField>
+        </Field>
+        <Field Name="DocumentNo_IFSTenderCommittee">
+          <DataField>DocumentNo_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="CommitteeType_IFSTenderCommittee">
+          <DataField>CommitteeType_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="Description_IFSTenderCommittee">
+          <DataField>Description_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="AppointmentEffectiveDate_IFSTenderCommittee">
+          <DataField>AppointmentEffectiveDate_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="AppointingAuthority_IFSTenderCommittee">
+          <DataField>AppointingAuthority_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="TenderName_IFSTenderCommittee">
+          <DataField>TenderName_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_IFSTenderCommittee">
+          <DataField>ApprovalStatus_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="PrimaryRegion_IFSTenderCommittee">
+          <DataField>PrimaryRegion_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="PrimaryDirectorate_IFSTenderCommittee">
+          <DataField>PrimaryDirectorate_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="PrimaryDepartment_IFSTenderCommittee">
+          <DataField>PrimaryDepartment_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="Blocked_IFSTenderCommittee">
+          <DataField>Blocked_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="NoSeries_IFSTenderCommittee">
+          <DataField>NoSeries_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="CreatedBy_IFSTenderCommittee">
+          <DataField>CreatedBy_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="CreatedDate_IFSTenderCommittee">
+          <DataField>CreatedDate_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="CreatedTime_IFSTenderCommittee">
+          <DataField>CreatedTime_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="IFSCode_IFSTenderCommittee">
+          <DataField>IFSCode_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="DocumentDate_IFSTenderCommittee">
+          <DataField>DocumentDate_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="DocumentStatus_IFSTenderCommittee">
+          <DataField>DocumentStatus_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="ContractNo_IFSTenderCommittee">
+          <DataField>ContractNo_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="ExternalDocumentNo_IFSTenderCommittee">
+          <DataField>ExternalDocumentNo_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="RaisedBy_IFSTenderCommittee">
+          <DataField>RaisedBy_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="Name_IFSTenderCommittee">
+          <DataField>Name_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="StaffId_IFSTenderCommittee">
+          <DataField>StaffId_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="Designation_IFSTenderCommittee">
+          <DataField>Designation_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="MinRequiredNoofMembers_IFSTenderCommittee">
+          <DataField>MinRequiredNoofMembers_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="MinRequiredNoofMembers_IFSTenderCommitteeFormat">
+          <DataField>MinRequiredNoofMembers_IFSTenderCommitteeFormat</DataField>
+        </Field>
+        <Field Name="ActualNoofCommitteeMemb_IFSTenderCommittee">
+          <DataField>ActualNoofCommitteeMemb_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="Duration_IFSTenderCommittee">
+          <DataField>Duration_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="Duration_IFSTenderCommitteeFormat">
+          <DataField>Duration_IFSTenderCommitteeFormat</DataField>
+        </Field>
+        <Field Name="Location_IFSTenderCommittee">
+          <DataField>Location_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="ImprestCreated_IFSTenderCommittee">
+          <DataField>ImprestCreated_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="MemoNo_IFSTenderCommittee">
+          <DataField>MemoNo_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="RoadCode_IFSTenderCommittee">
+          <DataField>RoadCode_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="RoadSectionNo_IFSTenderCommittee">
+          <DataField>RoadSectionNo_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="MeasurementSheets_IFSTenderCommittee">
+          <DataField>MeasurementSheets_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="Inspection_IFSTenderCommittee">
+          <DataField>Inspection_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="Type_IFSTenderCommittee">
+          <DataField>Type_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="PreviousAppointedCommittee_IFSTenderCommittee">
+          <DataField>PreviousAppointedCommittee_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="DocumentType_IFSTenderCommittee">
+          <DataField>DocumentType_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="OpeningTime_IFSTenderCommittee">
+          <DataField>OpeningTime_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="IFPCode_IFSTenderCommittee">
+          <DataField>IFPCode_IFSTenderCommittee</DataField>
+        </Field>
+        <Field Name="DocumentNo_IFSTenderCommitteeMember">
+          <DataField>DocumentNo_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="CommitteeType_IFSTenderCommitteeMember">
+          <DataField>CommitteeType_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="LineNo_IFSTenderCommitteeMember">
+          <DataField>LineNo_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="Role_IFSTenderCommitteeMember">
+          <DataField>Role_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="MemberNo_IFSTenderCommitteeMember">
+          <DataField>MemberNo_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="MemberName_IFSTenderCommitteeMember">
+          <DataField>MemberName_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="Designation_IFSTenderCommitteeMember">
+          <DataField>Designation_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="IDPassportNo_IFSTenderCommitteeMember">
+          <DataField>IDPassportNo_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="TaxRegistrationPINNo_IFSTenderCommitteeMember">
+          <DataField>TaxRegistrationPINNo_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="MemberEmail_IFSTenderCommitteeMember">
+          <DataField>MemberEmail_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="TelephoneNo_IFSTenderCommitteeMember">
+          <DataField>TelephoneNo_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="StaffNo_IFSTenderCommitteeMember">
+          <DataField>StaffNo_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="IFSCode_IFSTenderCommitteeMember">
+          <DataField>IFSCode_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="NotifiedonEmail_IFSTenderCommitteeMember">
+          <DataField>NotifiedonEmail_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="DateTimeNotified_IFSTenderCommitteeMember">
+          <DataField>DateTimeNotified_IFSTenderCommitteeMember</DataField>
+        </Field>
+        <Field Name="Code_BidOpeningRegisterLine">
+          <DataField>Code_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="VendorNo_BidOpeningRegisterLine">
+          <DataField>VendorNo_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="IFSCode_BidOpeningRegisterLine">
+          <DataField>IFSCode_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="BidderName_BidOpeningRegisterLine">
+          <DataField>BidderName_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="BidNo_BidOpeningRegisterLine">
+          <DataField>BidNo_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="ExternalBidReferenceNo_BidOpeningRegisterLine">
+          <DataField>ExternalBidReferenceNo_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="ValidBidSecurityProvided_BidOpeningRegisterLine">
+          <DataField>ValidBidSecurityProvided_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="BidSecurityIssuer_BidOpeningRegisterLine">
+          <DataField>BidSecurityIssuer_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="BidSecurityAmountLCY_BidOpeningRegisterLine">
+          <DataField>BidSecurityAmountLCY_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="BidSecurityAmountLCY_BidOpeningRegisterLineFormat">
+          <DataField>BidSecurityAmountLCY_BidOpeningRegisterLineFormat</DataField>
+        </Field>
+        <Field Name="BidSecurityAmountPass_BidOpeningRegisterLine">
+          <DataField>BidSecurityAmountPass_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="TotalTenderPriceLCY_BidOpeningRegisterLine">
+          <DataField>TotalTenderPriceLCY_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="TotalTenderPriceLCY_BidOpeningRegisterLineFormat">
+          <DataField>TotalTenderPriceLCY_BidOpeningRegisterLineFormat</DataField>
+        </Field>
+        <Field Name="CompleteBidDocSubmitted_BidOpeningRegisterLine">
+          <DataField>CompleteBidDocSubmitted_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="LateBid_BidOpeningRegisterLine">
+          <DataField>LateBid_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="LateBidSubmissionTime_BidOpeningRegisterLine">
+          <DataField>LateBidSubmissionTime_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="BidWithdrawalNoticeNo_BidOpeningRegisterLine">
+          <DataField>BidWithdrawalNoticeNo_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="BidModificationNoticeNo_BidOpeningRegisterLine">
+          <DataField>BidModificationNoticeNo_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="BidWithdrawalExists_BidOpeningRegisterLine">
+          <DataField>BidWithdrawalExists_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="BidModificationExists_BidOpeningRegisterLine">
+          <DataField>BidModificationExists_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="FinalBidOpeningResult_BidOpeningRegisterLine">
+          <DataField>FinalBidOpeningResult_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="TenderOpeningComRemarks_BidOpeningRegisterLine">
+          <DataField>TenderOpeningComRemarks_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="NoofRepresentatives_BidOpeningRegisterLine">
+          <DataField>NoofRepresentatives_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="Notified_BidOpeningRegisterLine">
+          <DataField>Notified_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="DateTimeNotified_BidOpeningRegisterLine">
+          <DataField>DateTimeNotified_BidOpeningRegisterLine</DataField>
+        </Field>
+        <Field Name="Rank_BidOpeningRegisterLine">
+          <DataField>Rank_BidOpeningRegisterLine</DataField>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet</rd:DataSetName>
+        <rd:SchemaPath>Report.xsd</rd:SchemaPath>
+        <rd:TableName>Result</rd:TableName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.01736in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.71874in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.26389in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Committee Member Name</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox7">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Member Role</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.26389in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="MemberName_IFSTenderCommitteeMember">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!MemberName_IFSTenderCommitteeMember.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>MemberName_IFSTenderCommitteeMember</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Role_IFSTenderCommitteeMember">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Role_IFSTenderCommitteeMember.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Role_IFSTenderCommitteeMember</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>1.49595in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.52778in</Height>
+            <Width>6.7361in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Tender Description</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>0.12095in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>1.71528in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox6">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!CompanyName.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> invited eligible firms through an </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Description_RequestForInformation.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> dated </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!DateTimePublished_RequestForInformation.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">. </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Opening of Tenders</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">
+Bids were received and opened by the Tender opening Committee on</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!BidOpeningDate_BidOpeningRegister.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">  in the presence of officials of </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!CompanyName.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> and Bidders’ representatives at the </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!BidOpeningVenue_BidOpeningRegister.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">, soon after closing the Tender submission at </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!SubmissionEndTime_RequestForInformation.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> as per the Invitation to Tender. The Members of the Tender Opening Committee were as follows:</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>0.32233in</Top>
+            <Left>0.06943in</Left>
+            <Height>1.16667in</Height>
+            <Width>6.73611in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox8">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">The following bids were submitted:</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox8</rd:DefaultName>
+            <Top>2.0029in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.3125in</Height>
+            <Width>6.73611in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.85806in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.87804in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.28125in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Application No.</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox15">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Name of Bidder</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox15</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.28125in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="BidNo_BidOpeningRegisterLine">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!BidNo_BidOpeningRegisterLine.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>BidNo_BidOpeningRegisterLine</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="BidderName_BidOpeningRegisterLine">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!BidderName_BidOpeningRegisterLine.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>BidderName_BidOpeningRegisterLine</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details1" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>2.32234in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.5625in</Height>
+            <Width>6.7361in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox9">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Tender Evaluation Committee</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">
+
+</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">The </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!AppointingAuthority_IFSTenderCommittee.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> on </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!AppointmentEffectiveDate_IFSTenderCommittee.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> appointed a Tender Evaluation Committee  to evaluate the bids received and to make recommendations. The members of the committee are as follows</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">:
+</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">
+</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox9</rd:DefaultName>
+            <Top>2.88481in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.97223in</Height>
+            <Width>6.73611in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox17">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Evaluation Criteria</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">
+</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">The Evaluation was conducted in accordance with the criteria set out in the Invitation for Bids, the Conditions of Tender and Instruction to Bidders as summarized.</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">
+</Value>
+                    <Style>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox17</rd:DefaultName>
+            <Top>4.81537in</Top>
+            <Height>0.67014in</Height>
+            <Width>6.77083in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix3">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.75347in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>4.01735in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.32986in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox19">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Evaluation Criteria</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox19</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox21">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Description</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox21</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.32986in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CriteriaGroupID_BidEvaluationCriteriaGroup">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!CriteriaGroupID_BidEvaluationCriteriaGroup.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CriteriaGroupID_BidEvaluationCriteriaGroup</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Description_BidEvaluationCriteriaGroup">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Description_BidEvaluationCriteriaGroup.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Description_BidEvaluationCriteriaGroup</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details2" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>5.47857in</Top>
+            <Height>0.65972in</Height>
+            <Width>6.77083in</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix4">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.44791in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.32291in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.28125in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox23">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Member Name </Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox23</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox25">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Member Role </Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox25</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.28125in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="MemberName_IFSTenderCommitteeMember1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!MemberName_IFSTenderCommitteeMember.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>MemberName_IFSTenderCommitteeMember1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Role_IFSTenderCommitteeMember1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Role_IFSTenderCommitteeMember.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Role_IFSTenderCommitteeMember1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details3" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>3.85009in</Top>
+            <Left>0.03472in</Left>
+            <Height>0.5625in</Height>
+            <Width>6.77082in</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox33">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">The Evaluation process took place at </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!EvaluationVenue_PrequalificationScoreHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">  and this report describes the evaluation process and recommendations.</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox33</rd:DefaultName>
+            <Top>4.41954in</Top>
+            <Height>0.40278in</Height>
+            <Width>6.77083in</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Evaluation Findings</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>6.11745in</Top>
+            <Height>0.31945in</Height>
+            <Width>6.77083in</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix5">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.14236in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.52083in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.14236in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.28125in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Name of Bidder</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox16">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Prequalification Category</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox16</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox24">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Evaluation Decision</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox24</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.28125in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox14">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox18">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox18</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox26">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox26</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details4" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <Top>6.41607in</Top>
+            <Height>0.5625in</Height>
+            <Width>6.80555in</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>7.04801in</Height>
+        <Style />
+      </Body>
+      <Width>6.86457in</Width>
+      <Page>
+        <PageHeader>
+          <Height>2.23546in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=First(Fields!CompanyName.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>SeaGreen</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>0.94576in</Top>
+              <Left>1.79165in</Left>
+              <Height>0.28623in</Height>
+              <Width>3.56945in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Image Name="Image1">
+              <Source>Database</Source>
+              <Value>=First(Fields!Logo.Value, "DataSet_Result")</Value>
+              <MIMEType>image/png</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.20606in</Top>
+              <Left>2.59372in</Left>
+              <Height>0.71192in</Height>
+              <Width>1.20139in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="Textbox10">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value xml:space="preserve" EvaluationMode="Auto">              </Value>
+                      <Style />
+                    </TextRun>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">  Tender Evaluation Report</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">                              For</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value xml:space="preserve" EvaluationMode="Auto">                            </Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=First(Fields!TenderName_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value xml:space="preserve" EvaluationMode="Auto">                            </Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=First(Fields!IFPCode_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value xml:space="preserve" EvaluationMode="Auto">                            </Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=First(Fields!DocumentDate_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox10</rd:DefaultName>
+              <Top>1.24587in</Top>
+              <Left>1.79165in</Left>
+              <Height>0.94792in</Height>
+              <Width>3.56945in</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>0.3507in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox30">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value xml:space="preserve" EvaluationMode="Auto">	</Value>
+                      <Style>
+                        <Color>Green</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">Connecting Devolved Kenya</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <Color>Green</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox30</rd:DefaultName>
+              <Top>0.05556in</Top>
+              <Left>2.13417in</Left>
+              <Height>0.25in</Height>
+              <Width>2.32639in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>8.27in</PageWidth>
+        <LeftMargin>0.25in</LeftMargin>
+        <RightMargin>0.25in</RightMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+</Report>

@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_ProcurementRequest">
+          <DataField>No_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Title_ProcurementRequest">
+          <DataField>Title_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="RequisitionNo_ProcurementRequest">
+          <DataField>RequisitionNo_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ProcurementPlanNo_ProcurementRequest">
+          <DataField>ProcurementPlanNo_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="CreationDate_ProcurementRequest">
+          <DataField>CreationDate_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="UserID_ProcurementRequest">
+          <DataField>UserID_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ProcurementMethod_ProcurementRequest">
+          <DataField>ProcurementMethod_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="NoSeries_ProcurementRequest">
+          <DataField>NoSeries_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ProcessType_ProcurementRequest">
+          <DataField>ProcessType_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ProcurementPlanItem_ProcurementRequest">
+          <DataField>ProcurementPlanItem_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="SupplierCategory_ProcurementRequest">
+          <DataField>SupplierCategory_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code_ProcurementRequest">
+          <DataField>GlobalDimension1Code_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_ProcurementRequest">
+          <DataField>GlobalDimension2Code_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TenderOpeningDate_ProcurementRequest">
+          <DataField>TenderOpeningDate_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TenderStatus_ProcurementRequest">
+          <DataField>TenderStatus_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TenderClosingDate_ProcurementRequest">
+          <DataField>TenderClosingDate_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Addedum_ProcurementRequest">
+          <DataField>Addedum_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="SiteView_ProcurementRequest">
+          <DataField>SiteView_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Status_ProcurementRequest">
+          <DataField>Status_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ReturnDate_ProcurementRequest">
+          <DataField>ReturnDate_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ReturnTime_ProcurementRequest">
+          <DataField>ReturnTime_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TenderType_ProcurementRequest">
+          <DataField>TenderType_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="DocumentNo_ProcurementRequest">
+          <DataField>DocumentNo_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="NoofTenderDocuments_ProcurementRequest">
+          <DataField>NoofTenderDocuments_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ExtendedDate_ProcurementRequest">
+          <DataField>ExtendedDate_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="CurrencyCode_ProcurementRequest">
+          <DataField>CurrencyCode_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TenderAmount_ProcurementRequest">
+          <DataField>TenderAmount_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TenderAmount_ProcurementRequestFormat">
+          <DataField>TenderAmount_ProcurementRequestFormat</DataField>
+        </Field>
+        <Field Name="ValidityPeriod_ProcurementRequest">
+          <DataField>ValidityPeriod_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="IssuedDate_ProcurementRequest">
+          <DataField>IssuedDate_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Closed_ProcurementRequest">
+          <DataField>Closed_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="RFQSent_ProcurementRequest">
+          <DataField>RFQSent_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="VendorNo_ProcurementRequest">
+          <DataField>VendorNo_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ProcurementAmount_ProcurementRequest">
+          <DataField>ProcurementAmount_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ProcurementAmount_ProcurementRequestFormat">
+          <DataField>ProcurementAmount_ProcurementRequestFormat</DataField>
+        </Field>
+        <Field Name="GenerateMultipleLPO_ProcurementRequest">
+          <DataField>GenerateMultipleLPO_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_ProcurementRequest">
+          <DataField>ApprovalStatus_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TenderCommittee_ProcurementRequest">
+          <DataField>TenderCommittee_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="MinutesPath_ProcurementRequest">
+          <DataField>MinutesPath_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="EvaluationStarted_ProcurementRequest">
+          <DataField>EvaluationStarted_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Technicalstarted_ProcurementRequest">
+          <DataField>Technicalstarted_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="FinancialStarted_ProcurementRequest">
+          <DataField>FinancialStarted_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TechnicalScore_ProcurementRequest">
+          <DataField>TechnicalScore_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="FinancialScore_ProcurementRequest">
+          <DataField>FinancialScore_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="AwardStarted_ProcurementRequest">
+          <DataField>AwardStarted_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="minutesbeforeproceedtoaward_ProcurementRequest">
+          <DataField>minutesbeforeproceedtoaward_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="minutesafterproceedtoaward_ProcurementRequest">
+          <DataField>minutesafterproceedtoaward_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Awarded_ProcurementRequest">
+          <DataField>Awarded_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="SuccessfulBidder_ProcurementRequest">
+          <DataField>SuccessfulBidder_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="SelectBidderVendorNo_ProcurementRequest">
+          <DataField>SelectBidderVendorNo_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="SelectedBidderName_ProcurementRequest">
+          <DataField>SelectedBidderName_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="EvaluationAdmin_ProcurementRequest">
+          <DataField>EvaluationAdmin_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Mandatorystarted_ProcurementRequest">
+          <DataField>Mandatorystarted_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Mandatoryinprogress_ProcurementRequest">
+          <DataField>Mandatoryinprogress_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TechnicalinProgress_ProcurementRequest">
+          <DataField>TechnicalinProgress_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="FinancialinProgress_ProcurementRequest">
+          <DataField>FinancialinProgress_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="AwardinginProgress_ProcurementRequest">
+          <DataField>AwardinginProgress_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="LPOGenerated_ProcurementRequest">
+          <DataField>LPOGenerated_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="CurrentBudget_ProcurementRequest">
+          <DataField>CurrentBudget_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TORAttached_ProcurementRequest">
+          <DataField>TORAttached_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ApprovalPath_ProcurementRequest">
+          <DataField>ApprovalPath_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TORFileName_ProcurementRequest">
+          <DataField>TORFileName_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="QuotationPendingOpening_ProcurementRequest">
+          <DataField>QuotationPendingOpening_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="OpeningPerson1_ProcurementRequest">
+          <DataField>OpeningPerson1_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="OpeningPerson2_ProcurementRequest">
+          <DataField>OpeningPerson2_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="OpeningPerson3_ProcurementRequest">
+          <DataField>OpeningPerson3_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="AsignedUser_ProcurementRequest">
+          <DataField>AsignedUser_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="QuotationEvaluation_ProcurementRequest">
+          <DataField>QuotationEvaluation_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="InFinancial_ProcurementRequest">
+          <DataField>InFinancial_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="InTechnical_ProcurementRequest">
+          <DataField>InTechnical_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="InAward_ProcurementRequest">
+          <DataField>InAward_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="PendingLPO_ProcurementRequest">
+          <DataField>PendingLPO_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="MinutesFile_ProcurementRequest">
+          <DataField>MinutesFile_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="QuotationFinished_ProcurementRequest">
+          <DataField>QuotationFinished_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TechnicalMinutes_ProcurementRequest">
+          <DataField>TechnicalMinutes_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="DoesNotRequireTOR_ProcurementRequest">
+          <DataField>DoesNotRequireTOR_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="JustificationMemo_ProcurementRequest">
+          <DataField>JustificationMemo_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Direct_ProcurementRequest">
+          <DataField>Direct_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="POType_ProcurementRequest">
+          <DataField>POType_ProcurementRequest</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,2796 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>9b447cee-9c3a-4fcc-a19a-3af528151370</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Image Name="Image1">
+            <Source>Database</Source>
+            <Value>=Fields!Image_StudentProcessingHeader.Value</Value>
+            <MIMEType>image/png</MIMEType>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.02778in</Top>
+            <Left>6.2175in</Left>
+            <Height>1.37749in</Height>
+            <Width>1.625in</Width>
+            <ToolTip>Photo</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Textbox Name="Textbox11">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Registration No:</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>0.47668in</Top>
+            <Left>0.24528in</Left>
+            <Height>0.25in</Height>
+            <Width>1.25in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox12">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!StudentNo_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>0.79612in</Top>
+            <Left>0.25in</Left>
+            <Height>0.25in</Height>
+            <Width>1.81942in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox13">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Name and ID Number</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>0.47668in</Top>
+            <Left>2.40501in</Left>
+            <Height>0.25in</Height>
+            <Width>1.82639in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox14">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!StudentName_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">                   </Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!IDNumberPassportNo_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">        </Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>0.79612in</Top>
+            <Left>2.40501in</Left>
+            <Height>0.25in</Height>
+            <Width>3.08109in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox17">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Examination Centre</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>1.37612in</Top>
+            <Left>4.5in</Left>
+            <Height>0.27777in</Height>
+            <Width>1.39023in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox18">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!ExaminationCenter_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>1.69556in</Top>
+            <Left>4.5in</Left>
+            <Height>0.46528in</Height>
+            <Width>2.22692in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox15">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Examination Details</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>2.37946in</Top>
+            <Left>2.06473in</Left>
+            <Height>0.29167in</Height>
+            <Width>3.0625in</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox16">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!CourseId_StudentProcessingLines.Value+"  "+Fields!ExamLevel.Value</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">       </Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>2.76612in</Top>
+            <Left>2.06473in</Left>
+            <Height>0.25in</Height>
+            <Width>3.0625in</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox19">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Date</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>1.37612in</Top>
+            <Left>0.24528in</Left>
+            <Height>0.27777in</Height>
+            <Width>1.25in</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox20">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=UCase(Fields!Date_StudentProcessingHeader.Value)</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <Format>d MMMM yyyy</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>1.69556in</Top>
+            <Left>0.25in</Left>
+            <Height>0.25in</Height>
+            <Width>1.76387in</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox21">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Examination Sitting</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>1.37612in</Top>
+            <Left>2.40501in</Left>
+            <Height>0.29166in</Height>
+            <Width>1.54167in</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox22">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!SittingCycle_StudentProcessingLines.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>1.69556in</Top>
+            <Left>2.40501in</Left>
+            <Height>0.25in</Height>
+            <Width>1.89359in</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">You have been entered for the above examination at the designated examination centre and for the paper(s) indicated. Your attention is drawn to </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">" INSTRUCTIONS TO CANDIDATES " </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">relating to the conduct of the candidates during the examinations as outlined in the next page of this document. </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Candidates should note that the allocated centre may change based on capacity and availability. The final timetable will be available at least three (3) weeks from the examination date.</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>4.62499in</Top>
+            <Left>0.375in</Left>
+            <Height>0.9375in</Height>
+            <Width>7.57167in</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=UCase(Fields!StudentName_StudentProcessingHeader.Value)</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">P.O BOX </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!Address_StudentProcessingHeader.Value</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!PostCode_StudentProcessingHeader.Value</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>5.61805in</Top>
+            <Left>0.375in</Left>
+            <Height>0.79167in</Height>
+            <Width>3.3125in</Width>
+            <ZIndex>14</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox6">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">ISSUED BY: </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!IssuerName.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <ListLevel>1</ListLevel>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <ListLevel>1</ListLevel>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">FOR: SECRETARY</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>5.61805in</Top>
+            <Left>5.04389in</Left>
+            <Height>0.79167in</Height>
+            <Width>2.79861in</Width>
+            <ZIndex>15</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox8">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Copyright @ KASNEB website download. For any enquiry contact KASNEB</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox8</rd:DefaultName>
+            <Top>6.47916in</Top>
+            <Left>0.375in</Left>
+            <Height>0.25in</Height>
+            <Width>7.57167in</Width>
+            <ZIndex>16</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.52389in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.52389in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.52389in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">INSTRUCTIONS TO CANDIDATES    </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>3</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>6.76389in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox24">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">The following instructions are issued for the benefit of candidates. All candidates are advised to read carefully and understand the instructions. The candidates attention is also drawn to Section 42 of the Accountants Act, No. 15 of 2008 on examination offences.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">1. Candidates should present themselves for the examination at least 30 minutes before the scheduled time for the commencement of the paper they are taking (see note (a) and (b) below).</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">2. Candidates will neither be allowed to take the examination if they arrive 30 minutes or more after the commencement of the examination nor will candidates be permitted to leave the examinations room until after the end of the first 30 minutes following the commencement of the examination. However, no candidate will be allowed to leave the examinations room during the last 15 minutes of the examinations session. </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">3. IDENTIFICATION: Candidates who are Kenya citizens will be required to produce their National Identity Cards and/or KASNEB Student Identification Cards. Non-Kenyans will be required to produce relevant identification documents such as Passports. Candidates who do not have the aforementioned identification documents will be required to avail other acceptable identification documents.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">4. Stationery will be provided but candidates must bring their own pens, pencils, rulers and ink. No stationery whatsoever may be removed from the examinations room. </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">5. Each candidate has a registration number assigned at the time of registration. Each candidate must take his/her seat at the place allocated and indicated by the registration number. The registration number must be entered at the top right hand corner of each answer sheet.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">6.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto"> Candidates MUST NOT write their names on the answer booklet.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve" EvaluationMode="Auto"> </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">7. Strict silence must be observed during the examination. </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">8. </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Candidates MUST NOT retain any notes, printed papers or books during the examination, but must leave any such documents outside the examinations room.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">9. Candidates are allowed to use calculators provided that such calculators are noiseless and cordless. Calculators which are programmable are not allowed. </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">10. During the course of the examination, no candidate may leave the examinations room without permission. Any candidate who does so will not be allowed back into the examinations room. Candidates who finish the paper before the invigilators announce the end of the examination session and who wish to leave the examinations room while the examination is in progress must hand in their scripts to the invigilators. </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">11. </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Mobile phones are strictly not allowed in the examinations room. </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">12. Candidates </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">MUST NOT</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto"> take away the examination question papers from the examinations room. </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">13. Candidates </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">MUST NOT</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto"> collude in the examinations room by exchanging notes or keeping the answer booklet in such a way that another candidate can read or copy from the booklet.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value xml:space="preserve" EvaluationMode="Auto"> </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">14. Smoking is not allowed in the examinations room. </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">15. Candidates shall not write their names, registration numbers, notes, formulars or any other material on time tables or question papers</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">16. Your names will appear on the certificate as they appear on the time table and result slip. In case of corrections in order or spelling of names, please contact Kasneb immediately through certificates@kasneb.or.ke with a copy of your ID/Passport. Where requests for correction of names are received after certificates are printed, the candidate will bear the cost of reprinting the certificate.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <LineHeight>3pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox24</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>3</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.66667in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox29">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">NOTE: </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value xml:space="preserve" EvaluationMode="Auto">           </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">(a) THE MORNING SESSIONS BEGIN AT 9.00 A.M.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">           (b) THE AFTERNOON SESSIONS BEGIN AT 2.00 P.M.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">           (c) ALL PAPERS ARE OF THREE HOURS DURATION.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox29</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>3</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.43056in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox32">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">BEFORE YOU START TO ANSWER THE QUESTIONS, MAKE SURE THAT YOU HAVE BEEN ISSUED WITH THE CORRECT EXAMINATION QUESTION PAPER.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox32</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>3</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
+            <PageBreak>
+              <BreakLocation>Start</BreakLocation>
+            </PageBreak>
+            <Top>6.81944in</Top>
+            <Left>0.375in</Left>
+            <Height>8.11112in</Height>
+            <Width>7.57167in</Width>
+            <ZIndex>17</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix3">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>0.7249in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.41265in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.21486in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.16282in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.02128in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.931in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox25">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Paper</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox26">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Description </Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox27">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto"> Date</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>2</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox28">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Start Time</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox30">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">End Time</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Paper_StudentProcessingLines2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Paper_StudentProcessingLines.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Paper_StudentProcessingLines</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Description_StudentProcessingLines2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Description_StudentProcessingLines.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Description_StudentProcessingLines</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PaperDate2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value xml:space="preserve" EvaluationMode="Auto">     </Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Day.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve" EvaluationMode="Auto">             </Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PaperDate</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox38">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!PaperDate.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox38</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PaperTime2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!PaperTime.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>t</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PaperTime</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PaperEndTime2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!PaperEndTime.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>t</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PaperEndTime</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details2" />
+                  <Visibility>
+                    <Hidden>=IsNothing(Fields!Paper_StudentProcessingLines.Value)</Hidden>
+                  </Visibility>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>3.14112in</Top>
+            <Left>0.37499in</Left>
+            <Height>0.5in</Height>
+            <Width>7.46751in</Width>
+            <ZIndex>18</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </RightBorder>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>16.24305in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>8.27083in</Width>
+      <Page>
+        <PageHeader>
+          <Height>1.93056in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox23">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=IIF(Fields!VisibleLabel.Value=TRUE,Fields!Labeltxt.Value," ")</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value EvaluationMode="Auto"> AUTHORITY  TO SIT EXAMINATION /TIMETABLE</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox23</rd:DefaultName>
+              <Top>1.50694in</Top>
+              <Left>0.03299in</Left>
+              <Height>0.36806in</Height>
+              <Width>7.91368in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Image Name="Image2">
+              <Source>Database</Source>
+              <Value>=First(Fields!Logo.Value, "DataSet_Result")</Value>
+              <MIMEType>image/png</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.20139in</Top>
+              <Left>3.34546in</Left>
+              <Height>0.98139in</Height>
+              <Width>1.38194in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="Textbox111">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!CompanyAddress.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve" EvaluationMode="Auto">  </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Fields!CompanyAddress2.Value + "-" + Fields!CompanyPostCode.Value + "  " + Fields!CompanyCity.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve" EvaluationMode="Auto">   </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">="Tel: " + Fields!CompanyPhone.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve" EvaluationMode="Auto">    </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">="Email: " + Fields!CompanyEmail.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve" EvaluationMode="Auto">  </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">="Website: " + Fields!CompanyWebsite.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>1.22916in</Top>
+              <Left>0.03299in</Left>
+              <Height>0.25in</Height>
+              <Width>8.20486in</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <EmbeddedImages>
+    <EmbeddedImage Name="Provisional">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="CompanyPostCode">
+          <DataField>CompanyPostCode</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompanyFax">
+          <DataField>CompanyFax</DataField>
+        </Field>
+        <Field Name="CompanyEmail">
+          <DataField>CompanyEmail</DataField>
+        </Field>
+        <Field Name="CompanyWebsite">
+          <DataField>CompanyWebsite</DataField>
+        </Field>
+        <Field Name="IssuerName">
+          <DataField>IssuerName</DataField>
+        </Field>
+        <Field Name="Signatory">
+          <DataField>Signatory</DataField>
+        </Field>
+        <Field Name="No_StudentProcessingHeader">
+          <DataField>No_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Labeltxt">
+          <DataField>Labeltxt</DataField>
+        </Field>
+        <Field Name="VisibleLabel">
+          <DataField>VisibleLabel</DataField>
+        </Field>
+        <Field Name="Date_StudentProcessingHeader">
+          <DataField>Date_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DocumentType_StudentProcessingHeader">
+          <DataField>DocumentType_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="StudentNo_StudentProcessingHeader">
+          <DataField>StudentNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="StudentName_StudentProcessingHeader">
+          <DataField>StudentName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="FirstName_StudentProcessingHeader">
+          <DataField>FirstName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="MiddleName_StudentProcessingHeader">
+          <DataField>MiddleName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="IDNumberPassportNo_StudentProcessingHeader">
+          <DataField>IDNumberPassportNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Surname_StudentProcessingHeader">
+          <DataField>Surname_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Image_StudentProcessingHeader">
+          <DataField>Image_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationCenter_StudentProcessingHeader">
+          <DataField>ExaminationCenter_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="SittingCycle_StudentProcessingLines">
+          <DataField>SittingCycle_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Address_StudentProcessingHeader">
+          <DataField>Address_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Address2_StudentProcessingHeader">
+          <DataField>Address2_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="City_StudentProcessingHeader">
+          <DataField>City_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CountryRegionCode_StudentProcessingHeader">
+          <DataField>CountryRegionCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PhoneNo_StudentProcessingHeader">
+          <DataField>PhoneNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PostCode_StudentProcessingHeader">
+          <DataField>PostCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExamLevel">
+          <DataField>ExamLevel</DataField>
+        </Field>
+        <Field Name="CourseId_StudentProcessingLines">
+          <DataField>CourseId_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Section_StudentProcessingLines">
+          <DataField>Section_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Part_StudentProcessingLines">
+          <DataField>Part_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Paper_StudentProcessingLines">
+          <DataField>Paper_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Description_StudentProcessingLines">
+          <DataField>Description_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="CurrencyCode_StudentProcessingLines">
+          <DataField>CurrencyCode_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Amount_StudentProcessingLines">
+          <DataField>Amount_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Amount_StudentProcessingLinesFormat">
+          <DataField>Amount_StudentProcessingLinesFormat</DataField>
+        </Field>
+        <Field Name="AmountLCY_StudentProcessingLines">
+          <DataField>AmountLCY_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="AmountLCY_StudentProcessingLinesFormat">
+          <DataField>AmountLCY_StudentProcessingLinesFormat</DataField>
+        </Field>
+        <Field Name="RegistrationNo_StudentProcessingLines">
+          <DataField>RegistrationNo_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Name_StudentProcessingLines">
+          <DataField>Name_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="PreferredExamCenter_StudentProcessingLines">
+          <DataField>PreferredExamCenter_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Year_StudentProcessingLines">
+          <DataField>Year_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="Blocked_StudentProcessingLines">
+          <DataField>Blocked_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="LastModifiedDateTime_StudentProcessingLines">
+          <DataField>LastModifiedDateTime_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="LastDateModified_StudentProcessingLines">
+          <DataField>LastDateModified_StudentProcessingLines</DataField>
+        </Field>
+        <Field Name="PaperDate">
+          <DataField>PaperDate</DataField>
+        </Field>
+        <Field Name="PaperTime">
+          <DataField>PaperTime</DataField>
+        </Field>
+        <Field Name="PaperEndTime">
+          <DataField>PaperEndTime</DataField>
+        </Field>
+        <Field Name="Day">
+          <DataField>Day</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

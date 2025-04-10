@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ActiveEmployees">
+          <DataField>ActiveEmployees</DataField>
+        </Field>
+        <Field Name="AppointmentAuthority">
+          <DataField>AppointmentAuthority</DataField>
+        </Field>
+        <Field Name="BasicPayPerScale">
+          <DataField>BasicPayPerScale</DataField>
+        </Field>
+        <Field Name="BasicPayPerScaleFormat">
+          <DataField>BasicPayPerScaleFormat</DataField>
+        </Field>
+        <Field Name="BedLimit">
+          <DataField>BedLimit</DataField>
+        </Field>
+        <Field Name="BedLimitFormat">
+          <DataField>BedLimitFormat</DataField>
+        </Field>
+        <Field Name="Blocked">
+          <DataField>Blocked</DataField>
+        </Field>
+        <Field Name="Commuter">
+          <DataField>Commuter</DataField>
+        </Field>
+        <Field Name="CommuterFormat">
+          <DataField>CommuterFormat</DataField>
+        </Field>
+        <Field Name="CommuterAllowance">
+          <DataField>CommuterAllowance</DataField>
+        </Field>
+        <Field Name="CommuterAllowanceFormat">
+          <DataField>CommuterAllowanceFormat</DataField>
+        </Field>
+        <Field Name="DentalLimit">
+          <DataField>DentalLimit</DataField>
+        </Field>
+        <Field Name="DentalLimitFormat">
+          <DataField>DentalLimitFormat</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="EmployeeCategory">
+          <DataField>EmployeeCategory</DataField>
+        </Field>
+        <Field Name="ExtraDuty">
+          <DataField>ExtraDuty</DataField>
+        </Field>
+        <Field Name="ExtraDutyFormat">
+          <DataField>ExtraDutyFormat</DataField>
+        </Field>
+        <Field Name="ExtraneousDutyAllowance">
+          <DataField>ExtraneousDutyAllowance</DataField>
+        </Field>
+        <Field Name="ExtraneousDutyAllowanceFormat">
+          <DataField>ExtraneousDutyAllowanceFormat</DataField>
+        </Field>
+        <Field Name="GrossPay">
+          <DataField>GrossPay</DataField>
+        </Field>
+        <Field Name="GrossPayFormat">
+          <DataField>GrossPayFormat</DataField>
+        </Field>
+        <Field Name="InPatientLimit">
+          <DataField>InPatientLimit</DataField>
+        </Field>
+        <Field Name="InPatientLimitFormat">
+          <DataField>InPatientLimitFormat</DataField>
+        </Field>
+        <Field Name="MarketSalary">
+          <DataField>MarketSalary</DataField>
+        </Field>
+        <Field Name="MarketSalaryFormat">
+          <DataField>MarketSalaryFormat</DataField>
+        </Field>
+        <Field Name="MaternityLimit">
+          <DataField>MaternityLimit</DataField>
+        </Field>
+        <Field Name="MaternityLimitFormat">
+          <DataField>MaternityLimitFormat</DataField>
+        </Field>
+        <Field Name="MaximumCarLoan">
+          <DataField>MaximumCarLoan</DataField>
+        </Field>
+        <Field Name="MaximumCarLoanFormat">
+          <DataField>MaximumCarLoanFormat</DataField>
+        </Field>
+        <Field Name="MaximumCover">
+          <DataField>MaximumCover</DataField>
+        </Field>
+        <Field Name="MaximumCoverFormat">
+          <DataField>MaximumCoverFormat</DataField>
+        </Field>
+        <Field Name="MaximumMortageLoan">
+          <DataField>MaximumMortageLoan</DataField>
+        </Field>
+        <Field Name="MaximumMortageLoanFormat">
+          <DataField>MaximumMortageLoanFormat</DataField>
+        </Field>
+        <Field Name="MaximumPointer">
+          <DataField>MaximumPointer</DataField>
+        </Field>
+        <Field Name="MinimumPointer">
+          <DataField>MinimumPointer</DataField>
+        </Field>
+        <Field Name="MobilityTransferRate">
+          <DataField>MobilityTransferRate</DataField>
+        </Field>
+        <Field Name="MobilityTransferRateFormat">
+          <DataField>MobilityTransferRateFormat</DataField>
+        </Field>
+        <Field Name="NonPractising">
+          <DataField>NonPractising</DataField>
+        </Field>
+        <Field Name="NonPractisingFormat">
+          <DataField>NonPractisingFormat</DataField>
+        </Field>
+        <Field Name="NumberofStaffPerScale">
+          <DataField>NumberofStaffPerScale</DataField>
+        </Field>
+        <Field Name="OpticalLimit">
+          <DataField>OpticalLimit</DataField>
+        </Field>
+        <Field Name="OpticalLimitFormat">
+          <DataField>OpticalLimitFormat</DataField>
+        </Field>
+        <Field Name="OutPatientLimit">
+          <DataField>OutPatientLimit</DataField>
+        </Field>
+        <Field Name="OutPatientLimitFormat">
+          <DataField>OutPatientLimitFormat</DataField>
+        </Field>
+        <Field Name="RentalHouse">
+          <DataField>RentalHouse</DataField>
+        </Field>
+        <Field Name="RentalHouseFormat">
+          <DataField>RentalHouseFormat</DataField>
+        </Field>
+        <Field Name="ResponsibilityAllowance">
+          <DataField>ResponsibilityAllowance</DataField>
+        </Field>
+        <Field Name="ResponsibilityAllowanceFormat">
+          <DataField>ResponsibilityAllowanceFormat</DataField>
+        </Field>
+        <Field Name="ResponsibilityAllowanceTotal">
+          <DataField>ResponsibilityAllowanceTotal</DataField>
+        </Field>
+        <Field Name="ResponsibilityAllowanceTotalFormat">
+          <DataField>ResponsibilityAllowanceTotalFormat</DataField>
+        </Field>
+        <Field Name="RiskAllowance">
+          <DataField>RiskAllowance</DataField>
+        </Field>
+        <Field Name="RiskAllowanceFormat">
+          <DataField>RiskAllowanceFormat</DataField>
+        </Field>
+        <Field Name="Scale">
+          <DataField>Scale</DataField>
+        </Field>
+        <Field Name="SeniorityLevel">
+          <DataField>SeniorityLevel</DataField>
+        </Field>
+        <Field Name="SpecialDuty">
+          <DataField>SpecialDuty</DataField>
+        </Field>
+        <Field Name="SpecialDutyFormat">
+          <DataField>SpecialDutyFormat</DataField>
+        </Field>
+        <Field Name="SpecialJudicialDuty">
+          <DataField>SpecialJudicialDuty</DataField>
+        </Field>
+        <Field Name="SpecialJudicialDutyFormat">
+          <DataField>SpecialJudicialDutyFormat</DataField>
+        </Field>
+        <Field Name="SpecialResponsibility">
+          <DataField>SpecialResponsibility</DataField>
+        </Field>
+        <Field Name="SpecialResponsibilityFormat">
+          <DataField>SpecialResponsibilityFormat</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="ValidPositions">
+          <DataField>ValidPositions</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

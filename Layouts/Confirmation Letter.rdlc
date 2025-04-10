@@ -1,0 +1,837 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>51938697-83ed-4a91-83de-d410c89353b3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">REF:</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!No_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">                                                                                                                                           Date: </Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!PostedOn_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!StudentName_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Address_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!City_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!CountryRegionCode_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.06944in</Top>
+            <Left>0.5925in</Left>
+            <Height>1.51847in</Height>
+            <Width>6.53313in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Dear </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!StudentName_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">CONFIRMATION IN THE </Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!CourseID_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> EXAMINATION-</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!StudentRegNo_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">We can confirm the qualification of the above named student.</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">You are advised to retain this letter as evidence on qualifying the course.</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Your's faithfully</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>1.69208in</Top>
+            <Left>0.5925in</Left>
+            <Height>3.44792in</Height>
+            <Width>6.53313in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>5.61458in</Height>
+        <Style />
+      </Body>
+      <Width>7.14584in</Width>
+      <Page>
+        <PageHeader>
+          <Height>1.74417in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="Image1">
+              <Source>Database</Source>
+              <Value>=First(Fields!Logo.Value, "DataSet_Result")</Value>
+              <MIMEType>image/png</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Left>3.54042in</Left>
+              <Height>1.0925in</Height>
+              <Width>1.375in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Line Name="Line1">
+              <Top>1.26958in</Top>
+              <Left>0.23833in</Left>
+              <Height>0in</Height>
+              <Width>6.90751in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Line Name="Line2">
+              <Top>1.61917in</Top>
+              <Left>0.21812in</Left>
+              <Height>0in</Height>
+              <Width>6.90751in</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto" />
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.31125in</Top>
+              <Left>0.23833in</Left>
+              <Height>0.25in</Height>
+              <Width>6.8873in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <LeftMargin>0.5in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+        </Field>
+        <Field Name="No_StudentProcessingHeader">
+          <DataField>No_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Date_StudentProcessingHeader">
+          <DataField>Date_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DocumentType_StudentProcessingHeader">
+          <DataField>DocumentType_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="StudentNo_StudentProcessingHeader">
+          <DataField>StudentNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="StudentName_StudentProcessingHeader">
+          <DataField>StudentName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="FirstName_StudentProcessingHeader">
+          <DataField>FirstName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="MiddleName_StudentProcessingHeader">
+          <DataField>MiddleName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Surname_StudentProcessingHeader">
+          <DataField>Surname_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="IDNumberPassportNo_StudentProcessingHeader">
+          <DataField>IDNumberPassportNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CourseID_StudentProcessingHeader">
+          <DataField>CourseID_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CourseDescription_StudentProcessingHeader">
+          <DataField>CourseDescription_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationCenterCode_StudentProcessingHeader">
+          <DataField>ExaminationCenterCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationCenter_StudentProcessingHeader">
+          <DataField>ExaminationCenter_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="HighestAcademicQCode_StudentProcessingHeader">
+          <DataField>HighestAcademicQCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="HighestAcademicQualification_StudentProcessingHeader">
+          <DataField>HighestAcademicQualification_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Gender_StudentProcessingHeader">
+          <DataField>Gender_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DateofBirth_StudentProcessingHeader">
+          <DataField>DateofBirth_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Disabled_StudentProcessingHeader">
+          <DataField>Disabled_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="NCPWDNo_StudentProcessingHeader">
+          <DataField>NCPWDNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationDate_StudentProcessingHeader">
+          <DataField>RegistrationDate_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CreatedBy_StudentProcessingHeader">
+          <DataField>CreatedBy_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CreatedOn_StudentProcessingHeader">
+          <DataField>CreatedOn_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_StudentProcessingHeader">
+          <DataField>ApprovalStatus_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CurrencyCode_StudentProcessingHeader">
+          <DataField>CurrencyCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Address_StudentProcessingHeader">
+          <DataField>Address_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Address2_StudentProcessingHeader">
+          <DataField>Address2_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="City_StudentProcessingHeader">
+          <DataField>City_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CountryRegionCode_StudentProcessingHeader">
+          <DataField>CountryRegionCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PhoneNo_StudentProcessingHeader">
+          <DataField>PhoneNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PostCode_StudentProcessingHeader">
+          <DataField>PostCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="County_StudentProcessingHeader">
+          <DataField>County_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Email_StudentProcessingHeader">
+          <DataField>Email_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="NoSeries_StudentProcessingHeader">
+          <DataField>NoSeries_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Created_StudentProcessingHeader">
+          <DataField>Created_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Portal_StudentProcessingHeader">
+          <DataField>Portal_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ReasonforRejection_StudentProcessingHeader">
+          <DataField>ReasonforRejection_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Amount_StudentProcessingHeader">
+          <DataField>Amount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Amount_StudentProcessingHeaderFormat">
+          <DataField>Amount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="ExaminationCyce_StudentProcessingHeader">
+          <DataField>ExaminationCyce_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Type_StudentProcessingHeader">
+          <DataField>Type_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationAmount_StudentProcessingHeader">
+          <DataField>RegistrationAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationAmount_StudentProcessingHeaderFormat">
+          <DataField>RegistrationAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="RegistrationReceiptNo_StudentProcessingHeader">
+          <DataField>RegistrationReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="BookingAmount_StudentProcessingHeader">
+          <DataField>BookingAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="BookingAmount_StudentProcessingHeaderFormat">
+          <DataField>BookingAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="BookingReceiptNo_StudentProcessingHeader">
+          <DataField>BookingReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExemptionAmount_StudentProcessingHeader">
+          <DataField>ExemptionAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExemptionAmount_StudentProcessingHeaderFormat">
+          <DataField>ExemptionAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="ExemptionReceiptNo_StudentProcessingHeader">
+          <DataField>ExemptionReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationInvoiceNo_StudentProcessingHeader">
+          <DataField>RegistrationInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="BookingInvoiceNo_StudentProcessingHeader">
+          <DataField>BookingInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExemptionInvoiceNo_StudentProcessingHeader">
+          <DataField>ExemptionInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="StudentRegNo_StudentProcessingHeader">
+          <DataField>StudentRegNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Section_StudentProcessingHeader">
+          <DataField>Section_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Part_StudentProcessingHeader">
+          <DataField>Part_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Paper_StudentProcessingHeader">
+          <DataField>Paper_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WorkType_StudentProcessingHeader">
+          <DataField>WorkType_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Posted_StudentProcessingHeader">
+          <DataField>Posted_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="TypeCode_StudentProcessingHeader">
+          <DataField>TypeCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApplicationInvoice_StudentProcessingHeader">
+          <DataField>ApplicationInvoice_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApplicationAmount_StudentProcessingHeader">
+          <DataField>ApplicationAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApplicationAmount_StudentProcessingHeaderFormat">
+          <DataField>ApplicationAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="ApplicationReceipt_StudentProcessingHeader">
+          <DataField>ApplicationReceipt_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="TotalWithdrawalAmount_StudentProcessingHeader">
+          <DataField>TotalWithdrawalAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="TotalWithdrawalAmount_StudentProcessingHeaderFormat">
+          <DataField>TotalWithdrawalAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="PreferredExamCenter_StudentProcessingHeader">
+          <DataField>PreferredExamCenter_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PreferredExamCenterName_StudentProcessingHeader">
+          <DataField>PreferredExamCenterName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalApplicationNo_StudentProcessingHeader">
+          <DataField>WithdrawalApplicationNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Age_StudentProcessingHeader">
+          <DataField>Age_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalCode_StudentProcessingHeader">
+          <DataField>WithdrawalCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalReason_StudentProcessingHeader">
+          <DataField>WithdrawalReason_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Image_StudentProcessingHeader">
+          <DataField>Image_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PostedBy_StudentProcessingHeader">
+          <DataField>PostedBy_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PostedOn_StudentProcessingHeader">
+          <DataField>PostedOn_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationProjectCode_StudentProcessingHeader">
+          <DataField>ExaminationProjectCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="EntryNo_ExemptionEntries">
+          <DataField>EntryNo_ExemptionEntries</DataField>
+        </Field>
+        <Field Name="ExcemptionVoucherNo_ExemptionEntries">
+          <DataField>ExcemptionVoucherNo_ExemptionEntries</DataField>
+        </Field>
+        <Field Name="CourseId_ExemptionEntries">
+          <DataField>CourseId_ExemptionEntries</DataField>
+        </Field>
+        <Field Name="Type_ExemptionEntries">
+          <DataField>Type_ExemptionEntries</DataField>
+        </Field>
+        <Field Name="No_ExemptionEntries">
+          <DataField>No_ExemptionEntries</DataField>
+        </Field>
+        <Field Name="Name_ExemptionEntries">
+          <DataField>Name_ExemptionEntries</DataField>
+        </Field>
+        <Field Name="CurrencyCode_ExemptionEntries">
+          <DataField>CurrencyCode_ExemptionEntries</DataField>
+        </Field>
+        <Field Name="Amount_ExemptionEntries">
+          <DataField>Amount_ExemptionEntries</DataField>
+        </Field>
+        <Field Name="Amount_ExemptionEntriesFormat">
+          <DataField>Amount_ExemptionEntriesFormat</DataField>
+        </Field>
+        <Field Name="AmountLCY_ExemptionEntries">
+          <DataField>AmountLCY_ExemptionEntries</DataField>
+        </Field>
+        <Field Name="AmountLCY_ExemptionEntriesFormat">
+          <DataField>AmountLCY_ExemptionEntriesFormat</DataField>
+        </Field>
+        <Field Name="StudCustNo_ExemptionEntries">
+          <DataField>StudCustNo_ExemptionEntries</DataField>
+        </Field>
+        <Field Name="StudRegNo_ExemptionEntries">
+          <DataField>StudRegNo_ExemptionEntries</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

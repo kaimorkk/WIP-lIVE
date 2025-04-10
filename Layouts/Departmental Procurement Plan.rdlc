@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="logo">
+          <DataField>logo</DataField>
+        </Field>
+        <Field Name="companyname">
+          <DataField>companyname</DataField>
+        </Field>
+        <Field Name="Code_ProcurementPlan">
+          <DataField>Code_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="Description_ProcurementPlan">
+          <DataField>Description_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="CorporateStrategicPlanID_ProcurementPlan">
+          <DataField>CorporateStrategicPlanID_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="FinancialBudgetID_ProcurementPlan">
+          <DataField>FinancialBudgetID_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="FinancialYearCode_ProcurementPlan">
+          <DataField>FinancialYearCode_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="StartDate_ProcurementPlan">
+          <DataField>StartDate_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="EndDate_ProcurementPlan">
+          <DataField>EndDate_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="CreatedBy_ProcurementPlan">
+          <DataField>CreatedBy_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="DateCreated_ProcurementPlan">
+          <DataField>DateCreated_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TimeCreated_ProcurementPlan">
+          <DataField>TimeCreated_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="PlanType_ProcurementPlan">
+          <DataField>PlanType_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_ProcurementPlan">
+          <DataField>ApprovalStatus_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="NoSeries_ProcurementPlan">
+          <DataField>NoSeries_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="EchequerJobID_ProcurementPlan">
+          <DataField>EchequerJobID_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalBudgetGoods_ProcurementPlan">
+          <DataField>TotalBudgetGoods_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalBudgetGoods_ProcurementPlanFormat">
+          <DataField>TotalBudgetGoods_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalBudgetWorks_ProcurementPlan">
+          <DataField>TotalBudgetWorks_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalBudgetWorks_ProcurementPlanFormat">
+          <DataField>TotalBudgetWorks_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalBudgetServices_ProcurementPlan">
+          <DataField>TotalBudgetServices_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalBudgetServices_ProcurementPlanFormat">
+          <DataField>TotalBudgetServices_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalBudgetedSpend_ProcurementPlan">
+          <DataField>TotalBudgetedSpend_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalBudgetedSpend_ProcurementPlanFormat">
+          <DataField>TotalBudgetedSpend_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalActualWorks_ProcurementPlan">
+          <DataField>TotalActualWorks_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalActualWorks_ProcurementPlanFormat">
+          <DataField>TotalActualWorks_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalActualServices_ProcurementPlan">
+          <DataField>TotalActualServices_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalActualServices_ProcurementPlanFormat">
+          <DataField>TotalActualServices_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalActualSpend_ProcurementPlan">
+          <DataField>TotalActualSpend_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalActualSpend_ProcurementPlanFormat">
+          <DataField>TotalActualSpend_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="Spend_ProcurementPlan">
+          <DataField>Spend_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="Spend_ProcurementPlanFormat">
+          <DataField>Spend_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="DepartmentFilter_ProcurementPlan">
+          <DataField>DepartmentFilter_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="BudgetPlanPosted_ProcurementPlan">
+          <DataField>BudgetPlanPosted_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalActualGoods_ProcurementPlan">
+          <DataField>TotalActualGoods_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalActualGoods_ProcurementPlanFormat">
+          <DataField>TotalActualGoods_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code_ProcurementPlan">
+          <DataField>GlobalDimension1Code_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_ProcurementPlan">
+          <DataField>GlobalDimension2Code_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="GlobalDimension3Code_ProcurementPlan">
+          <DataField>GlobalDimension3Code_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="ConsolidatedProcurementPlan_ProcurementPlan">
+          <DataField>ConsolidatedProcurementPlan_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="PlanningResponsibilityCenter_ProcurementPlan">
+          <DataField>PlanningResponsibilityCenter_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalPRNCommitments_ProcurementPlan">
+          <DataField>TotalPRNCommitments_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalPRNCommitments_ProcurementPlanFormat">
+          <DataField>TotalPRNCommitments_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalContractCommitments_ProcurementPlan">
+          <DataField>TotalContractCommitments_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalContractCommitments_ProcurementPlanFormat">
+          <DataField>TotalContractCommitments_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalPOCommitments_ProcurementPlan">
+          <DataField>TotalPOCommitments_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalPOCommitments_ProcurementPlanFormat">
+          <DataField>TotalPOCommitments_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalPurchaseCommitments_ProcurementPlan">
+          <DataField>TotalPurchaseCommitments_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalPurchaseCommitments_ProcurementPlanFormat">
+          <DataField>TotalPurchaseCommitments_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalPurchaseInvoices_ProcurementPlan">
+          <DataField>TotalPurchaseInvoices_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalPurchaseInvoices_ProcurementPlanFormat">
+          <DataField>TotalPurchaseInvoices_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalPurchaseCreditMemos_ProcurementPlan">
+          <DataField>TotalPurchaseCreditMemos_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalPurchaseCreditMemos_ProcurementPlanFormat">
+          <DataField>TotalPurchaseCreditMemos_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="TotalActualCosts_ProcurementPlan">
+          <DataField>TotalActualCosts_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="TotalActualCosts_ProcurementPlanFormat">
+          <DataField>TotalActualCosts_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_ProcurementPlan">
+          <DataField>AvailableProcurementBudget_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_ProcurementPlanFormat">
+          <DataField>AvailableProcurementBudget_ProcurementPlanFormat</DataField>
+        </Field>
+        <Field Name="DocumentDate_ProcurementPlan">
+          <DataField>DocumentDate_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="DimensionSetID_ProcurementPlan">
+          <DataField>DimensionSetID_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="Blocked_ProcurementPlan">
+          <DataField>Blocked_ProcurementPlan</DataField>
+        </Field>
+        <Field Name="PreparedBy">
+          <DataField>PreparedBy</DataField>
+        </Field>
+        <Field Name="DatePrepared">
+          <DataField>DatePrepared</DataField>
+        </Field>
+        <Field Name="PreparedBy_Signature">
+          <DataField>PreparedBy_Signature</DataField>
+        </Field>
+        <Field Name="ExaminedBy">
+          <DataField>ExaminedBy</DataField>
+        </Field>
+        <Field Name="DateExamined">
+          <DataField>DateExamined</DataField>
+        </Field>
+        <Field Name="ExaminedBy_Signature">
+          <DataField>ExaminedBy_Signature</DataField>
+        </Field>
+        <Field Name="VBC">
+          <DataField>VBC</DataField>
+        </Field>
+        <Field Name="VBCDate">
+          <DataField>VBCDate</DataField>
+        </Field>
+        <Field Name="VBC_Signature">
+          <DataField>VBC_Signature</DataField>
+        </Field>
+        <Field Name="Authorizer">
+          <DataField>Authorizer</DataField>
+        </Field>
+        <Field Name="DateAuthorized">
+          <DataField>DateAuthorized</DataField>
+        </Field>
+        <Field Name="Authorizer_Signature">
+          <DataField>Authorizer_Signature</DataField>
+        </Field>
+        <Field Name="ProcurementPlanID_ProcurementPlanEntry">
+          <DataField>ProcurementPlanID_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="EntryNo_ProcurementPlanEntry">
+          <DataField>EntryNo_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="PlanningCategory_ProcurementPlanEntry">
+          <DataField>PlanningCategory_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="WorkPlanProjectID_ProcurementPlanEntry">
+          <DataField>WorkPlanProjectID_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="Description_ProcurementPlanEntry">
+          <DataField>Description_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="ProcurementType_ProcurementPlanEntry">
+          <DataField>ProcurementType_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="SolicitationType_ProcurementPlanEntry">
+          <DataField>SolicitationType_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="ProcurementMethod_ProcurementPlanEntry">
+          <DataField>ProcurementMethod_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="PreferenceReservationCode_ProcurementPlanEntry">
+          <DataField>PreferenceReservationCode_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="FundingSourceID_ProcurementPlanEntry">
+          <DataField>FundingSourceID_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="PlanningDate_ProcurementPlanEntry">
+          <DataField>PlanningDate_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="Quantity_ProcurementPlanEntry">
+          <DataField>Quantity_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="Quantity_ProcurementPlanEntryFormat">
+          <DataField>Quantity_ProcurementPlanEntryFormat</DataField>
+        </Field>
+        <Field Name="UnitCost_ProcurementPlanEntry">
+          <DataField>UnitCost_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="UnitCost_ProcurementPlanEntryFormat">
+          <DataField>UnitCost_ProcurementPlanEntryFormat</DataField>
+        </Field>
+        <Field Name="LineBudgetCost_ProcurementPlanEntry">
+          <DataField>LineBudgetCost_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="LineBudgetCost_ProcurementPlanEntryFormat">
+          <DataField>LineBudgetCost_ProcurementPlanEntryFormat</DataField>
+        </Field>
+        <Field Name="Region_ProcurementPlanEntry">
+          <DataField>Region_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="Directorate_ProcurementPlanEntry">
+          <DataField>Directorate_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="Department_ProcurementPlanEntry">
+          <DataField>Department_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="Constituency_ProcurementPlanEntry">
+          <DataField>Constituency_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="RoadNo_ProcurementPlanEntry">
+          <DataField>RoadNo_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="RoadName_ProcurementPlanEntry">
+          <DataField>RoadName_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code_ProcurementPlanEntry">
+          <DataField>GlobalDimension1Code_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_ProcurementPlanEntry">
+          <DataField>GlobalDimension2Code_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="ProcurementStartDate_ProcurementPlanEntry">
+          <DataField>ProcurementStartDate_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="ProcurementEndDate_ProcurementPlanEntry">
+          <DataField>ProcurementEndDate_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="ProcurementDurationDays_ProcurementPlanEntry">
+          <DataField>ProcurementDurationDays_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="ProcurementDurationDays_ProcurementPlanEntryFormat">
+          <DataField>ProcurementDurationDays_ProcurementPlanEntryFormat</DataField>
+        </Field>
+        <Field Name="BusinessUnitCode_ProcurementPlanEntry">
+          <DataField>BusinessUnitCode_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="UserID_ProcurementPlanEntry">
+          <DataField>UserID_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="LastDateModified_ProcurementPlanEntry">
+          <DataField>LastDateModified_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="WorkplanTaskNo_ProcurementPlanEntry">
+          <DataField>WorkplanTaskNo_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="ProjectCombinedProcBudget_ProcurementPlanEntry">
+          <DataField>ProjectCombinedProcBudget_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="RequisitionProductGroup_ProcurementPlanEntry">
+          <DataField>RequisitionProductGroup_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="ProcurementUse_ProcurementPlanEntry">
+          <DataField>ProcurementUse_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="InvitationNoticeType_ProcurementPlanEntry">
+          <DataField>InvitationNoticeType_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="DimensionSetID_ProcurementPlanEntry">
+          <DataField>DimensionSetID_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="BudgetControlJobNo_ProcurementPlanEntry">
+          <DataField>BudgetControlJobNo_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="BudgetControlJobTaskNo_ProcurementPlanEntry">
+          <DataField>BudgetControlJobTaskNo_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="StartChainageKm_ProcurementPlanEntry">
+          <DataField>StartChainageKm_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="StartChainageKm_ProcurementPlanEntryFormat">
+          <DataField>StartChainageKm_ProcurementPlanEntryFormat</DataField>
+        </Field>
+        <Field Name="EndChainageKm_ProcurementPlanEntry">
+          <DataField>EndChainageKm_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="EndChainageKm_ProcurementPlanEntryFormat">
+          <DataField>EndChainageKm_ProcurementPlanEntryFormat</DataField>
+        </Field>
+        <Field Name="SectionLengthKm_ProcurementPlanEntry">
+          <DataField>SectionLengthKm_ProcurementPlanEntry</DataField>
+        </Field>
+        <Field Name="SectionLengthKm_ProcurementPlanEntryFormat">
+          <DataField>SectionLengthKm_ProcurementPlanEntryFormat</DataField>
+        </Field>
+        <Field Name="Posted_ProcurementPlanEntry">
+          <DataField>Posted_ProcurementPlanEntry</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

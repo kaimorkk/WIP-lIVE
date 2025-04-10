@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+        </Field>
+        <Field Name="NextFinancialYear1">
+          <DataField>NextFinancialYear1</DataField>
+        </Field>
+        <Field Name="NextFinancialYear2">
+          <DataField>NextFinancialYear2</DataField>
+        </Field>
+        <Field Name="NextFinancialYear3">
+          <DataField>NextFinancialYear3</DataField>
+        </Field>
+        <Field Name="PreviousFinancialYear1">
+          <DataField>PreviousFinancialYear1</DataField>
+        </Field>
+        <Field Name="CeilingAmount">
+          <DataField>CeilingAmount</DataField>
+        </Field>
+        <Field Name="CeilingAmountFormat">
+          <DataField>CeilingAmountFormat</DataField>
+        </Field>
+        <Field Name="EndDate">
+          <DataField>EndDate</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code">
+          <DataField>GlobalDimension1Code</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code">
+          <DataField>GlobalDimension2Code</DataField>
+        </Field>
+        <Field Name="PlanningBudgetType">
+          <DataField>PlanningBudgetType</DataField>
+        </Field>
+        <Field Name="StartDate">
+          <DataField>StartDate</DataField>
+        </Field>
+        <Field Name="YearReportingCode">
+          <DataField>YearReportingCode</DataField>
+        </Field>
+        <Field Name="StationName">
+          <DataField>StationName</DataField>
+        </Field>
+        <Field Name="NextFinancialYear2Est">
+          <DataField>NextFinancialYear2Est</DataField>
+        </Field>
+        <Field Name="NextFinancialYear2EstFormat">
+          <DataField>NextFinancialYear2EstFormat</DataField>
+        </Field>
+        <Field Name="NextFinancialYear3Est">
+          <DataField>NextFinancialYear3Est</DataField>
+        </Field>
+        <Field Name="NextFinancialYear3EstFormat">
+          <DataField>NextFinancialYear3EstFormat</DataField>
+        </Field>
+        <Field Name="PreviousCeilingAmount">
+          <DataField>PreviousCeilingAmount</DataField>
+        </Field>
+        <Field Name="PreviousCeilingAmountFormat">
+          <DataField>PreviousCeilingAmountFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

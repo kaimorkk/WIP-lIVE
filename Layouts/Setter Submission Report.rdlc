@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>f36f3ce5-b204-4c16-8f6e-c698bce95000</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.92708in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.69792in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.97917in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.36458in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Examination_SetterHeader1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Examination_SetterHeader.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Examination_SetterHeader1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>3</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.36458in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Level_SetterHeader1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Level_SetterHeader.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Level_SetterHeader1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>3</ColSpan>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.36458in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ExaminerCode_SetterHeader1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!ExaminerCode_SetterHeader.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ExaminerCode_SetterHeader1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ExaminerName_SetterHeader">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!ExaminerName_SetterHeader.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ExaminerName_SetterHeader</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>2</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.36458in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="QuestionNo_ExaminationReviewLines">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!QuestionNo_ExaminationReviewLines.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>QuestionNo_ExaminationReviewLines</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TopicName_ExaminationReviewLines">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!TopicName_ExaminationReviewLines.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>TopicName_ExaminationReviewLines</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>2</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Examination_SetterHeader">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Examination_SetterHeader.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Examination_SetterHeader.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <KeepWithGroup>After</KeepWithGroup>
+                    </TablixMember>
+                    <TablixMember>
+                      <Group Name="Level_SetterHeader">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Level_SetterHeader.Value</GroupExpression>
+                        </GroupExpressions>
+                        <Filters>
+                          <Filter>
+                            <FilterExpression>=Fields!Level_SetterHeader.Value</FilterExpression>
+                            <Operator>NotEqual</Operator>
+                            <FilterValues>
+                              <FilterValue>''</FilterValue>
+                            </FilterValues>
+                          </Filter>
+                        </Filters>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Level_SetterHeader.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixMembers>
+                        <TablixMember>
+                          <KeepWithGroup>After</KeepWithGroup>
+                        </TablixMember>
+                        <TablixMember>
+                          <Group Name="ExaminerCode_SetterHeader">
+                            <GroupExpressions>
+                              <GroupExpression>=Fields!ExaminerCode_SetterHeader.Value</GroupExpression>
+                            </GroupExpressions>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!ExaminerCode_SetterHeader.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
+                          <TablixMembers>
+                            <TablixMember>
+                              <KeepWithGroup>After</KeepWithGroup>
+                            </TablixMember>
+                            <TablixMember>
+                              <Group Name="Details" />
+                            </TablixMember>
+                          </TablixMembers>
+                        </TablixMember>
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>0.13542in</Top>
+            <Left>0.14458in</Left>
+            <Height>1.45833in</Height>
+            <Width>7.60417in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>1.8993in</Height>
+        <Style />
+      </Body>
+      <Width>7.88417in</Width>
+      <Page>
+        <PageHeader>
+          <Height>1.4675in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <ReportItems>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">SETTER SUBMITTED EXAMINATIONS</Value>
+                      <Style>
+                        <FontSize>14pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.2175in</Top>
+              <Height>0.25in</Height>
+              <Width>7.88417in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Image Name="Image1">
+              <Source>Database</Source>
+              <Value>=First(Fields!Logo.Value, "DataSet_Result")</Value>
+              <MIMEType>image/png</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.05083in</Top>
+              <Left>2.91542in</Left>
+              <Height>1.09722in</Height>
+              <Width>1.95833in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>0.61458in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>8.27in</PageWidth>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+        </Field>
+        <Field Name="DocumentNo_SetterHeader">
+          <DataField>DocumentNo_SetterHeader</DataField>
+        </Field>
+        <Field Name="DocumentType_SetterHeader">
+          <DataField>DocumentType_SetterHeader</DataField>
+        </Field>
+        <Field Name="CreatedBy_SetterHeader">
+          <DataField>CreatedBy_SetterHeader</DataField>
+        </Field>
+        <Field Name="CreatedOn_SetterHeader">
+          <DataField>CreatedOn_SetterHeader</DataField>
+        </Field>
+        <Field Name="ExaminationSitting_SetterHeader">
+          <DataField>ExaminationSitting_SetterHeader</DataField>
+        </Field>
+        <Field Name="ExaminerCode_SetterHeader">
+          <DataField>ExaminerCode_SetterHeader</DataField>
+        </Field>
+        <Field Name="ExaminerName_SetterHeader">
+          <DataField>ExaminerName_SetterHeader</DataField>
+        </Field>
+        <Field Name="IDNo_SetterHeader">
+          <DataField>IDNo_SetterHeader</DataField>
+        </Field>
+        <Field Name="PhoneNo_SetterHeader">
+          <DataField>PhoneNo_SetterHeader</DataField>
+        </Field>
+        <Field Name="Email_SetterHeader">
+          <DataField>Email_SetterHeader</DataField>
+        </Field>
+        <Field Name="Address_SetterHeader">
+          <DataField>Address_SetterHeader</DataField>
+        </Field>
+        <Field Name="Submitted_SetterHeader">
+          <DataField>Submitted_SetterHeader</DataField>
+        </Field>
+        <Field Name="SubmittedOn_SetterHeader">
+          <DataField>SubmittedOn_SetterHeader</DataField>
+        </Field>
+        <Field Name="SubmittedBy_SetterHeader">
+          <DataField>SubmittedBy_SetterHeader</DataField>
+        </Field>
+        <Field Name="Declaration_SetterHeader">
+          <DataField>Declaration_SetterHeader</DataField>
+        </Field>
+        <Field Name="DeclarationDate_SetterHeader">
+          <DataField>DeclarationDate_SetterHeader</DataField>
+        </Field>
+        <Field Name="NoofPapers_SetterHeader">
+          <DataField>NoofPapers_SetterHeader</DataField>
+        </Field>
+        <Field Name="NoofQuestions_SetterHeader">
+          <DataField>NoofQuestions_SetterHeader</DataField>
+        </Field>
+        <Field Name="BankCode_SetterHeader">
+          <DataField>BankCode_SetterHeader</DataField>
+        </Field>
+        <Field Name="BankBranch_SetterHeader">
+          <DataField>BankBranch_SetterHeader</DataField>
+        </Field>
+        <Field Name="BankName_SetterHeader">
+          <DataField>BankName_SetterHeader</DataField>
+        </Field>
+        <Field Name="BankAccountNo_SetterHeader">
+          <DataField>BankAccountNo_SetterHeader</DataField>
+        </Field>
+        <Field Name="AccountName_SetterHeader">
+          <DataField>AccountName_SetterHeader</DataField>
+        </Field>
+        <Field Name="KRAPin_SetterHeader">
+          <DataField>KRAPin_SetterHeader</DataField>
+        </Field>
+        <Field Name="PaperCode_SetterHeader">
+          <DataField>PaperCode_SetterHeader</DataField>
+        </Field>
+        <Field Name="PaperName_SetterHeader">
+          <DataField>PaperName_SetterHeader</DataField>
+        </Field>
+        <Field Name="Examination_SetterHeader">
+          <DataField>Examination_SetterHeader</DataField>
+        </Field>
+        <Field Name="Level_SetterHeader">
+          <DataField>Level_SetterHeader</DataField>
+        </Field>
+        <Field Name="NoofTopicsExamined_SetterHeader">
+          <DataField>NoofTopicsExamined_SetterHeader</DataField>
+        </Field>
+        <Field Name="NoofTopicsinSyllabus_SetterHeader">
+          <DataField>NoofTopicsinSyllabus_SetterHeader</DataField>
+        </Field>
+        <Field Name="ofSyllabusExamined_SetterHeader">
+          <DataField>ofSyllabusExamined_SetterHeader</DataField>
+        </Field>
+        <Field Name="ofSyllabusExamined_SetterHeaderFormat">
+          <DataField>ofSyllabusExamined_SetterHeaderFormat</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_SetterHeader">
+          <DataField>ApprovalStatus_SetterHeader</DataField>
+        </Field>
+        <Field Name="ExaminationSitting_ExaminationReviewLines">
+          <DataField>ExaminationSitting_ExaminationReviewLines</DataField>
+        </Field>
+        <Field Name="QuestionNo_ExaminationReviewLines">
+          <DataField>QuestionNo_ExaminationReviewLines</DataField>
+        </Field>
+        <Field Name="TopicCode_ExaminationReviewLines">
+          <DataField>TopicCode_ExaminationReviewLines</DataField>
+        </Field>
+        <Field Name="TopicName_ExaminationReviewLines">
+          <DataField>TopicName_ExaminationReviewLines</DataField>
+        </Field>
+        <Field Name="References_ExaminationReviewLines">
+          <DataField>References_ExaminationReviewLines</DataField>
+        </Field>
+        <Field Name="KnowledgeandComprehension_ExaminationReviewLines">
+          <DataField>KnowledgeandComprehension_ExaminationReviewLines</DataField>
+        </Field>
+        <Field Name="ApplicationandAnalysis_ExaminationReviewLines">
+          <DataField>ApplicationandAnalysis_ExaminationReviewLines</DataField>
+        </Field>
+        <Field Name="SynthesisandEvaluation_ExaminationReviewLines">
+          <DataField>SynthesisandEvaluation_ExaminationReviewLines</DataField>
+        </Field>
+        <Field Name="Comments_ExaminationReviewLines">
+          <DataField>Comments_ExaminationReviewLines</DataField>
+        </Field>
+        <Field Name="SetterCode_ExaminationReviewLines">
+          <DataField>SetterCode_ExaminationReviewLines</DataField>
+        </Field>
+        <Field Name="SetterName_ExaminationReviewLines">
+          <DataField>SetterName_ExaminationReviewLines</DataField>
+        </Field>
+        <Field Name="SetterTotalMarks_ExaminationReviewLines">
+          <DataField>SetterTotalMarks_ExaminationReviewLines</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

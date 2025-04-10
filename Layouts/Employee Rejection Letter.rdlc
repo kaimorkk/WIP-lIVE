@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CI_Picture">
+          <DataField>CI_Picture</DataField>
+        </Field>
+        <Field Name="NewSattion">
+          <DataField>NewSattion</DataField>
+        </Field>
+        <Field Name="CI_Address">
+          <DataField>CI_Address</DataField>
+        </Field>
+        <Field Name="CI__Address_2______CI__Post_Code_">
+          <DataField>CI__Address_2______CI__Post_Code_</DataField>
+        </Field>
+        <Field Name="CI_City">
+          <DataField>CI_City</DataField>
+        </Field>
+        <Field Name="CI_PhoneNo">
+          <DataField>CI_PhoneNo</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="ActualReportingDate">
+          <DataField>ActualReportingDate</DataField>
+        </Field>
+        <Field Name="Age">
+          <DataField>Age</DataField>
+        </Field>
+        <Field Name="BulkTransfersRequestNo">
+          <DataField>BulkTransfersRequestNo</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="CurrentHOSRemarks">
+          <DataField>CurrentHOSRemarks</DataField>
+        </Field>
+        <Field Name="DateCreated">
+          <DataField>DateCreated</DataField>
+        </Field>
+        <Field Name="Designation">
+          <DataField>Designation</DataField>
+        </Field>
+        <Field Name="Distance">
+          <DataField>Distance</DataField>
+        </Field>
+        <Field Name="DistanceFormat">
+          <DataField>DistanceFormat</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="DocumentType">
+          <DataField>DocumentType</DataField>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+        </Field>
+        <Field Name="EmployeeName">
+          <DataField>EmployeeName</DataField>
+        </Field>
+        <Field Name="EmployeeNo">
+          <DataField>EmployeeNo</DataField>
+        </Field>
+        <Field Name="EntryNo">
+          <DataField>EntryNo</DataField>
+        </Field>
+        <Field Name="Gender">
+          <DataField>Gender</DataField>
+        </Field>
+        <Field Name="HODHRRecommendation">
+          <DataField>HODHRRecommendation</DataField>
+        </Field>
+        <Field Name="HODMobilityRecommendation">
+          <DataField>HODMobilityRecommendation</DataField>
+        </Field>
+        <Field Name="HOSJobTitle">
+          <DataField>HOSJobTitle</DataField>
+        </Field>
+        <Field Name="HOSName">
+          <DataField>HOSName</DataField>
+        </Field>
+        <Field Name="HOSPJNo">
+          <DataField>HOSPJNo</DataField>
+        </Field>
+        <Field Name="JobCadre">
+          <DataField>JobCadre</DataField>
+        </Field>
+        <Field Name="JobDescription">
+          <DataField>JobDescription</DataField>
+        </Field>
+        <Field Name="JobGrade">
+          <DataField>JobGrade</DataField>
+        </Field>
+        <Field Name="JobTitle">
+          <DataField>JobTitle</DataField>
+        </Field>
+        <Field Name="MobilityObservations">
+          <DataField>MobilityObservations</DataField>
+        </Field>
+        <Field Name="MobilityRecommendation">
+          <DataField>MobilityRecommendation</DataField>
+        </Field>
+        <Field Name="MobilityReleaseDate">
+          <DataField>MobilityReleaseDate</DataField>
+        </Field>
+        <Field Name="NewSattionName">
+          <DataField>NewSattionName</DataField>
+        </Field>
+        <Field Name="NewStation">
+          <DataField>NewStation</DataField>
+        </Field>
+        <Field Name="NoofEmployeeRequested">
+          <DataField>NoofEmployeeRequested</DataField>
+        </Field>
+        <Field Name="NoSeries">
+          <DataField>NoSeries</DataField>
+        </Field>
+        <Field Name="OriginalStation">
+          <DataField>OriginalStation</DataField>
+        </Field>
+        <Field Name="OriginalStationName">
+          <DataField>OriginalStationName</DataField>
+        </Field>
+        <Field Name="OriginalTransferNo">
+          <DataField>OriginalTransferNo</DataField>
+        </Field>
+        <Field Name="PLWD">
+          <DataField>PLWD</DataField>
+        </Field>
+        <Field Name="PREVActualReportingDate">
+          <DataField>PREVActualReportingDate</DataField>
+        </Field>
+        <Field Name="PREVReportingDate">
+          <DataField>PREVReportingDate</DataField>
+        </Field>
+        <Field Name="PREVTransferDate">
+          <DataField>PREVTransferDate</DataField>
+        </Field>
+        <Field Name="Posted">
+          <DataField>Posted</DataField>
+        </Field>
+        <Field Name="PostedOn">
+          <DataField>PostedOn</DataField>
+        </Field>
+        <Field Name="ProfessionalOpinion">
+          <DataField>ProfessionalOpinion</DataField>
+        </Field>
+        <Field Name="ReasonsforAppeal">
+          <DataField>ReasonsforAppeal</DataField>
+        </Field>
+        <Field Name="ReleaseDate">
+          <DataField>ReleaseDate</DataField>
+        </Field>
+        <Field Name="Remarks">
+          <DataField>Remarks</DataField>
+        </Field>
+        <Field Name="ReplacementRequestNo">
+          <DataField>ReplacementRequestNo</DataField>
+        </Field>
+        <Field Name="ReportingDate">
+          <DataField>ReportingDate</DataField>
+        </Field>
+        <Field Name="RequestDate">
+          <DataField>RequestDate</DataField>
+        </Field>
+        <Field Name="RequestType">
+          <DataField>RequestType</DataField>
+        </Field>
+        <Field Name="RequestingStation">
+          <DataField>RequestingStation</DataField>
+        </Field>
+        <Field Name="RequestingStationName">
+          <DataField>RequestingStationName</DataField>
+        </Field>
+        <Field Name="RequestorEmployeeNo">
+          <DataField>RequestorEmployeeNo</DataField>
+        </Field>
+        <Field Name="RequestorJobTitle">
+          <DataField>RequestorJobTitle</DataField>
+        </Field>
+        <Field Name="RequestorName">
+          <DataField>RequestorName</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="SuggestedStation1">
+          <DataField>SuggestedStation1</DataField>
+        </Field>
+        <Field Name="SuggestedStation1Name">
+          <DataField>SuggestedStation1Name</DataField>
+        </Field>
+        <Field Name="SuggestedStation2">
+          <DataField>SuggestedStation2</DataField>
+        </Field>
+        <Field Name="SuggestedStation2Name">
+          <DataField>SuggestedStation2Name</DataField>
+        </Field>
+        <Field Name="SuggestedStation3">
+          <DataField>SuggestedStation3</DataField>
+        </Field>
+        <Field Name="SuggestedStation3Name">
+          <DataField>SuggestedStation3Name</DataField>
+        </Field>
+        <Field Name="SystemCreatedAt">
+          <DataField>SystemCreatedAt</DataField>
+        </Field>
+        <Field Name="SystemCreatedBy">
+          <DataField>SystemCreatedBy</DataField>
+        </Field>
+        <Field Name="SystemId">
+          <DataField>SystemId</DataField>
+        </Field>
+        <Field Name="SystemModifiedAt">
+          <DataField>SystemModifiedAt</DataField>
+        </Field>
+        <Field Name="SystemModifiedBy">
+          <DataField>SystemModifiedBy</DataField>
+        </Field>
+        <Field Name="TimeCreated">
+          <DataField>TimeCreated</DataField>
+        </Field>
+        <Field Name="ToHardshipArea">
+          <DataField>ToHardshipArea</DataField>
+        </Field>
+        <Field Name="TransferAppeal">
+          <DataField>TransferAppeal</DataField>
+        </Field>
+        <Field Name="TransferDate">
+          <DataField>TransferDate</DataField>
+        </Field>
+        <Field Name="TransferNo">
+          <DataField>TransferNo</DataField>
+        </Field>
+        <Field Name="TransferReasonCode">
+          <DataField>TransferReasonCode</DataField>
+        </Field>
+        <Field Name="TransferedBy">
+          <DataField>TransferedBy</DataField>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

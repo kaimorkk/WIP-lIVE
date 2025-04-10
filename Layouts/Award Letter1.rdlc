@@ -1,0 +1,1553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>MSRB</am:Name>
+      <am:Version>15.0.20283.0</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>MSRB</am:Name>
+      <am:Version>15.0.20283.0</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2024-11-24T11:28:42.0785512Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>64463708-7f18-4bd9-8f71-c6c9558106b7</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Image Name="Image4">
+            <Source>Database</Source>
+            <Value>=First(Fields!logo.Value, "DataSet_Result")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Sizing>FitProportional</Sizing>
+            <Top>1.04514in</Top>
+            <Left>3.20822in</Left>
+            <Height>1.20139in</Height>
+            <Width>2.10356in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!No_PHead.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>2.51333in</Top>
+            <Left>0.755in</Left>
+            <Height>0.25in</Height>
+            <Width>2.96667in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!DocumentDate_BidTabulationHeader.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <Format>dddd, d MMMM yyyy</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>2.89583in</Top>
+            <Left>4.96417in</Left>
+            <Height>0.25in</Height>
+            <Width>2.55833in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox51">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>The Chief Executive Officer</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox51</rd:DefaultName>
+            <Top>3.21041in</Top>
+            <Left>0.755in</Left>
+            <Height>0.25in</Height>
+            <Width>2.96667in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox52">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!Name_Vend.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox51</rd:DefaultName>
+            <Top>3.46041in</Top>
+            <Left>0.755in</Left>
+            <Height>0.25in</Height>
+            <Width>2.96667in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox53">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!Address_2_Vend.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox51</rd:DefaultName>
+            <Top>3.71041in</Top>
+            <Left>0.755in</Left>
+            <Height>0.25in</Height>
+            <Width>2.96667in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox54">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!City_Vend.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox51</rd:DefaultName>
+            <Top>3.96041in</Top>
+            <Left>0.755in</Left>
+            <Height>0.25in</Height>
+            <Width>2.96667in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox55">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Email: </Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!E_Mail_Vend.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox51</rd:DefaultName>
+            <Top>4.21041in</Top>
+            <Left>0.755in</Left>
+            <Height>0.25in</Height>
+            <Width>2.96667in</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line3">
+            <Top>4.78679in</Top>
+            <Left>0.755in</Left>
+            <Height>0in</Height>
+            <Width>6.75833in</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line4">
+            <Top>4.82846in</Top>
+            <Left>0.755in</Left>
+            <Height>0in</Height>
+            <Width>6.75833in</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+                <Width>3pt</Width>
+              </Border>
+            </Style>
+          </Line>
+          <Textbox Name="Textbox7">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>RE: NOTIFICATION OF INTENT TO ENTER INTO TO A CONTRACT- QUOTATION NO </Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!No_PHead.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> FOR </Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!TenderName_BidTabulationHeader.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>:</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>4.57152in</Top>
+            <Left>0.755in</Left>
+            <Height>0.19167in</Height>
+            <Width>6.64888in</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox9">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>We are pleased to inform you that your quotation for the </Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!TenderName_BidTabulationHeader.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> for a period of </Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!Tender_Validity_Duration.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> has been accepted at your quoted total cost detailed below; -</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox9</rd:DefaultName>
+            <Top>4.9625in</Top>
+            <Left>0.755in</Left>
+            <Height>0.525in</Height>
+            <Width>6.45722in</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>0.57842in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.55573in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.63333in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25061in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>S/NO</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox14">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Item description</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox18">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Qty</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox18</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox24">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>UoM</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox24</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox20">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Unit Cost</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox22">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Amount</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox22</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.27717in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="MemberName_IFSTenderCommitteeMember2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!No_Quote.Value</Value>
+                                  <Style>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>MemberName_IFSTenderCommitteeMember</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Role_IFSTenderCommitteeMember2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Description_Quote.Value</Value>
+                                  <Style>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Role_IFSTenderCommitteeMember</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Quantity_Quote">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Quantity_Quote.Value</Value>
+                                  <Style>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>n2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Quantity_Quote</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Unit_of_Measure_Code_Quote">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Unit_of_Measure_Code_Quote.Value</Value>
+                                  <Style>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Unit_of_Measure_Code_Quote</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Direct_Unit_Cost_Quote">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Direct_Unit_Cost_Quote.Value</Value>
+                                  <Style>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>n2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Direct_Unit_Cost_Quote</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Line_Amount_Quote">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Line_Amount_Quote.Value</Value>
+                                  <Style>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>n2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Line_Amount_Quote</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox26">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox26</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox27">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Total VAT inclusive</Value>
+                                  <Style>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox27</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>4</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="AwardTenderSumIncTaxes_BidTabulationHeader">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!AwardTenderSumIncTaxes_BidTabulationHeader.Value</Value>
+                                  <Style>
+                                    <FontFamily>Bookman Old Style</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>n2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>AwardTenderSumIncTaxes_BidTabulationHeader</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details2" />
+                </TablixMember>
+                <TablixMember>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Microsoft.ReportingServices.RdlObjectModel.ExpressionParser.VBFunctions.Cstr(Fields!DocumentNo_IFSTenderCommittee.Value)</FilterExpression>
+                <Operator>GreaterThan</Operator>
+                <FilterValues>
+                  <FilterValue>""</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <Top>5.78194in</Top>
+            <Left>0.75501in</Left>
+            <Height>0.77778in</Height>
+            <Width>6.76748in</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox10">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>The entitlements shall be subject to review and communicated accordingly, our contact Person is </Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!OfficerName.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> on </Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!OfficerPhone.Value</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>.
+
+We take this opportunity to congratulate you for winning the quotation and look forward to a beneficial working relationship.</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox9</rd:DefaultName>
+            <Top>6.94584in</Top>
+            <Left>0.75501in</Left>
+            <Height>0.70833in</Height>
+            <Width>6.45721in</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="CompanyHeadName">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!CompanyHeadName.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>CompanyHeadName</rd:DefaultName>
+            <Top>7.98195in</Top>
+            <Left>0.75501in</Left>
+            <Height>0.25in</Height>
+            <Width>3.4in</Width>
+            <ZIndex>14</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="CompanyHeadName1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!CompanyHeadName.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Bookman Old Style</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>CompanyHeadName1</rd:DefaultName>
+            <Top>8.25973in</Top>
+            <Left>0.75501in</Left>
+            <Height>0.25in</Height>
+            <Width>3.4in</Width>
+            <ZIndex>15</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>8.83334in</Height>
+        <Style />
+      </Body>
+      <Width>8.27in</Width>
+      <Page>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>8.27in</PageWidth>
+        <LeftMargin>0in</LeftMargin>
+        <RightMargin>0in</RightMargin>
+        <TopMargin>0in</TopMargin>
+        <BottomMargin>0in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="logo">
+          <DataField>logo</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyName2">
+          <DataField>CompanyName2</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="CompanyEmail">
+          <DataField>CompanyEmail</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompanyPostCode">
+          <DataField>CompanyPostCode</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyHeadName">
+          <DataField>CompanyHeadName</DataField>
+        </Field>
+        <Field Name="CompanyHeadTitle">
+          <DataField>CompanyHeadTitle</DataField>
+        </Field>
+        <Field Name="Code_BidTabulationHeader">
+          <DataField>Code_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentType_BidTabulationHeader">
+          <DataField>DocumentType_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="IFSCode_BidTabulationHeader">
+          <DataField>IFSCode_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentDate_BidTabulationHeader">
+          <DataField>DocumentDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinalEvaluationReportID_BidTabulationHeader">
+          <DataField>FinalEvaluationReportID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Description_BidTabulationHeader">
+          <DataField>Description_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="TenderName_BidTabulationHeader">
+          <DataField>TenderName_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="RaisedBy_BidTabulationHeader">
+          <DataField>RaisedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Name_BidTabulationHeader">
+          <DataField>Name_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="TenderCommitteeRole_BidTabulationHeader">
+          <DataField>TenderCommitteeRole_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DesignationTitle_BidTabulationHeader">
+          <DataField>DesignationTitle_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AnnualProcurementPlanID_BidTabulationHeader">
+          <DataField>AnnualProcurementPlanID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanDate_BidTabulationHeader">
+          <DataField>ProcurementPlanDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinancialYearCode_BidTabulationHeader">
+          <DataField>FinancialYearCode_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanLineNo_BidTabulationHeader">
+          <DataField>ProcurementPlanLineNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanEntryNo_BidTabulationHeader">
+          <DataField>ProcurementPlanEntryNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_BidTabulationHeader">
+          <DataField>AvailableProcurementBudget_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_BidTabulationHeaderFormat">
+          <DataField>AvailableProcurementBudget_BidTabulationHeaderFormat</DataField>
+        </Field>
+        <Field Name="BudgetNarration_BidTabulationHeader">
+          <DataField>BudgetNarration_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningDate_BidTabulationHeader">
+          <DataField>BidOpeningDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="EvaluationCompletionDate_BidTabulationHeader">
+          <DataField>EvaluationCompletionDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AppointedBidOpeningComm_BidTabulationHeader">
+          <DataField>AppointedBidOpeningComm_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AppointedBidEvaluationCom_BidTabulationHeader">
+          <DataField>AppointedBidEvaluationCom_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PrimaryRegion_BidTabulationHeader">
+          <DataField>PrimaryRegion_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_BidTabulationHeader">
+          <DataField>ApprovalStatus_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProfessionalOpinionID_BidTabulationHeader">
+          <DataField>ProfessionalOpinionID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidNo_BidTabulationHeader">
+          <DataField>AwardedBidNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidderNo_BidTabulationHeader">
+          <DataField>AwardedBidderNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidderName_BidTabulationHeader">
+          <DataField>AwardedBidderName_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardTenderSumIncTaxes_BidTabulationHeader">
+          <DataField>AwardTenderSumIncTaxes_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardTenderSumIncTaxes_BidTabulationHeaderFormat">
+          <DataField>AwardTenderSumIncTaxes_BidTabulationHeaderFormat</DataField>
+        </Field>
+        <Field Name="AwardAcceptanceDeadline_BidTabulationHeader">
+          <DataField>AwardAcceptanceDeadline_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardAcceptanceResponse_BidTabulationHeader">
+          <DataField>AwardAcceptanceResponse_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="MinContractHolding_BidTabulationHeader">
+          <DataField>MinContractHolding_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="EarliestContractIssuanceDt_BidTabulationHeader">
+          <DataField>EarliestContractIssuanceDt_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidderNoAResponseType_BidTabulationHeader">
+          <DataField>BidderNoAResponseType_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidderNoAResponseDate_BidTabulationHeader">
+          <DataField>BidderNoAResponseDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofPostAwardDisputes_BidTabulationHeader">
+          <DataField>NoofPostAwardDisputes_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentStatus_BidTabulationHeader">
+          <DataField>DocumentStatus_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoSeries_BidTabulationHeader">
+          <DataField>NoSeries_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedBy_BidTabulationHeader">
+          <DataField>CreatedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedDate_BidTabulationHeader">
+          <DataField>CreatedDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedTime_BidTabulationHeader">
+          <DataField>CreatedTime_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Posted_BidTabulationHeader">
+          <DataField>Posted_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PostedBy_BidTabulationHeader">
+          <DataField>PostedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PostedDate_BidTabulationHeader">
+          <DataField>PostedDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinancialEvaluationID_BidTabulationHeader">
+          <DataField>FinancialEvaluationID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="GeneralProcurementRemarks_BidTabulationHeader">
+          <DataField>GeneralProcurementRemarks_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Noofsubmittedbids_BidTabulationHeader">
+          <DataField>Noofsubmittedbids_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofOpenedBidsTech_BidTabulationHeader">
+          <DataField>NoofOpenedBidsTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofOpenedBidsFinance_BidTabulationHeader">
+          <DataField>NoofOpenedBidsFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofResponsiveTech_BidTabulationHeader">
+          <DataField>NoofResponsiveTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofnonResponsiveTech_BidTabulationHeader">
+          <DataField>NoofnonResponsiveTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofResponsiveFinance_BidTabulationHeader">
+          <DataField>NoofResponsiveFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofnonResponsiveFinance_BidTabulationHeader">
+          <DataField>NoofnonResponsiveFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningRegisterTech_BidTabulationHeader">
+          <DataField>BidOpeningRegisterTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningRegisterFinance_BidTabulationHeader">
+          <DataField>BidOpeningRegisterFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Code_Tender">
+          <DataField>Code_Tender</DataField>
+        </Field>
+        <Field Name="Tender_Name">
+          <DataField>Tender_Name</DataField>
+        </Field>
+        <Field Name="Tender_Summary">
+          <DataField>Tender_Summary</DataField>
+        </Field>
+        <Field Name="Tender_Validity_Duration">
+          <DataField>Tender_Validity_Duration</DataField>
+        </Field>
+        <Field Name="Purchaser_Code">
+          <DataField>Purchaser_Code</DataField>
+        </Field>
+        <Field Name="OfficerName">
+          <DataField>OfficerName</DataField>
+        </Field>
+        <Field Name="OfficerEmail">
+          <DataField>OfficerEmail</DataField>
+        </Field>
+        <Field Name="OfficerPhone">
+          <DataField>OfficerPhone</DataField>
+        </Field>
+        <Field Name="No_PHead">
+          <DataField>No_PHead</DataField>
+        </Field>
+        <Field Name="Amount_PHead">
+          <DataField>Amount_PHead</DataField>
+        </Field>
+        <Field Name="Amount_PHeadFormat">
+          <DataField>Amount_PHeadFormat</DataField>
+        </Field>
+        <Field Name="No_Quote">
+          <DataField>No_Quote</DataField>
+        </Field>
+        <Field Name="Type_Quote">
+          <DataField>Type_Quote</DataField>
+        </Field>
+        <Field Name="Description_Quote">
+          <DataField>Description_Quote</DataField>
+        </Field>
+        <Field Name="Location_Code_Quote">
+          <DataField>Location_Code_Quote</DataField>
+        </Field>
+        <Field Name="Quantity_Quote">
+          <DataField>Quantity_Quote</DataField>
+        </Field>
+        <Field Name="Quantity_QuoteFormat">
+          <DataField>Quantity_QuoteFormat</DataField>
+        </Field>
+        <Field Name="Unit_of_Measure_Code_Quote">
+          <DataField>Unit_of_Measure_Code_Quote</DataField>
+        </Field>
+        <Field Name="Direct_Unit_Cost_Quote">
+          <DataField>Direct_Unit_Cost_Quote</DataField>
+        </Field>
+        <Field Name="Direct_Unit_Cost_QuoteFormat">
+          <DataField>Direct_Unit_Cost_QuoteFormat</DataField>
+        </Field>
+        <Field Name="Line_Discount__Quote">
+          <DataField>Line_Discount__Quote</DataField>
+        </Field>
+        <Field Name="Line_Discount__QuoteFormat">
+          <DataField>Line_Discount__QuoteFormat</DataField>
+        </Field>
+        <Field Name="Line_Discount_Amount_Quote">
+          <DataField>Line_Discount_Amount_Quote</DataField>
+        </Field>
+        <Field Name="Line_Discount_Amount_QuoteFormat">
+          <DataField>Line_Discount_Amount_QuoteFormat</DataField>
+        </Field>
+        <Field Name="Line_Amount_Quote">
+          <DataField>Line_Amount_Quote</DataField>
+        </Field>
+        <Field Name="Line_Amount_QuoteFormat">
+          <DataField>Line_Amount_QuoteFormat</DataField>
+        </Field>
+        <Field Name="No_Vend">
+          <DataField>No_Vend</DataField>
+        </Field>
+        <Field Name="Name_Vend">
+          <DataField>Name_Vend</DataField>
+        </Field>
+        <Field Name="Post_Code_Vend">
+          <DataField>Post_Code_Vend</DataField>
+        </Field>
+        <Field Name="City_Vend">
+          <DataField>City_Vend</DataField>
+        </Field>
+        <Field Name="E_Mail_Vend">
+          <DataField>E_Mail_Vend</DataField>
+        </Field>
+        <Field Name="Address_Vend">
+          <DataField>Address_Vend</DataField>
+        </Field>
+        <Field Name="Address_2_Vend">
+          <DataField>Address_2_Vend</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

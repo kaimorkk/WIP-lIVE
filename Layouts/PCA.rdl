@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompInfo_Name">
+          <DataField>CompInfo_Name</DataField>
+        </Field>
+        <Field Name="CompInfo_Address">
+          <DataField>CompInfo_Address</DataField>
+        </Field>
+        <Field Name="CompInfo_Address2">
+          <DataField>CompInfo_Address2</DataField>
+        </Field>
+        <Field Name="CompInfo_City">
+          <DataField>CompInfo_City</DataField>
+        </Field>
+        <Field Name="CompInfo_Picture">
+          <DataField>CompInfo_Picture</DataField>
+        </Field>
+        <Field Name="CompInfo_PhoneNo">
+          <DataField>CompInfo_PhoneNo</DataField>
+        </Field>
+        <Field Name="IDNumber">
+          <DataField>IDNumber</DataField>
+        </Field>
+        <Field Name="BasicPay">
+          <DataField>BasicPay</DataField>
+        </Field>
+        <Field Name="BasicPayFormat">
+          <DataField>BasicPayFormat</DataField>
+        </Field>
+        <Field Name="CampusCode">
+          <DataField>CampusCode</DataField>
+        </Field>
+        <Field Name="CampusName">
+          <DataField>CampusName</DataField>
+        </Field>
+        <Field Name="ChangeAdviceSerialNo">
+          <DataField>ChangeAdviceSerialNo</DataField>
+        </Field>
+        <Field Name="ChangeBankDetails">
+          <DataField>ChangeBankDetails</DataField>
+        </Field>
+        <Field Name="Comments">
+          <DataField>Comments</DataField>
+        </Field>
+        <Field Name="CostCenterName">
+          <DataField>CostCenterName</DataField>
+        </Field>
+        <Field Name="CurrencyCode">
+          <DataField>CurrencyCode</DataField>
+        </Field>
+        <Field Name="DepartmentCode">
+          <DataField>DepartmentCode</DataField>
+        </Field>
+        <Field Name="DepartmentName">
+          <DataField>DepartmentName</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="DutyStation">
+          <DataField>DutyStation</DataField>
+        </Field>
+        <Field Name="Effected">
+          <DataField>Effected</DataField>
+        </Field>
+        <Field Name="EffectiveDate">
+          <DataField>EffectiveDate</DataField>
+        </Field>
+        <Field Name="EmployeeCode">
+          <DataField>EmployeeCode</DataField>
+        </Field>
+        <Field Name="EmployeeName">
+          <DataField>EmployeeName</DataField>
+        </Field>
+        <Field Name="EmployeesBank">
+          <DataField>EmployeesBank</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code">
+          <DataField>GlobalDimension1Code</DataField>
+        </Field>
+        <Field Name="ImplementingUnit">
+          <DataField>ImplementingUnit</DataField>
+        </Field>
+        <Field Name="Multipay">
+          <DataField>Multipay</DataField>
+        </Field>
+        <Field Name="PAyrollCode">
+          <DataField>PAyrollCode</DataField>
+        </Field>
+        <Field Name="PayrollPeriod">
+          <DataField>PayrollPeriod</DataField>
+        </Field>
+        <Field Name="PaysNHIF">
+          <DataField>PaysNHIF</DataField>
+        </Field>
+        <Field Name="PaysNSSF">
+          <DataField>PaysNSSF</DataField>
+        </Field>
+        <Field Name="PaysPAYE">
+          <DataField>PaysPAYE</DataField>
+        </Field>
+        <Field Name="PeriodMonth">
+          <DataField>PeriodMonth</DataField>
+        </Field>
+        <Field Name="PeriodYear">
+          <DataField>PeriodYear</DataField>
+        </Field>
+        <Field Name="ResponsibilityCenter">
+          <DataField>ResponsibilityCenter</DataField>
+        </Field>
+        <Field Name="SourceDocument">
+          <DataField>SourceDocument</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="UserID">
+          <DataField>UserID</DataField>
+        </Field>
+        <Field Name="Designation_prBasicpayPCA">
+          <DataField>Designation_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="IncrementalMonth_prBasicpayPCA">
+          <DataField>IncrementalMonth_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="SalaryScale_prBasicpayPCA">
+          <DataField>SalaryScale_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="ApproverID_ApprovalEntry">
+          <DataField>ApproverID_ApprovalEntry</DataField>
+        </Field>
+        <Field Name="LastDateTimeModified_ApprovalEntry">
+          <DataField>LastDateTimeModified_ApprovalEntry</DataField>
+        </Field>
+        <Field Name="Signature_PreparedBy">
+          <DataField>Signature_PreparedBy</DataField>
+        </Field>
+        <Field Name="PreparedByDesignation_UserSetup">
+          <DataField>PreparedByDesignation_UserSetup</DataField>
+        </Field>
+        <Field Name="Signature_UserSetup">
+          <DataField>Signature_UserSetup</DataField>
+        </Field>
+        <Field Name="ApprovalDesignation_UserSetup">
+          <DataField>ApprovalDesignation_UserSetup</DataField>
+        </Field>
+        <Field Name="Signature_UserSetup2">
+          <DataField>Signature_UserSetup2</DataField>
+        </Field>
+        <Field Name="ApprovalDesignation_UserSetup2">
+          <DataField>ApprovalDesignation_UserSetup2</DataField>
+        </Field>
+        <Field Name="Signature_UserSetup3">
+          <DataField>Signature_UserSetup3</DataField>
+        </Field>
+        <Field Name="ApprovalDesignation_UserSetup3">
+          <DataField>ApprovalDesignation_UserSetup3</DataField>
+        </Field>
+        <Field Name="Signature_UserSetup4">
+          <DataField>Signature_UserSetup4</DataField>
+        </Field>
+        <Field Name="ApprovalDesignation_UserSetup4">
+          <DataField>ApprovalDesignation_UserSetup4</DataField>
+        </Field>
+        <Field Name="Signature_UserSetup5">
+          <DataField>Signature_UserSetup5</DataField>
+        </Field>
+        <Field Name="ApprovalDesignation_UserSetup5">
+          <DataField>ApprovalDesignation_UserSetup5</DataField>
+        </Field>
+        <Field Name="UserDesign1">
+          <DataField>UserDesign1</DataField>
+        </Field>
+        <Field Name="UserDesign2">
+          <DataField>UserDesign2</DataField>
+        </Field>
+        <Field Name="UserDesign3">
+          <DataField>UserDesign3</DataField>
+        </Field>
+        <Field Name="UserDesign4">
+          <DataField>UserDesign4</DataField>
+        </Field>
+        <Field Name="UserDesign5">
+          <DataField>UserDesign5</DataField>
+        </Field>
+        <Field Name="ApprovalDate1">
+          <DataField>ApprovalDate1</DataField>
+        </Field>
+        <Field Name="ApprovalDate2">
+          <DataField>ApprovalDate2</DataField>
+        </Field>
+        <Field Name="ApprovalDate3">
+          <DataField>ApprovalDate3</DataField>
+        </Field>
+        <Field Name="ApprovalDate4">
+          <DataField>ApprovalDate4</DataField>
+        </Field>
+        <Field Name="ApprovalDate5">
+          <DataField>ApprovalDate5</DataField>
+        </Field>
+        <Field Name="UserName1">
+          <DataField>UserName1</DataField>
+        </Field>
+        <Field Name="UserName2">
+          <DataField>UserName2</DataField>
+        </Field>
+        <Field Name="UserName3">
+          <DataField>UserName3</DataField>
+        </Field>
+        <Field Name="UserName4">
+          <DataField>UserName4</DataField>
+        </Field>
+        <Field Name="UserName5">
+          <DataField>UserName5</DataField>
+        </Field>
+        <Field Name="SendDate">
+          <DataField>SendDate</DataField>
+        </Field>
+        <Field Name="SenderDesign">
+          <DataField>SenderDesign</DataField>
+        </Field>
+        <Field Name="SenderName">
+          <DataField>SenderName</DataField>
+        </Field>
+        <Field Name="SenderSignature">
+          <DataField>SenderSignature</DataField>
+        </Field>
+        <Field Name="BankAccountNumber_prBasicpayPCA">
+          <DataField>BankAccountNumber_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="BankName_prBasicpayPCA">
+          <DataField>BankName_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="BankBranch_prBasicpayPCA">
+          <DataField>BankBranch_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="BankBranchName_prBasicpayPCA">
+          <DataField>BankBranchName_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="CauseofInactivity_prBasicpayPCA">
+          <DataField>CauseofInactivity_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="CurrentJobGrade_prBasicpayPCA">
+          <DataField>CurrentJobGrade_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="DocumentType_prBasicpayPCA">
+          <DataField>DocumentType_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="EmployeeStatus_prBasicpayPCA">
+          <DataField>EmployeeStatus_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="ExitStatus_prBasicpayPCA">
+          <DataField>ExitStatus_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="IncrementDate_prBasicpayPCA">
+          <DataField>IncrementDate_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="PaysNITA_prBasicpayPCA">
+          <DataField>PaysNITA_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="PostedBy_prBasicpayPCA">
+          <DataField>PostedBy_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="PostedByName_prBasicpayPCA">
+          <DataField>PostedByName_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="PostedDate_prBasicpayPCA">
+          <DataField>PostedDate_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="Present_prBasicpayPCA">
+          <DataField>Present_prBasicpayPCA</DataField>
+        </Field>
+        <Field Name="Amount_prEmployeeTransPCA">
+          <DataField>Amount_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="Amount_prEmployeeTransPCAFormat">
+          <DataField>Amount_prEmployeeTransPCAFormat</DataField>
+        </Field>
+        <Field Name="Balance_prEmployeeTransPCA">
+          <DataField>Balance_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="Balance_prEmployeeTransPCAFormat">
+          <DataField>Balance_prEmployeeTransPCAFormat</DataField>
+        </Field>
+        <Field Name="Comments_prEmployeeTransPCA">
+          <DataField>Comments_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="ChangeType_prEmployeeTransPCA">
+          <DataField>ChangeType_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="Difference_prEmployeeTransPCA">
+          <DataField>Difference_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="Difference_prEmployeeTransPCAFormat">
+          <DataField>Difference_prEmployeeTransPCAFormat</DataField>
+        </Field>
+        <Field Name="Duration_prEmployeeTransPCA">
+          <DataField>Duration_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="EmployerAmount_prEmployeeTransPCA">
+          <DataField>EmployerAmount_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="EmployerAmount_prEmployeeTransPCAFormat">
+          <DataField>EmployerAmount_prEmployeeTransPCAFormat</DataField>
+        </Field>
+        <Field Name="EndDate_prEmployeeTransPCA">
+          <DataField>EndDate_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="FromDate_prEmployeeTransPCA">
+          <DataField>FromDate_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="Paid_prEmployeeTransPCA">
+          <DataField>Paid_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="Paid_prEmployeeTransPCAFormat">
+          <DataField>Paid_prEmployeeTransPCAFormat</DataField>
+        </Field>
+        <Field Name="Payable_prEmployeeTransPCA">
+          <DataField>Payable_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="Payable_prEmployeeTransPCAFormat">
+          <DataField>Payable_prEmployeeTransPCAFormat</DataField>
+        </Field>
+        <Field Name="PeriodMonth_prEmployeeTransPCA">
+          <DataField>PeriodMonth_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="PeriodYear_prEmployeeTransPCA">
+          <DataField>PeriodYear_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="StartDate_prEmployeeTransPCA">
+          <DataField>StartDate_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="SubTotal_prEmployeeTransPCA">
+          <DataField>SubTotal_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="SubTotal_prEmployeeTransPCAFormat">
+          <DataField>SubTotal_prEmployeeTransPCAFormat</DataField>
+        </Field>
+        <Field Name="ToDate_prEmployeeTransPCA">
+          <DataField>ToDate_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="TransactionCode_prEmployeeTransPCA">
+          <DataField>TransactionCode_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="TransactionName_prEmployeeTransPCA">
+          <DataField>TransactionName_prEmployeeTransPCA</DataField>
+        </Field>
+        <Field Name="TransactionType_prEmployeeTransPCA">
+          <DataField>TransactionType_prEmployeeTransPCA</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

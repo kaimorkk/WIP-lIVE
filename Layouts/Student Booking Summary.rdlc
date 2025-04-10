@@ -1,0 +1,1329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>a26715ae-a1ff-4632-88b9-463289fe534e</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.8125in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.28125in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.21875in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Subject</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Description </Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Amount </Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Paper_StudentBookingLines">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Paper_StudentBookingLines.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Paper_StudentBookingLines</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Description_StudentBookingLines">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Description_StudentBookingLines.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Description_StudentBookingLines</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Amount_StudentBookingLines">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!Amount_StudentBookingLines.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>n2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Amount_StudentBookingLines</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox10">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value EvaluationMode="Auto">Part </Value>
+                                <Style>
+                                  <FontFamily>Century</FontFamily>
+                                  <FontSize>9pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox10</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BottomBorder>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </BottomBorder>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>1.30208in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox8">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value EvaluationMode="Auto">Section </Value>
+                                    <Style>
+                                      <FontFamily>Century</FontFamily>
+                                      <FontSize>9pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox8</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BottomBorder>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </BottomBorder>
+                              <BackgroundColor>White</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Part_StudentBookingLines">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Part_StudentBookingLines.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Part_StudentBookingLines.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="Part_StudentBookingLines">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value EvaluationMode="Auto">=Fields!Part_StudentBookingLines.Value</Value>
+                                <Style>
+                                  <FontFamily>Century</FontFamily>
+                                  <FontSize>9pt</FontSize>
+                                  <FontWeight>Normal</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Part_StudentBookingLines</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BottomBorder>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </BottomBorder>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="Section_StudentBookingLines">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Section_StudentBookingLines.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Section_StudentBookingLines.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixHeader>
+                        <Size>1.30208in</Size>
+                        <CellContents>
+                          <Textbox Name="Section_StudentBookingLines">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value EvaluationMode="Auto">=Fields!Section_StudentBookingLines.Value</Value>
+                                    <Style>
+                                      <FontFamily>Century</FontFamily>
+                                      <FontSize>9pt</FontSize>
+                                      <FontWeight>Normal</FontWeight>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Section_StudentBookingLines</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BottomBorder>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </BottomBorder>
+                              <BackgroundColor>White</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember>
+                          <Group Name="Details" />
+                        </TablixMember>
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>0in</Top>
+            <Height>0.5in</Height>
+            <Width>7.61458in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>0.61458in</Height>
+        <Style />
+      </Body>
+      <Width>8.29168in</Width>
+      <Page>
+        <PageHeader>
+          <Height>2.5925in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="Image1">
+              <Source>Database</Source>
+              <Value>=First(Fields!CI_Picture.Value, "DataSet_Result")</Value>
+              <MIMEType>image/png</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.13417in</Top>
+              <Left>3.39458in</Left>
+              <Height>0.6875in</Height>
+              <Width>0.95833in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">SUMMARY BOOKING ENTRIES</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                        <FontSize>14pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.94667in</Top>
+              <Left>2.28in</Left>
+              <Height>0.38889in</Height>
+              <Width>3.5in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox12">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">Reg No.</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>1.53in</Top>
+              <Left>0.08208in</Left>
+              <Height>0.25in</Height>
+              <Width>1.09375in</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox13">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=First(Fields!StudentNo_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>1.53in</Top>
+              <Left>1.26959in</Left>
+              <Height>0.25in</Height>
+              <Width>2.20957in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox14">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">Student Name</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>1.84944in</Top>
+              <Left>0.08209in</Left>
+              <Height>0.25in</Height>
+              <Width>1.09375in</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox15">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=First(Fields!StudentName_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>1.84944in</Top>
+              <Left>1.2696in</Left>
+              <Height>0.25in</Height>
+              <Width>2.20957in</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox16">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">Examination Cycle</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>1.53in</Top>
+              <Left>4.47916in</Left>
+              <Height>0.25in</Height>
+              <Width>1.66666in</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox17">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=First(Fields!ExaminationCyce_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>1.53in</Top>
+              <Left>6.29167in</Left>
+              <Height>0.25in</Height>
+              <Width>1.9375in</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox18">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">Preffered Examination Center</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>1.84944in</Top>
+              <Left>4.47917in</Left>
+              <Height>0.25in</Height>
+              <Width>1.66666in</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox19">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=First(Fields!PreferredExamCenterName_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>1.84944in</Top>
+              <Left>6.29168in</Left>
+              <Height>0.25in</Height>
+              <Width>1.9375in</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox20">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">Examination</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>2.16889in</Top>
+              <Left>0.08208in</Left>
+              <Height>0.25in</Height>
+              <Width>1.09375in</Width>
+              <ZIndex>10</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox21">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=First(Fields!CourseDescription_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>2.16889in</Top>
+              <Left>1.26959in</Left>
+              <Height>0.25in</Height>
+              <Width>2.20957in</Width>
+              <ZIndex>11</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox22">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">Total Booking Amount</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>2.16889in</Top>
+              <Left>4.47916in</Left>
+              <Height>0.25in</Height>
+              <Width>1.66666in</Width>
+              <ZIndex>12</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox23">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=First(Fields!BookingAmount_StudentProcessingHeader.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Century</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>2.16889in</Top>
+              <Left>6.29167in</Left>
+              <Height>0.25in</Height>
+              <Width>1.9375in</Width>
+              <ZIndex>13</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_StudentProcessingHeader">
+          <DataField>No_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Date_StudentProcessingHeader">
+          <DataField>Date_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DocumentType_StudentProcessingHeader">
+          <DataField>DocumentType_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="StudentNo_StudentProcessingHeader">
+          <DataField>StudentNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="StudentName_StudentProcessingHeader">
+          <DataField>StudentName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="FirstName_StudentProcessingHeader">
+          <DataField>FirstName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="MiddleName_StudentProcessingHeader">
+          <DataField>MiddleName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Surname_StudentProcessingHeader">
+          <DataField>Surname_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="IDNumber_StudentProcessingHeader">
+          <DataField>IDNumber_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CourseID_StudentProcessingHeader">
+          <DataField>CourseID_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CourseDescription_StudentProcessingHeader">
+          <DataField>CourseDescription_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationCenterCode_StudentProcessingHeader">
+          <DataField>ExaminationCenterCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationCenter_StudentProcessingHeader">
+          <DataField>ExaminationCenter_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="HighestAcademicQCode_StudentProcessingHeader">
+          <DataField>HighestAcademicQCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="HighestAcademicQualification_StudentProcessingHeader">
+          <DataField>HighestAcademicQualification_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Gender_StudentProcessingHeader">
+          <DataField>Gender_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DateofBirth_StudentProcessingHeader">
+          <DataField>DateofBirth_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Disabled_StudentProcessingHeader">
+          <DataField>Disabled_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="NCPWDNo_StudentProcessingHeader">
+          <DataField>NCPWDNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationDate_StudentProcessingHeader">
+          <DataField>RegistrationDate_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CreatedBy_StudentProcessingHeader">
+          <DataField>CreatedBy_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CreatedOn_StudentProcessingHeader">
+          <DataField>CreatedOn_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_StudentProcessingHeader">
+          <DataField>ApprovalStatus_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CurrencyCode_StudentProcessingHeader">
+          <DataField>CurrencyCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Address_StudentProcessingHeader">
+          <DataField>Address_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Address2_StudentProcessingHeader">
+          <DataField>Address2_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="City_StudentProcessingHeader">
+          <DataField>City_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CountryRegionCode_StudentProcessingHeader">
+          <DataField>CountryRegionCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PhoneNo_StudentProcessingHeader">
+          <DataField>PhoneNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PostCode_StudentProcessingHeader">
+          <DataField>PostCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="County_StudentProcessingHeader">
+          <DataField>County_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Email_StudentProcessingHeader">
+          <DataField>Email_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="NoSeries_StudentProcessingHeader">
+          <DataField>NoSeries_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Created_StudentProcessingHeader">
+          <DataField>Created_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Portal_StudentProcessingHeader">
+          <DataField>Portal_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ReasonforRejection_StudentProcessingHeader">
+          <DataField>ReasonforRejection_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Amount_StudentProcessingHeader">
+          <DataField>Amount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Amount_StudentProcessingHeaderFormat">
+          <DataField>Amount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="ExaminationCyce_StudentProcessingHeader">
+          <DataField>ExaminationCyce_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Type_StudentProcessingHeader">
+          <DataField>Type_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationAmount_StudentProcessingHeader">
+          <DataField>RegistrationAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationAmount_StudentProcessingHeaderFormat">
+          <DataField>RegistrationAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="RegistrationReceiptNo_StudentProcessingHeader">
+          <DataField>RegistrationReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="BookingAmount_StudentProcessingHeader">
+          <DataField>BookingAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="BookingAmount_StudentProcessingHeaderFormat">
+          <DataField>BookingAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="BookingReceiptNo_StudentProcessingHeader">
+          <DataField>BookingReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExemptionAmount_StudentProcessingHeader">
+          <DataField>ExemptionAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExemptionAmount_StudentProcessingHeaderFormat">
+          <DataField>ExemptionAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="ExemptionReceiptNo_StudentProcessingHeader">
+          <DataField>ExemptionReceiptNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="RegistrationInvoiceNo_StudentProcessingHeader">
+          <DataField>RegistrationInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="BookingInvoiceNo_StudentProcessingHeader">
+          <DataField>BookingInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExemptionInvoiceNo_StudentProcessingHeader">
+          <DataField>ExemptionInvoiceNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="StudentRegNo_StudentProcessingHeader">
+          <DataField>StudentRegNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Section_StudentProcessingHeader">
+          <DataField>Section_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Part_StudentProcessingHeader">
+          <DataField>Part_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Paper_StudentProcessingHeader">
+          <DataField>Paper_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WorkType_StudentProcessingHeader">
+          <DataField>WorkType_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Posted_StudentProcessingHeader">
+          <DataField>Posted_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="TypeCode_StudentProcessingHeader">
+          <DataField>TypeCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApplicationInvoice_StudentProcessingHeader">
+          <DataField>ApplicationInvoice_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApplicationAmount_StudentProcessingHeader">
+          <DataField>ApplicationAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ApplicationAmount_StudentProcessingHeaderFormat">
+          <DataField>ApplicationAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="ApplicationReceipt_StudentProcessingHeader">
+          <DataField>ApplicationReceipt_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="TotalWithdrawalAmount_StudentProcessingHeader">
+          <DataField>TotalWithdrawalAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="TotalWithdrawalAmount_StudentProcessingHeaderFormat">
+          <DataField>TotalWithdrawalAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="PreferredExamCenter_StudentProcessingHeader">
+          <DataField>PreferredExamCenter_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PreferredExamCenterName_StudentProcessingHeader">
+          <DataField>PreferredExamCenterName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalApplicationNo_StudentProcessingHeader">
+          <DataField>WithdrawalApplicationNo_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Age_StudentProcessingHeader">
+          <DataField>Age_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalCode_StudentProcessingHeader">
+          <DataField>WithdrawalCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalReason_StudentProcessingHeader">
+          <DataField>WithdrawalReason_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="Image_StudentProcessingHeader">
+          <DataField>Image_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PostedBy_StudentProcessingHeader">
+          <DataField>PostedBy_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="PostedOn_StudentProcessingHeader">
+          <DataField>PostedOn_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationProjectCode_StudentProcessingHeader">
+          <DataField>ExaminationProjectCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="ExaminationProjectName_StudentProcessingHeader">
+          <DataField>ExaminationProjectName_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalRefundAmount_StudentProcessingHeader">
+          <DataField>WithdrawalRefundAmount_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="WithdrawalRefundAmount_StudentProcessingHeaderFormat">
+          <DataField>WithdrawalRefundAmount_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="DeffermentCharge_StudentProcessingHeader">
+          <DataField>DeffermentCharge_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="DeffermentCharge_StudentProcessingHeaderFormat">
+          <DataField>DeffermentCharge_StudentProcessingHeaderFormat</DataField>
+        </Field>
+        <Field Name="TrainingInstitutionCode_StudentProcessingHeader">
+          <DataField>TrainingInstitutionCode_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="CI_Picture">
+          <DataField>CI_Picture</DataField>
+        </Field>
+        <Field Name="CI_Address">
+          <DataField>CI_Address</DataField>
+        </Field>
+        <Field Name="CI__Address_2______CI__Post_Code_">
+          <DataField>CI__Address_2______CI__Post_Code_</DataField>
+        </Field>
+        <Field Name="CI_City">
+          <DataField>CI_City</DataField>
+        </Field>
+        <Field Name="CI_PhoneNo">
+          <DataField>CI_PhoneNo</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="TrainingInstitution_StudentProcessingHeader">
+          <DataField>TrainingInstitution_StudentProcessingHeader</DataField>
+        </Field>
+        <Field Name="BookingHeaderNo_StudentBookingLines">
+          <DataField>BookingHeaderNo_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="LineNo_StudentBookingLines">
+          <DataField>LineNo_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="CourseId_StudentBookingLines">
+          <DataField>CourseId_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="Section_StudentBookingLines">
+          <DataField>Section_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="Part_StudentBookingLines">
+          <DataField>Part_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="Paper_StudentBookingLines">
+          <DataField>Paper_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="Description_StudentBookingLines">
+          <DataField>Description_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="CurrencyCode_StudentBookingLines">
+          <DataField>CurrencyCode_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="Amount_StudentBookingLines">
+          <DataField>Amount_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="Amount_StudentBookingLinesFormat">
+          <DataField>Amount_StudentBookingLinesFormat</DataField>
+        </Field>
+        <Field Name="AmountLCY_StudentBookingLines">
+          <DataField>AmountLCY_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="AmountLCY_StudentBookingLinesFormat">
+          <DataField>AmountLCY_StudentBookingLinesFormat</DataField>
+        </Field>
+        <Field Name="RegistrationNo_StudentBookingLines">
+          <DataField>RegistrationNo_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="Name_StudentBookingLines">
+          <DataField>Name_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="PreferredExamCenter_StudentBookingLines">
+          <DataField>PreferredExamCenter_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="SittingCycle_StudentBookingLines">
+          <DataField>SittingCycle_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="Year_StudentBookingLines">
+          <DataField>Year_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="Blocked_StudentBookingLines">
+          <DataField>Blocked_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="Type_StudentBookingLines">
+          <DataField>Type_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="Exempted_StudentBookingLines">
+          <DataField>Exempted_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="BookingType_StudentBookingLines">
+          <DataField>BookingType_StudentBookingLines</DataField>
+        </Field>
+        <Field Name="DocumentType_StudentBookingLines">
+          <DataField>DocumentType_StudentBookingLines</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

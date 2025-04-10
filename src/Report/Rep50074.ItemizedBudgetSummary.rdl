@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="DimensionTotalHeaderCode">
+          <DataField>DimensionTotalHeaderCode</DataField>
+        </Field>
+        <Field Name="DimensionTotalHeaderDescription">
+          <DataField>DimensionTotalHeaderDescription</DataField>
+        </Field>
+        <Field Name="PrevYearCode">
+          <DataField>PrevYearCode</DataField>
+        </Field>
+        <Field Name="CurrYear">
+          <DataField>CurrYear</DataField>
+        </Field>
+        <Field Name="NextYear">
+          <DataField>NextYear</DataField>
+        </Field>
+        <Field Name="ClassType">
+          <DataField>ClassType</DataField>
+        </Field>
+        <Field Name="NextYearBut1">
+          <DataField>NextYearBut1</DataField>
+        </Field>
+        <Field Name="DimensionHeaderValuePrevYearEstimate">
+          <DataField>DimensionHeaderValuePrevYearEstimate</DataField>
+        </Field>
+        <Field Name="DimensionHeaderValuePrevYearEstimateFormat">
+          <DataField>DimensionHeaderValuePrevYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="DimensionHeaderValueCurrYearEstimate">
+          <DataField>DimensionHeaderValueCurrYearEstimate</DataField>
+        </Field>
+        <Field Name="DimensionHeaderValueCurrYearEstimateFormat">
+          <DataField>DimensionHeaderValueCurrYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="DimensionHeaderValueNextYearEstimate">
+          <DataField>DimensionHeaderValueNextYearEstimate</DataField>
+        </Field>
+        <Field Name="DimensionHeaderValueNextYearEstimateFormat">
+          <DataField>DimensionHeaderValueNextYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="DimensionHeaderValueNextYearBut1Estimate">
+          <DataField>DimensionHeaderValueNextYearBut1Estimate</DataField>
+        </Field>
+        <Field Name="DimensionHeaderValueNextYearBut1EstimateFormat">
+          <DataField>DimensionHeaderValueNextYearBut1EstimateFormat</DataField>
+        </Field>
+        <Field Name="CumulativeValuePrevYearEstimate">
+          <DataField>CumulativeValuePrevYearEstimate</DataField>
+        </Field>
+        <Field Name="CumulativeValuePrevYearEstimateFormat">
+          <DataField>CumulativeValuePrevYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="CumulativeValueCurrYearEstimate">
+          <DataField>CumulativeValueCurrYearEstimate</DataField>
+        </Field>
+        <Field Name="CumulativeValueCurrYearEstimateFormat">
+          <DataField>CumulativeValueCurrYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="CumulativeValueNextYearEstimate">
+          <DataField>CumulativeValueNextYearEstimate</DataField>
+        </Field>
+        <Field Name="CumulativeValueNextYearEstimateFormat">
+          <DataField>CumulativeValueNextYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="CumulativeValueNextYearBut1Estimate">
+          <DataField>CumulativeValueNextYearBut1Estimate</DataField>
+        </Field>
+        <Field Name="CumulativeValueNextYearBut1EstimateFormat">
+          <DataField>CumulativeValueNextYearBut1EstimateFormat</DataField>
+        </Field>
+        <Field Name="DimensionValueCode">
+          <DataField>DimensionValueCode</DataField>
+        </Field>
+        <Field Name="DimensionValueDescription">
+          <DataField>DimensionValueDescription</DataField>
+        </Field>
+        <Field Name="DimensionValuePrevYearEstimate">
+          <DataField>DimensionValuePrevYearEstimate</DataField>
+        </Field>
+        <Field Name="DimensionValuePrevYearEstimateFormat">
+          <DataField>DimensionValuePrevYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="DimensionValueCurrYearEstimate">
+          <DataField>DimensionValueCurrYearEstimate</DataField>
+        </Field>
+        <Field Name="DimensionValueCurrYearEstimateFormat">
+          <DataField>DimensionValueCurrYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="DimensionValueNextYearEstimate">
+          <DataField>DimensionValueNextYearEstimate</DataField>
+        </Field>
+        <Field Name="DimensionValueNextYearEstimateFormat">
+          <DataField>DimensionValueNextYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="DimensionValueNextYearBut1Estimate">
+          <DataField>DimensionValueNextYearBut1Estimate</DataField>
+        </Field>
+        <Field Name="DimensionValueNextYearBut1EstimateFormat">
+          <DataField>DimensionValueNextYearBut1EstimateFormat</DataField>
+        </Field>
+        <Field Name="AccountDetailsCounter">
+          <DataField>AccountDetailsCounter</DataField>
+        </Field>
+        <Field Name="AccountDetailsCode">
+          <DataField>AccountDetailsCode</DataField>
+        </Field>
+        <Field Name="AccountDetailsDescription">
+          <DataField>AccountDetailsDescription</DataField>
+        </Field>
+        <Field Name="AccountIsHeader">
+          <DataField>AccountIsHeader</DataField>
+        </Field>
+        <Field Name="AccountPrevYearEstimate">
+          <DataField>AccountPrevYearEstimate</DataField>
+        </Field>
+        <Field Name="AccountPrevYearEstimateFormat">
+          <DataField>AccountPrevYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="AccountCurrYearEstimate">
+          <DataField>AccountCurrYearEstimate</DataField>
+        </Field>
+        <Field Name="AccountCurrYearEstimateFormat">
+          <DataField>AccountCurrYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="AccountNextYearEstimate">
+          <DataField>AccountNextYearEstimate</DataField>
+        </Field>
+        <Field Name="AccountNextYearEstimateFormat">
+          <DataField>AccountNextYearEstimateFormat</DataField>
+        </Field>
+        <Field Name="AccountNextYearBut1Estimate">
+          <DataField>AccountNextYearBut1Estimate</DataField>
+        </Field>
+        <Field Name="AccountNextYearBut1EstimateFormat">
+          <DataField>AccountNextYearBut1EstimateFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

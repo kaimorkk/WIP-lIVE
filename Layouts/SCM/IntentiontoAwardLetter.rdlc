@@ -1,0 +1,1606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>33662b91-de1a-4d56-9cc1-2271c0d5091c</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+        </Field>
+        <Field Name="PhysicalAddress">
+          <DataField>PhysicalAddress</DataField>
+        </Field>
+        <Field Name="COAddress">
+          <DataField>COAddress</DataField>
+        </Field>
+        <Field Name="TelNo">
+          <DataField>TelNo</DataField>
+        </Field>
+        <Field Name="MobileNo">
+          <DataField>MobileNo</DataField>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="Website">
+          <DataField>Website</DataField>
+        </Field>
+        <Field Name="Code_BidTabulationHeader">
+          <DataField>Code_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentType_BidTabulationHeader">
+          <DataField>DocumentType_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="IFSCode_BidTabulationHeader">
+          <DataField>IFSCode_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentDate_BidTabulationHeader">
+          <DataField>DocumentDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinalEvaluationReportID_BidTabulationHeader">
+          <DataField>FinalEvaluationReportID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Description_BidTabulationHeader">
+          <DataField>Description_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="TenderName_BidTabulationHeader">
+          <DataField>TenderName_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="RaisedBy_BidTabulationHeader">
+          <DataField>RaisedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Name_BidTabulationHeader">
+          <DataField>Name_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="TenderCommitteeRole_BidTabulationHeader">
+          <DataField>TenderCommitteeRole_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DesignationTitle_BidTabulationHeader">
+          <DataField>DesignationTitle_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AnnualProcurementPlanID_BidTabulationHeader">
+          <DataField>AnnualProcurementPlanID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanDate_BidTabulationHeader">
+          <DataField>ProcurementPlanDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinancialYearCode_BidTabulationHeader">
+          <DataField>FinancialYearCode_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanLineNo_BidTabulationHeader">
+          <DataField>ProcurementPlanLineNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanEntryNo_BidTabulationHeader">
+          <DataField>ProcurementPlanEntryNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_BidTabulationHeader">
+          <DataField>AvailableProcurementBudget_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_BidTabulationHeaderFormat">
+          <DataField>AvailableProcurementBudget_BidTabulationHeaderFormat</DataField>
+        </Field>
+        <Field Name="BudgetNarration_BidTabulationHeader">
+          <DataField>BudgetNarration_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningDate_BidTabulationHeader">
+          <DataField>BidOpeningDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="EvaluationCompletionDate_BidTabulationHeader">
+          <DataField>EvaluationCompletionDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AppointedBidOpeningComm_BidTabulationHeader">
+          <DataField>AppointedBidOpeningComm_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AppointedBidEvaluationCom_BidTabulationHeader">
+          <DataField>AppointedBidEvaluationCom_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PrimaryRegion_BidTabulationHeader">
+          <DataField>PrimaryRegion_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_BidTabulationHeader">
+          <DataField>ApprovalStatus_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProfessionalOpinionID_BidTabulationHeader">
+          <DataField>ProfessionalOpinionID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidNo_BidTabulationHeader">
+          <DataField>AwardedBidNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidderNo_BidTabulationHeader">
+          <DataField>AwardedBidderNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidderName_BidTabulationHeader">
+          <DataField>AwardedBidderName_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardTenderSumIncTaxes_BidTabulationHeader">
+          <DataField>AwardTenderSumIncTaxes_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardTenderSumIncTaxes_BidTabulationHeaderFormat">
+          <DataField>AwardTenderSumIncTaxes_BidTabulationHeaderFormat</DataField>
+        </Field>
+        <Field Name="AwardAcceptanceDeadline_BidTabulationHeader">
+          <DataField>AwardAcceptanceDeadline_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardAcceptanceResponse_BidTabulationHeader">
+          <DataField>AwardAcceptanceResponse_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="MinContractHolding_BidTabulationHeader">
+          <DataField>MinContractHolding_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="EarliestContractIssuanceDt_BidTabulationHeader">
+          <DataField>EarliestContractIssuanceDt_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidderNoAResponseType_BidTabulationHeader">
+          <DataField>BidderNoAResponseType_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidderNoAResponseDate_BidTabulationHeader">
+          <DataField>BidderNoAResponseDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofPostAwardDisputes_BidTabulationHeader">
+          <DataField>NoofPostAwardDisputes_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentStatus_BidTabulationHeader">
+          <DataField>DocumentStatus_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoSeries_BidTabulationHeader">
+          <DataField>NoSeries_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedBy_BidTabulationHeader">
+          <DataField>CreatedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedDate_BidTabulationHeader">
+          <DataField>CreatedDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedTime_BidTabulationHeader">
+          <DataField>CreatedTime_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Posted_BidTabulationHeader">
+          <DataField>Posted_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PostedBy_BidTabulationHeader">
+          <DataField>PostedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PostedDate_BidTabulationHeader">
+          <DataField>PostedDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinancialEvaluationID_BidTabulationHeader">
+          <DataField>FinancialEvaluationID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="GeneralProcurementRemarks_BidTabulationHeader">
+          <DataField>GeneralProcurementRemarks_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Noofsubmittedbids_BidTabulationHeader">
+          <DataField>Noofsubmittedbids_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofOpenedBidsTech_BidTabulationHeader">
+          <DataField>NoofOpenedBidsTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofOpenedBidsFinance_BidTabulationHeader">
+          <DataField>NoofOpenedBidsFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofResponsiveTech_BidTabulationHeader">
+          <DataField>NoofResponsiveTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofnonResponsiveTech_BidTabulationHeader">
+          <DataField>NoofnonResponsiveTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofResponsiveFinance_BidTabulationHeader">
+          <DataField>NoofResponsiveFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofnonResponsiveFinance_BidTabulationHeader">
+          <DataField>NoofnonResponsiveFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningRegisterTech_BidTabulationHeader">
+          <DataField>BidOpeningRegisterTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningRegisterFinance_BidTabulationHeader">
+          <DataField>BidOpeningRegisterFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementOfficerLicenseNo_BidTabulationHeader">
+          <DataField>ProcurementOfficerLicenseNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementMethod_BidTabulationHeader">
+          <DataField>ProcurementMethod_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcessType_BidTabulationHeader">
+          <DataField>ProcessType_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="IFPCode_BidTabulationHeader">
+          <DataField>IFPCode_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PrequalificationCategory_BidTabulationHeader">
+          <DataField>PrequalificationCategory_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CategoryName_BidTabulationHeader">
+          <DataField>CategoryName_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Appealed_BidTabulationHeader">
+          <DataField>Appealed_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="LinkedtoNOA_BidTabulationHeader">
+          <DataField>LinkedtoNOA_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ReasonforRejection_BidTabulationHeader">
+          <DataField>ReasonforRejection_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ReasonforTenderTermination_BidTabulationHeader">
+          <DataField>ReasonforTenderTermination_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="TenderCancellationReason_BidTabulationHeader">
+          <DataField>TenderCancellationReason_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="TerminationRequest_BidTabulationHeader">
+          <DataField>TerminationRequest_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="TabulationID_BidTabulationLine">
+          <DataField>TabulationID_BidTabulationLine</DataField>
+        </Field>
+        <Field Name="TabulationType_BidTabulationLine">
+          <DataField>TabulationType_BidTabulationLine</DataField>
+        </Field>
+        <Field Name="DocumentType_BidTabulationLine">
+          <DataField>DocumentType_BidTabulationLine</DataField>
+        </Field>
+        <Field Name="No_BidTabulationLine">
+          <DataField>No_BidTabulationLine</DataField>
+        </Field>
+        <Field Name="BidderNo_BidTabulationLine">
+          <DataField>BidderNo_BidTabulationLine</DataField>
+        </Field>
+        <Field Name="BidderName_BidTabulationLine">
+          <DataField>BidderName_BidTabulationLine</DataField>
+        </Field>
+        <Field Name="InvitationForSupplyNo_BidTabulationLine">
+          <DataField>InvitationForSupplyNo_BidTabulationLine</DataField>
+        </Field>
+        <Field Name="FinalEvaluatedBidPrice_BidTabulationLine">
+          <DataField>FinalEvaluatedBidPrice_BidTabulationLine</DataField>
+        </Field>
+        <Field Name="FinalEvaluatedBidPrice_BidTabulationLineFormat">
+          <DataField>FinalEvaluatedBidPrice_BidTabulationLineFormat</DataField>
+        </Field>
+        <Field Name="ProfessionalOpinionOutcome_BidTabulationLine">
+          <DataField>ProfessionalOpinionOutcome_BidTabulationLine</DataField>
+        </Field>
+        <Field Name="ReadoutBidPriceA_BidTabulationLine">
+          <DataField>ReadoutBidPriceA_BidTabulationLine</DataField>
+        </Field>
+        <Field Name="ReadoutBidPriceA_BidTabulationLineFormat">
+          <DataField>ReadoutBidPriceA_BidTabulationLineFormat</DataField>
+        </Field>
+        <Field Name="DueDiligenceReportID_BidTabulationLine">
+          <DataField>DueDiligenceReportID_BidTabulationLine</DataField>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet</rd:DataSetName>
+        <rd:SchemaPath>Report.xsd</rd:SchemaPath>
+        <rd:TableName>Result</rd:TableName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Ref.:                                                                                                     	        Date: </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!DocumentDate_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <Format>d</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">
+
+</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!AwardedBidderName_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">
+
+Dear Sir/Madam
+
+RE: </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!TenderName_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">
+
+                         	</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">NOTIFICATION OF INTENTION TO ENTER INTO A CONTRACT</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">
+
+This Notification is sent by: email and postal address on </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!DocumentDate_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> (local time) by </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!TenderName_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">,  in regards to </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!TenderName_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">
+Pursuant to Sec. 87 of the PPAD Act,2015, this Notification of Intention to Award (Notification) notifies you of our decision to award the above contract. The transmission of this Notification begins the Standstill Period. During the Standstill Period, you may:
+
+          a)	Request a debriefing in relation to the evaluation of your Tender, and/or
+          b)	Submit a Procurement-related Complaint in relation to the decision to award the contract.</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">
+</Value>
+                    <Style>
+                      <TextDecoration>None</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>1.60194in</Top>
+            <Left>0.23833in</Left>
+            <Height>2.78471in</Height>
+            <Width>7.18055in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.87905in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.87905in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.87905in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.5434in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.375in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">S/ No.</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Name of Bidder</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox7">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Tender Price (KShs)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Evaluated Tender Price (KShs.)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.375in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="BidderNo_BidTabulationLine">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!BidderNo_BidTabulationLine.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>BidderNo_BidTabulationLine</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="BidderName_BidTabulationLine">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!BidderName_BidTabulationLine.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>BidderName_BidTabulationLine</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ReadoutBidPriceA_BidTabulationLine">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!ReadoutBidPriceA_BidTabulationLine.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ReadoutBidPriceA_BidTabulationLine</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="FinalEvaluatedBidPrice_BidTabulationLine">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">=Fields!FinalEvaluatedBidPrice_BidTabulationLine.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>FinalEvaluatedBidPrice_BidTabulationLine</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>6.1436in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.75in</Height>
+            <Width>7.18055in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">The deadline to request a debriefing expires at midnight, the same day of expiration of stand still period stated under part 5 below.
+
+You may request a debriefing in relation to the results of the evaluation of your Tender. If you decide to request a debriefing, your written request must be made within three (3) Business Days of receipt of this Notification of Intention to Award. Provide the contract name, reference number, name of the tenderer, contact details; and address the request for debriefing as follows:
+
+ </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Attention: 	The Director General 
+                   Kenya Rural Roads Authority
+                   Email address: </Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">procurement@Judiciary.go.ke</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>Blue</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">
+
+If your request for a debriefing is received within the 3 Business Days deadline, we will provide the debriefing within three (3) Business Days of receipt of your request. If we are unable to provide the debriefing within this period, the Standstill Period shall be extended by three (3) Business Days after the date that the debriefing is provided. If this happens, we will notify you and confirm the date that the extended Standstill Period will end. The debriefing may be in writing, by phone, video conference call or in person. We shall promptly advise you in writing how the debriefing will take place and confirm the date and time.
+
+If the deadline to request a debriefing has expired, you may still request a debriefing. In this case, we will provide the debriefing as soon as practicable, and normally no later than fifteen (15) Business Days from the date of publication of the Contract Award Notice.
+</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>7.25471in</Top>
+            <Left>0.23833in</Left>
+            <Height>3.61111in</Height>
+            <Width>7.18055in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox6">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">3.	How to request a debriefing</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>6.93527in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.29167in</Height>
+            <Width>7.18055in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>Green</BackgroundColor>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox8">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Procurement-related Complaint challenging the decision to award shall be submitted by midnight, the same day of expiration of stand still period.
+
+Provide the contract name, reference number, name of the tenderer, contact details; and address the Procurement- related Complaint as follows:
+
+</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Attention: 	The Director General 
+                 Kenya Rural Roads Authority
+                Email address: </Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">procuremen@Judiciary.go.ke</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>Blue</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">
+
+At this point in the procurement process, you may submit a Procurement-related Complaint challenging the decision to award the contract. You do not need to have requested, or received, a debriefing before making this complaint. Your complaint must be submitted within the Standstill Period and received by us before the Standstill Period ends.</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox8</rd:DefaultName>
+            <Top>11.21305in</Top>
+            <Left>0.23833in</Left>
+            <Height>2.27084in</Height>
+            <Width>7.27779in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox10">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">4.	How to make a complaint</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox10</rd:DefaultName>
+            <Top>10.87971in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.29167in</Height>
+            <Width>7.27779in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>Green</BackgroundColor>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox11">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">In summary, there are five essential requirements:</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>13.50248in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.29167in</Height>
+            <Width>7.27779in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>Green</BackgroundColor>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox12">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">a)	You must be an 'interested party'. In this case, that means a Tenderer who submitted a Tender in this tendering            process and is the recipient of a Notification of Intention to Award.
+b)	The complaint can only challenge the decision to award the contract.
+c)	You must submit the complaint within the period stated above.
+d)	You must include, in your complaint, all of the information necessary to support your case.
+e)	The application must be accompanied by the fees set out in the Procurement Regulations, which shall not be                 refundable (information available from the Public Procurement Authority at </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">www.ppra.go.ke.</Value>
+                    <Style>
+                      <Color>Blue</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">
+</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox12</rd:DefaultName>
+            <Top>13.83582in</Top>
+            <Left>0.23833in</Left>
+            <Height>1.23611in</Height>
+            <Width>7.27779in</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox13">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">5.	Standstill Period</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox13</rd:DefaultName>
+            <Top>15.08582in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.29167in</Height>
+            <Width>7.27779in</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>Green</BackgroundColor>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox14">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">a)	The Standstill Period lasts fourteen (14) Days after the date of transmission of this Notification of Intention to Award.
+
+If you have any questions regarding this Notifcation please do not hesitate to contact us on the addresses provided above. 
+
+Yours faithfully,
+</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox14</rd:DefaultName>
+            <Top>15.36359in</Top>
+            <Left>0.23833in</Left>
+            <Height>1.22917in</Height>
+            <Width>7.27779in</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox15">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Eng. Philemon K. Kandie
+</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Ag. DIRECTOR GENERAL</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">
+
+CC. Director - Road Asset Management
+	
+DD (SCM)
+</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox15</rd:DefaultName>
+            <Top>16.63443in</Top>
+            <Left>0.23833in</Left>
+            <Height>1.10889in</Height>
+            <Width>7.27779in</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox16">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">2.	Other Tenderers: Pursuant to Sec. 87(3) of the PPAD Act, 2015.</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox16</rd:DefaultName>
+            <Top>5.82415in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.29167in</Height>
+            <Width>7.18055in</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>Green</BackgroundColor>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox17">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">We intend to award the above tender to you  ………</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!AwardedBidderName_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">………….. at your bid sum of Kshs. ……</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!AwardTenderSumIncTaxes_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">………. being the lowest evaluated bidder, pursuant to section 86 (1) (a) of the Public Procurement and Asset Disposal, Act 2015. 
+
+The letter of award will be done after the expiry of the standstill period, as indicated in Part 5 below.</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox17</rd:DefaultName>
+            <Top>4.77554in</Top>
+            <Left>0.23833in</Left>
+            <Height>1.04861in</Height>
+            <Width>7.18055in</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox18">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">1.	</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">The successful Tenderer</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox18</rd:DefaultName>
+            <Top>4.44221in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.29167in</Height>
+            <Width>7.18055in</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>Green</BackgroundColor>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">KENYA RURAL ROADS AUTHORITY</Value>
+                    <Style>
+                      <Color>Green</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>1.2825in</Top>
+            <Left>2.29388in</Left>
+            <Height>0.25in</Height>
+            <Width>2.91667in</Width>
+            <ZIndex>14</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Image Name="Image1">
+            <Source>Database</Source>
+            <Value>=First(Fields!Logo.Value, "DataSet_Result")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.06945in</Top>
+            <Left>3.25222in</Left>
+            <Height>1.17138in</Height>
+            <Width>1.54861in</Width>
+            <ZIndex>15</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Textbox Name="Textbox19">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Barabara Plaza, Block B,
+Mazao Road, </Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Off Airport South Road, JKIA
+</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox19</rd:DefaultName>
+            <Top>0.04862in</Top>
+            <Left>5.87548in</Left>
+            <Height>0.21528in</Height>
+            <Width>1.61284in</Width>
+            <ZIndex>16</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox21">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">P. O. Box 48151-00100,</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox21</rd:DefaultName>
+            <Top>0.30556in</Top>
+            <Left>5.87548in</Left>
+            <Height>0.25in</Height>
+            <Width>1.61284in</Width>
+            <ZIndex>17</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox22">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Tel: 020-7807600/01-05</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox22</rd:DefaultName>
+            <Top>0.15973in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.21528in</Height>
+            <Width>1.60417in</Width>
+            <ZIndex>18</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox23">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Mobile No: 0711-851103</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox23</rd:DefaultName>
+            <Top>0.375in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.22222in</Height>
+            <Width>1.60417in</Width>
+            <ZIndex>19</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox24">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">General Email:</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">info@Judiciary.go.ke</Value>
+                    <Style>
+                      <Color>Blue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox24</rd:DefaultName>
+            <Top>0.61111in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.25in</Height>
+            <Width>2.21933in</Width>
+            <ZIndex>20</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox25">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Website: </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">www.Judiciary.go.ke</Value>
+                    <Style>
+                      <Color>Blue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox25</rd:DefaultName>
+            <Top>0.875in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.25in</Height>
+            <Width>2.21933in</Width>
+            <ZIndex>21</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox20">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Nairobi, Kenya</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox20</rd:DefaultName>
+            <Top>0.61111in</Top>
+            <Left>5.87548in</Left>
+            <Height>0.25in</Height>
+            <Width>1.61284in</Width>
+            <ZIndex>22</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>17.78944in</Height>
+        <Style />
+      </Body>
+      <Width>7.62028in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.36111in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox26">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">Connecting Devolved Kenya</Value>
+                      <Style>
+                        <Color>Green</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox26</rd:DefaultName>
+              <Top>0.06944in</Top>
+              <Left>2.87722in</Left>
+              <Height>0.25in</Height>
+              <Width>1.92361in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+</Report>

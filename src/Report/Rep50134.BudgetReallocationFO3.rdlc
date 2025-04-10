@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="CreatedOn">
+          <DataField>CreatedOn</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="PostedBy">
+          <DataField>PostedBy</DataField>
+        </Field>
+        <Field Name="PostedOn">
+          <DataField>PostedOn</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_BudgetModificationLines">
+          <DataField>GlobalDimension2Code_BudgetModificationLines</DataField>
+        </Field>
+        <Field Name="BudgetCode_BudgetModificationLines">
+          <DataField>BudgetCode_BudgetModificationLines</DataField>
+        </Field>
+        <Field Name="AdjustmentAmount_BudgetModificationLines">
+          <DataField>AdjustmentAmount_BudgetModificationLines</DataField>
+        </Field>
+        <Field Name="AdjustmentAmount_BudgetModificationLinesFormat">
+          <DataField>AdjustmentAmount_BudgetModificationLinesFormat</DataField>
+        </Field>
+        <Field Name="GLAccountNo_BudgetModificationLines">
+          <DataField>GLAccountNo_BudgetModificationLines</DataField>
+        </Field>
+        <Field Name="GLAccountName_BudgetModificationLines">
+          <DataField>GLAccountName_BudgetModificationLines</DataField>
+        </Field>
+        <Field Name="ShortcutDimension3Code_BudgetModificationLines">
+          <DataField>ShortcutDimension3Code_BudgetModificationLines</DataField>
+        </Field>
+        <Field Name="ShortcutDimension4Code_BudgetModificationLines">
+          <DataField>ShortcutDimension4Code_BudgetModificationLines</DataField>
+        </Field>
+        <Field Name="ShortcutDimension5Code_BudgetModificationLines">
+          <DataField>ShortcutDimension5Code_BudgetModificationLines</DataField>
+        </Field>
+        <Field Name="ShortcutDimension6Code_BudgetModificationLines">
+          <DataField>ShortcutDimension6Code_BudgetModificationLines</DataField>
+        </Field>
+        <Field Name="AllocatedAmt1">
+          <DataField>AllocatedAmt1</DataField>
+        </Field>
+        <Field Name="AllocatedAmt1Format">
+          <DataField>AllocatedAmt1Format</DataField>
+        </Field>
+        <Field Name="SupplimentaryAmt1">
+          <DataField>SupplimentaryAmt1</DataField>
+        </Field>
+        <Field Name="SupplimentaryAmt1Format">
+          <DataField>SupplimentaryAmt1Format</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_BudgetReallocationLine">
+          <DataField>GlobalDimension2Code_BudgetReallocationLine</DataField>
+        </Field>
+        <Field Name="AdjustmentAmount_BudgetReallocationLine">
+          <DataField>AdjustmentAmount_BudgetReallocationLine</DataField>
+        </Field>
+        <Field Name="AdjustmentAmount_BudgetReallocationLineFormat">
+          <DataField>AdjustmentAmount_BudgetReallocationLineFormat</DataField>
+        </Field>
+        <Field Name="BudgetCode_BudgetReallocationLine">
+          <DataField>BudgetCode_BudgetReallocationLine</DataField>
+        </Field>
+        <Field Name="GLAccountName_BudgetReallocationLine">
+          <DataField>GLAccountName_BudgetReallocationLine</DataField>
+        </Field>
+        <Field Name="GLAccountNo_BudgetReallocationLine">
+          <DataField>GLAccountNo_BudgetReallocationLine</DataField>
+        </Field>
+        <Field Name="ShortcutDimension3Code_BudgetReallocationLine">
+          <DataField>ShortcutDimension3Code_BudgetReallocationLine</DataField>
+        </Field>
+        <Field Name="ShortcutDimension4Code_BudgetReallocationLine">
+          <DataField>ShortcutDimension4Code_BudgetReallocationLine</DataField>
+        </Field>
+        <Field Name="ShortcutDimension5Code_BudgetReallocationLine">
+          <DataField>ShortcutDimension5Code_BudgetReallocationLine</DataField>
+        </Field>
+        <Field Name="ShortcutDimension6Code_BudgetReallocationLine">
+          <DataField>ShortcutDimension6Code_BudgetReallocationLine</DataField>
+        </Field>
+        <Field Name="ShortcutDimension7Code_BudgetReallocationLine">
+          <DataField>ShortcutDimension7Code_BudgetReallocationLine</DataField>
+        </Field>
+        <Field Name="AllocatedAmt">
+          <DataField>AllocatedAmt</DataField>
+        </Field>
+        <Field Name="AllocatedAmtFormat">
+          <DataField>AllocatedAmtFormat</DataField>
+        </Field>
+        <Field Name="SupplimentaryAmt">
+          <DataField>SupplimentaryAmt</DataField>
+        </Field>
+        <Field Name="SupplimentaryAmtFormat">
+          <DataField>SupplimentaryAmtFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="CI_NameCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CI_NameCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CI_NameCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CI_AddressCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CI_AddressCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CI_AddressCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CI_Address2Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CI_Address2Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CI_Address2Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CI_PhoneNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CI_PhoneNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CI_PhoneNoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CI_PictureCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CI_PictureCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CI_PictureCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CI_CityCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CI_CityCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CI_CityCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CI_Name">
+          <DataField>CI_Name</DataField>
+        </Field>
+        <Field Name="CI_Address">
+          <DataField>CI_Address</DataField>
+        </Field>
+        <Field Name="CI_Address2">
+          <DataField>CI_Address2</DataField>
+        </Field>
+        <Field Name="CI_PhoneNo">
+          <DataField>CI_PhoneNo</DataField>
+        </Field>
+        <Field Name="CI_Picture">
+          <DataField>CI_Picture</DataField>
+        </Field>
+        <Field Name="CI_City">
+          <DataField>CI_City</DataField>
+        </Field>
+        <Field Name="Actual">
+          <DataField>Actual</DataField>
+        </Field>
+        <Field Name="ActualFormat">
+          <DataField>ActualFormat</DataField>
+        </Field>
+        <Field Name="ActualEndDate">
+          <DataField>ActualEndDate</DataField>
+        </Field>
+        <Field Name="ActualStartDate">
+          <DataField>ActualStartDate</DataField>
+        </Field>
+        <Field Name="ApplicationDate">
+          <DataField>ApplicationDate</DataField>
+        </Field>
+        <Field Name="ApprovedCost">
+          <DataField>ApprovedCost</DataField>
+        </Field>
+        <Field Name="ApprovedCostFormat">
+          <DataField>ApprovedCostFormat</DataField>
+        </Field>
+        <Field Name="AvailableFunds">
+          <DataField>AvailableFunds</DataField>
+        </Field>
+        <Field Name="AvailableFundsFormat">
+          <DataField>AvailableFundsFormat</DataField>
+        </Field>
+        <Field Name="BondPenalty">
+          <DataField>BondPenalty</DataField>
+        </Field>
+        <Field Name="BondPenaltyFormat">
+          <DataField>BondPenaltyFormat</DataField>
+        </Field>
+        <Field Name="Bonded">
+          <DataField>Bonded</DataField>
+        </Field>
+        <Field Name="BondingPeriod">
+          <DataField>BondingPeriod</DataField>
+        </Field>
+        <Field Name="Budget">
+          <DataField>Budget</DataField>
+        </Field>
+        <Field Name="BudgetFormat">
+          <DataField>BudgetFormat</DataField>
+        </Field>
+        <Field Name="BudgetName">
+          <DataField>BudgetName</DataField>
+        </Field>
+        <Field Name="Code">
+          <DataField>Code</DataField>
+        </Field>
+        <Field Name="Commitment">
+          <DataField>Commitment</DataField>
+        </Field>
+        <Field Name="CommitmentFormat">
+          <DataField>CommitmentFormat</DataField>
+        </Field>
+        <Field Name="Cost">
+          <DataField>Cost</DataField>
+        </Field>
+        <Field Name="CostFormat">
+          <DataField>CostFormat</DataField>
+        </Field>
+        <Field Name="CourseTitle">
+          <DataField>CourseTitle</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="CreatedOn">
+          <DataField>CreatedOn</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Duration">
+          <DataField>Duration</DataField>
+        </Field>
+        <Field Name="DurationFormat">
+          <DataField>DurationFormat</DataField>
+        </Field>
+        <Field Name="DurationType">
+          <DataField>DurationType</DataField>
+        </Field>
+        <Field Name="EmployeeDepartment">
+          <DataField>EmployeeDepartment</DataField>
+        </Field>
+        <Field Name="EmployeeName">
+          <DataField>EmployeeName</DataField>
+        </Field>
+        <Field Name="EmployeeNo">
+          <DataField>EmployeeNo</DataField>
+        </Field>
+        <Field Name="EndDate">
+          <DataField>EndDate</DataField>
+        </Field>
+        <Field Name="EntryNo">
+          <DataField>EntryNo</DataField>
+        </Field>
+        <Field Name="EstimatedCost">
+          <DataField>EstimatedCost</DataField>
+        </Field>
+        <Field Name="EstimatedCostFormat">
+          <DataField>EstimatedCostFormat</DataField>
+        </Field>
+        <Field Name="EvaluationSummary">
+          <DataField>EvaluationSummary</DataField>
+        </Field>
+        <Field Name="ExpectedBondEnd">
+          <DataField>ExpectedBondEnd</DataField>
+        </Field>
+        <Field Name="ExpectedBondStart">
+          <DataField>ExpectedBondStart</DataField>
+        </Field>
+        <Field Name="FundingSource">
+          <DataField>FundingSource</DataField>
+        </Field>
+        <Field Name="GLAccount">
+          <DataField>GLAccount</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code">
+          <DataField>GlobalDimension1Code</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code">
+          <DataField>GlobalDimension2Code</DataField>
+        </Field>
+        <Field Name="ImprestCreated">
+          <DataField>ImprestCreated</DataField>
+        </Field>
+        <Field Name="Local">
+          <DataField>Local</DataField>
+        </Field>
+        <Field Name="Location">
+          <DataField>Location</DataField>
+        </Field>
+        <Field Name="MemoNo">
+          <DataField>MemoNo</DataField>
+        </Field>
+        <Field Name="NoSeries">
+          <DataField>NoSeries</DataField>
+        </Field>
+        <Field Name="NoofParticipants">
+          <DataField>NoofParticipants</DataField>
+        </Field>
+        <Field Name="OtherCosts">
+          <DataField>OtherCosts</DataField>
+        </Field>
+        <Field Name="OtherCostsFormat">
+          <DataField>OtherCostsFormat</DataField>
+        </Field>
+        <Field Name="PlannedBudget">
+          <DataField>PlannedBudget</DataField>
+        </Field>
+        <Field Name="PlannedBudgetFormat">
+          <DataField>PlannedBudgetFormat</DataField>
+        </Field>
+        <Field Name="PlannedNotobeTrained">
+          <DataField>PlannedNotobeTrained</DataField>
+        </Field>
+        <Field Name="Provider">
+          <DataField>Provider</DataField>
+        </Field>
+        <Field Name="ProviderName">
+          <DataField>ProviderName</DataField>
+        </Field>
+        <Field Name="Purpose">
+          <DataField>Purpose</DataField>
+        </Field>
+        <Field Name="Requestor">
+          <DataField>Requestor</DataField>
+        </Field>
+        <Field Name="RequiresFlight">
+          <DataField>RequiresFlight</DataField>
+        </Field>
+        <Field Name="ServiceProviderCost">
+          <DataField>ServiceProviderCost</DataField>
+        </Field>
+        <Field Name="ServiceProviderCostFormat">
+          <DataField>ServiceProviderCostFormat</DataField>
+        </Field>
+        <Field Name="StartDate">
+          <DataField>StartDate</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="SupervisorName">
+          <DataField>SupervisorName</DataField>
+        </Field>
+        <Field Name="SupervisorNo">
+          <DataField>SupervisorNo</DataField>
+        </Field>
+        <Field Name="TotalPerdiemCosts">
+          <DataField>TotalPerdiemCosts</DataField>
+        </Field>
+        <Field Name="TotalPerdiemCostsFormat">
+          <DataField>TotalPerdiemCostsFormat</DataField>
+        </Field>
+        <Field Name="TotalProcurementCost">
+          <DataField>TotalProcurementCost</DataField>
+        </Field>
+        <Field Name="TotalProcurementCostFormat">
+          <DataField>TotalProcurementCostFormat</DataField>
+        </Field>
+        <Field Name="TrainingDurationHrs">
+          <DataField>TrainingDurationHrs</DataField>
+        </Field>
+        <Field Name="TrainingDurationHrsFormat">
+          <DataField>TrainingDurationHrsFormat</DataField>
+        </Field>
+        <Field Name="TrainingPlanCost">
+          <DataField>TrainingPlanCost</DataField>
+        </Field>
+        <Field Name="TrainingPlanCostFormat">
+          <DataField>TrainingPlanCostFormat</DataField>
+        </Field>
+        <Field Name="TrainingPlanDescription">
+          <DataField>TrainingPlanDescription</DataField>
+        </Field>
+        <Field Name="TrainingPlanNo">
+          <DataField>TrainingPlanNo</DataField>
+        </Field>
+        <Field Name="TrainingRegion">
+          <DataField>TrainingRegion</DataField>
+        </Field>
+        <Field Name="TrainingResponsibility">
+          <DataField>TrainingResponsibility</DataField>
+        </Field>
+        <Field Name="TrainingTime">
+          <DataField>TrainingTime</DataField>
+        </Field>
+        <Field Name="TrainingType">
+          <DataField>TrainingType</DataField>
+        </Field>
+        <Field Name="TrainingTypes">
+          <DataField>TrainingTypes</DataField>
+        </Field>
+        <Field Name="TrainingVenueRegion">
+          <DataField>TrainingVenueRegion</DataField>
+        </Field>
+        <Field Name="TrainingVenueRegionCode">
+          <DataField>TrainingVenueRegionCode</DataField>
+        </Field>
+        <Field Name="Year">
+          <DataField>Year</DataField>
+        </Field>
+        <Field Name="TrainingCategory_TrainingRequests">
+          <DataField>TrainingCategory_TrainingRequests</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

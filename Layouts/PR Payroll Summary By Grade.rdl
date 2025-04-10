@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Salary_Scale">
+          <DataField>Salary_Scale</DataField>
+        </Field>
+        <Field Name="TransactionCode_PRPeriodTransactions">
+          <DataField>TransactionCode_PRPeriodTransactions</DataField>
+        </Field>
+        <Field Name="Amount_PRPeriodTransactions">
+          <DataField>Amount_PRPeriodTransactions</DataField>
+        </Field>
+        <Field Name="Amount_PRPeriodTransactionsFormat">
+          <DataField>Amount_PRPeriodTransactionsFormat</DataField>
+        </Field>
+        <Field Name="EmployeeCode_PRPeriodTransactions">
+          <DataField>EmployeeCode_PRPeriodTransactions</DataField>
+        </Field>
+        <Field Name="TransactionName_PRPeriodTransactions">
+          <DataField>TransactionName_PRPeriodTransactions</DataField>
+        </Field>
+        <Field Name="PeriodMonth_PRPeriodTransactions">
+          <DataField>PeriodMonth_PRPeriodTransactions</DataField>
+        </Field>
+        <Field Name="PeriodYear_PRPeriodTransactions">
+          <DataField>PeriodYear_PRPeriodTransactions</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code_PRPeriodTransactions">
+          <DataField>GlobalDimension1Code_PRPeriodTransactions</DataField>
+        </Field>
+        <Field Name="GroupOrder_PRPeriodTransactions">
+          <DataField>GroupOrder_PRPeriodTransactions</DataField>
+        </Field>
+        <Field Name="SubGroupOrder_PRPeriodTransactions">
+          <DataField>SubGroupOrder_PRPeriodTransactions</DataField>
+        </Field>
+        <Field Name="FullName">
+          <DataField>FullName</DataField>
+        </Field>
+        <Field Name="RowNum">
+          <DataField>RowNum</DataField>
+        </Field>
+        <Field Name="HideDetails">
+          <DataField>HideDetails</DataField>
+        </Field>
+        <Field Name="Global_Dimension_1_Code">
+          <DataField>Global_Dimension_1_Code</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="Gender">
+          <DataField>Gender</DataField>
+        </Field>
+        <Field Name="StationCode">
+          <DataField>StationCode</DataField>
+        </Field>
+        <Field Name="Station">
+          <DataField>Station</DataField>
+        </Field>
+        <Field Name="OrgUnit">
+          <DataField>OrgUnit</DataField>
+        </Field>
+        <Field Name="Category">
+          <DataField>Category</DataField>
+        </Field>
+        <Field Name="LastPromoDate">
+          <DataField>LastPromoDate</DataField>
+        </Field>
+        <Field Name="CostCenterName">
+          <DataField>CostCenterName</DataField>
+        </Field>
+        <Field Name="Designation">
+          <DataField>Designation</DataField>
+        </Field>
+        <Field Name="Grade">
+          <DataField>Grade</DataField>
+        </Field>
+        <Field Name="ACNumber_HRBankSummary">
+          <DataField>ACNumber_HRBankSummary</DataField>
+        </Field>
+        <Field Name="BankCode_HRBankSummary">
+          <DataField>BankCode_HRBankSummary</DataField>
+        </Field>
+        <Field Name="BankName_HRBankSummary">
+          <DataField>BankName_HRBankSummary</DataField>
+        </Field>
+        <Field Name="BankandBranchCode_HRBankSummary">
+          <DataField>BankandBranchCode_HRBankSummary</DataField>
+        </Field>
+        <Field Name="BranchName_HRBankSummary">
+          <DataField>BranchName_HRBankSummary</DataField>
+        </Field>
+        <Field Name="BranchCode_HRBankSummary">
+          <DataField>BranchCode_HRBankSummary</DataField>
+        </Field>
+        <Field Name="DateofEmployment">
+          <DataField>DateofEmployment</DataField>
+        </Field>
+        <Field Name="Amount_PREmployerDeductions">
+          <DataField>Amount_PREmployerDeductions</DataField>
+        </Field>
+        <Field Name="Amount_PREmployerDeductionsFormat">
+          <DataField>Amount_PREmployerDeductionsFormat</DataField>
+        </Field>
+        <Field Name="EmployeeCode_PREmployerDeductions">
+          <DataField>EmployeeCode_PREmployerDeductions</DataField>
+        </Field>
+        <Field Name="PayrollPeriod_PREmployerDeductions">
+          <DataField>PayrollPeriod_PREmployerDeductions</DataField>
+        </Field>
+        <Field Name="PeriodClosed_PREmployerDeductions">
+          <DataField>PeriodClosed_PREmployerDeductions</DataField>
+        </Field>
+        <Field Name="PeriodMonth_PREmployerDeductions">
+          <DataField>PeriodMonth_PREmployerDeductions</DataField>
+        </Field>
+        <Field Name="PeriodYear_PREmployerDeductions">
+          <DataField>PeriodYear_PREmployerDeductions</DataField>
+        </Field>
+        <Field Name="PostingGroup_PREmployerDeductions">
+          <DataField>PostingGroup_PREmployerDeductions</DataField>
+        </Field>
+        <Field Name="TransactionCode_PREmployerDeductions">
+          <DataField>TransactionCode_PREmployerDeductions</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

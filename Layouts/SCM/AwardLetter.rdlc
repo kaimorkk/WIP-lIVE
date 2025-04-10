@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>a55f9d07-7c87-4c15-96f7-cbc03b4dff7a</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="logo">
+          <DataField>logo</DataField>
+        </Field>
+        <Field Name="CEO">
+          <DataField>CEO</DataField>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+        </Field>
+        <Field Name="Code_BidTabulationHeader">
+          <DataField>Code_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentType_BidTabulationHeader">
+          <DataField>DocumentType_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="IFSCode_BidTabulationHeader">
+          <DataField>IFSCode_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentDate_BidTabulationHeader">
+          <DataField>DocumentDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinalEvaluationReportID_BidTabulationHeader">
+          <DataField>FinalEvaluationReportID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Description_BidTabulationHeader">
+          <DataField>Description_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="TenderName_BidTabulationHeader">
+          <DataField>TenderName_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="RaisedBy_BidTabulationHeader">
+          <DataField>RaisedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Name_BidTabulationHeader">
+          <DataField>Name_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="TenderCommitteeRole_BidTabulationHeader">
+          <DataField>TenderCommitteeRole_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DesignationTitle_BidTabulationHeader">
+          <DataField>DesignationTitle_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AnnualProcurementPlanID_BidTabulationHeader">
+          <DataField>AnnualProcurementPlanID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanDate_BidTabulationHeader">
+          <DataField>ProcurementPlanDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinancialYearCode_BidTabulationHeader">
+          <DataField>FinancialYearCode_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanLineNo_BidTabulationHeader">
+          <DataField>ProcurementPlanLineNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProcurementPlanEntryNo_BidTabulationHeader">
+          <DataField>ProcurementPlanEntryNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_BidTabulationHeader">
+          <DataField>AvailableProcurementBudget_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_BidTabulationHeaderFormat">
+          <DataField>AvailableProcurementBudget_BidTabulationHeaderFormat</DataField>
+        </Field>
+        <Field Name="BudgetNarration_BidTabulationHeader">
+          <DataField>BudgetNarration_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningDate_BidTabulationHeader">
+          <DataField>BidOpeningDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="EvaluationCompletionDate_BidTabulationHeader">
+          <DataField>EvaluationCompletionDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AppointedBidOpeningComm_BidTabulationHeader">
+          <DataField>AppointedBidOpeningComm_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AppointedBidEvaluationCom_BidTabulationHeader">
+          <DataField>AppointedBidEvaluationCom_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PrimaryRegion_BidTabulationHeader">
+          <DataField>PrimaryRegion_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ApprovalStatus_BidTabulationHeader">
+          <DataField>ApprovalStatus_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="ProfessionalOpinionID_BidTabulationHeader">
+          <DataField>ProfessionalOpinionID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidNo_BidTabulationHeader">
+          <DataField>AwardedBidNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidderNo_BidTabulationHeader">
+          <DataField>AwardedBidderNo_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardedBidderName_BidTabulationHeader">
+          <DataField>AwardedBidderName_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardTenderSumIncTaxes_BidTabulationHeader">
+          <DataField>AwardTenderSumIncTaxes_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardTenderSumIncTaxes_BidTabulationHeaderFormat">
+          <DataField>AwardTenderSumIncTaxes_BidTabulationHeaderFormat</DataField>
+        </Field>
+        <Field Name="AwardAcceptanceDeadline_BidTabulationHeader">
+          <DataField>AwardAcceptanceDeadline_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="AwardAcceptanceResponse_BidTabulationHeader">
+          <DataField>AwardAcceptanceResponse_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="MinContractHolding_BidTabulationHeader">
+          <DataField>MinContractHolding_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="EarliestContractIssuanceDt_BidTabulationHeader">
+          <DataField>EarliestContractIssuanceDt_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidderNoAResponseType_BidTabulationHeader">
+          <DataField>BidderNoAResponseType_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidderNoAResponseDate_BidTabulationHeader">
+          <DataField>BidderNoAResponseDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofPostAwardDisputes_BidTabulationHeader">
+          <DataField>NoofPostAwardDisputes_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="DocumentStatus_BidTabulationHeader">
+          <DataField>DocumentStatus_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoSeries_BidTabulationHeader">
+          <DataField>NoSeries_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedBy_BidTabulationHeader">
+          <DataField>CreatedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedDate_BidTabulationHeader">
+          <DataField>CreatedDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="CreatedTime_BidTabulationHeader">
+          <DataField>CreatedTime_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Posted_BidTabulationHeader">
+          <DataField>Posted_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PostedBy_BidTabulationHeader">
+          <DataField>PostedBy_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="PostedDate_BidTabulationHeader">
+          <DataField>PostedDate_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="FinancialEvaluationID_BidTabulationHeader">
+          <DataField>FinancialEvaluationID_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="GeneralProcurementRemarks_BidTabulationHeader">
+          <DataField>GeneralProcurementRemarks_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="Noofsubmittedbids_BidTabulationHeader">
+          <DataField>Noofsubmittedbids_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofOpenedBidsTech_BidTabulationHeader">
+          <DataField>NoofOpenedBidsTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofOpenedBidsFinance_BidTabulationHeader">
+          <DataField>NoofOpenedBidsFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofResponsiveTech_BidTabulationHeader">
+          <DataField>NoofResponsiveTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofnonResponsiveTech_BidTabulationHeader">
+          <DataField>NoofnonResponsiveTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofResponsiveFinance_BidTabulationHeader">
+          <DataField>NoofResponsiveFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="NoofnonResponsiveFinance_BidTabulationHeader">
+          <DataField>NoofnonResponsiveFinance_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningRegisterTech_BidTabulationHeader">
+          <DataField>BidOpeningRegisterTech_BidTabulationHeader</DataField>
+        </Field>
+        <Field Name="BidOpeningRegisterFinance_BidTabulationHeader">
+          <DataField>BidOpeningRegisterFinance_BidTabulationHeader</DataField>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet</rd:DataSetName>
+        <rd:SchemaPath>Report.xsd</rd:SchemaPath>
+        <rd:TableName>Result</rd:TableName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox48">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">REF:</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!IFSCode_BidTabulationHeader.Value</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox48</rd:DefaultName>
+            <Top>0.0619in</Top>
+            <Left>0.13417in</Left>
+            <Height>0.21527in</Height>
+            <Width>2.40217in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox49">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Fields!AwardedBidderName_BidTabulationHeader.Value</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox49</rd:DefaultName>
+            <Top>0.27717in</Top>
+            <Left>0.13417in</Left>
+            <Height>0.25694in</Height>
+            <Width>2.40217in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox50">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox50</rd:DefaultName>
+            <Top>0.57578in</Top>
+            <Left>0.13417in</Left>
+            <Height>0.25in</Height>
+            <Width>2.40217in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox51">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Dear Sir/Madam,</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox51</rd:DefaultName>
+            <Top>0.83967in</Top>
+            <Left>0.13417in</Left>
+            <Height>0.25in</Height>
+            <Width>2.40217in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox52">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">NOTICE AWARD</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox51</rd:DefaultName>
+            <Top>1.10356in</Top>
+            <Left>0.13417in</Left>
+            <Height>0.22222in</Height>
+            <Width>2.40217in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Rectangle Name="Rectangle1">
+            <ReportItems>
+              <Textbox Name="Textbox53">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">TENDER NUMBER:</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">=Fields!IFSCode_BidTabulationHeader.Value</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto"> : </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">=Fields!TenderName_BidTabulationHeader.Value</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox53</rd:DefaultName>
+                <Height>0.31944in</Height>
+                <Width>7.36111in</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>1.35356in</Top>
+            <Left>0.13417in</Left>
+            <Height>0.31944in</Height>
+            <Width>7.36111in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="Rectangle2">
+            <ReportItems>
+              <Textbox Name="Textbox54">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">Please refer to your tender reference number </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">=Fields!IFSCode_BidTabulationHeader.Value</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">: </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">=Fields!TenderName_BidTabulationHeader.Value</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto"> which you submitted on or before the tender submission closing date and time on  </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">=Fields!BidOpeningDate_BidTabulationHeader.Value</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Format>d</Format>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">.  Your tender together with the tenders from other bidders, were opened immediately after the closing date and time on  </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">=Fields!BidOpeningDate_BidTabulationHeader.Value</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Format>d</Format>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">. and were evaluated thereafter.
+
+This is to notify, that your bid was successful and you have been awarded the </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">=Fields!TenderName_BidTabulationHeader.Value</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto"> at your tender sum of </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">KES.</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value xml:space="preserve" EvaluationMode="Auto"> </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">=Fields!AwardTenderSumIncTaxes_BidTabulationHeader.Value</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Format>n2</Format>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto"> inclusive of all applicable taxes and costs.
+
+You are requested to acknowledge receipt of this letter and submit your Letter of Acceptance of the award within </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">=First(Fields!AwardAcceptanceDeadline_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value EvaluationMode="Auto"> from the date of this letter. Upon receipt of your Letter of Acceptance you will be required to enter into contractual agreement  and to undertake the assignment in accordance with the terms of contract. 
+
+I take this opportunity to congratulate you on winning the tender. 
+
+Yours faithfully</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox54</rd:DefaultName>
+                <Height>2.41032in</Height>
+                <Width>7.62092in</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>1.60356in</Top>
+            <Left>0.13417in</Left>
+            <Height>2.41032in</Height>
+            <Width>7.62092in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Image Name="Image13">
+            <Source>Database</Source>
+            <Value>=First(Fields!CEO.Value, "DataSet_Result")</Value>
+            <MIMEType>image/bmp</MIMEType>
+            <Sizing>FitProportional</Sizing>
+            <Top>10.23053cm</Top>
+            <Left>0.3408cm</Left>
+            <Height>0.56944in</Height>
+            <Width>1.82284in</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Textbox Name="Textbox242">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Name.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">COMMISSION SECRETARY</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto"> </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox153</rd:DefaultName>
+            <Top>11.67691cm</Top>
+            <Left>0.3408cm</Left>
+            <Height>0.52083in</Height>
+            <Width>2.19784in</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>6.15972in</Height>
+        <Style />
+      </Body>
+      <Width>7.75509in</Width>
+      <Page>
+        <PageHeader>
+          <Height>1.05144in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="Image1">
+              <Source>Database</Source>
+              <Value>=First(Fields!logo.Value, "DataSet_Result")</Value>
+              <MIMEType>image/png</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Left>7.22313cm</Left>
+              <Height>2.67065cm</Height>
+              <Width>4.91312cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=Globals!ExecutionTime</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>7pt</FontSize>
+                        <Format>d MMMM yyyy</Format>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.80009cm</Top>
+              <Left>13.07042cm</Left>
+              <Height>0.45889cm</Height>
+              <Width>6.6275cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">="Page "&amp;Globals!PageNumber</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.27662cm</Top>
+              <Left>13.07042cm</Left>
+              <Height>0.45889cm</Height>
+              <Width>6.6275cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">=User!UserID</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.7849cm</Top>
+              <Left>13.07042cm</Left>
+              <Height>0.46771cm</Height>
+              <Width>6.6275cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox4">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">="AWARD LETTER"</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox4</rd:DefaultName>
+              <Top>0.80009cm</Top>
+              <Height>0.40597cm</Height>
+              <Width>6.44229cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Auto">="Award No: "&amp; First(Fields!Code_BidTabulationHeader.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>1.24134cm</Top>
+              <Height>0.56473cm</Height>
+              <Width>6.44229cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <EmbeddedImages>
+    <EmbeddedImage Name="Sign">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+</Report>

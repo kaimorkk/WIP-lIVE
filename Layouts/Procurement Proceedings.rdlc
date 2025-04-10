@@ -1,0 +1,1260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>6dffde72-55e1-4502-b820-ae07e460fcc7</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Rectangle Name="Rectangle1">
+            <ReportItems>
+              <Textbox Name="Textbox1">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value EvaluationMode="Auto">Procuring Entity:……………………………………………………….
+
+Financial Year:	……………………………………………………
+
+Tender/Quotation No......................................................................
+
+Description of the tender................................................................
+Requisition No. ..............................................................................
+
+Procurement method......................................................................</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value xml:space="preserve" EvaluationMode="Auto">
+</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox1</rd:DefaultName>
+                <Height>1.82514in</Height>
+                <Width>8.22917in</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>0.06944in</Top>
+            <Left>0.10292in</Left>
+            <Height>1.82514in</Height>
+            <Width>8.22917in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.36458in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.95833in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.5in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Procurement Stage</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Indicators</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Information on Indicators (fill as appropriate)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Invitation and Tender opening</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Tender Invitation/advertisement date</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto">Tender closing/opening date</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox7">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Auto" />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <Top>2.0925in</Top>
+            <Left>0.32167in</Left>
+            <Height>1in</Height>
+            <Width>7.82292in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>6.69444in</Height>
+        <Style />
+      </Body>
+      <Width>8.33208in</Width>
+      <Page>
+        <PageHeader>
+          <Height>1in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="Image1">
+              <Source>Database</Source>
+              <Value>=First(Fields!logo.Value, "DataSet_Result")</Value>
+              <MIMEType>image/bmp</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.02306in</Top>
+              <Left>3.47685in</Left>
+              <Height>0.94917in</Height>
+              <Width>1.27083in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>1.1875in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="comp_name">
+          <DataField>comp_name</DataField>
+        </Field>
+        <Field Name="logo">
+          <DataField>logo</DataField>
+        </Field>
+        <Field Name="Code_StandardPurchaseCode">
+          <DataField>Code_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="Description_StandardPurchaseCode">
+          <DataField>Description_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="CurrencyCode_StandardPurchaseCode">
+          <DataField>CurrencyCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ProcurementMethod_StandardPurchaseCode">
+          <DataField>ProcurementMethod_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="SolicitationType_StandardPurchaseCode">
+          <DataField>SolicitationType_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ExternalDocumentNo_StandardPurchaseCode">
+          <DataField>ExternalDocumentNo_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ProcurementType_StandardPurchaseCode">
+          <DataField>ProcurementType_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ProcurementCategoryID_StandardPurchaseCode">
+          <DataField>ProcurementCategoryID_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ProjectID_StandardPurchaseCode">
+          <DataField>ProjectID_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="AssignedProcurementOfficer_StandardPurchaseCode">
+          <DataField>AssignedProcurementOfficer_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="RoadCode_StandardPurchaseCode">
+          <DataField>RoadCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="RoadLinkName_StandardPurchaseCode">
+          <DataField>RoadLinkName_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ConstituencyID_StandardPurchaseCode">
+          <DataField>ConstituencyID_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="RequestingRegion_StandardPurchaseCode">
+          <DataField>RequestingRegion_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="RequestingDirectorate_StandardPurchaseCode">
+          <DataField>RequestingDirectorate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="RequestingDepartment_StandardPurchaseCode">
+          <DataField>RequestingDepartment_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="EngineerEstimateLCY_StandardPurchaseCode">
+          <DataField>EngineerEstimateLCY_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="EngineerEstimateLCY_StandardPurchaseCodeFormat">
+          <DataField>EngineerEstimateLCY_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="TenderName_StandardPurchaseCode">
+          <DataField>TenderName_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="TenderSummary_StandardPurchaseCode">
+          <DataField>TenderSummary_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DocumentDate_StandardPurchaseCode">
+          <DataField>DocumentDate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="Status_StandardPurchaseCode">
+          <DataField>Status_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="Name_StandardPurchaseCode">
+          <DataField>Name_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="Name2_StandardPurchaseCode">
+          <DataField>Name2_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="Address_StandardPurchaseCode">
+          <DataField>Address_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="Address2_StandardPurchaseCode">
+          <DataField>Address2_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PostCode_StandardPurchaseCode">
+          <DataField>PostCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="City_StandardPurchaseCode">
+          <DataField>City_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="CountryRegionCode_StandardPurchaseCode">
+          <DataField>CountryRegionCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PhoneNo_StandardPurchaseCode">
+          <DataField>PhoneNo_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="EMail_StandardPurchaseCode">
+          <DataField>EMail_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="TenderBoxLocationCode_StandardPurchaseCode">
+          <DataField>TenderBoxLocationCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidChargeCode_StandardPurchaseCode">
+          <DataField>BidChargeCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidChargeLCY_StandardPurchaseCode">
+          <DataField>BidChargeLCY_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidChargeLCY_StandardPurchaseCodeFormat">
+          <DataField>BidChargeLCY_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="BidChargeBankCode_StandardPurchaseCode">
+          <DataField>BidChargeBankCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BankName_StandardPurchaseCode">
+          <DataField>BankName_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BankAccountName_StandardPurchaseCode">
+          <DataField>BankAccountName_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidChargeBankBranch_StandardPurchaseCode">
+          <DataField>BidChargeBankBranch_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidChargeBankACNo_StandardPurchaseCode">
+          <DataField>BidChargeBankACNo_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="Published_StandardPurchaseCode">
+          <DataField>Published_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="Createdby_StandardPurchaseCode">
+          <DataField>Createdby_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="SubmissionStartDate_StandardPurchaseCode">
+          <DataField>SubmissionStartDate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="SubmissionStartTime_StandardPurchaseCode">
+          <DataField>SubmissionStartTime_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="SubmissionEndDate_StandardPurchaseCode">
+          <DataField>SubmissionEndDate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="SubmissionEndTime_StandardPurchaseCode">
+          <DataField>SubmissionEndTime_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="NoofSubmission_StandardPurchaseCode">
+          <DataField>NoofSubmission_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="EnforceMandatoryEReceipt_StandardPurchaseCode">
+          <DataField>EnforceMandatoryEReceipt_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidDocumentTemplate_StandardPurchaseCode">
+          <DataField>BidDocumentTemplate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DisplayScoringCriteriaVendo_StandardPurchaseCode">
+          <DataField>DisplayScoringCriteriaVendo_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidScoringTemplate_StandardPurchaseCode">
+          <DataField>BidScoringTemplate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="CreatedDateTime_StandardPurchaseCode">
+          <DataField>CreatedDateTime_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="County_StandardPurchaseCode">
+          <DataField>County_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="InvitationNoticeType_StandardPurchaseCode">
+          <DataField>InvitationNoticeType_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidEnvelopType_StandardPurchaseCode">
+          <DataField>BidEnvelopType_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="SealedBids_StandardPurchaseCode">
+          <DataField>SealedBids_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PRNNo_StandardPurchaseCode">
+          <DataField>PRNNo_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidSubmissionMethod_StandardPurchaseCode">
+          <DataField>BidSubmissionMethod_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="LotNo_StandardPurchaseCode">
+          <DataField>LotNo_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="LCYCurrencyCode_StandardPurchaseCode">
+          <DataField>LCYCurrencyCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="WorksCategory_StandardPurchaseCode">
+          <DataField>WorksCategory_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="AnnualProcurementPlanID_StandardPurchaseCode">
+          <DataField>AnnualProcurementPlanID_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ProcurementPlanLineNo_StandardPurchaseCode">
+          <DataField>ProcurementPlanLineNo_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ProcurementPlanEntryNo1_StandardPurchaseCode">
+          <DataField>ProcurementPlanEntryNo1_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="FinancialYearCode_StandardPurchaseCode">
+          <DataField>FinancialYearCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BudgetNarration_StandardPurchaseCode">
+          <DataField>BudgetNarration_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_StandardPurchaseCode">
+          <DataField>AvailableProcurementBudget_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="AvailableProcurementBudget_StandardPurchaseCodeFormat">
+          <DataField>AvailableProcurementBudget_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="PublishEngineersEstimate_StandardPurchaseCode">
+          <DataField>PublishEngineersEstimate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ProcuringEntityNameContact_StandardPurchaseCode">
+          <DataField>ProcuringEntityNameContact_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidOpeningDate_StandardPurchaseCode">
+          <DataField>BidOpeningDate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidOpeningTime_StandardPurchaseCode">
+          <DataField>BidOpeningTime_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidOpeningVenue_StandardPurchaseCode">
+          <DataField>BidOpeningVenue_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="TenderValidityDuration_StandardPurchaseCode">
+          <DataField>TenderValidityDuration_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="TenderValidityExpiryDate_StandardPurchaseCode">
+          <DataField>TenderValidityExpiryDate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="EnforceMandatoryPrebidVisi_StandardPurchaseCode">
+          <DataField>EnforceMandatoryPrebidVisi_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="MandatoryPrebidVisitDate_StandardPurchaseCode">
+          <DataField>MandatoryPrebidVisitDate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DomesticBidderPreference_StandardPurchaseCode">
+          <DataField>DomesticBidderPreference_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="MandatorySpecialGroupReserv_StandardPurchaseCode">
+          <DataField>MandatorySpecialGroupReserv_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidTenderSecurityRequired_StandardPurchaseCode">
+          <DataField>BidTenderSecurityRequired_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidSecurity_StandardPurchaseCode">
+          <DataField>BidSecurity_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidSecurity_StandardPurchaseCodeFormat">
+          <DataField>BidSecurity_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="BidSecurityAmountLCY_StandardPurchaseCode">
+          <DataField>BidSecurityAmountLCY_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidSecurityAmountLCY_StandardPurchaseCodeFormat">
+          <DataField>BidSecurityAmountLCY_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="SpecialGroupBidSecurity_StandardPurchaseCode">
+          <DataField>SpecialGroupBidSecurity_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidSecurityValidityDuration_StandardPurchaseCode">
+          <DataField>BidSecurityValidityDuration_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidSecurityExpiryDate_StandardPurchaseCode">
+          <DataField>BidSecurityExpiryDate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="InsuranceCoverRequired_StandardPurchaseCode">
+          <DataField>InsuranceCoverRequired_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PerformanceSecurityRequired_StandardPurchaseCode">
+          <DataField>PerformanceSecurityRequired_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PerformanceSecurity_StandardPurchaseCode">
+          <DataField>PerformanceSecurity_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PerformanceSecurity_StandardPurchaseCodeFormat">
+          <DataField>PerformanceSecurity_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="SpecialGroupPerformanceSecu_StandardPurchaseCode">
+          <DataField>SpecialGroupPerformanceSecu_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="AdvancePaymentSecurityReq_StandardPurchaseCode">
+          <DataField>AdvancePaymentSecurityReq_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="AdvancePaymentSecurity_StandardPurchaseCode">
+          <DataField>AdvancePaymentSecurity_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="AdvancePaymentSecurity_StandardPurchaseCodeFormat">
+          <DataField>AdvancePaymentSecurity_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="AdvanceAmountLimit_StandardPurchaseCode">
+          <DataField>AdvanceAmountLimit_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="AdvanceAmountLimit_StandardPurchaseCodeFormat">
+          <DataField>AdvanceAmountLimit_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="MaxWorksKickoffDuration_StandardPurchaseCode">
+          <DataField>MaxWorksKickoffDuration_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="MaxWorksCharterDuration_StandardPurchaseCode">
+          <DataField>MaxWorksCharterDuration_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="MaxWorksCompletionDuration_StandardPurchaseCode">
+          <DataField>MaxWorksCompletionDuration_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PaymentTermsCode_StandardPurchaseCode">
+          <DataField>PaymentTermsCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DefectsLiabilityPeriod_StandardPurchaseCode">
+          <DataField>DefectsLiabilityPeriod_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DailyLiquidatedDamUnitCost_StandardPurchaseCode">
+          <DataField>DailyLiquidatedDamUnitCost_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DailyLiquidatedDamUnitCost_StandardPurchaseCodeFormat">
+          <DataField>DailyLiquidatedDamUnitCost_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="LiquidatedDamagesLimit_StandardPurchaseCode">
+          <DataField>LiquidatedDamagesLimit_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="LiquidatedDamagesLimit_StandardPurchaseCodeFormat">
+          <DataField>LiquidatedDamagesLimit_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="PaymentRetention_StandardPurchaseCode">
+          <DataField>PaymentRetention_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PaymentRetention_StandardPurchaseCodeFormat">
+          <DataField>PaymentRetention_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="RetentionAmountLimit_StandardPurchaseCode">
+          <DataField>RetentionAmountLimit_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="RetentionAmountLimit_StandardPurchaseCodeFormat">
+          <DataField>RetentionAmountLimit_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="MinInterimCertificateAmount_StandardPurchaseCode">
+          <DataField>MinInterimCertificateAmount_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="MinInterimCertificateAmount_StandardPurchaseCodeFormat">
+          <DataField>MinInterimCertificateAmount_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="AppointerofBidArbitrator_StandardPurchaseCode">
+          <DataField>AppointerofBidArbitrator_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DisplayScoringCriteriaVend_StandardPurchaseCode">
+          <DataField>DisplayScoringCriteriaVend_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DocumentStatus_StandardPurchaseCode">
+          <DataField>DocumentStatus_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="CancelReasonCode_StandardPurchaseCode">
+          <DataField>CancelReasonCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ParentInvitationNo_StandardPurchaseCode">
+          <DataField>ParentInvitationNo_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="TargetBidderGroup_StandardPurchaseCode">
+          <DataField>TargetBidderGroup_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="LocationCode_StandardPurchaseCode">
+          <DataField>LocationCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ResponsibilityCenter_StandardPurchaseCode">
+          <DataField>ResponsibilityCenter_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="RequisitionProductGroup_StandardPurchaseCode">
+          <DataField>RequisitionProductGroup_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="LanguageCode_StandardPurchaseCode">
+          <DataField>LanguageCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PurchaserCode_StandardPurchaseCode">
+          <DataField>PurchaserCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="NoSeries_StandardPurchaseCode">
+          <DataField>NoSeries_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code_StandardPurchaseCode">
+          <DataField>GlobalDimension1Code_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_StandardPurchaseCode">
+          <DataField>GlobalDimension2Code_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="GlobalDimension3Code_StandardPurchaseCode">
+          <DataField>GlobalDimension3Code_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PrimaryTenderSubmission_StandardPurchaseCode">
+          <DataField>PrimaryTenderSubmission_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PrimaryEngineerContact_StandardPurchaseCode">
+          <DataField>PrimaryEngineerContact_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="CancellationDate_StandardPurchaseCode">
+          <DataField>CancellationDate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="CancellationSecretCode_StandardPurchaseCode">
+          <DataField>CancellationSecretCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidOpeningCommitte_StandardPurchaseCode">
+          <DataField>BidOpeningCommitte_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidEvaluationCommitte_StandardPurchaseCode">
+          <DataField>BidEvaluationCommitte_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DimensionSetID_StandardPurchaseCode">
+          <DataField>DimensionSetID_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DepartmentCode_StandardPurchaseCode">
+          <DataField>DepartmentCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DirectorateCode_StandardPurchaseCode">
+          <DataField>DirectorateCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="Division_StandardPurchaseCode">
+          <DataField>Division_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="Job_StandardPurchaseCode">
+          <DataField>Job_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="RequisitionTemplateID_StandardPurchaseCode">
+          <DataField>RequisitionTemplateID_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ProcurementPlanID_StandardPurchaseCode">
+          <DataField>ProcurementPlanID_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="ProcurementPlanEntryNo_StandardPurchaseCode">
+          <DataField>ProcurementPlanEntryNo_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PPPlanningCategory_StandardPurchaseCode">
+          <DataField>PPPlanningCategory_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PPFundingSourceID_StandardPurchaseCode">
+          <DataField>PPFundingSourceID_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PPTotalBudget_StandardPurchaseCode">
+          <DataField>PPTotalBudget_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PPTotalBudget_StandardPurchaseCodeFormat">
+          <DataField>PPTotalBudget_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="PPTotalActualCosts_StandardPurchaseCode">
+          <DataField>PPTotalActualCosts_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PPTotalActualCosts_StandardPurchaseCodeFormat">
+          <DataField>PPTotalActualCosts_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="PPTotalCommitments_StandardPurchaseCode">
+          <DataField>PPTotalCommitments_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PPTotalCommitments_StandardPurchaseCodeFormat">
+          <DataField>PPTotalCommitments_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="PPTotalAvailableBudget_StandardPurchaseCode">
+          <DataField>PPTotalAvailableBudget_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PPTotalAvailableBudget_StandardPurchaseCodeFormat">
+          <DataField>PPTotalAvailableBudget_StandardPurchaseCodeFormat</DataField>
+        </Field>
+        <Field Name="Stage1EOIInvitation_StandardPurchaseCode">
+          <DataField>Stage1EOIInvitation_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PrebidMeetingAddress_StandardPurchaseCode">
+          <DataField>PrebidMeetingAddress_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PrebidMeetingRegisterID_StandardPurchaseCode">
+          <DataField>PrebidMeetingRegisterID_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="DateTimePublished_StandardPurchaseCode">
+          <DataField>DateTimePublished_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="CancelledBy_StandardPurchaseCode">
+          <DataField>CancelledBy_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PPSolicitationType_StandardPurchaseCode">
+          <DataField>PPSolicitationType_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PPProcurementMethod_StandardPurchaseCode">
+          <DataField>PPProcurementMethod_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="PPPreferenceReservationCode_StandardPurchaseCode">
+          <DataField>PPPreferenceReservationCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidSelectionMethod_StandardPurchaseCode">
+          <DataField>BidSelectionMethod_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="JobTaskNo_StandardPurchaseCode">
+          <DataField>JobTaskNo_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="SentCancellationSecretCode_StandardPurchaseCode">
+          <DataField>SentCancellationSecretCode_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="SealedBidsTechnical_StandardPurchaseCode">
+          <DataField>SealedBidsTechnical_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="SealedBidsFinancial_StandardPurchaseCode">
+          <DataField>SealedBidsFinancial_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="BidOpeningRegister_StandardPurchaseCode">
+          <DataField>BidOpeningRegister_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="FinanceOpeningRegister_StandardPurchaseCode">
+          <DataField>FinanceOpeningRegister_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="FinanceBidOpeningDate_StandardPurchaseCode">
+          <DataField>FinanceBidOpeningDate_StandardPurchaseCode</DataField>
+        </Field>
+        <Field Name="StandardPurchaseCode_StandardPurchaseLine">
+          <DataField>StandardPurchaseCode_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="LineNo_StandardPurchaseLine">
+          <DataField>LineNo_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="Type_StandardPurchaseLine">
+          <DataField>Type_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="No_StandardPurchaseLine">
+          <DataField>No_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="Description_StandardPurchaseLine">
+          <DataField>Description_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="Quantity_StandardPurchaseLine">
+          <DataField>Quantity_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="Quantity_StandardPurchaseLineFormat">
+          <DataField>Quantity_StandardPurchaseLineFormat</DataField>
+        </Field>
+        <Field Name="AmountExclVAT_StandardPurchaseLine">
+          <DataField>AmountExclVAT_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="AmountExclVAT_StandardPurchaseLineFormat">
+          <DataField>AmountExclVAT_StandardPurchaseLineFormat</DataField>
+        </Field>
+        <Field Name="UnitofMeasureCode_StandardPurchaseLine">
+          <DataField>UnitofMeasureCode_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="ShortcutDimension1Code_StandardPurchaseLine">
+          <DataField>ShortcutDimension1Code_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="ShortcutDimension2Code_StandardPurchaseLine">
+          <DataField>ShortcutDimension2Code_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="VariantCode_StandardPurchaseLine">
+          <DataField>VariantCode_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="ItemCategory_StandardPurchaseLine">
+          <DataField>ItemCategory_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="DimensionSetID_StandardPurchaseLine">
+          <DataField>DimensionSetID_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="ShortcutDimension3Code_StandardPurchaseLine">
+          <DataField>ShortcutDimension3Code_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="ShortcutDimension4Code_StandardPurchaseLine">
+          <DataField>ShortcutDimension4Code_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="ShortcutDimension5Code_StandardPurchaseLine">
+          <DataField>ShortcutDimension5Code_StandardPurchaseLine</DataField>
+        </Field>
+        <Field Name="DocumentNo_IFSRequiredDocument">
+          <DataField>DocumentNo_IFSRequiredDocument</DataField>
+        </Field>
+        <Field Name="ProcurementDocumentTypeID_IFSRequiredDocument">
+          <DataField>ProcurementDocumentTypeID_IFSRequiredDocument</DataField>
+        </Field>
+        <Field Name="Description_IFSRequiredDocument">
+          <DataField>Description_IFSRequiredDocument</DataField>
+        </Field>
+        <Field Name="TrackCertificateExpiry_IFSRequiredDocument">
+          <DataField>TrackCertificateExpiry_IFSRequiredDocument</DataField>
+        </Field>
+        <Field Name="RequirementType_IFSRequiredDocument">
+          <DataField>RequirementType_IFSRequiredDocument</DataField>
+        </Field>
+        <Field Name="SpecialGroupRequirement_IFSRequiredDocument">
+          <DataField>SpecialGroupRequirement_IFSRequiredDocument</DataField>
+        </Field>
+        <Field Name="SpecializedProviderReq_IFSRequiredDocument">
+          <DataField>SpecializedProviderReq_IFSRequiredDocument</DataField>
+        </Field>
+        <Field Name="DocumentNo_IFSTenderDocumentSource">
+          <DataField>DocumentNo_IFSTenderDocumentSource</DataField>
+        </Field>
+        <Field Name="TenderSourceID_IFSTenderDocumentSource">
+          <DataField>TenderSourceID_IFSTenderDocumentSource</DataField>
+        </Field>
+        <Field Name="Description_IFSTenderDocumentSource">
+          <DataField>Description_IFSTenderDocumentSource</DataField>
+        </Field>
+        <Field Name="UrlLink_IFSTenderDocumentSource">
+          <DataField>UrlLink_IFSTenderDocumentSource</DataField>
+        </Field>
+        <Field Name="DatePublished_IFSTenderDocumentSource">
+          <DataField>DatePublished_IFSTenderDocumentSource</DataField>
+        </Field>
+        <Field Name="BidChargeCode_IFSTenderDocumentSource">
+          <DataField>BidChargeCode_IFSTenderDocumentSource</DataField>
+        </Field>
+        <Field Name="IFSApplicationFeesLCY_IFSTenderDocumentSource">
+          <DataField>IFSApplicationFeesLCY_IFSTenderDocumentSource</DataField>
+        </Field>
+        <Field Name="IFSApplicationFeesLCY_IFSTenderDocumentSourceFormat">
+          <DataField>IFSApplicationFeesLCY_IFSTenderDocumentSourceFormat</DataField>
+        </Field>
+        <Field Name="IFSCode_IFSSecurities">
+          <DataField>IFSCode_IFSSecurities</DataField>
+        </Field>
+        <Field Name="FormofSecurity_IFSSecurities">
+          <DataField>FormofSecurity_IFSSecurities</DataField>
+        </Field>
+        <Field Name="SecurityType_IFSSecurities">
+          <DataField>SecurityType_IFSSecurities</DataField>
+        </Field>
+        <Field Name="RequiredatBidSubmission_IFSSecurities">
+          <DataField>RequiredatBidSubmission_IFSSecurities</DataField>
+        </Field>
+        <Field Name="Description_IFSSecurities">
+          <DataField>Description_IFSSecurities</DataField>
+        </Field>
+        <Field Name="SecurityAmountLCY_IFSSecurities">
+          <DataField>SecurityAmountLCY_IFSSecurities</DataField>
+        </Field>
+        <Field Name="SecurityAmountLCY_IFSSecuritiesFormat">
+          <DataField>SecurityAmountLCY_IFSSecuritiesFormat</DataField>
+        </Field>
+        <Field Name="BidSecurityValidityExpiry_IFSSecurities">
+          <DataField>BidSecurityValidityExpiry_IFSSecurities</DataField>
+        </Field>
+        <Field Name="NatureofSecurity_IFSSecurities">
+          <DataField>NatureofSecurity_IFSSecurities</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

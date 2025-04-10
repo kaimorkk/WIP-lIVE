@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="AIERefNo">
+          <DataField>AIERefNo</DataField>
+        </Field>
+        <Field Name="Global_Dimension_1_Code">
+          <DataField>Global_Dimension_1_Code</DataField>
+        </Field>
+        <Field Name="Global_Dimension_2_Code">
+          <DataField>Global_Dimension_2_Code</DataField>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+        </Field>
+        <Field Name="Quarter">
+          <DataField>Quarter</DataField>
+        </Field>
+        <Field Name="Reporting_Period">
+          <DataField>Reporting_Period</DataField>
+        </Field>
+        <Field Name="Amount_to_Authorize">
+          <DataField>Amount_to_Authorize</DataField>
+        </Field>
+        <Field Name="Amount_to_AuthorizeFormat">
+          <DataField>Amount_to_AuthorizeFormat</DataField>
+        </Field>
+        <Field Name="PreparedBy">
+          <DataField>PreparedBy</DataField>
+        </Field>
+        <Field Name="PreparedByDateTime">
+          <DataField>PreparedByDateTime</DataField>
+        </Field>
+        <Field Name="ApprovedBy">
+          <DataField>ApprovedBy</DataField>
+        </Field>
+        <Field Name="ApprovedByDesignation">
+          <DataField>ApprovedByDesignation</DataField>
+        </Field>
+        <Field Name="ApprovedByDateTime">
+          <DataField>ApprovedByDateTime</DataField>
+        </Field>
+        <Field Name="CourtStation">
+          <DataField>CourtStation</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="G_L_Account">
+          <DataField>G_L_Account</DataField>
+        </Field>
+        <Field Name="G_L_Account_Name">
+          <DataField>G_L_Account_Name</DataField>
+        </Field>
+        <Field Name="Amount_to_Authorize_Lines">
+          <DataField>Amount_to_Authorize_Lines</DataField>
+        </Field>
+        <Field Name="Amount_to_Authorize_LinesFormat">
+          <DataField>Amount_to_Authorize_LinesFormat</DataField>
+        </Field>
+        <Field Name="Global_Dimension_1_Code_Lines">
+          <DataField>Global_Dimension_1_Code_Lines</DataField>
+        </Field>
+        <Field Name="Global_Dimension_2_Code_Lines">
+          <DataField>Global_Dimension_2_Code_Lines</DataField>
+        </Field>
+        <Field Name="Shortcut_Dimension_3_Code">
+          <DataField>Shortcut_Dimension_3_Code</DataField>
+        </Field>
+        <Field Name="Shortcut_Dimension_4_Code">
+          <DataField>Shortcut_Dimension_4_Code</DataField>
+        </Field>
+        <Field Name="Shortcut_Dimension_5_Code">
+          <DataField>Shortcut_Dimension_5_Code</DataField>
+        </Field>
+        <Field Name="Shortcut_Dimension_6_Code">
+          <DataField>Shortcut_Dimension_6_Code</DataField>
+        </Field>
+        <Field Name="Shortcut_Dimension_7_Code">
+          <DataField>Shortcut_Dimension_7_Code</DataField>
+        </Field>
+        <Field Name="Shortcut_Dimension_8_Code">
+          <DataField>Shortcut_Dimension_8_Code</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

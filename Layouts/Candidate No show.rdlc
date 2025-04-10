@@ -1,0 +1,1062 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>8fe88d10-b487-407b-9601-a019c674af2a</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox24">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Vacancy ID:</Value>
+                    <Style>
+                      <FontFamily>Cambria</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox18</rd:DefaultName>
+            <Top>0.02778in</Top>
+            <Height>0.25in</Height>
+            <Width>1.34375in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox25">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!VacancyID_CandidateInterviewRecord.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Cambria</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox18</rd:DefaultName>
+            <Top>0.02778in</Top>
+            <Left>1.55333in</Left>
+            <Height>0.25in</Height>
+            <Width>1.82292in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line1">
+            <Top>0.33333in</Top>
+            <Height>0in</Height>
+            <Width>7.79302in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+                <Width>1.5pt</Width>
+              </Border>
+              <TopBorder>
+                <Color>Black</Color>
+                <Width>1.5pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Black</Color>
+                <Width>1.5pt</Width>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Black</Color>
+                <Width>1.5pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Black</Color>
+                <Width>1.5pt</Width>
+              </RightBorder>
+            </Style>
+          </Line>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.32407in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.15741in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.26852in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.43056in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.22222in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Name</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>E-Mail</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Phone No.</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>ID Number</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.22222in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!FirstName_CandidateInterviewQuestion.Value</Value>
+                                  <Style />
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve"> </Value>
+                                  <Style />
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!MiddleName_CandidateInterviewQuestion.Value</Value>
+                                  <Style />
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve"> </Value>
+                                  <Style />
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!LastName_CandidateInterviewQuestion.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="EMail_CandidateInterviewQuestion">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!EMail_CandidateInterviewQuestion.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>EMail_CandidateInterviewQuestion</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PhoneNo_CandidateInterviewQuestion">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!PhoneNo_CandidateInterviewQuestion.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PhoneNo_CandidateInterviewQuestion</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="IDNumber_CandidateInterviewQuestion">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!IDNumber_CandidateInterviewQuestion.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>IDNumber_CandidateInterviewQuestion</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!ApplicationNo_CandidateInterviewRecord.Value</FilterExpression>
+                <Operator>GreaterThan</Operator>
+                <FilterValues>
+                  <FilterValue>""</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <Top>0.55209in</Top>
+            <Left>0.26611in</Left>
+            <Height>0.44444in</Height>
+            <Width>7.18056in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>1.29514in</Height>
+        <Style />
+      </Body>
+      <Width>7.875in</Width>
+      <Page>
+        <PageHeader>
+          <Height>1.64458in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>INTERVIEW NO SHOW REPORT</Value>
+                      <Style>
+                        <FontFamily>Cambria</FontFamily>
+                        <FontSize>18pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.17931in</Top>
+              <Left>0.72222in</Left>
+              <Height>0.39583in</Height>
+              <Width>7.0708in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Image Name="Image1">
+              <Source>Database</Source>
+              <Value>=First(Fields!Logo.Value, "DataSet_Result")</Value>
+              <MIMEType>image/png</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.05556in</Top>
+              <Left>3.14458in</Left>
+              <Height>1.16194in</Height>
+              <Width>1.42708in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>8.27in</PageWidth>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+        </Field>
+        <Field Name="DocumentNo_CandidateInterviewRecord">
+          <DataField>DocumentNo_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="InterviewInvitationNo_CandidateInterviewRecord">
+          <DataField>InterviewInvitationNo_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="InterviewScoresheetTemplate_CandidateInterviewRecord">
+          <DataField>InterviewScoresheetTemplate_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="VacancyID_CandidateInterviewRecord">
+          <DataField>VacancyID_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="CandidateShortlistVouchNo_CandidateInterviewRecord">
+          <DataField>CandidateShortlistVouchNo_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="ApplicationNo_CandidateInterviewRecord">
+          <DataField>ApplicationNo_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="CandidateNo_CandidateInterviewRecord">
+          <DataField>CandidateNo_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="FirstName_CandidateInterviewRecord">
+          <DataField>FirstName_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="MiddleName_CandidateInterviewRecord">
+          <DataField>MiddleName_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="LastName_CandidateInterviewRecord">
+          <DataField>LastName_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="InterviewDate_CandidateInterviewRecord">
+          <DataField>InterviewDate_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="InterviewStartTime_CandidateInterviewRecord">
+          <DataField>InterviewStartTime_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="InterviewEndTime_CandidateInterviewRecord">
+          <DataField>InterviewEndTime_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="InterviewVenue_CandidateInterviewRecord">
+          <DataField>InterviewVenue_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="RoomNo_CandidateInterviewRecord">
+          <DataField>RoomNo_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="AssignedPanelID_CandidateInterviewRecord">
+          <DataField>AssignedPanelID_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="PanelMemberNo_CandidateInterviewRecord">
+          <DataField>PanelMemberNo_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="Member_CandidateInterviewRecord">
+          <DataField>Member_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="PanelInterviewOutcome_CandidateInterviewRecord">
+          <DataField>PanelInterviewOutcome_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="PanelInterviewScore_CandidateInterviewRecord">
+          <DataField>PanelInterviewScore_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="PanelInterviewScore_CandidateInterviewRecordFormat">
+          <DataField>PanelInterviewScore_CandidateInterviewRecordFormat</DataField>
+        </Field>
+        <Field Name="PanelistInterviewRemarks_CandidateInterviewRecord">
+          <DataField>PanelistInterviewRemarks_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="UnsuccesfulAppReasonCode_CandidateInterviewRecord">
+          <DataField>UnsuccesfulAppReasonCode_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="DocumentStatus_CandidateInterviewRecord">
+          <DataField>DocumentStatus_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="DocumentDate_CandidateInterviewRecord">
+          <DataField>DocumentDate_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="Posted_CandidateInterviewRecord">
+          <DataField>Posted_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="PostedBy_CandidateInterviewRecord">
+          <DataField>PostedBy_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="PostedOn_CandidateInterviewRecord">
+          <DataField>PostedOn_CandidateInterviewRecord</DataField>
+        </Field>
+        <Field Name="ApplicationNo_CandidateInterviewQuestion">
+          <DataField>ApplicationNo_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="Address_CandidateInterviewQuestion">
+          <DataField>Address_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="Address2_CandidateInterviewQuestion">
+          <DataField>Address2_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="ApplicationStatus_CandidateInterviewQuestion">
+          <DataField>ApplicationStatus_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="ApplicationsClosingDate_CandidateInterviewQuestion">
+          <DataField>ApplicationsClosingDate_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="ApplicationsClosingTime_CandidateInterviewQuestion">
+          <DataField>ApplicationsClosingTime_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="AttendedInterview_CandidateInterviewQuestion">
+          <DataField>AttendedInterview_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="BackgroundChecksPass_CandidateInterviewQuestion">
+          <DataField>BackgroundChecksPass_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="BirthDate_CandidateInterviewQuestion">
+          <DataField>BirthDate_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="CandidateNo_CandidateInterviewQuestion">
+          <DataField>CandidateNo_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="City_CandidateInterviewQuestion">
+          <DataField>City_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="CommitteeRemarks_CandidateInterviewQuestion">
+          <DataField>CommitteeRemarks_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="CountryRegionCode_CandidateInterviewQuestion">
+          <DataField>CountryRegionCode_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="CountyofBirth_CandidateInterviewQuestion">
+          <DataField>CountyofBirth_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="CurrentEmploymentStatus_CandidateInterviewQuestion">
+          <DataField>CurrentEmploymentStatus_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="Department_CandidateInterviewQuestion">
+          <DataField>Department_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="Directorate_CandidateInterviewQuestion">
+          <DataField>Directorate_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="DisabilityCertificateNo_CandidateInterviewQuestion">
+          <DataField>DisabilityCertificateNo_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="DisabilityCode_CandidateInterviewQuestion">
+          <DataField>DisabilityCode_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="DisabilityDescription_CandidateInterviewQuestion">
+          <DataField>DisabilityDescription_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="Disabled_CandidateInterviewQuestion">
+          <DataField>Disabled_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="DutyStationID_CandidateInterviewQuestion">
+          <DataField>DutyStationID_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="EMail_CandidateInterviewQuestion">
+          <DataField>EMail_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="EmployeeNo_CandidateInterviewQuestion">
+          <DataField>EmployeeNo_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="EmployerName_CandidateInterviewQuestion">
+          <DataField>EmployerName_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="EmploymentType_CandidateInterviewQuestion">
+          <DataField>EmploymentType_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="EthnicGroup_CandidateInterviewQuestion">
+          <DataField>EthnicGroup_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="FirstName_CandidateInterviewQuestion">
+          <DataField>FirstName_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="FullNames_CandidateInterviewQuestion">
+          <DataField>FullNames_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="Gender_CandidateInterviewQuestion">
+          <DataField>Gender_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="GrossSalary_CandidateInterviewQuestion">
+          <DataField>GrossSalary_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="HighestAcademicQualification_CandidateInterviewQuestion">
+          <DataField>HighestAcademicQualification_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="IDNumber_CandidateInterviewQuestion">
+          <DataField>IDNumber_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="JobGrade_CandidateInterviewQuestion">
+          <DataField>JobGrade_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="JobTitleDesignation_CandidateInterviewQuestion">
+          <DataField>JobTitleDesignation_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="LastName_CandidateInterviewQuestion">
+          <DataField>LastName_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="ManagementExperienceYears_CandidateInterviewQuestion">
+          <DataField>ManagementExperienceYears_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="MaritalStatus_CandidateInterviewQuestion">
+          <DataField>MaritalStatus_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="MedicalChecksPass_CandidateInterviewQuestion">
+          <DataField>MedicalChecksPass_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="MiddleName_CandidateInterviewQuestion">
+          <DataField>MiddleName_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="MobilePhoneNo_CandidateInterviewQuestion">
+          <DataField>MobilePhoneNo_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="Nationality_CandidateInterviewQuestion">
+          <DataField>Nationality_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="NoSeries_CandidateInterviewQuestion">
+          <DataField>NoSeries_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="NoofOpenings_CandidateInterviewQuestion">
+          <DataField>NoofOpenings_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PINRegistration_CandidateInterviewQuestion">
+          <DataField>PINRegistration_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PassedCountyofOrigin_CandidateInterviewQuestion">
+          <DataField>PassedCountyofOrigin_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PassedDateofBirth_CandidateInterviewQuestion">
+          <DataField>PassedDateofBirth_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PassedEthnicity_CandidateInterviewQuestion">
+          <DataField>PassedEthnicity_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PassedGender_CandidateInterviewQuestion">
+          <DataField>PassedGender_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PassedMinimumAcademic_CandidateInterviewQuestion">
+          <DataField>PassedMinimumAcademic_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PassedMinimumMngtExp_CandidateInterviewQuestion">
+          <DataField>PassedMinimumMngtExp_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PassedMinimumWorkExp_CandidateInterviewQuestion">
+          <DataField>PassedMinimumWorkExp_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PassedPWD_CandidateInterviewQuestion">
+          <DataField>PassedPWD_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PassportNo_CandidateInterviewQuestion">
+          <DataField>PassportNo_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PersonalNo_CandidateInterviewQuestion">
+          <DataField>PersonalNo_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PhoneNo_CandidateInterviewQuestion">
+          <DataField>PhoneNo_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="Picture_CandidateInterviewQuestion">
+          <DataField>Picture_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PositionCategory_CandidateInterviewQuestion">
+          <DataField>PositionCategory_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PositionId_CandidateInterviewQuestion">
+          <DataField>PositionId_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PostCode_CandidateInterviewQuestion">
+          <DataField>PostCode_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PreScreeningTemplateID_CandidateInterviewQuestion">
+          <DataField>PreScreeningTemplateID_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="PresentSubstantivePost_CandidateInterviewQuestion">
+          <DataField>PresentSubstantivePost_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="ProfessionalSummary_CandidateInterviewQuestion">
+          <DataField>ProfessionalSummary_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="QualificationName_CandidateInterviewQuestion">
+          <DataField>QualificationName_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="RefereeChecksPass_CandidateInterviewQuestion">
+          <DataField>RefereeChecksPass_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="RegionID_CandidateInterviewQuestion">
+          <DataField>RegionID_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="Religion_CandidateInterviewQuestion">
+          <DataField>Religion_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="SecondmentDesignation_CandidateInterviewQuestion">
+          <DataField>SecondmentDesignation_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="SecondmentJobGroup_CandidateInterviewQuestion">
+          <DataField>SecondmentJobGroup_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="SecondmentOrganization_CandidateInterviewQuestion">
+          <DataField>SecondmentOrganization_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="SeniorityLevel_CandidateInterviewQuestion">
+          <DataField>SeniorityLevel_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="ShorlistingDocumentNo_CandidateInterviewQuestion">
+          <DataField>ShorlistingDocumentNo_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="Shortlisted_CandidateInterviewQuestion">
+          <DataField>Shortlisted_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="ShortlistingOutcome_CandidateInterviewQuestion">
+          <DataField>ShortlistingOutcome_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="SpecializationArea_CandidateInterviewQuestion">
+          <DataField>SpecializationArea_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="Station_CandidateInterviewQuestion">
+          <DataField>Station_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="SystemCreatedAt_CandidateInterviewQuestion">
+          <DataField>SystemCreatedAt_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="SystemCreatedBy_CandidateInterviewQuestion">
+          <DataField>SystemCreatedBy_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="SystemId_CandidateInterviewQuestion">
+          <DataField>SystemId_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="SystemModifiedAt_CandidateInterviewQuestion">
+          <DataField>SystemModifiedAt_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="SystemModifiedBy_CandidateInterviewQuestion">
+          <DataField>SystemModifiedBy_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="TargetCandidateSource_CandidateInterviewQuestion">
+          <DataField>TargetCandidateSource_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="TermsofServiceCode_CandidateInterviewQuestion">
+          <DataField>TermsofServiceCode_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="VacancyId_CandidateInterviewQuestion">
+          <DataField>VacancyId_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="WorkExperienceYears_CandidateInterviewQuestion">
+          <DataField>WorkExperienceYears_CandidateInterviewQuestion</DataField>
+        </Field>
+        <Field Name="WorkLocationDetails_CandidateInterviewQuestion">
+          <DataField>WorkLocationDetails_CandidateInterviewQuestion</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
