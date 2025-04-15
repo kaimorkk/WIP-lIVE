@@ -37,10 +37,10 @@ Report 52193432 "Expected Contrib and Repayment"
             // {
             //     IncludeCaption = true;
             // }
-            column(MonthlyContribution_Customer; Customer."Monthly Contribution")
-            {
-                IncludeCaption = true;
-            }
+            // column(MonthlyContribution_Customer; Customer."Monthly Contribution")
+            // {
+            //     IncludeCaption = true;
+            // }
             column(CompInfo_Picture; CompInfo.Picture)
             {
                 IncludeCaption = true;

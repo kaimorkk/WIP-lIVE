@@ -1,4 +1,5 @@
-table 52193433 "Cash Management Setup"
+ 
+    table 52193433 "Cash Management Setup"
 {
     DataClassification = CustomerContent;
 
@@ -47,6 +48,12 @@ table 52193433 "Cash Management Setup"
         field(12; "PV Nos"; Code[20])
         {
             TableRelation = "No. Series";
+        }
+
+        field(70095; "Bounced Pvs Nos"; Code[20])
+        {
+            TableRelation = "No. Series";
+
         }
         field(13; "Petty Cash Nos"; Code[20])
         {
@@ -127,7 +134,9 @@ table 52193433 "Cash Management Setup"
         field(33; "Tax Rate"; Decimal)
         {
         }
-
+        field(34; "Imprest Recovery Date"; DateFormula)
+        {
+        }
         field(56000; "PV Journal Template"; Code[10])
         {
             TableRelation = "Gen. Journal Template".Name;
@@ -482,7 +491,11 @@ table 52193433 "Cash Management Setup"
             DataClassification = CustomerContent;
             TableRelation = "G/L Account"."No." where("Direct Posting" = filter(true), "Income/Balance" = filter("Balance Sheet"));
         }
-
+        field(57075; "Deposit Cash Book"; Code[50])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = "Bank Account"."No." where(Type = filter(deposit | Revenue));
+        }
         field(57076; "KCB Controller Email"; Text[100])
         {
             DataClassification = ToBeClassified;
@@ -497,7 +510,11 @@ table 52193433 "Cash Management Setup"
             DataClassification = ToBeClassified;
             TableRelation = "No. Series".Code;
         }
-
+        field(57081; "Revenue Cash Book"; Code[50])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = "Bank Account"."No." where(Type = filter(deposit | Revenue));
+        }
         field(57082; "Default Bank Acc. Type By"; Option)
         {
             OptionMembers = "Geographical Location & Administration Unit","Geographical Location","Administration Unit","Ignore Dimensions";
@@ -586,6 +603,41 @@ table 52193433 "Cash Management Setup"
             DataClassification = ToBeClassified;
         }
         field(70093; "AIE Receipt Nos"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(70094; "Tax Rounding Precision"; Decimal)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70096; paymentNotifnAlert; Code[100])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70097; taxVariance; Decimal)
+        {
+            DataClassification = ToBeClassified;
+            caption = 'Tax Variance';
+
+        }
+        field(70098; "Payroll Bank Account"; Code[50])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = "Bank Account"."No.";
+        }
+        field(70099; "Commission Vendor Account"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = Vendor;
+        }
+        field(70100; "Reinstatement Nos"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+
+        field(70101; "RD Receipts"; Code[20])
         {
             DataClassification = ToBeClassified;
             TableRelation = "No. Series";

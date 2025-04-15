@@ -706,24 +706,24 @@ Table 52193801 "Request Header1"
             if RequestHeader.Posted <> true then begin
 
                 PV.Init;
-                PV.No := '';
+                PV."No." := '';
                 PV.Date := Today;
                 PV.Payee := RequestHeader."Employee Name";
                 PV.Remarks := 'Imprest';
-                PV."PO/INV No" := RequestHeader."No.";
+                // PV."PO/INV No" := RequestHeader."No.";
                 PV."Paying Bank Account" := RequestHeader."Bank Account";//GLSetup."Default Bank Account";
                 PV."Account Type" := PV."account type"::"Bank Account";
                 PV."Account No." := RequestHeader."Bank Account";
-                PV."Global Dimension 1 Code" := RequestHeader."Global Dimension 1 Code";
-                PV.Validate("Global Dimension 1 Code");
-                PV."Global Dimension 2 Code" := RequestHeader."Global Dimension 2 Code";
-                PV.Validate("Global Dimension 2 Code");
+                // PV."Global Dimension 1 Code" := RequestHeader."Global Dimension 1 Code";
+                // PV.Validate("Global Dimension 1 Code");
+                // PV."Global Dimension 2 Code" := RequestHeader."Global Dimension 2 Code";
+                // PV.Validate("Global Dimension 2 Code");
                 //PV."Account Name":=;
                 PV.Insert(true);
 
                 RequestHeader.CalcFields(RequestHeader."Imprest Amount");
                 PVlines.Init;
-                PVlines."PV No" := PV.No;
+                PVlines."PV No" := PV."No.";
                 PVlines."Line No" := PVlines."Line No" + 10000;
                 PVlines."Account Type" := PVlines."account type"::Customer;
                 PVlines."Account No" := RequestHeader."Customer A/C";
@@ -743,7 +743,7 @@ Table 52193801 "Request Header1"
                 RequestHeader.Posted := true;
                 RequestHeader.Modify;
 
-                Message('Payment Voucher %1 has been created for Imprest %2', PV.No, RequestHeader."No.");
+                Message('Payment Voucher %1 has been created for Imprest %2', PV."No.", RequestHeader."No.");
             end else
                 Error('A Payment Voucher has already been created for Imprest %1', RequestHeader."No.");
 
@@ -755,7 +755,7 @@ Table 52193801 "Request Header1"
            BEGIN
 
              PV.INIT;
-             PV.No:='';
+             PV."No.":='';
              PV.Date:=TODAY;
              PV.Payee:=RequestHeader."Employee Name";
              PV.Remarks:='Imprest';
@@ -767,7 +767,7 @@ Table 52193801 "Request Header1"
              PV.INSERT(TRUE);
              RequestHeader.CALCFIELDS(RequestHeader."Total Amount Requested");
              PVlines.INIT;
-             PVlines."PV No":=PV.No;
+             PVlines."PV No":=PV."No.";
              PVlines."Line No":=PVlines."Line No"+10000;
              PVlines."Account Type":=PVlines."Account Type"::Customer;
              PVlines."Account No":=RequestHeader."Customer A/C";
@@ -785,7 +785,7 @@ Table 52193801 "Request Header1"
              RequestHeader.Posted:=TRUE;
              RequestHeader.MODIFY;
 
-             MESSAGE('Petty Cash Voucher %1 has been created for Imprest %2',PV.No,RequestHeader."No.");
+             MESSAGE('Petty Cash Voucher %1 has been created for Imprest %2',PV."No.",RequestHeader."No.");
            END ELSE
             ERROR('A Petty Cash Voucher has already been created for Imprest %1',RequestHeader."No.");
              */
@@ -840,7 +840,7 @@ Table 52193801 "Request Header1"
 
 
               PV.INIT;
-              PV.No:='';
+              PV."No.":='';
               PV.Date:=TODAY;
               PV.Payee:=RequestHeader."Employee Name";
               PV.Remarks:='Claim';
@@ -853,7 +853,7 @@ Table 52193801 "Request Header1"
               IF ReqLines.FIND('-') THEN
               REPEAT
                PVlines.INIT;
-               PVlines."PV No":=PV.No;
+               PVlines."PV No":=PV."No.";
                PVlines."Line No":=PVlines."Line No"+10000;
                PVlines."Account Type":=PVlines."Account Type"::"G/L Account";
                PVlines."Account No.":=ReqLines."Account No";
@@ -1212,17 +1212,17 @@ Table 52193801 "Request Header1"
 
 
             PV.Init;
-            PV.No := '';
+            PV."No." := '';
             PV.Date := Today;
             PV.Payee := RequestHeader."Employee Name";
             PV.Remarks := 'Refund';
-            PV."PO/INV No" := RequestHeader."No.";
+            // PV."PO/INV No" := RequestHeader."No.";
             PV."Paying Bank Account" := GLSetup."Receipt Nos";
             PV.Insert(true);
             RequestHeader.CalcFields(RequestHeader."Imprest Amount");
 
             PVlines.Init;
-            PVlines."PV No" := PV.No;
+            PVlines."PV No" := PV."No.";
             PVlines."Line No" := PVlines."Line No" + 10000;
             PVlines."Account Type" := PVlines."account type"::Customer;
             PVlines."Account No" := RequestHeader."Customer A/C";
@@ -1234,7 +1234,7 @@ Table 52193801 "Request Header1"
             PVlines."Loan No" := "No.";
             PVlines.Insert;
 
-            Message('Payment Voucher %1 has been created for the claim refund %2', PV.No, RequestHeader."No.");
+            Message('Payment Voucher %1 has been created for the claim refund %2', PV."No.", RequestHeader."No.");
             //END
             //ELSE
             //BEGIN

@@ -41,7 +41,7 @@ Table 52193508 "Standing Order Register"
         }
         field(6; "Destination Account No."; Code[20])
         {
-            TableRelation = if ("Destination Account Type" = const(Internal)) Vendor."No." where("Creditor Type" = const(Account));
+            // TableRelation = if ("Destination Account Type" = const(Internal)) Vendor."No." where("Creditor Type" = const(Account));
         }
         field(7; "Destination Account Name"; Text[50])
         {

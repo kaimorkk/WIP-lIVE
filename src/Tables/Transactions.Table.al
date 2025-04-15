@@ -21,44 +21,44 @@ Table 52193497 Transactions
         field(2; "Account No"; Code[20])
         {
             NotBlank = true;
-            TableRelation = Vendor where("Debtor Type" = const("FOSA Account"),
-                                          Status = filter(<> Closed));
+            // TableRelation = Vendor where("Debtor Type" = const("FOSA Account"),
+            //                               Status = filter(<> Closed));
 
             trigger OnValidate()
             begin
                 //CHECK ACCOUNT ACTIVITY
                 Account.Reset;
                 if Account.Get("Account No") then begin
-                    if Account.Status = Account.Status::Dormant then begin
-                        Account.Status := Account.Status::Active;
+                    if Account.Status = Account.Status::"Pending Prepayment" then begin
+                        Account.Status := Account.Status::Released;
                         Account.Modify;
                     end;
-                    if Account.Status = Account.Status::New then begin
+                    if Account.Status = Account.Status::Open then begin
                     end
                     else begin
-                        if Account.Status <> Account.Status::Active then
+                        if Account.Status <> Account.Status::Released then
                             Error('The account is not active and therefore cannot be transacted upon.');
                     end;
 
                     Account.CalcFields(Account.Balance);
                     "Account Name" := Account.Name;
                     Payee := Account.Name;
-                    "Account Type" := Account."Account Type";
+                    // "Account Type" := Account."Account Type";
                     "Currency Code" := Account."Currency Code";
-                    "Staff/Payroll No" := Account."Staff No";
-                    "ID No" := Account."ID No.";
+                    // "Staff/Payroll No" := Account.staf;
+                    "ID No" := Account."ID BRN";
                     //Picture := Account.Picture;
-                    Signature := Account.Signature;
-                    "Signing Instructions" := Account."Signing Instructions";
-                    if (Account.Balance <> 0) and (Account.Status = Account.Status::New) then begin
-                        Account.Status := Account.Status::Active;
-                        Account.Modify;
-                    end;
+                    // Signature := Account.Signature;
+                    // "Signing Instructions" := Account."Signing Instructions";
+                    // if (Account.Balance <> 0) and (Account.Status = Account.Status::New) then begin
+                    // Account.Status := Account.Status::Active;
+                    //     Account.Modify;
+                    // end;
 
                     "Book Balance" := Account.Balance;
 
-                    if Account."Account Category" = Account."account category"::Branch then
-                        "Branch Transaction" := true;
+                    // if Account."Account Category" = Account."account category"::Branch then
+                    //     "Branch Transaction" := true;
 
                 end;
 
@@ -97,10 +97,10 @@ Table 52193497 Transactions
                 if AccTypes.Find('-') then
                     if "Account No" <> '' then begin
                         Acc.SetRange("No.", "Account No");
-                        Acc.SetRange("Account Type", AccTypes.Code);
-                        if Acc.Find('-') then
-                            AccNos := Acc."Account Type";
-                        AccTransNos := TransactionTypes."Account Type";
+                        // Acc.SetRange("Account Type", AccTypes.Code);
+                        // if Acc.Find('-') then
+                        //     AccNos := Acc."Account Type";
+                        // AccTransNos := TransactionTypes."Account Type";
 
                         if AccNos = AccTransNos then begin
 
@@ -662,6 +662,7 @@ Table 52193497 Transactions
             begin
                 if "Bankers Cheque Type" = "bankers cheque type"::Company then begin
                     GenLedgerSetup.Get;
+
                     GenLedgerSetup.TestField(GenLedgerSetup."Company Bankers Cheque Account");
                     "Account Type." := "account type."::"G/L Account";
                     "Account No." := GenLedgerSetup."Company Bankers Cheque Account";
@@ -755,8 +756,8 @@ Table 52193497 Transactions
         }
         field(129; "Branch Account"; Code[20])
         {
-            TableRelation = Vendor."No." where("Creditor Type" = const(Account),
-                                                "Account Category" = const(Branch));
+            // TableRelation = Vendor."No." where("Creditor Type" = const(Account),
+            //                                     "Account Category" = const(Branch));
 
             trigger OnValidate()
             begin
@@ -814,8 +815,8 @@ Table 52193497 Transactions
         field(145; "Source Number"; Code[20])
         {
             TableRelation = if (Source = filter("G/L Account")) "G/L Account"."No."
-            else if (Source = filter(Bank)) "Bank Account"."No."
-            else if (Source = const("FOSA Account")) Vendor."No." where("Debtor Type" = const("FOSA Account"));
+            else if (Source = filter(Bank)) "Bank Account"."No.";
+            // else if (Source = const("FOSA Account")) Vendor."No." where("Debtor Type" = const("FOSA Account"));
 
             trigger OnValidate()
             begin
@@ -1495,7 +1496,7 @@ Table 52193497 Transactions
         "IntervalG/LAcc" := '';
 
         if Account.Get("Account No") then begin
-            Account.CalcFields(Account.Balance, Account."Uncleared Cheques");
+            // Account.CalcFields(Account.Balance, Account."Uncleared Cheques");
 
             AccountTypes.Reset;
             AccountTypes.SetRange(AccountTypes.Code, "Account Type");
@@ -1505,16 +1506,16 @@ Table 52193497 Transactions
 
 
                 //Check Withdrawal Interval
-                if Account.Status <> Account.Status::New then begin
+                if Account.Status <> Account.Status::Open then begin
                     if Type = Type::Withdrawal then begin
                         AccountTypes.Reset;
                         AccountTypes.SetRange(AccountTypes.Code, "Account Type");
                         if AccountTypes."Don't Allow Transactions" <> true then begin
-                            if Account."Last Withdrawal Date" <> 0D then begin
-                                if CalcDate(AccountTypes."Withdrawal Interval", Account."Last Withdrawal Date") > Today then
-                                    IntervalPenalty := AccountTypes."Withdrawal Penalty";
-                                "IntervalG/LAcc" := AccountTypes."Withdrawal Interval Account";
-                            end;
+                            // if Account."Last Withdrawal Date" <> 0D then begin
+                            //     if CalcDate(AccountTypes."Withdrawal Interval", Account."Last Withdrawal Date") > Today then
+                            //         IntervalPenalty := AccountTypes."Withdrawal Penalty";
+                            //     "IntervalG/LAcc" := AccountTypes."Withdrawal Interval Account";
+                            // end;
                         end else begin
                             IntervalPenalty := AccountTypes."Withdrawal Penalty";
                             "IntervalG/LAcc" := AccountTypes."Withdrawal Interval Account";
@@ -1528,8 +1529,8 @@ Table 52193497 Transactions
                     //Fixed Deposit
                     ChargesOnFD := 0;
                     if AccountTypes."Fixed Deposit" = true then begin
-                        if Account."Expected Maturity Date" > Today then
-                            ChargesOnFD := AccountTypes."Charge Closure Before Maturity";
+                        // if Account."Expected Maturity Date" > Today then
+                        //     ChargesOnFD := AccountTypes."Charge Closure Before Maturity";
                     end;
                     //Fixed Deposit
 
@@ -1561,8 +1562,8 @@ Table 52193497 Transactions
                     end;
 
 
-                    TotalUnprocessed := Account."Uncleared Cheques";
-                    ATMBalance := Account."ATM Transactions";
+                    // TotalUnprocessed := Account."Uncleared Cheques";
+                    // ATMBalance := Account."ATM Transactions";
 
                     //FD
                     if AccountTypes."Fixed Deposit" = false then begin

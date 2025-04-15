@@ -72,7 +72,7 @@ Report 52193644 "Generate PV Lines"
                     if ImprestBal <= 0 then
                         CurrReport.Skip;
                     PVlines.Init;
-                    PVlines."PV No" := PV.No;
+                    PVlines."PV No" := PV."No.";
                     PVlines."Line No" := PVlines."Line No" + 10000;
                     PVlines."Account Type" := PVlines."account type"::Customer;
                     PVlines."Account No" := "Request Header1"."Customer A/C";
@@ -91,7 +91,7 @@ Report 52193644 "Generate PV Lines"
                     "Request Header1".CalcFields("Request Header1".Balance, "Request Header1"."Imprest Amount");
                     if (-"Request Header1"."Claim accounting Balance") > GLSetup."Cash Limit" then begin
                         PVlines.Init;
-                        PVlines."PV No" := PV.No;
+                        PVlines."PV No" := PV."No.";
                         PVlines."Line No" := PVlines."Line No" + 10000;
                         PVlines."Account Type" := PVlines."account type"::Customer;
                         PVlines."Account No" := "Request Header1"."Customer A/C";
@@ -111,7 +111,7 @@ Report 52193644 "Generate PV Lines"
                 if "Request Header1".Type = "Request Header1".Type::Refund then begin
                     "Request Header1".CalcFields("Request Header1"."Imprest Amount");
                     PVlines.Init;
-                    PVlines."PV No" := PV.No;
+                    PVlines."PV No" := PV."No.";
                     PVlines."Line No" := PVlines."Line No" + 10000;
                     PVlines."Account Type" := PVlines."account type"::Customer;
                     PVlines."Account No" := "Request Header1"."Customer A/C";

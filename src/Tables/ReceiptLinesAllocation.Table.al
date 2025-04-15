@@ -158,11 +158,11 @@ Table 52193596 "Receipt Lines Allocation"
                                         RecLine."Account Name" := Cust.Name;
                                         RecLine.Amount := ContribAmnt;
                                         RecLine.Validate(Amount);
-                                        RecLine.Type := RecLine.Type::Contribution;
-                                        RecLine."Product Code" := MontContrib."Product Code";
-                                        RecLine.Validate("Product Code");
-                                        RecLine."Transaction Code" := BosaSetup."Default Contribution Trans";
-                                        RecLine.Validate("Transaction Code");
+                                        // RecLine.Type := RecLine.Type::Contribution;
+                                        // RecLine."Product Code" := MontContrib."Product Code";
+                                        // RecLine.Validate("Product Code");
+                                        // RecLine."Transaction Code" := BosaSetup."Default Contribution Trans";
+                                        // RecLine.Validate("Transaction Code");
                                         if not RecLine.Get(Rec."Receipt No.", RecLine."Line No") then begin
                                             RecLine.SetRange("Account No.", RecLine."Account No.");
                                             if RecLine.Find('-') then

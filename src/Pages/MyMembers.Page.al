@@ -18,7 +18,7 @@ Page 52193479 "My Members"
                 {
                     ApplicationArea = Basic;
                 }
-                field(IDNo; "ID No.")
+                field(IDNo; "ID. No.")
                 {
                     ApplicationArea = Basic;
                 }

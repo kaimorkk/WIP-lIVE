@@ -18,8 +18,8 @@ Table 52193486 Refunds
             begin
                 if "Transaction Type" = "transaction type"::"Unallocated Funds" then begin
                     if Cust.Get("Member No.") then begin
-                        Cust.CalcFields(Cust."Un-allocated Funds");
-                        Amount := Cust."Un-allocated Funds" * -1;
+                        // Cust.CalcFields(Cust."Un-allocated Funds");
+                        // Amount := Cust."Un-allocated Funds" * -1;
                     end;
                 end;
             end;
@@ -32,19 +32,19 @@ Table 52193486 Refunds
             begin
                 if "Transaction Type" = "transaction type"::"Unallocated Funds" then begin
                     if Cust.Get("Member No.") then begin
-                        Cust.CalcFields(Cust."Un-allocated Funds");
-                        if Amount > (Cust."Un-allocated Funds" * -1) then
-                            Error('Amount cannot be greater than the un-allocated funds: %1', (Cust."Un-allocated Funds" * -1));
-                        ;
+                        // Cust.CalcFields(Cust."Un-allocated Funds");
+                        // if Amount > (Cust."Un-allocated Funds" * -1) then
+                        //     Error('Amount cannot be greater than the un-allocated funds: %1', (Cust."Un-allocated Funds" * -1));
+                        // ;
                     end;
                 end;
 
                 if "Transaction Type" = "transaction type"::"Shares Contribution" then begin
                     if Cust.Get("Member No.") then begin
-                        Cust.CalcFields(Cust."Current Shares");
-                        if Amount > (Cust."Current Shares" * -1) then
-                            Error('Amount cannot be greater than the current shares: %1', (Cust."Current Shares" * -1));
-                        ;
+                        // Cust.CalcFields(Cust."Current Shares");
+                        // if Amount > (Cust."Current Shares" * -1) then
+                        //     Error('Amount cannot be greater than the current shares: %1', (Cust."Current Shares" * -1));
+                        // ;
                     end;
                 end;
 

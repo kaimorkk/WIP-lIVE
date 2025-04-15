@@ -69,15 +69,15 @@ table 52193673 "PR Employee Transactions"
                             // if dTaken < 15 then
                             //     error('Please note that the minimum leave days for leave allowance is 15 days');
 
-                            if HREmp."Leave Allowance Taken" then begin
-                                PRPeriod.Reset;
-                                PRPeriod.SetRange(PRPeriod.Closed, false);
-                                if PRPeriod.FindFirst() then begin
-                                    if PRPeriod."Date Opened" <> HREmp."Leave Allowance Period" then
-                                        if PRPeriod."Period Year" <= HREmp."Leave Allowance Year" then
-                                            error('Leave allowance already processed for this year');
-                                end;
-                            end;
+                            // if HREmp."Leave Allowance Taken" then begin
+                            //     PRPeriod.Reset;
+                            //     PRPeriod.SetRange(PRPeriod.Closed, false);
+                            //     if PRPeriod.FindFirst() then begin
+                            //         if PRPeriod."Date Opened" <> HREmp."Leave Allowance Period" then
+                            //             if PRPeriod."Period Year" <= HREmp."Leave Allowance Year" then
+                            //                 error('Leave allowance already processed for this year');
+                            //     end;
+                            // end;
 
                             if Amount > 50000 then Amount := 50000;
                         end;

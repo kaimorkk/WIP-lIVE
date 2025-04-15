@@ -49,8 +49,8 @@ Table 52193591 Payments1
         }
         field(7; "Bank Account"; Code[20])
         {
-            TableRelation = "Bank Account"."No." where(Type = filter(Bank | "Petty Cash"),
-                                                        "Account Type" = filter(" "));
+            // TableRelation = "Bank Account"."No." where(Type = filter(Bank | "Petty Cash"),
+            //                                             "Account Type" = filter(" "));
         }
         field(8; "Ext. Document No."; Code[20])
         {
@@ -143,9 +143,9 @@ Table 52193591 Payments1
         }
         field(28; "Employer Code"; Code[20])
         {
-            TableRelation = "Bank Account"."No." where(Status = filter(Released),
-                                                        Type = filter(Bank),
-                                                        "Account Type" = const(Employer));
+            // TableRelation = "Bank Account"."No." where(Status = filter(Released),
+            //                                             Type = filter(Bank),
+            //                                             "Account Type" = const(Employer));
 
             trigger OnValidate()
             begin

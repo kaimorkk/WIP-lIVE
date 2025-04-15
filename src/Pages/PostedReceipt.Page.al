@@ -40,10 +40,10 @@ Page 52194383 "Posted Receipt"
                 {
                     ApplicationArea = Basic;
                 }
-                field(Remarks;Remarks)
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(Remarks;Remarks)
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 field(BankCode;"Bank Code")
                 {
                     ApplicationArea = Basic;
@@ -52,18 +52,18 @@ Page 52194383 "Posted Receipt"
                 {
                     ApplicationArea = Basic;
                 }
-                field(ExtDocumentNo;"Ext. Document No.")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(ExtDocumentNo;"Ext. Document No.")
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 field(Status;Status)
                 {
                     ApplicationArea = Basic;
                 }
-                field(TotalAmount;"Total Amount")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(TotalAmount;"Total Amount")
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 field(Posted;Posted)
                 {
                     ApplicationArea = Basic;

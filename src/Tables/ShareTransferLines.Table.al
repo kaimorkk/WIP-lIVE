@@ -12,7 +12,7 @@ Table 52193437 "Share Transfer Lines"
         }
         field(3; "Source Member No."; Code[20])
         {
-            TableRelation = Customer."No." where("Customer Type" = filter(Member));
+            // TableRelation = Customer."No." where("Customer Ty/pe" = filter(Member));
 
             trigger OnValidate()
             begin
@@ -63,7 +63,7 @@ Table 52193437 "Share Transfer Lines"
         }
         field(7; "Destination Member No."; Code[20])
         {
-            TableRelation = Customer."No." where("Customer Type" = filter(Member));
+            // TableRelation = Customer."No." where("Customer Type" = filter(Member));
 
             trigger OnValidate()
             begin

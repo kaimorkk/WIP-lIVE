@@ -1,80 +1,54 @@
-TableExtension 52193555 tableextension52193555 extends "Detailed Vendor Ledg. Entry" 
+ 
+   #pragma warning disable AA0005, AA0008, AA0018, AA0021, AA0072, AA0137, AA0201, AA0206, AA0218, AA0228, AL0254, AL0424, AS0011, AW0006 // ForNAV settings
+tableextension 52193555 "tableextension50074" extends "Detailed Vendor Ledg. Entry"
 {
     fields
     {
-
-        //Unsupported feature: Property Deletion (DataClassification) on ""User ID"(Field 11)".
-
-
-        //Unsupported feature: Deletion (FieldCollection) on ""Ledger Entry Amount"(Field 43)".
-
-        field(50000;"Group Code";Code[20])
+        field(70000; "Procurement Plan"; Code[10])
         {
+            DataClassification = CustomerContent;
+            TableRelation = "Procurement Header".No;
         }
-        field(50001;"Group Account";Code[20])
+        field(70001; "Procurement Plan Item"; Code[10])
         {
+            DataClassification = CustomerContent;
+            TableRelation = "Procurement Plan1"."Plan Item No" where("Plan Year" = field("Procurement Plan"));
+
+            trigger OnValidate()
+            begin
+
+                /* ProcurementPlan.RESET;
+                ProcurementPlan.SETRANGE(ProcurementPlan."Plan Item No","Procurement Plan Item");
+               IF ProcurementPlan.FIND('-') THEN BEGIN
+               IF ProcurementPlan."Procurement Type"=ProcurementPlan."Procurement Type"::Goods THEN BEGIN
+                 Type:=Type::Item;
+                 No:=ProcurementPlan."No.";
+               END;
+               IF ProcurementPlan."Procurement Type"<>ProcurementPlan."Procurement Type"::Service THEN BEGIN
+                Type:=Type::"Non Stock";
+                No:=ProcurementPlan."Source of Funds";
+               END;
+                 "Budget Line":=ProcurementPlan."Source of Funds";
+                  Description:=ProcurementPlan."Item Description";
+                 "Unit of Measure":=ProcurementPlan."Unit of Measure";
+                 "Unit Price":=ProcurementPlan."Unit Price";
+               END;
+              */
+
+            end;
         }
-    }
-    keys
-    {
-        // Unsupported feature: Key containing base fields
-        // 
-        // //Unsupported feature: Property Insertion (SumIndexFields) on ""Entry No."(Key)".
-        // 
-        // 
-        // //Unsupported feature: Property Modification (SumIndexFields) on ""Vendor Ledger Entry No.","Entry Type","Posting Date"(Key)".
-        // 
-        // 
-        // //Unsupported feature: Property Insertion (MaintainSIFTIndex) on ""Vendor Ledger Entry No.","Entry Type","Posting Date"(Key)".
-        // 
-        // 
-        // //Unsupported feature: Deletion (KeyCollection) on ""Ledger Entry Amount","Vendor Ledger Entry No.","Posting Date"(Key)".
-        // 
-        // 
-        // //Unsupported feature: Deletion (KeyCollection) on ""Initial Document Type","Entry Type","Vendor No.","Currency Code","Initial Entry Global Dim. 1","Initial Entry Global Dim. 2","Posting Date"(Key)".
-        // 
-        // 
-        // //Unsupported feature: Deletion (KeyCollection) on ""Vendor No.","Currency Code","Initial Entry Global Dim. 1","Initial Entry Global Dim. 2","Initial Entry Due Date","Posting Date"(Key)".
-        // 
-        // key(Key1;"Vendor No.","Initial Entry Due Date","Posting Date","Currency Code")
-        // {
-        // MaintainSIFTIndex = false;
-        // SumIndexFields = Amount,"Amount (LCY)","Debit Amount","Credit Amount","Debit Amount (LCY)","Credit Amount (LCY)";
-        // }
-        // Unsupported feature: Key containing base fields
-        // key(Key2;"Vendor No.","Initial Entry Due Date","Posting Date")
-        // {
-        // MaintainSQLIndex = false;
-        // SumIndexFields = Amount,"Amount (LCY)";
-        // }
-        // Unsupported feature: Key containing base fields
-        // key(Key3;"Vendor No.","Posting Date","Entry Type","Currency Code")
-        // {
-        // SumIndexFields = Amount,"Amount (LCY)","Debit Amount","Debit Amount (LCY)","Credit Amount","Credit Amount (LCY)";
-        // }
-        // Unsupported feature: Key containing base fields
-        // key(Key4;"Vendor No.","Initial Document Type","Document Type","Entry Type","Posting Date")
-        // {
-        // SumIndexFields = Amount,"Amount (LCY)";
-        // }
-        // Unsupported feature: Key containing base fields
-        // key(Key5;"Vendor No.","Initial Entry Due Date","Posting Date","Initial Entry Global Dim. 1","Initial Entry Global Dim. 2","Currency Code")
-        // {
-        // Enabled = false;
-        // SumIndexFields = Amount,"Amount (LCY)","Debit Amount","Credit Amount","Debit Amount (LCY)","Credit Amount (LCY)";
-        // }
-        // Unsupported feature: Key containing base fields
-        // key(Key6;"Vendor No.","Posting Date","Entry Type","Initial Entry Global Dim. 1","Initial Entry Global Dim. 2","Currency Code")
-        // {
-        // Enabled = false;
-        // SumIndexFields = Amount,"Amount (LCY)";
-        // }
-        // Unsupported feature: Key containing base fields
-        // key(Key7;"Vendor No.","Initial Document Type","Document Type","Entry Type","Initial Entry Global Dim. 1","Initial Entry Global Dim. 2")
-        // {
-        // Enabled = false;
-        // SumIndexFields = Amount,"Amount (LCY)";
-        // }
+        field(70002; "Responsibility Center"; Code[10])
+        {
+            Caption = 'Responsibility Center';
+            DataClassification = CustomerContent;
+            TableRelation = "Responsibility Center";
+        }
+
+        field(70003; "Entry Type2"; Option)
+        {
+            Caption = 'Entry Type2';
+            OptionMembers = " ",Retention;
+        }
     }
 }
 

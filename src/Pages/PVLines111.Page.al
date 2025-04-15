@@ -9,23 +9,23 @@ Page 52193621 "PV Lines111"
         {
             repeater(Group)
             {
-                field(Applyto;"Apply to")
+                // field(Applyto;"Apply to")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(PECode;"PE Code")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(ExternalDocumentNo;"External Document No")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                field(Description; Description)
                 {
                     ApplicationArea = Basic;
                 }
-                field(PECode;"PE Code")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(ExternalDocumentNo;"External Document No")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(Description;Description)
-                {
-                    ApplicationArea = Basic;
-                }
-                field(RemainingAmount;"Remaining Amount")
+                field(RemainingAmount; "Remaining Amount")
                 {
                     ApplicationArea = Basic;
                 }

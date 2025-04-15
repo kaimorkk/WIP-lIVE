@@ -82,7 +82,7 @@ Table 52193595 "Reallocation Lines"
                 end
                 else if "Account Type" = "account type"::"Bank Account" then begin
                     Bank.Reset;
-                    Bank.SetRange("Account Type", Bank."account type"::Employer);
+                    // Bank.SetRange(Bank."Account Type", Bank.acc::Employer);
                     if Page.RunModal(51507323, Bank) = Action::LookupOK then begin
                         "Account No." := Bank."No.";
                         "Account Name" := Bank.Name;

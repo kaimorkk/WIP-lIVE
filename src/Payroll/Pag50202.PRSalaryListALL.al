@@ -7,7 +7,7 @@ page 52193589 "PR Salary List (ALL)"
     ModifyAllowed = false;
     PageType = List;
     SourceTable = "Employee";
-    SourceTableView = where(Status = filter(Active), "Employee Category Type" = filter(<> Board));
+    // SourceTableView = where(Status = filter(Active), "Employee Category Type" = filter(<> Board));
     layout
     {
         area(content)
@@ -174,7 +174,7 @@ page 52193589 "PR Salary List (ALL)"
                     HrEmp.reset();
                     HrEmp.setrange(HrEmp.Status, HrEmp.Status::Active);
                     HrEmp.setfilter(HrEmp."Date Of Leaving", '<>%1', 0D);
-                    HREmp.SetFilter(HREmp."Employee Category Type", '<>%1', HREmp."Employee Category Type"::Board);
+                    // HREmp.SetFilter(HREmp."Employee Category Type", '<>%1', HREmp."Employee Category Type"::Board);
                     if HrEmp.Find('-') then begin
                         repeat
                             if (HrEmp."Date Of Leaving" < SelectedPeriod) and (Date2dmy(HrEmp."Date Of Leaving", 2) <> Date2dmy(SelectedPeriod, 2)) then begin

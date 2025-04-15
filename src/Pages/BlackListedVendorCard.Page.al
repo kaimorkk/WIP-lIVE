@@ -247,7 +247,7 @@ Page 50039 "BlackListed Vendor Card"
                         end;
                     end;
                 }
-                field(PINNo; "PIN No.")
+                field(PINNo; "PIN Number")
                 {
                     ApplicationArea = Basic;
                 }

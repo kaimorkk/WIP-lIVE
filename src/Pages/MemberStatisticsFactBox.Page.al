@@ -37,10 +37,10 @@ Page 52193646 "Member Statistics FactBox"
             group(Loans)
             {
                 Caption = 'Loans';
-                field(OustandingBalance; "Oustanding Balance")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(OustandingBalance; "Oustanding Balance")
+                // {
+                //     ApplicationArea = Basic;
+                // }
             }
             group(Products)
             {

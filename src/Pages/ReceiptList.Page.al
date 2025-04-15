@@ -4,7 +4,7 @@ Page 52194381 "Receipt List"
     CardPageID = Receipt;
     PageType = List;
     SourceTable = "Receipts Header1";
-    SourceTableView = where(Posted=const(false));
+    SourceTableView = where(Posted = const(false));
     UsageCategory = Lists;
 
     layout
@@ -13,99 +13,99 @@ Page 52194381 "Receipt List"
         {
             repeater(Group)
             {
-                field(No;"No.")
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                     ApplicationArea = Basic;
                 }
-                field(PayMode;"Pay Mode")
+                field(PayMode; "Pay Mode")
                 {
                     ApplicationArea = Basic;
                     LookupPageID = "Payment Modes111";
                 }
-                field(ChequeNo;"Cheque No")
+                field(ChequeNo; "Cheque No")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeDate;"Cheque Date")
+                field(ChequeDate; "Cheque Date")
                 {
                     ApplicationArea = Basic;
                 }
-                field(TotalAmount;"Total Amount")
+                // field(TotalAmount;"Total Amount")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                field(AmountLCY; "Amount(LCY)")
                 {
                     ApplicationArea = Basic;
                 }
-                field(AmountLCY;"Amount(LCY)")
+                field(BankCode; "Bank Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(BankCode;"Bank Code")
+                field(ReceivedFrom; "Received From")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ReceivedFrom;"Received From")
+                field(OnBehalfOf; "On Behalf Of")
                 {
                     ApplicationArea = Basic;
                 }
-                field(OnBehalfOf;"On Behalf Of")
+                field(Cashier; Cashier)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Cashier;Cashier)
+                field(Posted; Posted)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Posted;Posted)
+                field(PostedDate; "Posted Date")
                 {
                     ApplicationArea = Basic;
                 }
-                field(PostedDate;"Posted Date")
+                field(PostedTime; "Posted Time")
                 {
                     ApplicationArea = Basic;
                 }
-                field(PostedTime;"Posted Time")
+                field(PostedBy; "Posted By")
                 {
                     ApplicationArea = Basic;
                 }
-                field(PostedBy;"Posted By")
+                field(NoSeries; "No. Series")
                 {
                     ApplicationArea = Basic;
                 }
-                field(NoSeries;"No. Series")
+                field(CurrencyCode; "Currency Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(CurrencyCode;"Currency Code")
+                field(GlobalDimension1Code; "Global Dimension 1 Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(GlobalDimension1Code;"Global Dimension 1 Code")
+                field(GlobalDimension2Code; "Global Dimension 2 Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(GlobalDimension2Code;"Global Dimension 2 Code")
+                // field(ProcurementMethod;"Procurement Method")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(ProcurementRequest;"Procurement Request")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                field(Status; Status)
                 {
                     ApplicationArea = Basic;
                 }
-                field(ProcurementMethod;"Procurement Method")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(ProcurementRequest;"Procurement Request")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(Status;Status)
-                {
-                    ApplicationArea = Basic;
-                }
-                field(Banked;Banked)
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(Banked; Banked)
+                // {
+                //     ApplicationArea = Basic;
+                // }
             }
         }
     }

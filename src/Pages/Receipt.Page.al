@@ -2,7 +2,7 @@ Page 52194379 Receipt
 {
     PageType = Card;
     SourceTable = "Receipts Header1";
-    SourceTableView = where(Posted=filter(false));
+    SourceTableView = where(Posted = filter(false));
 
     layout
     {
@@ -10,77 +10,77 @@ Page 52194379 Receipt
         {
             group(General)
             {
-                field(No;"No.")
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                     ApplicationArea = Basic;
                 }
-                field(PayMode;"Pay Mode")
+                field(PayMode; "Pay Mode")
                 {
                     ApplicationArea = Basic;
                     LookupPageID = "Payment Modes111";
                 }
-                field(ChequeNo;"Cheque No")
+                field(ChequeNo; "Cheque No")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeDate;"Cheque Date")
+                field(ChequeDate; "Cheque Date")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ReceivedFrom;"Received From")
+                field(ReceivedFrom; "Received From")
                 {
                     ApplicationArea = Basic;
                 }
-                field(OnBehalfOf;"On Behalf Of")
+                field(OnBehalfOf; "On Behalf Of")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Remarks;Remarks)
+                // field(Remarks;Remarks)
+                // {
+                //     ApplicationArea = Basic;
+                //     Caption = 'Purpose';
+                // }
+                field(BankCode; "Bank Code")
                 {
                     ApplicationArea = Basic;
-                    Caption = 'Purpose';
                 }
-                field(BankCode;"Bank Code")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(CurrencyCode;"Currency Code")
+                field(CurrencyCode; "Currency Code")
                 {
                     ApplicationArea = Basic;
                     Visible = false;
                 }
-                field(ExtDocumentNo;"Ext. Document No.")
+                // field(ExtDocumentNo;"Ext. Document No.")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                field(Status; Status)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Status;Status)
+                field(Amount; Amount)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Amount;Amount)
+                // field(TotalAmount;"Total Amount")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                field(Posted; Posted)
                 {
                     ApplicationArea = Basic;
                 }
-                field(TotalAmount;"Total Amount")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(Posted;Posted)
-                {
-                    ApplicationArea = Basic;
-                }
-                field(Cashier;Cashier)
+                field(Cashier; Cashier)
                 {
                     ApplicationArea = Basic;
                 }
             }
-            part(Control1000000026;"Receipts Line")
+            part(Control1000000026; "Receipts Line")
             {
-                SubPageLink = "Receipt No."=field("No.");
+                SubPageLink = "Receipt No." = field("No.");
             }
         }
     }
@@ -113,7 +113,7 @@ Page 52194379 Receipt
 
                     trigger OnAction()
                     begin
-                        
+
                         /*IF "Account Type"=FALSE THEN
                          ERROR('Receipt No %1 has not been posted',No);*/
                         // BankLedgerEntry.Reset;
@@ -141,19 +141,19 @@ Page 52194379 Receipt
 
     trigger OnAfterGetCurrRecord()
     begin
-        if "Pay Mode"='CHEQUE' then begin
-        CheqNoEditable:=true;
-        CheqDateEditable:=true;
+        if "Pay Mode" = 'CHEQUE' then begin
+            CheqNoEditable := true;
+            CheqDateEditable := true;
         end else begin
-        CheqNoEditable:=false;
-        CheqDateEditable:=false;
+            CheqNoEditable := false;
+            CheqDateEditable := false;
         end;
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        CheqNoEditable:=true;
-        CheqDateEditable:=true;
+        CheqNoEditable := true;
+        CheqDateEditable := true;
     end;
 
     var

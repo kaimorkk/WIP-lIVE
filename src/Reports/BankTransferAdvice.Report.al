@@ -37,7 +37,7 @@ Report 52193726 "Bank Transfer Advice"
             column(BankName; Payments."Bank Name")
             {
             }
-            column(BankAccountNo; Payments."Bank Account No")
+            column(BankAccountNo; Payments."Bank Code")
             {
             }
             column(VendBankAcc; VendBankAcc)
@@ -52,7 +52,7 @@ Report 52193726 "Bank Transfer Advice"
             trigger OnAfterGetRecord();
             begin
                 PVLines.Reset;
-                PVLines.SetRange(PVLines."PV No", Payments.No);
+                PVLines.SetRange(PVLines."PV No", Payments."No.");
                 if PVLines.Find('-') then begin
                     if PVLines."Account Type" = PVLines."account type"::"Bank Account" then begin
                         VendorBank.Reset;

@@ -4,7 +4,7 @@ Page 52193719 "Imprest Card111"
     PageType = Card;
     RefreshOnActivate = true;
     SourceTable = Customer;
-    SourceTableView = where("Customer Type" = filter(Imprest));
+    // SourceTableView = where("Customer Type" = filter(Imprest));
 
     layout
     {

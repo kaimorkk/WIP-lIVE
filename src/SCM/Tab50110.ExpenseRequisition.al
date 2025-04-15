@@ -83,8 +83,8 @@ table 50110 "Expense Requisition"
         }
         field(5; "Approval Status"; Option)
         {
-            OptionMembers = Open,"Pending Approval",Released,Reject;
-            OptionCaption = 'Open,Pending Approval,Approved,Reject';
+            OptionMembers = Open,"Pending Approval",Released,Reject,Archived;
+            OptionCaption = 'Open,Pending Approval,Approved,Reject,Archived';
             Editable = false;
         }
         field(9; "Status"; Option)

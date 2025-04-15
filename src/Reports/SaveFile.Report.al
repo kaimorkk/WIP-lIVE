@@ -17,7 +17,7 @@ Report 52193683 "Save File"
                 NetPay := 0;
                 NetPay := Payments."Total Amount";
                 PVLines.Reset;
-                PVLines.SetRange("PV No", Payments.No);
+                PVLines.SetRange("PV No", Payments."No.");
                 if PVLines.Find('-') then begin
                     Name := PVLines."Account Name";
                     Name := DelChr(Name, '=', '.');
@@ -137,7 +137,7 @@ Report 52193683 "Save File"
                     // TempFile.Write(Text002);
 
                     // TempFile.CreateInstream(NewStream);
-                    ToFile := No + '.csv';
+                    ToFile := "No." + '.csv';
 
                     // Tranfer the content from the temporary file on the NAV server to a file on the RoleTailored client.
 

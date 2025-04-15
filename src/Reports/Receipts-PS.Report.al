@@ -142,7 +142,7 @@ Report 52193447 "Receipts-PS"
                 Receipt.SetRange(Receipt."No.", "Bank Account Ledger Entry"."Document No.");
                 if Receipt.FindFirst then begin
                     ReceivedFrom := Receipt."Received From";
-                    Remarks := Receipt.Remarks;
+                    // Remarks := Receipt.Remarks;
                     //onbehalfof & accno
                     OnbehalfOf := Receipt."On Behalf Of";
                     PayMode := Receipt."Pay Mode";

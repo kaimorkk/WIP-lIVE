@@ -2,8 +2,8 @@ Page 52193599 "Account Holders"
 {
     PageType = Card;
     SourceTable = Vendor;
-    SourceTableView = where("Debtor Type" = const("FOSA Account"),
-                            "Group Account" = const(true));
+    // SourceTableView = where("Debtor Type" = const("FOSA Account"),
+    //                         "Group Account" = const(true));
 
     layout
     {
@@ -31,54 +31,54 @@ Page 52193599 "Account Holders"
                 {
                     ApplicationArea = Basic;
                 }
-                field(GroupChairName; "Group Chair Name")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(GroupSecName; "Group Sec. Name")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(GroupTreasurerName; "Group Treasurer Name")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(MeetingDays; "Meeting Days")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(MeetingVenue; "Meeting Venue")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(GroupAccount; "Group Account")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(GroupChairName; "Group Chair Name")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(GroupSecName; "Group Sec. Name")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(GroupTreasurerName; "Group Treasurer Name")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(MeetingDays; "Meeting Days")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(MeetingVenue; "Meeting Venue")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(GroupAccount; "Group Account")
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 field(BalanceLCY; "Balance (LCY)")
                 {
                     ApplicationArea = Basic;
                 }
-                field(GroupLoanBalance; "Group Loan Balance")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(GroupBalance; "Group Balance")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(Status2; "Status 2")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(NoofFemaleClients; "No. of Female Clients")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(NoofMaleClients; "No. of Male Clients")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(GroupLoanBalance; "Group Loan Balance")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(GroupBalance; "Group Balance")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(Status2; "Status 2")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(NoofFemaleClients; "No. of Female Clients")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(NoofMaleClients; "No. of Male Clients")
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 field(VendorPostingGroup; "Vendor Posting Group")
                 {
                     ApplicationArea = Basic;

@@ -583,7 +583,7 @@ Page 52193442 "Claims Refund Finance"
                 trigger OnAction()
                 begin
                     GLSetup.Get();
-                    Link := GLSetup."DMS Imprest Claim Link" + "No.";
+                    // Link := GLSetup."DMS Imprest Claim Link" + "No.";
                     Hyperlink(Link);
                 end;
             }

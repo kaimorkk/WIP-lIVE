@@ -138,7 +138,7 @@ Table 52193542 "Assignment Matrix"
                         if Deductions.Advance = true then begin
 
                             Customer.Reset;
-                            Customer.SetRange(Customer."Customer Type", Customer."customer type"::Member);
+                            Customer.SetRange(Customer."Customer Type", Customer."customer type"::Normal);
                             Customer.SetRange(Customer."Staff No", "Employee No");
                             Customer.SetRange(Customer."Customer Posting Group", Deductions."Customer Posting Group");
 
@@ -151,12 +151,12 @@ Table 52193542 "Assignment Matrix"
 
                         if Deductions.StimaInvestment = true then begin
                             Customer.Reset;
-                            Customer.SetRange(Customer."Customer Type", Customer."customer type"::Member);
+                            Customer.SetRange(Customer."Customer Type", Customer."customer type"::Normal);
                             //Customer.SETRANGE(Customer."Customer CID  No.","Employee No");
                             Customer.SetRange(Customer."Customer Posting Group", 'BOSA');
                             if Customer.Find('-') then begin
-                                Customer.CalcFields(Customer."Current Investment Total");
-                                "Investment Bal" := Customer."Investment B/F" - Abs(Customer."Current Investment Total");
+                                // Customer.CalcFields(Customer."Current Investment Total");
+                                // "Investment Bal" := Customer."Investment B/F" - Abs(Customer."Current Investment Total");
                             end;
 
                         end;

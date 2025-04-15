@@ -3302,9 +3302,9 @@ codeunit 69502 "PR Payroll Processing"
                 PRPeriod.Reset();
                 PRPeriod.SetRange(prPeriod."Date Opened", selectedPeriod);
                 if PRPeriod.FindFirst() then begin
-                    Emp."Leave Allowance Taken" := true;
-                    Emp."Leave Allowance Period" := PRPeriod."Date Opened";
-                    Emp."Leave Allowance Year" := PRPeriod."Period Year";
+                    // Emp."Leave Allowance Taken" := true;
+                    // Emp."Leave Allowance Period" := PRPeriod."Date Opened";
+                    // Emp."Leave Allowance Year" := PRPeriod."Period Year";
                     Emp.Modify();
                 end;
             end;

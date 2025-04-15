@@ -246,7 +246,7 @@ Page 52194420 "Board Member Card"
                         end;
                     end;
                 }
-                field(PINNo; "PIN No.")
+                field(PINNo; "PIN Number")
                 {
                     ApplicationArea = Basic;
                 }

@@ -2703,7 +2703,7 @@ codeunit 52193490 "Approval Mgmt. Ext"
                 begin
                     RecRef.SETTABLE(payments);
                     payments.CalcFields("Total Amount");
-                    ApprovalEntryArgument."Document No." := payments.No;
+                    ApprovalEntryArgument."Document No." := payments."No.";
                     ApprovalEntryArgument.Amount := payments."Total Amount";
                 end;
             //"IFS Tender Committee"

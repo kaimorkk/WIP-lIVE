@@ -1,85 +1,135 @@
-TableExtension 52193502 tableextension52193502 extends "Bank Account"
+#pragma warning disable AA0005, AA0008, AA0018, AA0021, AA0072, AA0137, AA0201, AA0206, AA0218, AA0228, AL0254, AL0424, AS0011, AW0006 // ForNAV settings
+tableextension 50053 "Bank Account Ext" extends "Bank Account"
 {
     fields
     {
-        field(50000; "WB Account"; Boolean)
+
+        //Unsupported feature: Property Modification (CalcFormula) on "Balance(Field 58)".
+        modify("Bank Branch No.")
         {
+            TableRelation = "PR Bank Branches"."Branch Code" where("Bank Code" = field("Bank Code"));
+            Caption = 'Branch Code';
+            trigger OnAfterValidate()
+            var
+                BankBranch: Record "PR Bank Branches";
+            begin
+                if BankBranch.Get("Bank Branch No.", "Bank Code") then
+                    "Bank Branch Name" := BankBranch."Branch Name";
+            end;
         }
-        field(50001; "Coinage Balance"; Decimal)
+        field(50000; Test; Code[30])
         {
+            DataClassification = CustomerContent;
         }
-        field(50002; "Tag Filter"; Code[20])
+        field(57000; Type; Enum BankType)
         {
-            FieldClass = FlowFilter;
-            //TableRelation = Table0;
+            DataClassification = CustomerContent;
         }
-        field(50003; "Tag Code"; Code[20])
+        field(57001; "Bank Type"; Option)
         {
-            //TableRelation = Table0;
-        }
-        field(53000; rrrr; Option)
-        {
-            OptionCaption = 'tre,err,rrr';
-            OptionMembers = tre,err,rrr;
-        }
-        field(61000; Type; Option)
-        {
-            OptionCaption = ' ,Normal,Petty Cash,Bank,Recurrent';
-            OptionMembers = " ",Normal,"Petty Cash",Bank,Recurrent;
-        }
-        field(61001; Cashier; Code[70])
-        {
-            TableRelation = "User Setup"."User ID";
-        }
-        field(68000; "Cashier ID"; Code[70])
-        {
-            TableRelation = "User Setup"."User ID";
-        }
-        field(68001; "Account Type"; Option)
-        {
-            OptionCaption = ' ,Cashier,Treasury,Employer';
-            OptionMembers = " ",Cashier,Treasury,Employer;
-        }
-        field(68002; "Maximum Teller Withholding"; Decimal)
-        {
-        }
-        field(68003; "Max Withdrawal Limit"; Decimal)
-        {
-        }
-        field(68004; "Max Deposit Limit"; Decimal)
-        {
-        }
-        field(68005; Status; Option)
-        {
-            Editable = false;
-            OptionCaption = 'Open,Pending Approval,Approved,Released,Active,Non-Active,Suspended,Deceased,Withdrawan,Retired,Termination,Family Member,Rejected,,,BOSA';
-            OptionMembers = Open,"Pending Approval",Approved,Released,Active,"Non-Active",Suspended,Deceased,Withdrawan,Retired,Termination,"Family Member",Rejected,,,BOSA;
+            OptionMembers = Normal,Cash,"Fixed Deposit",SMPA,"Chq Collection";
+            DataClassification = CustomerContent;
 
             trigger OnValidate()
             begin
-                //Advice:=TRUE;
+
+                //TestNoEntriesExist(FIELDCAPTION("Bank Type"));
             end;
         }
-        field(68006; "No Of Employees"; Integer)
+        field(57002; "Pending Voucher Amount"; Decimal)
         {
-            CalcFormula = count(Customer where("Employer Code" = field("No.")));
+            DataClassification = CustomerContent;
+        }
+
+        field(57014; AllowedOverDraft; Boolean)
+        {
+            Caption = 'Allowed Overdraft';
+        }
+        field(57003; "Responsibility Center"; Code[10])
+        {
+            Caption = 'Responsibility Center';
+            DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                /*
+                IF NOT UserMgt.CheckRespCenter(1,"Responsibility Center") THEN
+                  ERROR(
+                    Text005,
+                    RespCenter.TABLECAPTION,UserMgt.GetPurchasesFilter);
+                
+                */
+
+            end;
+        }
+        field(57004; "Bank Branch Name"; Text[250])
+        {
+            DataClassification = CustomerContent;
+        }
+        field(57005; "Cheque Numbers"; Code[20])
+        {
+            TableRelation = "No. Series";
+            DataClassification = CustomerContent;
+        }
+        field(57006; "Main Bank"; Boolean)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(57007; "Closed Entries Net Change"; Decimal)
+        {
+            AutoFormatExpression = "Currency Code";
+            AutoFormatType = 1;
+            CalcFormula = sum("Bank Account Ledger Entry".Amount where("Bank Account No." = field("No."),
+                                                                        "Global Dimension 1 Code" = field("Global Dimension 1 Filter"),
+                                                                        "Global Dimension 2 Code" = field("Global Dimension 2 Filter"),
+                                                                        "Posting Date" = field("Date Filter")));
+            // "Fee Account Entries" = filter(true)));
+            Caption = 'Net Change';
+            Editable = false;
             FieldClass = FlowField;
         }
-        field(68007; "Expected Contribution"; Decimal)
+        field(57008; "PRN No."; Code[50])
         {
-            CalcFormula = sum(Customer."Monthly Contribution" where("Employer Code" = field("No."),
-                                                                     "Customer Type" = filter(Member)));
-            FieldClass = FlowField;
+            DataClassification = CustomerContent;
         }
-        field(68008; "Unallocated Receipts"; Code[20])
+        field(57009; "HQ Account"; Boolean)
         {
-            TableRelation = "Receipts Header1"."Employer Code" where("Employer Code" = field("No."),
-                                                                      Posted = filter(true));
+            DataClassification = ToBeClassified;
         }
-        field(68009; "Allocated Receipts"; Code[20])
+        field(57010; "Bank Code"; Code[20])
         {
-            TableRelation = Receipts."Employer Code" where("Employer Code" = field("No."),
-                                                            Posted = filter(true));
+            DataClassification = ToBeClassified;
+            TableRelation = "PR Bank Accounts"."Bank Code";
+            trigger OnValidate()
+            var
+                Banks: Record "PR Bank Accounts";
+            begin
+                if Banks.Get("Bank Code") then
+                    "Bank Name" := Banks."Bank Name";
+            end;
+        }
+        field(57011; "Bank Name"; Text[250])
+        {
+            DataClassification = ToBeClassified;
+            Editable = false;
+        }
+        field(57012; "Bank Account Name"; Text[150])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(57018; "Actual Bank Bal"; Text[100])
+        {
+
+        }
+        field(57013; "IFT Enabled"; Boolean)
+        {
+            Caption = 'Internal Fund Transfer Enabled';
+            DataClassification = ToBeClassified;
+        }
+        field(58000; "Account Type"; Option)
+        {
+            DataClassification = ToBeClassified;
+            OptionMembers = Employer,Employee;
         }
     }
     procedure GetBankCode(BankAccType: Enum BankType; Dimension1Code: Code[20]; Dimension2Code: code[20]) BnkCode: Code[20]
@@ -121,34 +171,18 @@ TableExtension 52193502 tableextension52193502 extends "Bank Account"
             Error(ErrorTxt);
     end;
 
-
-
-    //Unsupported feature: Code Modification on "OnModify".
-
-    //trigger OnModify()
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    "Last Date Modified" := TODAY;
-
-    IF (Name <> xRec.Name) OR
-    #4..21
-    THEN BEGIN
-      MODIFY;
-      UpdateContFromBank.OnModify(Rec);
-      IF NOT FIND THEN BEGIN
-        RESET;
-        IF FIND THEN;
-      END;
-    END;
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    #1..24
-    END;
-    */
-    //end;
+    procedure GetHQBankAccount(BankAccType: enum BankType) BnkCode: Code[20]
+    var
+        BankAcc: Record "Bank Account";
+        Error001: Label 'There is  no %1 bank defined for HQ';
+    begin
+        BankAcc.Reset();
+        BankAcc.SetRange("HQ Account", true);
+        BankAcc.SetRange(Type, BankAccType);
+        if BankAcc.FindFirst() then
+            BnkCode := BankAcc."No."
+        else
+            Error(Error001, BankAccType);
+    end;
 }
 

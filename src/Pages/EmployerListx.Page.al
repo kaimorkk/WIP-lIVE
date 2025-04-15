@@ -6,8 +6,8 @@ Page 52193563 "Employer Listx"
     Editable = false;
     PageType = List;
     SourceTable = "Bank Account";
-    SourceTableView = where(Type=filter(Bank),
-                            "Account Type"=filter(Employer));
+    SourceTableView = where(Type = filter(Bank),
+                            "Account Type" = filter(Employer));
     UsageCategory = Lists;
 
     layout
@@ -16,45 +16,35 @@ Page 52193563 "Employer Listx"
         {
             repeater(Control1)
             {
-                field(No;"No.")
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                     ApplicationArea = Basic;
                 }
-                field(PostCode;"Post Code")
-                {
-                    ApplicationArea = Basic;
-                    Visible = false;
-                }
-                field(CountryRegionCode;"Country/Region Code")
+                field(PostCode; "Post Code")
                 {
                     ApplicationArea = Basic;
                     Visible = false;
                 }
-                field(PhoneNo;"Phone No.")
+                field(CountryRegionCode; "Country/Region Code")
+                {
+                    ApplicationArea = Basic;
+                    Visible = false;
+                }
+                field(PhoneNo; "Phone No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Control23;Contact)
+                field(Control23; Contact)
                 {
                     ApplicationArea = Basic;
                 }
-                field(NoOfEmployees;"No Of Employees")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(Status;Status)
-                {
-                    ApplicationArea = Basic;
-                }
-                field(ExpectedContribution;"Expected Contribution")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(Control1000000001;Balance)
+
+
+                field(Control1000000001; Balance)
                 {
                     ApplicationArea = Basic;
                 }
@@ -62,16 +52,16 @@ Page 52193563 "Employer Listx"
         }
         area(factboxes)
         {
-            part(Control1905532107;"Dimensions FactBox")
+            part(Control1905532107; "Dimensions FactBox")
             {
-                SubPageLink = "Table ID"=const(270),
-                              "No."=field("No.");
+                SubPageLink = "Table ID" = const(270),
+                              "No." = field("No.");
                 Visible = false;
             }
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = true;
             }
@@ -92,10 +82,10 @@ Page 52193563 "Employer Listx"
                     Caption = 'Statistics';
                     Image = Statistics;
                     RunObject = Page "Bank Account Statistics";
-                    RunPageLink = "No."=field("No."),
-                                  "Date Filter"=field("Date Filter"),
-                                  "Global Dimension 1 Filter"=field("Global Dimension 1 Filter"),
-                                  "Global Dimension 2 Filter"=field("Global Dimension 2 Filter");
+                    RunPageLink = "No." = field("No."),
+                                  "Date Filter" = field("Date Filter"),
+                                  "Global Dimension 1 Filter" = field("Global Dimension 1 Filter"),
+                                  "Global Dimension 2 Filter" = field("Global Dimension 2 Filter");
                     ShortCutKey = 'F7';
                 }
                 action(Comments)
@@ -104,8 +94,8 @@ Page 52193563 "Employer Listx"
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Comment Sheet";
-                    RunPageLink = "Table Name"=const("Bank Account"),
-                                  "No."=field("No.");
+                    RunPageLink = "Table Name" = const("Bank Account"),
+                                  "No." = field("No.");
                 }
                 group(Dimensions)
                 {
@@ -117,8 +107,8 @@ Page 52193563 "Employer Listx"
                         Caption = 'Dimensions-Single';
                         Image = Dimensions;
                         RunObject = Page "Default Dimensions";
-                        RunPageLink = "Table ID"=const(270),
-                                      "No."=field("No.");
+                        RunPageLink = "Table ID" = const(270),
+                                      "No." = field("No.");
                         ShortCutKey = 'Shift+Ctrl+D';
                     }
                     action(DimensionsMultiple)
@@ -144,10 +134,10 @@ Page 52193563 "Employer Listx"
                     Caption = 'Balance';
                     Image = Balance;
                     RunObject = Page "Bank Account Balance";
-                    RunPageLink = "No."=field("No."),
-                                  "Date Filter"=field("Date Filter"),
-                                  "Global Dimension 1 Filter"=field("Global Dimension 1 Filter"),
-                                  "Global Dimension 2 Filter"=field("Global Dimension 2 Filter");
+                    RunPageLink = "No." = field("No."),
+                                  "Date Filter" = field("Date Filter"),
+                                  "Global Dimension 1 Filter" = field("Global Dimension 1 Filter"),
+                                  "Global Dimension 2 Filter" = field("Global Dimension 2 Filter");
                 }
                 action(Statements)
                 {
@@ -155,7 +145,7 @@ Page 52193563 "Employer Listx"
                     Caption = 'St&atements';
                     Image = List;
                     RunObject = Page "Bank Account Statement List";
-                    RunPageLink = "Bank Account No."=field("No.");
+                    RunPageLink = "Bank Account No." = field("No.");
                 }
                 action(LedgerEntries)
                 {
@@ -165,7 +155,7 @@ Page 52193563 "Employer Listx"
                     //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                     //PromotedCategory = Process;
                     RunObject = Page "Bank Account Ledger Entries";
-                    RunPageLink = "Bank Account No."=field("No.");
+                    RunPageLink = "Bank Account No." = field("No.");
                     RunPageView = sorting("Bank Account No.");
                     ShortCutKey = 'Ctrl+F7';
                 }
@@ -175,7 +165,7 @@ Page 52193563 "Employer Listx"
                     Caption = 'Chec&k Ledger Entries';
                     Image = CheckLedger;
                     RunObject = Page "Check Ledger Entries";
-                    RunPageLink = "Bank Account No."=field("No.");
+                    RunPageLink = "Bank Account No." = field("No.");
                     RunPageView = sorting("Bank Account No.");
                 }
                 action(Contact)

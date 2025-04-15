@@ -103,7 +103,7 @@ Report 52193700 "Supplier Analysis"
             column(Contracts_Awarded; ContractsAwarded)
             {
             }
-            column(Title; Vendor.Title)
+            column(Title; Vendor."Nature of Business")
             {
             }
             trigger OnAfterGetRecord();

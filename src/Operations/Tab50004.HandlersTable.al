@@ -2038,7 +2038,7 @@
                     Rec."Job Title" := HrEmpRec."Job Title";
                     rec."Current Duty Station" := HrEmpRec."Current Duty Station";
                     rec."Marital Status" := HrEmpRec."Marital Status";
-                    Rec."Ethnic Origin" := HrEmpRec."Ethnic Origin";
+                    // Rec."Ethnic Origin" := HrEmpRec."Ethnic Origin";
                
                     // HrEmpRec.CalcFields(Image);
                     Rec.Picture := HrEmpRec.Image;

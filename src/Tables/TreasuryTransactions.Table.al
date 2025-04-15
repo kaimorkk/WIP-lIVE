@@ -51,9 +51,9 @@ Table 52193500 "Treasury Transactions"
         }
         field(4; "From Account"; Code[20])
         {
-            TableRelation = if ("Transaction Type" = filter("Issue To Teller" | "Return To Bank" | "Branch Treasury Transactions")) "Bank Account"."No." where("Account Type" = const(Treasury))
-            else if ("Transaction Type" = filter("Return To Treasury" | "Return To Treasury" | "Inter Teller Transfers")) "Bank Account"."No." where("Account Type" = const(Cashier))
-            else if ("Transaction Type" = filter("Issue From Bank")) "Bank Account"."No." where("Account Type" = const(" "));
+            TableRelation = if ("Transaction Type" = filter("Issue To Teller" | "Return To Bank" | "Branch Treasury Transactions")) "Bank Account"."No." where("Account Type" = const(Employee))
+            else if ("Transaction Type" = filter("Return To Treasury" | "Return To Treasury" | "Inter Teller Transfers")) "Bank Account"."No." where("Account Type" = const(Employee))
+            else if ("Transaction Type" = filter("Issue From Bank")) "Bank Account"."No." where("Account Type" = const(Employee));
 
             trigger OnValidate()
             begin
@@ -63,9 +63,9 @@ Table 52193500 "Treasury Transactions"
         }
         field(5; "To Account"; Code[20])
         {
-            TableRelation = if ("Transaction Type" = filter("Return To Treasury" | "Issue From Bank" | "Branch Treasury Transactions")) "Bank Account"."No." where("Account Type" = const(Treasury))
-            else if ("Transaction Type" = filter("Issue To Teller" | "Inter Teller Transfers")) "Bank Account"."No." where("Account Type" = const(Cashier))
-            else if ("Transaction Type" = filter("Return To Bank")) "Bank Account"."No." where("Account Type" = const(" "));
+            TableRelation = if ("Transaction Type" = filter("Return To Treasury" | "Issue From Bank" | "Branch Treasury Transactions")) "Bank Account"."No." where("Account Type" = const(Employee))
+            else if ("Transaction Type" = filter("Issue To Teller" | "Inter Teller Transfers")) "Bank Account"."No." where("Account Type" = const(Employee))
+            else if ("Transaction Type" = filter("Return To Bank")) "Bank Account"."No." where("Account Type" = const(Employee));
 
             trigger OnValidate()
             begin
@@ -150,7 +150,7 @@ Table 52193500 "Treasury Transactions"
         }
         field(33; "Bank No"; Code[20])
         {
-            TableRelation = "Bank Account"."No." where("Account Type" = const(" "));
+            TableRelation = "Bank Account"."No." where("Account Type" = const(Employee));
         }
         field(34; "Denomination Total"; Decimal)
         {

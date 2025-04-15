@@ -17,7 +17,7 @@ Codeunit 52193466 "Receipts-Post"
         Batch: Record "Gen. Journal Batch";
         GLEntry: Record "G/L Entry";
     begin
-        
+
         /*IF CONFIRM('Are you sure you want to post the receipt no '+RptHeader.No+' ?')=TRUE THEN BEGIN
         
           IF RptHeader.Posted THEN
@@ -64,9 +64,9 @@ Codeunit 52193466 "Receipts-Post"
           GenJnLine."External Document No.":=RptHeader."Cheque No.";
           GenJnLine."Currency Code":=RptHeader."Currency Code";
           GenJnLine.VALIDATE(GenJnLine."Currency Code");
-          GenJnLine."Pay Mode":=RptHeader."Payment Mode";
+          //GenJnLine."Pay Mode":=RptHeader."Payment Mode";
           IF RptHeader."Payment Mode"='CHEQUE' THEN
-          GenJnLine."Cheque Date":=RptHeader."Cheque Date";
+          //GenJnLine."Cheque Date":=RptHeader."Cheque Date";
           GenJnLine."Shortcut Dimension 1 Code":=RptHeader."Global Dimension 1 Code";
           GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
           GenJnLine."Shortcut Dimension 2 Code":=RptHeader."Global Dimension 2 Code";

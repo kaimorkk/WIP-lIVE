@@ -12,76 +12,76 @@ Page 52194177 "HR Employee List"
         {
             repeater(Control1000000000)
             {
-                field(No;"No.")
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Title;Title)
+                field(Title; Title)
                 {
                     ApplicationArea = Basic;
                 }
-                field(FirstName;"First Name")
+                field(FirstName; "First Name")
                 {
                     ApplicationArea = Basic;
                 }
-                field(LastName;"Last Name")
-                {
-                    ApplicationArea = Basic;
-                    Visible = false;
-                }
-                field(Initials;Initials)
+                field(LastName; "Last Name")
                 {
                     ApplicationArea = Basic;
                     Visible = false;
                 }
-                field(JobTitle;"Job Title")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(PostCode;"Post Code")
+                field(Initials; Initials)
                 {
                     ApplicationArea = Basic;
                     Visible = false;
                 }
-                field(CountryRegionCode;"Country/Region Code")
+                field(JobTitle; "Job Title")
+                {
+                    ApplicationArea = Basic;
+                }
+                field(PostCode; "Post Code")
                 {
                     ApplicationArea = Basic;
                     Visible = false;
                 }
-                field(Extension;Extension)
-                {
-                    ApplicationArea = Basic;
-                }
-                field(PhoneNo;"Phone No.")
+                field(CountryRegionCode; "Country/Region Code")
                 {
                     ApplicationArea = Basic;
                     Visible = false;
                 }
-                field(MobilePhoneNo;"Mobile Phone No.")
+                field(Extension; Extension)
+                {
+                    ApplicationArea = Basic;
+                }
+                field(PhoneNo; "Phone No.")
                 {
                     ApplicationArea = Basic;
                     Visible = false;
                 }
-                field(EMail;"E-Mail")
+                field(MobilePhoneNo; "Mobile Phone No.")
                 {
                     ApplicationArea = Basic;
                     Visible = false;
                 }
-                field(StatisticsGroupCode;"Statistics Group Code")
+                field(EMail; "E-Mail")
                 {
                     ApplicationArea = Basic;
                     Visible = false;
                 }
-                field(ResourceNo;"Resource No.")
+                field(StatisticsGroupCode; "Statistics Group Code")
                 {
                     ApplicationArea = Basic;
                     Visible = false;
                 }
-                field(SearchName;"Search Name")
+                field(ResourceNo; "Resource No.")
+                {
+                    ApplicationArea = Basic;
+                    Visible = false;
+                }
+                field(SearchName; "Search Name")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Comment;Comment)
+                field(Comment; Comment)
                 {
                     ApplicationArea = Basic;
                 }
@@ -89,11 +89,11 @@ Page 52194177 "HR Employee List"
         }
         area(factboxes)
         {
-            systempart(Control1000000003;Links)
+            systempart(Control1000000003; Links)
             {
                 Visible = false;
             }
-            systempart(Control1000000001;Notes)
+            systempart(Control1000000001; Notes)
             {
                 Visible = true;
             }
@@ -112,13 +112,13 @@ Page 52194177 "HR Employee List"
                 var
                     EmpRec: Record Employee;
                 begin
-                    if Confirm(Text000,false) then begin
-                    CurrPage.SetSelectionFilter(EmpRec);
-                     if EmpRec.Find('-') then
-                       repeat
-                        CreateImprestAC(EmpRec);
-                       until
-                        EmpRec.Next=0;
+                    if Confirm(Text000, false) then begin
+                        CurrPage.SetSelectionFilter(EmpRec);
+                        if EmpRec.Find('-') then
+                            repeat
+                            // CreateImprestAC(EmpRec);
+                            until
+                             EmpRec.Next = 0;
                     end;
                 end;
             }

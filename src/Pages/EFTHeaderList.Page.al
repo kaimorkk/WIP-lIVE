@@ -49,10 +49,10 @@ Page 52193439 "EFT Header List"
                 {
                     ApplicationArea = Basic;
                 }
-                field(TransactingBranch; "Transacting Branch")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(TransactingBranch; "Transacting Branch")
+                // {
+                //     ApplicationArea = Basic;
+                // }
             }
         }
         area(factboxes)

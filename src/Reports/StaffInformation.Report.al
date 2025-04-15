@@ -40,9 +40,9 @@ Report 52193709 StaffInformation
             column(DepartmentName; Employee."Department Name")
             {
             }
-            column(DirectorateName; Employee."Directorate Name")
-            {
-            }
+            // column(DirectorateName; Employee."Directorate Name")
+            // {
+            // }
             column(DateOfJoin; Employee."Date Of Join")
             {
             }

@@ -9,67 +9,67 @@ Page 52193939 "Commissioner Transactions"
         {
             repeater(Control1000000000)
             {
-                field(MeetingID;"Meeting ID")
+                field(MeetingID; "Meeting ID")
                 {
                     ApplicationArea = Basic;
                 }
-                field(MeetingDescription;"Meeting Description")
+                field(MeetingDescription; "Meeting Description")
                 {
                     ApplicationArea = Basic;
                 }
-                field(StartingDate;"Starting Date")
+                field(StartingDate; "Starting Date")
                 {
                     ApplicationArea = Basic;
                 }
-                field(EndingDate;"Ending Date")
+                field(EndingDate; "Ending Date")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Commissioner;Commissioner)
+                field(Commissioner; Commissioner)
                 {
                     ApplicationArea = Basic;
                     Caption = 'Board Member';
                 }
-                field(BoardMemberName;"Commissioner Name")
+                field(BoardMemberName; "Commissioner Name")
                 {
                     ApplicationArea = Basic;
                     Caption = 'Board Member Name';
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                     ApplicationArea = Basic;
                 }
-                field(EDCode;"E/D Code")
+                field(EDCode; "E/D Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     ApplicationArea = Basic;
                 }
-                field(GrossAmount;"Gross  Amount")
+                field(GrossAmount; "Gross  Amount")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Tax;Tax)
+                field(Tax; Tax)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Amount;Amount)
+                field(Amount; Amount)
                 {
                     ApplicationArea = Basic;
                     Caption = 'Net Amount';
                 }
-                field(Recurring;Recurring)
+                field(Recurring; Recurring)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Paid;Paid)
+                field(Paid; Paid)
                 {
                     ApplicationArea = Basic;
                     Editable = false;
                 }
-                field(Attachment;Attachment)
+                field(Attachment; Attachment)
                 {
                     ApplicationArea = Basic;
                     Editable = false;
@@ -95,8 +95,8 @@ Page 52193939 "Commissioner Transactions"
                     var
                         InteractTemplLanguage: Record "Interaction Tmpl. Language";
                     begin
-                        if InteractTemplLanguage.Get("Meeting ID","Language Code(Default)") then
-                          InteractTemplLanguage.OpenAttachment;
+                        if InteractTemplLanguage.Get("Meeting ID", "Language Code(Default)") then
+                            InteractTemplLanguage.OpenAttachment;
                     end;
                 }
                 action(Create)
@@ -109,15 +109,15 @@ Page 52193939 "Commissioner Transactions"
                     var
                         InteractTemplLanguage: Record "Interaction Tmpl. Language";
                     begin
-                        if not InteractTemplLanguage.Get("Meeting ID","Language Code(Default)") then begin
-                          InteractTemplLanguage.Init;
-                          InteractTemplLanguage."Interaction Template Code" := "Meeting ID";
-                          InteractTemplLanguage."Language Code" := "Language Code(Default)";
-                          InteractTemplLanguage.Description := Description;
+                        if not InteractTemplLanguage.Get("Meeting ID", "Language Code(Default)") then begin
+                            InteractTemplLanguage.Init;
+                            InteractTemplLanguage."Interaction Template Code" := "Meeting ID";
+                            InteractTemplLanguage."Language Code" := "Language Code(Default)";
+                            InteractTemplLanguage.Description := Description;
                         end;
                         InteractTemplLanguage.CreateAttachment;
                         CurrPage.Update;
-                        Attachment:=Attachment::Yes;
+                        Attachment := Attachment::Yes;
                         Modify;
                     end;
                 }
@@ -131,17 +131,17 @@ Page 52193939 "Commissioner Transactions"
                     var
                         InteractTemplLanguage: Record "Interaction Tmpl. Language";
                     begin
-                        if not InteractTemplLanguage.Get("Meeting ID","Language Code(Default)") then begin
-                          InteractTemplLanguage.Init;
-                          InteractTemplLanguage."Interaction Template Code" :="Meeting ID";
-                          InteractTemplLanguage."Language Code" := "Language Code(Default)";
-                          InteractTemplLanguage.Description := Description;
-                          InteractTemplLanguage.Insert;
-                          Commit;
+                        if not InteractTemplLanguage.Get("Meeting ID", "Language Code(Default)") then begin
+                            InteractTemplLanguage.Init;
+                            InteractTemplLanguage."Interaction Template Code" := "Meeting ID";
+                            InteractTemplLanguage."Language Code" := "Language Code(Default)";
+                            InteractTemplLanguage.Description := Description;
+                            InteractTemplLanguage.Insert;
+                            Commit;
                         end;
                         InteractTemplLanguage.CopyFromAttachment;
                         CurrPage.Update;
-                        Attachment:=Attachment::Yes;
+                        Attachment := Attachment::Yes;
                         Modify;
                     end;
                 }
@@ -155,16 +155,16 @@ Page 52193939 "Commissioner Transactions"
                     var
                         InteractTemplLanguage: Record "Interaction Tmpl. Language";
                     begin
-                        if not InteractTemplLanguage.Get("Meeting ID","Language Code(Default)") then begin
-                          InteractTemplLanguage.Init;
+                        if not InteractTemplLanguage.Get("Meeting ID", "Language Code(Default)") then begin
+                            InteractTemplLanguage.Init;
                             InteractTemplLanguage."Interaction Template Code" := "Meeting ID";
-                          InteractTemplLanguage."Language Code" := "Language Code(Default)";
-                          InteractTemplLanguage.Description := Description;
-                          InteractTemplLanguage.Insert;
+                            InteractTemplLanguage."Language Code" := "Language Code(Default)";
+                            InteractTemplLanguage.Description := Description;
+                            InteractTemplLanguage.Insert;
                         end;
                         InteractTemplLanguage.ImportAttachment;
                         CurrPage.Update;
-                        Attachment:=Attachment::Yes;
+                        Attachment := Attachment::Yes;
                         Modify;
                     end;
                 }
@@ -178,8 +178,8 @@ Page 52193939 "Commissioner Transactions"
                     var
                         InteractTemplLanguage: Record "Interaction Tmpl. Language";
                     begin
-                        if InteractTemplLanguage.Get("Meeting ID","Language Code(Default)") then
-                          InteractTemplLanguage.ExportAttachment;
+                        if InteractTemplLanguage.Get("Meeting ID", "Language Code(Default)") then
+                            InteractTemplLanguage.ExportAttachment;
                     end;
                 }
                 action(Remove)
@@ -192,10 +192,10 @@ Page 52193939 "Commissioner Transactions"
                     var
                         InteractTemplLanguage: Record "Interaction Tmpl. Language";
                     begin
-                        if InteractTemplLanguage.Get("Meeting ID","Language Code(Default)") then begin
-                          InteractTemplLanguage.RemoveAttachment(true);
-                          Attachment:=Attachment::No;
-                          Modify;
+                        if InteractTemplLanguage.Get("Meeting ID", "Language Code(Default)") then begin
+                            InteractTemplLanguage.RemoveAttachment(true);
+                            Attachment := Attachment::No;
+                            Modify;
                         end;
                     end;
                 }
@@ -209,164 +209,164 @@ Page 52193939 "Commissioner Transactions"
 
                 trigger OnAction()
                 begin
-                    
-                    
+
+
                     GenJnlLine.Init;
-                    GenJnlLine."Journal Template Name":='GENERAL';
-                    GenJnlLine."Journal Batch Name":="Meeting ID";
+                    GenJnlLine."Journal Template Name" := 'GENERAL';
+                    GenJnlLine."Journal Batch Name" := "Meeting ID";
                     GenJnlLine.DeleteAll;
-                    
-                     //Commissioner allowance Allowances
-                      // SETRANGE("Meeting ID",Rec."Meeting ID");
+
+                    //Commissioner allowance Allowances
+                    // SETRANGE("Meeting ID",Rec."Meeting ID");
                     if Find('-') then
-                    repeat
-                    
-                    if Paid= true then
-                    Error('The Transaction has already been Posted!!! ');
-                    
-                    GenJnBatchName."Journal Template Name":='GENERAL';
-                    
-                    GenJnBatchName.Name:="Meeting ID";
-                      if not GenJnBatchName.Get(GenJnBatchName."Journal Template Name",GenJnBatchName.Name) then
-                     GenJnBatchName.Insert;
-                    
-                       //positing the Gross Amount Comm Exp payable AC
-                    
-                    CommPayableSetup.Get;
-                    GenJnlLine.Init;
-                    GenJnlLine."Journal Template Name":='GENERAL';
-                    GenJnlLine."Journal Batch Name":="Meeting ID";
-                    GenJnlLine."Line No.":=GenJnlLine."Line No."+1000;
-                    GenJnlLine."Account Type":=GenJnlLine."account type"::"G/L Account";
-                        if CommissionerED.Get("E/D Code") then
-                        AccountNo:=CommissionerED."GL Account";
-                    GenJnlLine."Account No.":=CommPayableSetup."Comm Expense Payable Acc";
-                    GenJnlLine.Amount:=-Amount;
-                    GenJnlLine."Posting Date":=Today;
-                    GenJnlLine."Document No.":="Meeting ID";
-                    GenJnlLine.Description:=Description;
-                    
-                    //Added By NATHAN
-                    
-                    GenJnlLine."ED Code":="E/D Code";
-                    GenJnlLine."Commissioner Name":="Commissioner Name";
-                    GenJnlLine."Shortcut Dimension 2 Code":=Commissioner;
-                    GenJnlLine."Meeting Description":="Meeting Description";
-                    GenJnlLine."Starting Date":="Starting Date";
-                    GenJnlLine."Ending Date":="Ending Date";
-                    GenJnlLine."Shortcut Dimension 2 Code":=Commissioner;
-                    
-                       //Added By NATHAN
-                    GenJnlLine."Meeting ID":="Meeting ID";
-                    GenJnlLine."Meeting Description":="Meeting Description";
-                    GenJnlLine."Starting Date":="Starting Date";
-                    GenJnlLine."Ending Date":="Ending Date";
-                    
-                    
-                    GenJnlLine.Insert;
-                    
-                    //POSTING TO COMMISSIONER EXPENCE ACCOUNT
-                    GenJnlLine.Init;
-                    GenJnlLine."Journal Template Name":='GENERAL';
-                    GenJnlLine."Journal Batch Name":="Meeting ID";
-                    GenJnlLine."Line No.":=GenJnlLine."Line No."+1000;
-                    GenJnlLine."Account Type":=GenJnlLine."account type"::"G/L Account";
-                        if CommissionerED.Get("E/D Code") then
-                        AccountNo:=CommissionerED."GL Account";
-                    GenJnlLine."Account No.":=AccountNo;
-                    GenJnlLine.Amount:="Gross  Amount";
-                    GenJnlLine."Posting Date":=Today;
-                    GenJnlLine."Document No.":="Meeting ID";
-                    GenJnlLine.Description:=Description;
-                    
-                    //Added By NATHAN
-                    
-                    GenJnlLine."ED Code":="E/D Code";
-                    GenJnlLine."Commissioner Name":="Commissioner Name";
-                    GenJnlLine."Shortcut Dimension 2 Code":=Commissioner;
-                    GenJnlLine."Meeting Description":="Meeting Description";
-                    GenJnlLine."Starting Date":="Starting Date";
-                    GenJnlLine."Ending Date":="Ending Date";
-                    
-                    //Commissioner Code
-                    //GenJnlLine."VAT %":=
-                    
-                    //GenJnlLine."Bal. Account No.":= CommPayableSetup."Comm Expense Payable Acc";
-                    GenJnlLine."Shortcut Dimension 2 Code":=Commissioner;
-                    
-                       //Added By NATHAN
-                    GenJnlLine."Meeting ID":="Meeting ID";
-                    GenJnlLine."Meeting Description":="Meeting Description";
-                    GenJnlLine."Starting Date":="Starting Date";
-                    GenJnlLine."Ending Date":="Ending Date";
-                    
-                    
-                    GenJnlLine.Insert;
-                    
-                    /*
-                    JnLineDim.INIT;
-                    JnLineDim."Table ID":=81;
-                    JnLineDim."Journal Template Name":='GENERAL';
-                    JnLineDim."Journal Batch Name":= "Meeting ID";
-                    JnLineDim."Journal Line No.":=GenJnlLine."Line No.";
-                    JnLineDim."Allocation Line No.":=0;
-                    GlSetup.GET;
-                    JnLineDim."Dimension Code":=GlSetup."Global Dimension 2 Code";
-                    JnLineDim."Dimension Value Code":=Commissioner;
-                    JnLineDim.INSERT;
-                    */
-                    
-                    
-                    
-                    
-                       //Tax
-                    
-                    GenJnlLine.Init;
-                    GenJnlLine."Journal Template Name":='GENERAL';
-                    GenJnlLine."Journal Batch Name":="Meeting ID";
-                    GenJnlLine."Line No.":=GenJnlLine."Line No."+1000;
-                    GenJnlLine."Account No.":= CommPayableSetup."Comm Tax Acc";
-                    GenJnlLine."Posting Date":=Today;
-                    GenJnlLine."Account Type":=GenJnlLine."account type"::"G/L Account";
-                    GenJnlLine."Document No.":="Meeting ID";
-                    GenJnlLine.Description:=Description;
-                    GenJnlLine.Description:='Tax(Sitting Alowance)';
-                    
-                    //Added By NATHAN
-                    GenJnlLine."ED Code":="E/D Code";
-                    GenJnlLine."Commissioner Name":="Commissioner Name";
-                    GenJnlLine."Shortcut Dimension 2 Code":=Commissioner;
-                    GenJnlLine."Meeting ID":="Meeting ID";
-                    GenJnlLine."Meeting Description":="Meeting Description";
-                    GenJnlLine."Starting Date":="Starting Date";
-                    GenJnlLine."Ending Date":="Ending Date";
-                    //GenJnlLine."Bal. Account No.":= CommPayableSetup."Comm Expense Payable Acc";
-                    GenJnlLine.Amount:=-Tax;
-                    GenJnlLine."Shortcut Dimension 2 Code":=Commissioner;
-                    GenJnlLine.Insert;
-                    
-                    
-                        Paid:=true;
-                        Modify;
-                    /*
-                    JnLineDim.INIT;
-                    JnLineDim."Table ID":=81;
-                    JnLineDim."Journal Template Name":='GENERAL';
-                    JnLineDim."Journal Batch Name":= "Meeting ID";
-                    JnLineDim."Journal Line No.":=GenJnlLine."Line No.";
-                    JnLineDim."Allocation Line No.":=0;
-                    GlSetup.GET;
-                    JnLineDim."Dimension Code":=GlSetup."Global Dimension 2 Code";
-                    JnLineDim."Dimension Value Code":=Commissioner;
-                    JnLineDim.INSERT;
-                    */
-                    
-                    
-                    until Next=0;
-                    
-                    
-                    
-                    Codeunit.Run(Codeunit::"Gen. Jnl.-Post",GenJnlLine);
+                        repeat
+
+                            if Paid = true then
+                                Error('The Transaction has already been Posted!!! ');
+
+                            GenJnBatchName."Journal Template Name" := 'GENERAL';
+
+                            GenJnBatchName.Name := "Meeting ID";
+                            if not GenJnBatchName.Get(GenJnBatchName."Journal Template Name", GenJnBatchName.Name) then
+                                GenJnBatchName.Insert;
+
+                            //positing the Gross Amount Comm Exp payable AC
+
+                            CommPayableSetup.Get;
+                            GenJnlLine.Init;
+                            GenJnlLine."Journal Template Name" := 'GENERAL';
+                            GenJnlLine."Journal Batch Name" := "Meeting ID";
+                            GenJnlLine."Line No." := GenJnlLine."Line No." + 1000;
+                            GenJnlLine."Account Type" := GenJnlLine."account type"::"G/L Account";
+                            if CommissionerED.Get("E/D Code") then
+                                AccountNo := CommissionerED."GL Account";
+                            GenJnlLine."Account No." := CommPayableSetup."Comm Expense Payable Acc";
+                            GenJnlLine.Amount := -Amount;
+                            GenJnlLine."Posting Date" := Today;
+                            GenJnlLine."Document No." := "Meeting ID";
+                            GenJnlLine.Description := Description;
+
+                            //Added By NATHAN
+
+                            // GenJnlLine."ED Code":="E/D Code";
+                            // GenJnlLine."Commissioner Name":="Commissioner Name";
+                            // GenJnlLine."Shortcut Dimension 2 Code":=Commissioner;
+                            // GenJnlLine."Meeting Description":="Meeting Description";
+                            // GenJnlLine."Starting Date":="Starting Date";
+                            // GenJnlLine."Ending Date":="Ending Date";
+                            GenJnlLine."Shortcut Dimension 2 Code" := Commissioner;
+
+                            //Added By NATHAN
+                            // GenJnlLine."Meeting ID":="Meeting ID";
+                            // GenJnlLine."Meeting Description":="Meeting Description";
+                            // GenJnlLine."Starting Date":="Starting Date";
+                            // GenJnlLine."Ending Date":="Ending Date";
+
+
+                            GenJnlLine.Insert;
+
+                            //POSTING TO COMMISSIONER EXPENCE ACCOUNT
+                            GenJnlLine.Init;
+                            GenJnlLine."Journal Template Name" := 'GENERAL';
+                            GenJnlLine."Journal Batch Name" := "Meeting ID";
+                            GenJnlLine."Line No." := GenJnlLine."Line No." + 1000;
+                            GenJnlLine."Account Type" := GenJnlLine."account type"::"G/L Account";
+                            if CommissionerED.Get("E/D Code") then
+                                AccountNo := CommissionerED."GL Account";
+                            GenJnlLine."Account No." := AccountNo;
+                            GenJnlLine.Amount := "Gross  Amount";
+                            GenJnlLine."Posting Date" := Today;
+                            GenJnlLine."Document No." := "Meeting ID";
+                            GenJnlLine.Description := Description;
+
+                            //Added By NATHAN
+
+                            // GenJnlLine."ED Code" := "E/D Code";
+                            // GenJnlLine."Commissioner Name" := "Commissioner Name";
+                            // GenJnlLine."Shortcut Dimension 2 Code" := Commissioner;
+                            // GenJnlLine."Meeting Description" := "Meeting Description";
+                            // GenJnlLine."Starting Date" := "Starting Date";
+                            // GenJnlLine."Ending Date" := "Ending Date";
+
+                            //Commissioner Code
+                            //GenJnlLine."VAT %":=
+
+                            //GenJnlLine."Bal. Account No.":= CommPayableSetup."Comm Expense Payable Acc";
+                            GenJnlLine."Shortcut Dimension 2 Code" := Commissioner;
+
+                            //Added By NATHAN
+                            // GenJnlLine."Meeting ID" := "Meeting ID";
+                            // GenJnlLine."Meeting Description" := "Meeting Description";
+                            // GenJnlLine."Starting Date" := "Starting Date";
+                            // GenJnlLine."Ending Date" := "Ending Date";
+
+
+                            GenJnlLine.Insert;
+
+                            /*
+                            JnLineDim.INIT;
+                            JnLineDim."Table ID":=81;
+                            JnLineDim."Journal Template Name":='GENERAL';
+                            JnLineDim."Journal Batch Name":= "Meeting ID";
+                            JnLineDim."Journal Line No.":=GenJnlLine."Line No.";
+                            JnLineDim."Allocation Line No.":=0;
+                            GlSetup.GET;
+                            JnLineDim."Dimension Code":=GlSetup."Global Dimension 2 Code";
+                            JnLineDim."Dimension Value Code":=Commissioner;
+                            JnLineDim.INSERT;
+                            */
+
+
+
+
+                            //Tax
+
+                            GenJnlLine.Init;
+                            GenJnlLine."Journal Template Name" := 'GENERAL';
+                            GenJnlLine."Journal Batch Name" := "Meeting ID";
+                            GenJnlLine."Line No." := GenJnlLine."Line No." + 1000;
+                            GenJnlLine."Account No." := CommPayableSetup."Comm Tax Acc";
+                            GenJnlLine."Posting Date" := Today;
+                            GenJnlLine."Account Type" := GenJnlLine."account type"::"G/L Account";
+                            GenJnlLine."Document No." := "Meeting ID";
+                            GenJnlLine.Description := Description;
+                            GenJnlLine.Description := 'Tax(Sitting Alowance)';
+
+                            //Added By NATHAN
+                            // GenJnlLine."ED Code" := "E/D Code";
+                            // GenJnlLine."Commissioner Name" := "Commissioner Name";
+                            // GenJnlLine."Shortcut Dimension 2 Code" := Commissioner;
+                            // GenJnlLine."Meeting ID" := "Meeting ID";
+                            // GenJnlLine."Meeting Description" := "Meeting Description";
+                            // GenJnlLine."Starting Date" := "Starting Date";
+                            // GenJnlLine."Ending Date" := "Ending Date";
+                            //GenJnlLine."Bal. Account No.":= CommPayableSetup."Comm Expense Payable Acc";
+                            GenJnlLine.Amount := -Tax;
+                            GenJnlLine."Shortcut Dimension 2 Code" := Commissioner;
+                            GenJnlLine.Insert;
+
+
+                            Paid := true;
+                            Modify;
+                        /*
+                        JnLineDim.INIT;
+                        JnLineDim."Table ID":=81;
+                        JnLineDim."Journal Template Name":='GENERAL';
+                        JnLineDim."Journal Batch Name":= "Meeting ID";
+                        JnLineDim."Journal Line No.":=GenJnlLine."Line No.";
+                        JnLineDim."Allocation Line No.":=0;
+                        GlSetup.GET;
+                        JnLineDim."Dimension Code":=GlSetup."Global Dimension 2 Code";
+                        JnLineDim."Dimension Value Code":=Commissioner;
+                        JnLineDim.INSERT;
+                        */
+
+
+                        until Next = 0;
+
+
+
+                    Codeunit.Run(Codeunit::"Gen. Jnl.-Post", GenJnlLine);
 
                 end;
             }

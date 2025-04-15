@@ -5,7 +5,7 @@ page 52193900 "Seconded In List"
     PageType = List;
     SourceTable = Employee;
     UsageCategory = Lists;
-    SourceTableView = where("Employee Category Type" = const("Second-In"));
+    // SourceTableView = where("Employee Category Type" = const("Second-In"));
     CardPageId = "Seconded In Card";
     InsertAllowed = false;
     ModifyAllowed = false;

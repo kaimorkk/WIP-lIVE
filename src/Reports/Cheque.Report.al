@@ -37,7 +37,7 @@ Report 52193675 Cheque
             column(DescriptionLine_2_; DescriptionLine[2])
             {
             }
-            column(Payments_No; Payments.No)
+            column(Payments_No; Payments."No.")
             {
             }
             trigger OnAfterGetRecord();
@@ -47,7 +47,7 @@ Report 52193675 Cheque
                     Payments.Modify;
                 end;
                 Payments.CalcFields("Total Amount");
-                FormatNoText(DescriptionLine, Payments."Total Amount", Payments.Currency);
+                FormatNoText(DescriptionLine, Payments."Total Amount", Payments."Currency Code");
             end;
 
         }
@@ -771,7 +771,7 @@ Report 52193675 Cheque
 
     procedure GetNo(PaymentsRec: Record Payments)
     begin
-        PVNo := PaymentsRec.No;
+        PVNo := PaymentsRec."No.";
         DocDate := PaymentsRec.Date;
     end;
 

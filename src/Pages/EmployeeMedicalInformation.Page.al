@@ -3,7 +3,7 @@ Page 52194069 "Employee Medical Information"
     ApplicationArea = Basic;
     PageType = Card;
     SourceTable = Employee;
-    SourceTableView = where(Status=const(Active));
+    SourceTableView = where(Status = const(Active));
     UsageCategory = History;
 
     layout
@@ -13,62 +13,59 @@ Page 52194069 "Employee Medical Information"
             group(General)
             {
                 Caption = 'General';
-                field(No;"No.")
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                     Editable = false;
                 }
-                field(FirstName;"First Name")
-                {
-                    ApplicationArea = Basic;
-                    Editable = false;
-                    Enabled = true;
-                }
-                field(MiddleName;"Middle Name")
-                {
-                    ApplicationArea = Basic;
-                    Editable = false;
-                }
-                field(LastName;"Last Name")
+                field(FirstName; "First Name")
                 {
                     ApplicationArea = Basic;
                     Editable = false;
                     Enabled = true;
                 }
-                field(Initials;Initials)
+                field(MiddleName; "Middle Name")
                 {
                     ApplicationArea = Basic;
                     Editable = false;
                 }
-                field(IDNumber;"ID Number")
+                field(LastName; "Last Name")
+                {
+                    ApplicationArea = Basic;
+                    Editable = false;
+                    Enabled = true;
+                }
+                field(Initials; Initials)
                 {
                     ApplicationArea = Basic;
                     Editable = false;
                 }
-                field(Gender;Gender)
+                field(IDNumber; "ID Number")
                 {
                     ApplicationArea = Basic;
                     Editable = false;
                 }
-                field(Position;Position)
+                field(Gender; Gender)
                 {
                     ApplicationArea = Basic;
                     Editable = false;
                 }
-                field(ContractType;"Contract Type")
+                field(Position; Position)
                 {
                     ApplicationArea = Basic;
                     Editable = false;
                 }
-                field(DateOfJoin;"Date Of Join")
+                field(ContractType; "Contract Type")
                 {
                     ApplicationArea = Basic;
                     Editable = false;
                 }
-                field(BloodType;"Blood Type")
+                field(DateOfJoin; "Date Of Join")
                 {
                     ApplicationArea = Basic;
+                    Editable = false;
                 }
+
             }
             label(Control1000000030)
             {
@@ -77,7 +74,7 @@ Page 52194069 "Employee Medical Information"
                 Style = Strong;
                 StyleExpr = true;
             }
-            part(KPA;"Medical Info")
+            part(KPA; "Medical Info")
             {
             }
         }

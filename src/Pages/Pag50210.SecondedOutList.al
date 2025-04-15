@@ -5,7 +5,7 @@ page 52193901 "Seconded Out List"
     PageType = List;
     SourceTable = Employee;
     UsageCategory = Lists;
-    SourceTableView = where("Employee Category Type" = const("Second-Out"));
+    // SourceTableView = where("Employee Category Type" = const("Second-Out"));
     CardPageId = "Seconded Out Card";
     InsertAllowed = false;
     ModifyAllowed = false;

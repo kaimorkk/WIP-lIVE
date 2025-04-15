@@ -4,7 +4,7 @@ Report 52193681 CBAEFT
 
     dataset
     {
-        dataitem(Payments;Payments)
+        dataitem(Payments; Payments)
         {
             column(ReportForNavId_1000000000; 1000000000)
             {
@@ -12,60 +12,59 @@ Report 52193681 CBAEFT
 
             trigger OnAfterGetRecord()
             begin
-                 Payments.CalcFields("Total Amount");
-                 NetPay:=0;
-                  NetPay:=Payments."Total Amount";
+                Payments.CalcFields("Total Amount");
+                NetPay := 0;
+                NetPay := Payments."Total Amount";
                 PVLines.Reset;
-                PVLines.SetRange("PV No",Payments.No);
+                PVLines.SetRange("PV No", Payments."No.");
                 if PVLines.Find('-') then begin
-                 Name:=PVLines."Account Name";
-                 Name:=DelChr(Name,'=','.');
-                 Name:=PadStr(Name,20,' ');
-                BankName:='';
+                    Name := PVLines."Account Name";
+                    Name := DelChr(Name, '=', '.');
+                    Name := PadStr(Name, 20, ' ');
+                    BankName := '';
 
-                BranchName:='';
-
-
-                VendBank.Reset;
-                VendBank.SetRange("Vendor No.",PVLines."Account No");
-                if VendBank.Find('-') then
-                begin
-                BankName:=VendBank.Name;
-                BankCode:=VendBank.Code;
-                BranchCode:=VendBank."Bank Branch No.";
-                BranchName:=VendBank."Name 2";
-                Amtlen2:=StrLen(VendBank."Bank Account No.");
-
-                Amtlen:=StrLen(AmountTxt);
-                Space:='';
-                i:=0;
-                j:=0;
-                i:=12-(Amtlen+1);
-                if j<i then
-                 repeat
-                   Space:=Space+' ';
-                  j:=j+1;
-                 until j=i;
-                AmountTxt:=Space+AmountTxt;
+                    BranchName := '';
 
 
-                Space2:='';
-                i:=0;
-                j:=0;
-                i:=14-(Amtlen2);
-                if j<i then
-                 repeat
-                   if i=1 then
-                    Space2:=' '
-                   else
-                   Space2:=Space2+' ';
+                    VendBank.Reset;
+                    VendBank.SetRange("Vendor No.", PVLines."Account No");
+                    if VendBank.Find('-') then begin
+                        BankName := VendBank.Name;
+                        BankCode := VendBank.Code;
+                        BranchCode := VendBank."Bank Branch No.";
+                        BranchName := VendBank."Name 2";
+                        Amtlen2 := StrLen(VendBank."Bank Account No.");
 
-                  j:=j+1;
-                 until j=i;
+                        Amtlen := StrLen(AmountTxt);
+                        Space := '';
+                        i := 0;
+                        j := 0;
+                        i := 12 - (Amtlen + 1);
+                        if j < i then
+                            repeat
+                                Space := Space + ' ';
+                                j := j + 1;
+                            until j = i;
+                        AmountTxt := Space + AmountTxt;
 
 
-                BankAcc:=Space2+DelChr(VendBank."Bank Account No.",'=',' ');
-                end;
+                        Space2 := '';
+                        i := 0;
+                        j := 0;
+                        i := 14 - (Amtlen2);
+                        if j < i then
+                            repeat
+                                if i = 1 then
+                                    Space2 := ' '
+                                else
+                                    Space2 := Space2 + ' ';
+
+                                j := j + 1;
+                            until j = i;
+
+
+                        BankAcc := Space2 + DelChr(VendBank."Bank Account No.", '=', ' ');
+                    end;
                 end;
 
                 //BANK ACCOUNT RECORD CHECK
@@ -76,8 +75,8 @@ Report 52193681 CBAEFT
 
                 //EFT FILE NAME ASSIGNMENT
                 GLSetup.Get;
-                FileNo := Payments.No;
-                FileName :=FileNo;
+                FileNo := Payments."No.";
+                FileName := FileNo;
 
                 //CREATE(xlApp);
                 // Create(xlApp, false, true);
@@ -138,11 +137,11 @@ Report 52193681 CBAEFT
         CheckLedgerEntry: Record "Check Ledger Entry";
         ClosingBalance: Decimal;
         FileName: Text[30];
-        EFTtext: array [8] of Text[1024];
+        EFTtext: array[8] of Text[1024];
         SpaceText: Text[30];
         ExcelBuf: Record "Excel Buffer";
         BalBankName: Text[80];
-        
+
         i: Integer;
         GLSetup: Record "General Ledger Setup";
         Name: Text[250];
@@ -174,7 +173,7 @@ Report 52193681 CBAEFT
 
     procedure GetPV(var PV: Record Payments)
     begin
-        PV_No:=PV.No;
+        PV_No := PV."No.";
     end;
 }
 

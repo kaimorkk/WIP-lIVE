@@ -104,19 +104,19 @@ page 52194047 "HR Employee"
                 field("Residential Address3"; "Residential Address3")
                 {
                 }
-                field("County Code"; "County Code")
-                {
-                    Caption = 'County';
-                }
+                // field("County Code"; "County Code")
+                // {
+                //     Caption = 'County';
+                // }
                 field("Country/Region Code"; "Country/Region Code")
                 {
                 }
                 field(Picture; Image)
                 {
                 }
-                field(Signature; Signature)
-                {
-                }
+                // field(Signature; Signature)
+                // {
+                // }
             }
             group("Personal Details")
             {
@@ -124,9 +124,9 @@ page 52194047 "HR Employee"
                 field(Gender; Gender)
                 {
                 }
-                field(Disability; Disability)
-                {
-                }
+                // field(Disability; Disability)
+                // {
+                // }
                 field("Date Of Birth"; "Date Of Birth")
                 {
                 }
@@ -141,33 +141,33 @@ page 52194047 "HR Employee"
                 field(Religion; Religion)
                 {
                 }
-                field("Ethnic Group"; "Ethnic Group")
-                {
-                }
-                field("First Language Read"; "First Language Read")
-                {
-                    Caption = 'English Read';
-                }
-                field("First Language Write"; "First Language Write")
-                {
-                    Caption = 'English Written';
-                }
-                field("First Language Speak"; "First Language Speak")
-                {
-                    Caption = 'English Spoken';
-                }
-                field("Second Language Read"; "Second Language Read")
-                {
-                    Caption = 'Kiswahili Read';
-                }
-                field("Second Language Write"; "Second Language Write")
-                {
-                    Caption = 'Kiswahili Written';
-                }
-                field("Second Language Speak"; "Second Language Speak")
-                {
-                    Caption = 'Kiswahili Spoken';
-                }
+                // field("Ethnic Group"; "Ethnic Group")
+                // {
+                // }
+                // field("First Language Read"; "First Language Read")
+                // {
+                //     Caption = 'English Read';
+                // }
+                // field("First Language Write"; "First Language Write")
+                // {
+                //     Caption = 'English Written';
+                // }
+                // field("First Language Speak"; "First Language Speak")
+                // {
+                //     Caption = 'English Spoken';
+                // }
+                // field("Second Language Read"; "Second Language Read")
+                // {
+                //     Caption = 'Kiswahili Read';
+                // }
+                // field("Second Language Write"; "Second Language Write")
+                // {
+                //     Caption = 'Kiswahili Written';
+                // }
+                // field("Second Language Speak"; "Second Language Speak")
+                // {
+                //     Caption = 'Kiswahili Spoken';
+                // }
                 field("Additional Language"; "Additional Language")
                 {
                     Caption = 'Other';
@@ -200,10 +200,10 @@ page 52194047 "HR Employee"
                 {
                     Editable = true;
                 }
-                field("Directorate Name"; "Directorate Name")
-                {
-                    Editable = false;
-                }
+                // field("Directorate Name"; "Directorate Name")
+                // {
+                //     Editable = false;
+                // }
                 field("Global Dimension 2 Code"; "Global Dimension 2 Code")
                 {
                     Editable = true;
@@ -222,13 +222,13 @@ page 52194047 "HR Employee"
                     Caption = 'Job Type(for Fleet)';
                     Editable = true;
                 }
-                field("Probation Period"; "Probation Period")
-                {
-                    Editable = false;
-                }
-                field("Notice Period(Probation)"; "Notice Period(Probation)")
-                {
-                }
+                // field("Probation Period"; "Probation Period")
+                // {
+                //     Editable = false;
+                // }
+                // field("Notice Period(Probation)"; "Notice Period(Probation)")
+                // {
+                // }
                 field("Notice Period"; "Notice Period")
                 {
                     Caption = 'Notice Period After Confirmation';
@@ -759,7 +759,7 @@ page 52194047 "HR Employee"
 
                     trigger OnAction()
                     begin
-                        CreateImprestAC(Rec);
+                        // CreateImprestAC(Rec);
                     end;
                 }
                 action("Account Mapping")

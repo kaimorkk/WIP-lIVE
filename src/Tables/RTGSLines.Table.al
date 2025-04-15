@@ -59,13 +59,13 @@ Table 52193653 "RTGS Lines"
         }
         field(9; "Account No"; Code[30])
         {
-            TableRelation = Vendor where("Debtor Type" = filter("FOSA Account"));
+            // TableRelation = Vendor where("Debtor Type" = filter());
 
             trigger OnValidate()
             begin
                 if Vendor.Get("Account No") then begin
-                    "Account Name" := Vendor.Name;
-                    "Account Code" := Vendor."Account Type";
+                    // "Account Name" := Vendor.Name;
+                    // "Account Code" := Vendor."Account Type";
                 end;
             end;
         }

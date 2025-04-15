@@ -11,62 +11,53 @@ Page 52193746 "Payment Listing"
         {
             repeater(Control1000000000)
             {
-                field(No;No)
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                     ApplicationArea = Basic;
                 }
-                field(DatePosted;"Date Posted")
+
+                field(Type; Type)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Type;Type)
+                field(PayMode; "Pay Mode")
                 {
                     ApplicationArea = Basic;
                 }
-                field(PayMode;"Pay Mode")
+                field(ChequeNo; "Cheque No")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeNo;"Cheque No")
+                field(ChequeDate; "Cheque Date")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeDate;"Cheque Date")
+                field(TotalAmount; "Total Amount")
                 {
                     ApplicationArea = Basic;
                 }
-                field(TotalAmount;"Total Amount")
+                field(ChequeType; "Cheque Type")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeType;"Cheque Type")
+
+                field(Payee; Payee)
                 {
                     ApplicationArea = Basic;
                 }
-                field(KBABankCode;"KBA Bank Code")
+                field(Status; Status)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Payee;Payee)
+                field(PayingBankAccount; "Paying Bank Account")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Status;Status)
-                {
-                    ApplicationArea = Basic;
-                }
-                field(PayingBankAccount;"Paying Bank Account")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(NetAmount;"Net Amount")
-                {
-                    ApplicationArea = Basic;
-                }
+
             }
         }
     }

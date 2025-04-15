@@ -4,7 +4,7 @@ Page 52193539 "Treasury List"
     CardPageID = "Treasury Card";
     PageType = List;
     SourceTable = "Bank Account";
-    SourceTableView = where("Account Type"=const(Treasury));
+    // SourceTableView = where("Account Type"=const(Treasury));
     UsageCategory = Lists;
 
     layout
@@ -13,39 +13,39 @@ Page 52193539 "Treasury List"
         {
             repeater(Group)
             {
-                field(No;"No.")
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                     ApplicationArea = Basic;
                 }
-                field(CashierID;"Cashier ID")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(MaximumTellerWithholding;"Maximum Teller Withholding")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(MaxWithdrawalLimit;"Max Withdrawal Limit")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(MaxDepositLimit;"Max Deposit Limit")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(CashierID;"Cashier ID")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(MaximumTellerWithholding;"Maximum Teller Withholding")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(MaxWithdrawalLimit;"Max Withdrawal Limit")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(MaxDepositLimit;"Max Deposit Limit")
+                // {
+                //     ApplicationArea = Basic;
+                // }
             }
         }
         area(factboxes)
         {
-            systempart(Control1000000005;Links)
+            systempart(Control1000000005; Links)
             {
                 Visible = true;
             }
-            systempart(Control1000000004;Notes)
+            systempart(Control1000000004; Notes)
             {
                 Visible = true;
             }

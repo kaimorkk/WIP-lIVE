@@ -59,8 +59,8 @@ Table 52193585 Receipts
         }
         field(7; "Bank Account"; Code[20])
         {
-            TableRelation = "Bank Account"."No." where(Type = filter(Bank | "Petty Cash"),
-                                                        "Account Type" = filter(" "));
+            // TableRelation = "Bank Account"."No." where(Type = filter(Bank | "Petty Cash"),
+            //                                             "Account Type" = filter(" "));
         }
         field(8; "Ext. Document No."; Code[20])
         {
@@ -93,8 +93,8 @@ Table 52193585 Receipts
             AutoFormatType = 1;
             Caption = 'Unallocated Receipt';
             Editable = true;
-            TableRelation = "Receipts Header1" where("Unallocated Receipt" = filter(false),
-                                                      "Employer Code" = filter(<> ''));
+            // TableRelation = "Receipts Header1" where("Unallocated Receipt" = filter(false),
+            //                                           "Employer Code" = filter(<> ''));
 
             trigger OnValidate()
             begin
@@ -175,9 +175,9 @@ Table 52193585 Receipts
         field(35; "Employer Code"; Code[30])
         {
             Editable = false;
-            TableRelation = "Bank Account"."No." where(Status = filter(Released),
-                                                        Type = filter(Bank),
-                                                        "Account Type" = const(Employer));
+            // TableRelation = "Bank Account"."No." where(Status = filter(Released),
+            //                                             Type = filter(Bank),
+            //                                             "Account Type" = const(Employer));
 
             trigger OnValidate()
             var

@@ -18,7 +18,7 @@ Table 52193645 "My Members"
         {
             Caption = 'Member No.';
             NotBlank = true;
-            TableRelation = Customer where("Customer Type" = filter(Member));
+            // TableRelation = Customer where("Customer Type" = filter(Member));
         }
     }
 

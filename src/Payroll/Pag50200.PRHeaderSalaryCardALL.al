@@ -68,14 +68,14 @@ page 52193586 "PR Header Salary Card - ALL"
                     ApplicationArea = Basic;
                     Editable = false;
                 }
-                field("Acting Scale"; Rec."Acting Scale")
-                {
-                    ApplicationArea = Basic;
-                }
-                field("Acting Present"; Rec."Acting Present")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field("Acting Scale"; Rec."Acting Scale")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field("Acting Present"; Rec."Acting Present")
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 // field("On Probation"; "On Probation")
                 // {
                 //     ApplicationArea = Basic;

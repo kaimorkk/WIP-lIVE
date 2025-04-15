@@ -86,26 +86,8 @@ Page 52193681 "Employers Card"
                 {
                     ApplicationArea = Basic;
                 }
-                field(Status; Status)
-                {
-                    ApplicationArea = Basic;
-                }
-                field(ExpectedContribution; "Expected Contribution")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(UnallocatedReceipts; "Unallocated Receipts")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(AllocatedReceipts; "Allocated Receipts")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(NoOfEmployees; "No Of Employees")
-                {
-                    ApplicationArea = Basic;
-                }
+
+
             }
             group(Communication)
             {

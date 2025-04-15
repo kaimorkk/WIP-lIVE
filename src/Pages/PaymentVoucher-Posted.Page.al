@@ -12,7 +12,7 @@ Page 52193756 "Payment Voucher-Posted"
             group(General)
             {
                 Caption = 'General';
-                field(No; No)
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                     Editable = true;
@@ -53,7 +53,7 @@ Page 52193756 "Payment Voucher-Posted"
                             Error('You cannot change this document at this stage');
                     end;
                 }
-                field(Currency; Currency)
+                field(Currency; "Currency Code")
                 {
                     ApplicationArea = Basic;
                 }
@@ -80,7 +80,7 @@ Page 52193756 "Payment Voucher-Posted"
                     ApplicationArea = Basic;
                     Editable = false;
                 }
-                field(Amount; Amount)
+                field(Amount; "Amount Approved")
                 {
                     ApplicationArea = Basic;
                 }
@@ -91,7 +91,7 @@ Page 52193756 "Payment Voucher-Posted"
             }
             part(Control1000000049; "PV Lines")
             {
-                SubPageLink = "PV No" = field(No);
+                SubPageLink = No = field("No.");
             }
         }
     }
@@ -112,40 +112,40 @@ Page 52193756 "Payment Voucher-Posted"
                     trigger OnAction()
                     begin
                         PVLines.Reset;
-                        PVLines.SetRange(PVLines."PV No", No);
+                        PVLines.SetRange(PVLines."PV No", "No.");
                         PVLines.SetRange(PVLines.Tax, true);
                         PVLines.DeleteAll;
 
                         PVLines.Reset;
-                        PVLines.SetRange(PVLines."PV No", No);
+                        PVLines.SetRange(PVLines."PV No", "No.");
                         if PVLines.Find('+') then
                             LastPVLine := PVLines."Line No";
 
 
                         if TarriffCodes.Get("VAT Code") then begin
                             PVLines.Init;
-                            PVLines."PV No" := No;
+                            PVLines."PV No" := "No.";
                             PVLines."Line No" := LastPVLine + 10000;
                             PVLines."Account Type" := PVLines."account type"::"G/L Account";
                             PVLines."Account No" := TarriffCodes."G/L Account";
                             PVLines.Description := TarriffCodes.Description;
                             PVLines.Validate(PVLines."Account No");
                             PVLines.Tax := true;
-                            CalcFields("Base Amount");
-                            PVLines.Amount := -ROUND(("Base Amount" / ((TarriffCodes.Percentage + 100)) * TarriffCodes.Percentage));
+                            // CalcFields("Base Amount");
+                            // PVLines.Amount := -ROUND(("Base Amount" / ((TarriffCodes.Percentage + 100)) * TarriffCodes.Percentage));
                             if PVLines.Amount <> 0 then
                                 PVLines.Insert;
 
                         end;
 
                         PVLines.Reset;
-                        PVLines.SetRange(PVLines."PV No", No);
+                        PVLines.SetRange(PVLines."PV No", "No.");
                         if PVLines.Find('+') then
                             LastPVLine := PVLines."Line No";
 
                         if TarriffCodes.Get("Withholding Tax Code") then begin
                             PVLines.Init;
-                            PVLines."PV No" := No;
+                            PVLines."PV No" := "No.";
                             PVLines."Line No" := LastPVLine + 10000;
                             PVLines."Account Type" := PVLines."account type"::"G/L Account";
                             PVLines."Account No" := TarriffCodes."G/L Account";
@@ -153,8 +153,8 @@ Page 52193756 "Payment Voucher-Posted"
                             PVLines.Validate(PVLines."Account No");
                             PVLines.Tax := true;
 
-                            CalcFields("Base Amount");
-                            PVLines.Amount := -ROUND(("Base Amount" / ((TarriffCodes.Percentage + 100)) * TarriffCodes.Percentage));
+                            // CalcFields("Base Amount");
+                            // PVLines.Amount := -ROUND(("Base Amount" / ((TarriffCodes.Percentage + 100)) * TarriffCodes.Percentage));
                             if PVLines.Amount <> 0 then
                                 PVLines.Insert;
 
@@ -171,7 +171,7 @@ Page 52193756 "Payment Voucher-Posted"
                     trigger OnAction()
                     begin
                         Reset;
-                        SetFilter(No, No);
+                        SetFilter("No.", "No.");
                         Report.Run(53097, true, true, Rec);
                         Reset;
                     end;
@@ -185,7 +185,7 @@ Page 52193756 "Payment Voucher-Posted"
                     trigger OnAction()
                     begin
                         Reset;
-                        SetFilter(No, No);
+                        SetFilter("No.", "No.");
                         Report.Run(53029, true, true, Rec);
                         Reset;
                     end;
@@ -201,7 +201,7 @@ Page 52193756 "Payment Voucher-Posted"
                         /*IF Status<>Status::Released THEN
                         ERROR('This document is not yet fully approved'); */
                         PVRec.Reset;
-                        PVRec.SetRange(PVRec.No, No);
+                        PVRec.SetRange(PVRec."No.", "No.");
                         Report.RunModal(50010, true, true, PVRec);
 
                     end;
@@ -215,7 +215,7 @@ Page 52193756 "Payment Voucher-Posted"
                     trigger OnAction()
                     begin
                         PVRec.Reset;
-                        PVRec.SetRange(PVRec.No, No);
+                        PVRec.SetRange(PVRec."No.", "No.");
                         Report.RunModal(50011, true, true, PVRec);
                     end;
                 }
@@ -242,7 +242,7 @@ Page 52193756 "Payment Voucher-Posted"
 
                         //CBAEFT.GetPV(Rec);
                         PVRec.Reset;
-                        PVRec.SetRange(PVRec.No, No);
+                        PVRec.SetRange(PVRec."No.", "No.");
                         //REPORT.RUN(51511362,TRUE,TRUE,PVRec);
                         Report.Run(51511374, true, true, PVRec);
                     end;
@@ -257,7 +257,7 @@ Page 52193756 "Payment Voucher-Posted"
 
                         //start from here
                         PVLines.Reset;
-                        PVLines.SetRange(PVLines."PV No", No);
+                        PVLines.SetRange(PVLines."PV No", "No.");
                         if PVLines.Find('-') then begin
                             case PVLines."Account Type" of
                                 PVLines."account type"::Vendor:
@@ -266,7 +266,7 @@ Page 52193756 "Payment Voucher-Posted"
                                         VendBank.SetRange("Vendor No.", PVLines."Account No");
                                         if VendBank.Find('-') then begin
                                             PVRec.Reset;
-                                            PVRec.SetRange(PVRec.No, No);
+                                            PVRec.SetRange(PVRec."No.", "No.");
                                             Report.Run(51511376, true, true, PVRec);
                                         end
                                         else
@@ -278,7 +278,7 @@ Page 52193756 "Payment Voucher-Posted"
                                         CustBank.SetRange("Customer No.", PVLines."Account No");
                                         if CustBank.Find('-') then begin
                                             PVRec.Reset;
-                                            PVRec.SetRange(PVRec.No, No);
+                                            PVRec.SetRange(PVRec."No.", "No.");
                                             Report.Run(51511376, true, true, PVRec);
                                         end
                                         else
@@ -296,7 +296,7 @@ Page 52193756 "Payment Voucher-Posted"
                     trigger OnAction()
                     begin
                         Reset;
-                        PVRec.SetRange(PVRec.No, No);
+                        PVRec.SetRange(PVRec."No.", "No.");
                         Report.RunModal(51511368, true, true, PVRec);
                     end;
                 }
@@ -307,7 +307,7 @@ Page 52193756 "Payment Voucher-Posted"
                     trigger OnAction()
                     begin
                         Reset;
-                        PVRec.SetRange(PVRec.No, No);
+                        PVRec.SetRange(PVRec."No.", "No.");
                         Report.RunModal(51511446, true, true, PVRec);
                     end;
                 }
@@ -318,7 +318,7 @@ Page 52193756 "Payment Voucher-Posted"
                     trigger OnAction()
                     begin
                         Reset;
-                        PVRec.SetRange(PVRec.No, No);
+                        PVRec.SetRange(PVRec."No.", "No.");
                         Report.RunModal(51511447, true, true, PVRec);
                     end;
                 }
@@ -344,7 +344,7 @@ Page 52193756 "Payment Voucher-Posted"
                         // FileName := FileManagement.ServerTempFileName('.pdf');
 
                         Reset;
-                        PVRec.SetRange(PVRec.No, No);
+                        PVRec.SetRange(PVRec."No.", "No.");
                         // Report.SaveAsPdf(51511373, FileName, PVRec);
 
                         //SMTPSetup.AddAttachment(FileName);
@@ -369,10 +369,10 @@ Page 52193756 "Payment Voucher-Posted"
                     if Status <> Status::Open then
                         Error('The document has already been processed.');
 
-                    if Amount < 0 then
+                    if "Amount Approved" < 0 then
                         Error('Amount cannot be less than zero.');
 
-                    if Amount = 0 then
+                    if "Amount Approved" = 0 then
                         Error('Please enter amount.');
 
 
@@ -384,16 +384,16 @@ Page 52193756 "Payment Voucher-Posted"
                         //TESTFIELD("Bank Code");
                     end;
                     TestField("Paying Bank Account");
-                    TestField("Transaction Name");
+                    // TestField("Transaction Name");
                     TestField("Pay Mode");
                     TestField(Payee);
-                    TestField(Amount);
+                    // TestField(Amount);
                     TestField("VAT Code");
-                    TestField("Withholding Tax Code");
-                    TestField("Global Dimension 1 Code");
+                    // TestField("Withholding Tax Code");
+                    // TestField("Global Dimension 1 Code");
                     TestField("Account No.");
-                    TestField("Branch Code");
-                    TestField("Net Amount");
+                    // TestField("Branch Code");
+                    // TestField("Net Amount");
                     TestField("Paying Bank Account");
 
                     if Confirm('Are you sure you would like to approve the payment?', false) = true then begin
@@ -803,7 +803,7 @@ Page 52193756 "Payment Voucher-Posted"
                 trigger OnAction()
                 begin
                     Reset;
-                    SetFilter(No, No);
+                    SetFilter("No.", "No.");
                     Report.Run(51511010, true, true, Rec);
                     Reset;
                 end;
@@ -870,7 +870,7 @@ Page 52193756 "Payment Voucher-Posted"
                 trigger OnAction()
                 begin
                     GLSetup.Get();
-                    Link := GLSetup."DMS PV Link" + No;
+                    Link := GLSetup."DMS PV Link" + "No.";
                     Hyperlink(Link);
                 end;
             }
@@ -916,7 +916,7 @@ Page 52193756 "Payment Voucher-Posted"
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
         // CurrForm.EDITABLE:=TRUE;
-        "Payment Type" := "payment type"::Normal;
+        // "Payment Type" := "payment type"::Normal;
     end;
 
     trigger OnNextRecord(Steps: Integer): Integer

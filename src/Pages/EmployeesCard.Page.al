@@ -72,10 +72,7 @@ Page 52194196 "Employees Card"
                 {
                     ApplicationArea = Basic;
                 }
-                field(Gender2; Gender2)
-                {
-                    ApplicationArea = Basic;
-                }
+
                 field(LastDateModified; "Last Date Modified")
                 {
                     ApplicationArea = Basic;

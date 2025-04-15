@@ -1,4 +1,4 @@
-PageExtension 52193435 pageextension52193435 extends "Vendor Card" 
+PageExtension 52193435 pageextension52193435 extends "Vendor Card"
 {
     layout
     {
@@ -53,74 +53,74 @@ PageExtension 52193435 pageextension52193435 extends "Vendor Card"
         {
             Visible = false;
         }
-        
+
         addafter(Blocked)
         {
-            field("Reason for Blacklist";"Reason for Blacklist")
-            {
-                ApplicationArea = Basic;
-            }
+            // field("Reason for Blacklist";"Reason for Blacklist")
+            // {
+            //     ApplicationArea = Basic;
+            // }
         }
         addafter("Last Date Modified")
         {
-            field(Prequalification;Prequalification)
+            field(Prequalification; Prequalification)
             {
                 ApplicationArea = Basic;
             }
-            field("Supplier Type";"Supplier Type")
+            field("Supplier Type"; "Supplier Type")
             {
                 ApplicationArea = Basic;
             }
-            field("Vendor Type";"Vendor Type")
+            field("Vendor Type"; "Vendor Type")
             {
                 ApplicationArea = Basic;
             }
         }
         addafter("IC Partner Code")
         {
-            field("Secondary Contact No.";"Secondary Contact No.")
+            field("Secondary Contact No."; "Secondary Contact No.")
             {
                 ApplicationArea = Basic;
             }
-            field("Secondary Contact";"Secondary Contact")
+            field("Secondary Contact"; "Secondary Contact")
             {
                 ApplicationArea = Basic;
             }
         }
         addafter("Vendor Posting Group")
         {
-            field("Withholding Tax Code";"Withholding Tax Code")
+            field("Withholding Tax Code"; "Withholding Tax Code")
             {
                 ApplicationArea = Basic;
             }
         }
         addafter("Prepayment %")
         {
-            field("Maximum Order Amount";"Maximum Order Amount")
+            field("Maximum Order Amount"; "Maximum Order Amount")
             {
                 ApplicationArea = Basic;
             }
-            field("Minimum Order Amount";"Minimum Order Amount")
+            field("Minimum Order Amount"; "Minimum Order Amount")
             {
                 ApplicationArea = Basic;
             }
-            field("Maximum Order Quantity";"Maximum Order Quantity")
+            field("Maximum Order Quantity"; "Maximum Order Quantity")
             {
                 ApplicationArea = Basic;
             }
-            field("Minimum Order Quantity";"Minimum Order Quantity")
+            field("Minimum Order Quantity"; "Minimum Order Quantity")
             {
                 ApplicationArea = Basic;
             }
         }
         addafter("Block Payment Tolerance")
         {
-            field("PIN No.";"PIN No.")
+            field("PIN No."; "PIN Number")
             {
                 ApplicationArea = Basic;
                 Importance = Promoted;
             }
-            field("Working Hours";"Working Hours")
+            field("Working Hours"; "Working Hours")
             {
                 ApplicationArea = Basic;
             }
@@ -130,9 +130,9 @@ PageExtension 52193435 pageextension52193435 extends "Vendor Card"
             group("Owner Details")
             {
                 Caption = 'Owner Details';
-                part(Control1000000006;"Owner Details")
+                part(Control1000000006; "Owner Details")
                 {
-                    SubPageLink = "Supplier No."=field("No.");
+                    SubPageLink = "Supplier No." = field("No.");
                 }
             }
         }
@@ -154,7 +154,7 @@ PageExtension 52193435 pageextension52193435 extends "Vendor Card"
             {
                 ApplicationArea = Basic;
                 RunObject = Page "Supplier Complaints";
-                RunPageLink = "Supplier No."=field("No.");
+                RunPageLink = "Supplier No." = field("No.");
             }
         }
     }
@@ -164,9 +164,9 @@ PageExtension 52193435 pageextension52193435 extends "Vendor Card"
 
     //trigger OnNewRecord(BelowxRec: Boolean)
     //begin
-        /*
-        "Debtor Type":="Debtor Type"::"Vendor Account";
-        */
+    /*
+    "Debtor Type":="Debtor Type"::"Vendor Account";
+    */
     //end;
 
 
@@ -176,16 +176,16 @@ PageExtension 52193435 pageextension52193435 extends "Vendor Card"
     //Parameters and return type have not been exported.
     //>>>> ORIGINAL CODE:
     //begin
-        /*
-        SetSocialListeningFactboxVisibility;
-        ContactEditable := "Primary Contact No." = '';
-        */
+    /*
+    SetSocialListeningFactboxVisibility;
+    ContactEditable := "Primary Contact No." = '';
+    */
     //end;
     //>>>> MODIFIED CODE:
     //begin
-        /*
-        ContactEditable := "Primary Contact No." = '';
-        */
+    /*
+    ContactEditable := "Primary Contact No." = '';
+    */
     //end;
 }
 

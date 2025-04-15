@@ -1736,7 +1736,7 @@
 //                                         Gnljnline."Transaction Type":=Gnljnline."Transaction Type"::"Interest Paid";
 //                                         Gnljnline.Amount:=ActualIntAmnt*-1;
 //                                         Gnljnline.VALIDATE(Gnljnline.Amount);
-//                                         Gnljnline."Loan No":=LoanRec."Loan  No.";
+//                                         //Gnljnline."Loan No":=LoanRec."Loan  No.";
 //                                         Gnljnline."Shortcut Dimension 1 Code":=BosaSetup."Global Dimension 1 Code";
 //                                         Gnljnline.VALIDATE(Gnljnline."Shortcut Dimension 1 Code");
 //                                         Gnljnline."Shortcut Dimension 2 Code":=Acc."Global Dimension 2 Code";
@@ -1762,7 +1762,7 @@
 //                                             Gnljnline.Amount := ActualIntAmnt * 1;
 //                                             Gnljnline.Validate(Gnljnline.Amount);
 //                                             Gnljnline."Bal. Account Type" := Gnljnline."bal. account type"::"G/L Account";
-//                                             Gnljnline."Loan No" := LoanRec."Loan No.";
+//                                             //Gnljnline."Loan No" := LoanRec."Loan No.";
 //                                             Gnljnline."Shortcut Dimension 1 Code" := BosaSetup."Global Dimension 1 Code";
 //                                             Gnljnline.Validate(Gnljnline."Shortcut Dimension 1 Code");
 //                                             Gnljnline."Shortcut Dimension 2 Code" := Acc."Global Dimension 2 Code";
@@ -1785,7 +1785,7 @@
 //                                         Gnljnline."Transaction Type" := Gnljnline."transaction type"::"Interest Paid";
 //                                         Gnljnline.Amount := ActualIntAmnt * -1;
 //                                         Gnljnline.Validate(Gnljnline.Amount);
-//                                         Gnljnline."Loan No" := LoanRec."Loan No.";
+//                                         //Gnljnline."Loan No" := LoanRec."Loan No.";
 //                                         Gnljnline."Shortcut Dimension 1 Code" := BosaSetup."Global Dimension 1 Code";
 //                                         Gnljnline.Validate(Gnljnline."Shortcut Dimension 1 Code");
 //                                         Gnljnline."Shortcut Dimension 2 Code" := Acc."Global Dimension 2 Code";
@@ -1822,7 +1822,7 @@
 //                                         Gnljnline."Transaction Type":=Gnljnline."Transaction Type"::"Loan Repayment";
 //                                         Gnljnline.Amount:=PrincipalAmnt*-1;
 //                                         Gnljnline.VALIDATE(Gnljnline.Amount);
-//                                         Gnljnline."Loan No":=LoanRec."Loan  No.";
+//                                         //Gnljnline."Loan No":=LoanRec."Loan  No.";
 //                                         Gnljnline."Shortcut Dimension 1 Code":=BosaSetup."Global Dimension 1 Code";
 //                                         Gnljnline.VALIDATE(Gnljnline."Shortcut Dimension 1 Code");
 //                                         Gnljnline."Shortcut Dimension 2 Code":=Acc."Global Dimension 2 Code";
@@ -1845,7 +1845,7 @@
 //                                         Gnljnline."Transaction Type" := Gnljnline."transaction type"::"Loan Repayment";
 //                                         Gnljnline.Amount := (PrincipalAmnt + ActualIntAmnt) * -1;
 //                                         Gnljnline.Validate(Gnljnline.Amount);
-//                                         Gnljnline."Loan No" := LoanRec."Loan No.";
+//                                         //Gnljnline."Loan No" := LoanRec."Loan No.";
 //                                         Gnljnline."Shortcut Dimension 1 Code" := BosaSetup."Global Dimension 1 Code";
 //                                         Gnljnline.Validate(Gnljnline."Shortcut Dimension 1 Code");
 //                                         Gnljnline."Shortcut Dimension 2 Code" := Acc."Global Dimension 2 Code";
@@ -1871,7 +1871,7 @@
 //                                     Gnljnline.Description := 'L-Repayment Install No' + ' - ' + Format(Rschedule."Instalment No");
 //                                     Gnljnline.Amount := (PrincipalAmnt + ActualIntAmnt);
 //                                     Gnljnline.Validate(Gnljnline.Amount);
-//                                     Gnljnline."Loan No" := LoanRec."Loan No.";
+//                                     //Gnljnline."Loan No" := LoanRec."Loan No.";
 //                                     Gnljnline."Shortcut Dimension 1 Code" := BosaSetup."Global Dimension 1 Code";
 //                                     Gnljnline.Validate(Gnljnline."Shortcut Dimension 1 Code");
 //                                     Gnljnline."Shortcut Dimension 2 Code" := Acc."Global Dimension 2 Code";
@@ -1912,7 +1912,7 @@
 //                                         if LoanTypes.Get(LoanRec."Loan Product Type") then
 //                                             Gnljnline."Bal. Account No." := LoanTypes."Received Interest Account";
 //                                         Gnljnline.Validate(Gnljnline."Bal. Account No.");
-//                                         Gnljnline."Loan No" := LoanRec."Loan No.";
+//                                         //Gnljnline."Loan No" := LoanRec."Loan No.";
 //                                         Gnljnline."Shortcut Dimension 1 Code" := BosaSetup."Global Dimension 1 Code";
 //                                         Gnljnline.Validate(Gnljnline."Shortcut Dimension 1 Code");
 //                                         Gnljnline."Shortcut Dimension 2 Code" := Acc."Global Dimension 2 Code";
@@ -1961,7 +1961,7 @@
 //                             Gnljnline."Bal. Account No.":=LoanTypes."Loan Bad Interest Account";
 //                             END;
 //                             Gnljnline.VALIDATE(Gnljnline."Bal. Account No.");
-//                             Gnljnline."Loan No":=LoanRec."Loan  No.";
+//                             //Gnljnline."Loan No":=LoanRec."Loan  No.";
 //                             Gnljnline."Shortcut Dimension 1 Code":=BosaSetup."Global Dimension 1 Code";
 //                             Gnljnline.VALIDATE(Gnljnline."Shortcut Dimension 1 Code");
 //                             Gnljnline."Shortcut Dimension 2 Code":=Acc."Global Dimension 2 Code";
@@ -2001,7 +2001,7 @@
 //                                     IF LoanTypes.GET(LoanRec."Loan Product Type") THEN
 //                                     Gnljnline."Bal. Account No.":=LoanTypes."Loan Interest Account";
 //                                     Gnljnline.VALIDATE(Gnljnline."Bal. Account No.");
-//                                     Gnljnline."Loan No":=LoanRec."Loan  No.";
+//                                     //Gnljnline."Loan No":=LoanRec."Loan  No.";
 //                                     Gnljnline."Shortcut Dimension 1 Code":=BosaSetup."Global Dimension 1 Code";
 //                                     Gnljnline.VALIDATE(Gnljnline."Shortcut Dimension 1 Code");
 //                                     Gnljnline."Shortcut Dimension 2 Code":=Acc."Global Dimension 2 Code";

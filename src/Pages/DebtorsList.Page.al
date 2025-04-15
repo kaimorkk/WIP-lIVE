@@ -5,7 +5,7 @@ Page 52193423 "Debtors List"
     Editable = false;
     PageType = List;
     SourceTable = Customer;
-    SourceTableView = where("Customer Type" = filter(Debtor));
+    // SourceTableView = where("Customer Type" = filter(Debtor));
 
     layout
     {

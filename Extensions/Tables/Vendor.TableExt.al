@@ -1,41 +1,386 @@
-TableExtension 52193434 tableextension52193434 extends Vendor
+ 
+    #pragma warning disable AA0005, AA0008, AA0018, AA0021, AA0072, AA0137, AA0201, AA0206, AA0218, AA0228, AL0254, AL0424, AS0011, AW0006 // ForNAV settings
+tableextension 52193434 "tableextension50008" extends Vendor
 {
     fields
     {
+        modify("VAT Registration No.")
+        {
+            trigger OnAfterValidate()
+            var
+                myInt: Integer;
+                Vendorrec: record Vendor;
+            begin
+                "PIN Number" := "VAT Registration No.";
+                if "VAT Registration No." = '' then
+                    exit;
+
+                Vendorrec.Reset();
+                Vendorrec.SetRange("VAT Registration No.", rec."VAT Registration No.");
+                if Vendorrec.FindFirst() then
+                    Error('You cannot share  pin Number with Vendor No. %1', Vendorrec."No.");
+                if StrLen("VAT Registration No.") <> 11 then Error('P.I.N Number length must be 11 characters');
+
+            end;
+        }
+
+        //Unsupported feature: Property Modification (Data type) on "Name(Field 2)".
+
+
+        //Unsupported feature: Property Modification (Data type) on ""Search Name"(Field 3)".
+
+
+        //Unsupported feature: Property Modification (Data type) on ""Name 2"(Field 4)".
+
+
+        //Unsupported feature: Property Modification (Data type) on "Address(Field 5)".
+
+
+        //Unsupported feature: Property Modification (Data type) on ""Address 2"(Field 6)".
+
+
+        //Unsupported feature: Property Modification (Data type) on "City(Field 7)".
+
+
+        //Unsupported feature: Property Modification (Data type) on "Contact(Field 8)".
+
+
+        //Unsupported feature: Property Modification (Data type) on ""Phone No."(Field 9)".
+
+
+        //Unsupported feature: Property Modification (Data type) on ""Pay-to Vendor No."(Field 45)".
+
+
+        //Unsupported feature: Property Modification (Data type) on ""Payment Method Code"(Field 47)".
+
+
+        //Unsupported feature: Code Modification on "Name(Field 2).OnValidate".
+
+        //trigger OnValidate()
+        //Parameters and return type have not been exported.
+        //>>>> ORIGINAL CODE:
+        //begin
+        /*
+        IF ("Search Name" = UPPERCASE(xRec.Name)) OR ("Search Name" = '') THEN
+          "Search Name" := Name;
+        */
+        //end;
+        //>>>> MODIFIED CODE:
+        //begin
+        /*
+         IF ("Search Name" = UPPERCASE(xRec.Name)) OR ("Search Name" = '') THEN
+          "Search Name" := Name;
+         NameBreakdown;
+        */
+        //end;
         field(50000; "Vendor Type"; Option)
         {
-            OptionMembers = "  ",Medical,Law,"Professional Bodies";
+            OptionCaption = 'Trade,Director,Insurance,Fleet,Person,Staff';
+            OptionMembers = Trade,Director,Insurance,Fleet,Person,Staff;
         }
-        field(50001; "KBA Code"; Code[10])
+        field(50001; "Total Allowances"; Decimal)
         {
-            TableRelation = "Employee Bank AccountX1".Code;
+            CalcFormula = sum("Director Ledger Entry".Amount where(Type = const(Payment),
+                                                                    "Director No" = field("No."),
+                                                                    "Payroll Period" = field("Pay Period Filter"),
+                                                                    "Non-Cash Benefit" = const(false)));
+            Editable = false;
+            FieldClass = FlowField;
         }
-        field(50002; "KBA Branch Code"; Code[10])
+        field(50002; "Total Deductions"; Decimal)
         {
-            TableRelation = "Employee Bank AccountX1"."Bank Branch No.";
+            CalcFormula = sum("Director Ledger Entry".Amount where(Type = filter(Deduction),
+                                                                    "Director No" = field("No."),
+                                                                    "Payroll Period" = field("Pay Period Filter")));
+            Editable = false;
+            FieldClass = FlowField;
         }
-        field(50003; "Withholding Tax Code"; Code[10])
+        field(50003; "PIN Number"; Code[20])
         {
-            TableRelation = "Tarriff Codes1";
+            trigger OnValidate()
+            var
+                myInt: Integer;
+                Vendorrec: record Vendor;
+                // KRAIntegration: Codeunit "KRA Integration";
+                // KRALog: Record "KRA Integration Log";
+            begin
+                if "PIN Number" = '' then begin
+                    "PIN Status" := '';
+                    exit;
+                end;
+                Vendorrec.Reset();
+                Vendorrec.SetRange("PIN Number", rec."PIN Number");
+                Vendorrec.SetFilter("No.", '<>%1', rec."No.");
+                if Vendorrec.FindFirst() then
+                    Error('You cannot share  pin Number with Vendor No. %1', Vendorrec."No.");
+               
+                // else
+                //     Error(KRALog."Status Message");
+                "VAT Registration No." := "PIN Number";
+            end;
         }
-        field(50004; "PIN No."; Code[80])
+        field(50004; "Cumm. PAYE"; Decimal)
+        {
+            CalcFormula = sum("Director Ledger Entry".Amount where("Director No" = field("No."),
+                                                                    "Payroll Period" = field("Pay Period Filter"),
+                                                                    Paye = const(true)));
+            Editable = false;
+            FieldClass = FlowField;
+        }
+        field(50005; "Taxable Income"; Decimal)
+        {
+            CalcFormula = sum("Director Ledger Entry".Amount where("Director No" = field("No."),
+                                                                    "Payroll Period" = field("Pay Period Filter"),
+                                                                    Taxable = const(true)));
+            Editable = false;
+            FieldClass = FlowField;
+        }
+        field(50006; "Payroll Pay Mode"; Code[20])
+        {
+            TableRelation = "Payroll Pay Mode";
+        }
+        field(50007; "Pay Mode Filter"; Code[20])
+        {
+            FieldClass = FlowFilter;
+            TableRelation = "Payroll Pay Mode";
+        }
+        field(50008; "Pays tax"; Boolean)
         {
         }
-        field(50005; "Working Hours"; Code[10])
+        field(50009; "Non Cash Benefit"; Decimal)
+        {
+            CalcFormula = sum("Director Ledger Entry".Amount where(Type = const(Payment),
+                         // if StrLen("PIN Number") <> 11 then Error('P.I.N Number length must be 11 characters');
+                // KRAIntegration.PINValidation("ID BRN", "Taxpayer Type".AsInteger(), KRALog);
+                // if KRALog.Success then begin
+                //     if Rec."PIN Number" <> KRALog.PIN then
+                //         Error('The information provided does not match our records. Please check and try again. If the problem persists, please contact the relevant registration bodies.');
+                //     "Validated Name" := KRALog."Business Name";
+                //     if Name = '' then
+                //         Name := KRALog."Business Name";
+                //     "PIN Status" := KRALog."Status Message";
+                // end                                            "Director No" = field("No."),
+                                                                    "Payroll Period" = field("Pay Period Filter"),
+                                                                    "Non-Cash Benefit" = const(true)));
+            FieldClass = FlowField;
+        }
+        field(50010; "Pay Period Filter"; Date)
+        {
+            FieldClass = FlowFilter;
+            TableRelation = "Payroll PeriodX"."Starting Date";
+        }
+        field(50020; "Shortcut Dimension 3 Code"; Code[20])
+        {
+            CaptionClass = '1,1,3';
+            Caption = 'Shorstcut Dimension 3 Code';
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
+
+            trigger OnValidate()
+            begin
+                //ValidateShortcutDimCode(3,"Shortcut Dimension 3 Code");
+            end;
+        }
+        field(50021; "Shortcut Dimension 4 Code"; Code[20])
+        {
+            CaptionClass = '1,1,4';
+            Caption = 'Shortcut Dimension 4 Code';
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(4));
+
+            trigger OnValidate()
+            begin
+                //ValidateShortcutDimCode(4,"Shortcut Dimension 4 Code");
+            end;
+        }
+        field(50022; "Shortcut Dimension 5 Code"; Code[20])
+        {
+            CaptionClass = '1,1,5';
+            Caption = 'Shortcut Dimension 5 Code';
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
+
+            trigger OnValidate()
+            begin
+                //ValidateShortcutDimCode(5,"Shortcut Dimension 5 Code");
+            end;
+        }
+        field(50050; Vendorname; Code[50])
         {
         }
-        field(50006; Prequalification; Integer)
+        field(50145; "Vendor Credit Limit(LCY)"; Decimal)
+        {
+        }
+        field(50146; "Requisition Default Vendor"; Boolean)
+        {
+        }
+        field(50147; "Vendor Retention Account"; Code[20])
+        {
+            TableRelation = Vendor."No." where(Retention = const(true));
+        }
+        field(50148; Retention; Boolean)
+        {
+        }
+        field(50149; Tel; Code[20])
+        {
+        }
+        field(50150; Email; Text[200])
+        {
+        }
+        field(50151; "Bank Account Number"; Code[200])
+        {
+        }
+        field(50152; "Bank Branch"; Code[200])
+        {
+             TableRelation = "Employee Bank AccountX"."Bank Branch No." where(Code = field("Vendor's Bank"));
+        }
+        field(50153; "Vendor's Bank"; Code[200])
+        {
+            TableRelation = "Employee Bank AccountX";
+        }
+        field(50154; "Bank Name"; Text[200])
+        {
+            CalcFormula = lookup("Employee Bank AccountX"."Bank Name" where(Code = field("Vendor's Bank"),
+                                                                             "Bank Branch No." = field("Bank Branch")));
+            Editable = false;
+            FieldClass = FlowField;
+        }
+        field(50155; "Bank Branch Name"; Text[200])
+        {
+            CalcFormula = lookup("Employee Bank AccountX"."Branch Name" where("Bank Branch No." = field("Bank Branch"),
+                                                                               Code = field("Vendor's Bank")));
+            Editable = false;
+            FieldClass = FlowField;
+        }
+        field(50156; "Status 1"; Option)
+        {
+            OptionCaption = ' ,Active,Inactive,Exited';
+            OptionMembers = " ",Active,Inactive,Exited;
+        }
+        field(50157; "Appointment Date"; Date)
+        {
+        }
+        field(50158; "Termination Date"; Date)
+        {
+        }
+        field(50159; "Yagpo Cert. No."; Code[50])
+        {
+            Caption = 'AGPO Certificate No.';
+        }
+        field(50160; Category; Code[200])
+        {
+        }
+        field(50161; "Incorporation Certificate No."; Code[200])
+        {
+            trigger OnValidate()
+            var
+                myInt: Integer;
+                Vendorrec: record Vendor;
+            begin
+                Vendorrec.Reset();
+                Vendorrec.SetRange("Incorporation Certificate No.", rec."Incorporation Certificate No.");
+                if Vendorrec.FindFirst() then
+                    Error('You cannot share Certificate Number with Vendor No. %1', Vendorrec."No.");
+            end;
+        }
+        field(50162; Disability; Boolean)
+        {
+        }
+        field(50163; "Tax Compliance"; Code[250])
+        {
+            caption = 'Tax Compliance Certificate No.';
+            trigger OnValidate()
+            var
+                // KRAIntegration: Codeunit "KRA Integration";
+                // KRALog: Record "KRA Integration Log";
+                valid: Integer;
+            begin
+                // if "Tax Compliance" <> '' then begin
+                //     KRAIntegration.TCCChecker("PIN Number", "Tax Compliance", KRALog);
+                //     if not KRALog.Success then
+                //         Error('The TCC number could not be entered because %1', KRALog."Status Message");
+                //     "Tax Compliance Expiry Date" := KRALog."End Date";
+                // end;
+
+            end;
+        }
+        field(50164; "Certificate of Registration"; Code[200])
+        {
+        }
+        field(50165; "Type of Work Done"; Text[250])
+        {
+        }
+        field(50166; "Supplier Category"; Text[200])
+        {
+            DataClassification = ToBeClassified;
+            caption = 'Procurement Category';
+            TableRelation = "Procurement Category".Code;
+        }
+        field(50167; "Special Category"; Text[200])
+        {
+            DataClassification = ToBeClassified;
+            caption = 'Vendor Category.';
+            TableRelation = "Special Vendor Category";
+        }
+        field(50180; "Director Taxable Income"; Decimal)
+        {
+            CalcFormula = sum("Director Ledger Entry".Amount where("Director No" = field("No."),
+                                                                    "Payroll Period" = field("Pay Period Filter"),
+                                                                    Taxable = const(true)));
+            FieldClass = FlowField;
+        }
+        field(54004; Broker; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(54006; "Vendor Type1"; Option)
+        {
+            DataClassification = ToBeClassified;
+            OptionCaption = ',Unit Trust,Broker,Agent';
+            OptionMembers = ,"Unit Trust",Broker,Agent;
+        }
+        field(54007; "First Name"; Text[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(54008; "Middle Name"; Text[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(54009; "Last Name"; Text[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70000; "KBA Code"; Code[10])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Employee Bank AccountX".Code;
+        }
+        field(70001; "KBA Branch Code"; Code[10])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Employee Bank AccountX"."Bank Branch No.";
+        }
+        field(70002; "Withholding Tax Code"; Code[10])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Tariff Codes1";
+        }
+        field(70004; "Working Hours"; Code[10])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70005; Prequalification; Integer)
         {
             CalcFormula = count("Prequalified Suppliers1" where("Vendor No" = field("No.")));
             FieldClass = FlowField;
         }
-        // field(50007; "Supplier Type"; Code[20])
-        // {
-        //     TableRelation = "Supplier Types";
-        // }
-        field(50008; "Secondary Contact No."; Code[20])
+        field(70006; "Special Groups Type"; Code[50])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Vendor Target Groups".Code;
+        }
+        field(70007; "Secondary Contact No."; Code[50])
         {
             Caption = 'Secondary Contact No.';
+            DataClassification = ToBeClassified;
             TableRelation = Contact;
 
             trigger OnLookup()
@@ -64,612 +409,98 @@ TableExtension 52193434 tableextension52193434 extends Vendor
                 ContBusRel: Record "Contact Business Relation";
             begin
 
-                /*Secondary Contact" := '';
-                IF "Secondary Contact No." <> '' THEN BEGIN
-                  Cont.GET("Secondary Contact No.");
-                
-                  ContBusRel.SETCURRENTKEY("Link to Table","No.");
-                  ContBusRel.SETRANGE("Link to Table",ContBusRel."Link to Table"::Vendor);
-                  ContBusRel.SETRANGE("No.","No.");
-                  ContBusRel.FINDFIRST;
-                
-                  IF Cont."Company No." <> ContBusRel."Contact No." THEN
-                    ERROR(Text004,Cont."No.",Cont.Name,"No.",Name);
-                
-                  IF Cont.Type = Cont.Type::Person THEN
-                    "Secondary Contact" := Cont.Name
-                END;
-                      */
+                "Secondary Contact" := '';
+                if "Secondary Contact No." <> '' then begin
+                    Cont.Get("Secondary Contact No.");
 
+                    ContBusRel.SetCurrentkey("Link to Table", "No.");
+                    ContBusRel.SetRange("Link to Table", ContBusRel."link to table"::Vendor);
+                    ContBusRel.SetRange("No.", "No.");
+                    ContBusRel.FindFirst;
+
+                    //    if Cont."Company No." <> ContBusRel."Contact No." then
+                    //     Error(Text004, Cont."No.", Cont.Name, "No.", Name);
+
+                    if Cont.Type = Cont.Type::Person then
+                        "Secondary Contact" := Cont.Name
+                end;
             end;
         }
-        field(50009; "Secondary Contact"; Text[50])
+        field(70008; "Secondary Contact"; Text[50])
         {
             Caption = 'Secondary Contact';
+            DataClassification = ToBeClassified;
 
-            trigger OnValidate()
-            begin
-                // if RMSetup.Get then
-                //     if RMSetup."Bus. Rel. Code for Vendors" <> '' then
-                //         if (xRec."Secondary Contact" = '') and (xRec."Secondary Contact No." = '') then begin
-                //             Modify;
-                //             UpdateContFromVend.OnModify(Rec);
-                //             UpdateContFromVend.InsertNewContactPerson(Rec, false);
-                //             Modify(true);
-                //         end
-            end;
-        }
-        field(50010; "Maximum Order Amount"; Decimal)
-        {
-        }
-        field(50011; "Minimum Order Amount"; Decimal)
-        {
-        }
-        field(50012; "Supplier Registration No."; Code[20])
-        {
-        }
-        field(50013; "Registration Date"; Date)
-        {
-        }
-        field(50014; "Registration Expiry Date"; Date)
-        {
-        }
-        field(50015; "Maximum Order Quantity"; Decimal)
-        {
-        }
-        field(50016; "Minimum Order Quantity"; Decimal)
-        {
-        }
-        field(53000; "PIN No"; Code[20])
-        {
-        }
-        field(53001; "VAT No"; Code[20])
-        {
-        }
-        field(53077; "Status 2"; Option)
-        {
-            OptionMembers = Active,Frozen,Closed,Archived,New,Dormant;
-
-            trigger OnValidate()
-            begin
-                if (Status = Status::" ") or (Status = Status::Archived) then
-                    Blocked := Blocked::" "
-                else
-                    Blocked := Blocked::All
-            end;
-        }
-        field(53078; "Account Type 2"; Code[30])
-        {
-            TableRelation = "Account Types";
-        }
-        field(55019; "Debtor Type"; Option)
-        {
-            OptionMembers = ,"Vendor Account","FOSA Account","Micro Account";
-        }
-        field(55035; "Marked For Closure"; Option)
-        {
-            OptionMembers = No,Yes;
-        }
-        field(55068; "Group Account"; Boolean)
-        {
-        }
-        field(55069; "Group Balance"; Decimal)
-        {
-            CalcFormula = - sum("Detailed Vendor Ledg. Entry".Amount where("Group Code" = field("No.")));
-            FieldClass = FlowField;
-        }
-        field(55070; "Group Loan Balance"; Decimal)
-        {
-            CalcFormula = sum("Detailed Cust. Ledg. Entry".Amount where("Transaction Type" = filter("Deposit Contribution" | "Share Contribution" | Withdrawal | "Loan Repayment"),
-                                                                         "Group Code" = field("No."),
-                                                                         "Posting Date" = field(upperlimit("Date Filter"))));
-            FieldClass = FlowField;
-        }
-        field(55071; "MF-FOSA Account"; Code[20])
-        {
-        }
-        field(55072; "Total No. of Clients"; Integer)
-        {
-            Editable = false;
-            FieldClass = Normal;
-        }
-        field(55073; "Address for Group Meetings"; Text[30])
-        {
-        }
-        field(55074; "Meeting Days"; Text[30])
-        {
-        }
-        field(55075; "Meeting Venue"; Text[30])
-        {
-        }
-        field(55076; "No. of Female Clients"; Integer)
-        {
-            Editable = false;
-            FieldClass = Normal;
-        }
-        field(55077; "No. of Male Clients"; Integer)
-        {
-            Editable = false;
-            FieldClass = Normal;
-        }
-        field(55078; "Group Chair Name"; Text[30])
-        {
-            Editable = true;
-        }
-        field(55079; "Group Sec. Name"; Text[30])
-        {
-            Editable = true;
-        }
-        field(55080; "Group Treasurer Name"; Text[30])
-        {
-            Editable = true;
-        }
-        field(55081; "Group Code"; Code[20])
-        {
-        }
-        field(55082; "Repayments Made"; Decimal)
-        {
-            CalcFormula = sum("Detailed Cust. Ledg. Entry".Amount where("Transaction Type" = filter("Share Contribution" | Withdrawal),
-                                                                         "Group Code" = field("No."),
-                                                                         "Posting Date" = field(upperlimit("Date Filter"))));
-            FieldClass = FlowField;
-        }
-        field(55083; "Amount Disbursed"; Decimal)
-        {
-            CalcFormula = sum("Detailed Cust. Ledg. Entry".Amount where("Transaction Type" = filter("Deposit Contribution"),
-                                                                         "Group Code" = field("No."),
-                                                                         "Posting Date" = field("Date Filter")));
-            FieldClass = FlowField;
-        }
-        field(55084; "Interest Due"; Decimal)
-        {
-            CalcFormula = sum("Detailed Cust. Ledg. Entry".Amount where("Transaction Type" = filter("Loan Repayment"),
-                                                                         "Group Code" = field("No."),
-                                                                         "Posting Date" = field("Date Filter")));
-            FieldClass = FlowField;
-        }
-        field(68000; "Creditor Type"; Option)
-        {
-            OptionMembers = " ",Account;
-        }
-        field(68001; "Staff No"; Code[20])
-        {
-        }
-        field(68002; "ID No."; Code[50])
-        {
-        }
-        field(68003; "Last Maintenance Date"; Date)
-        {
-        }
-        field(68004; "Activate Sweeping Arrangement"; Boolean)
-        {
-        }
-        field(68005; "Sweeping Balance"; Decimal)
-        {
-        }
-        field(68006; "Sweep To Account"; Code[30])
-        {
-            TableRelation = Vendor;
-        }
-        field(68007; "Fixed Deposit Status"; Option)
-        {
-            OptionCaption = ' ,Active,Matured,Closed,Not Matured';
-            OptionMembers = " ",Active,Matured,Closed,"Not Matured";
-        }
-        field(68008; "Call Deposit"; Boolean)
-        {
-
-            trigger OnValidate()
-            begin
-                /*IF AccountTypes.GET("Account Type") THEN BEGIN
-                IF AccountTypes."Fixed Deposit" = TRUE THEN
-                ERROR('Call deposit only applicable for Fixed Deposits.');
-                END;*/
-
-            end;
-        }
-        field(68009; "Mobile Phone No"; Code[50])
-        {
-
-            trigger OnValidate()
-            begin
-
-                /*Vend.RESET;
-                Vend.SETRANGE(Vend."Staff No","Staff No");
-                IF Vend.FIND('-') THEN
-                Vend.MODIFYALL(Vend."Mobile Phone No","Mobile Phone No");
-                
-                Cust.RESET;
-                Cust.SETRANGE(Cust."Staff No","Staff No");
-                IF Cust.FIND('-') THEN
-                Cust.MODIFYALL(Cust."Mobile Phone No","Mobile Phone No");
-                 */
-
-            end;
-        }
-        field(68010; "Marital Status"; Code[30])
-        {
-            TableRelation = Vendor;
-        }
-        field(68012; "BOSA Account No"; Code[20])
-        {
-            TableRelation = Customer;
-        }
-        field(68013; Signature; Blob)
-        {
-        }
-        field(68014; "Passport No."; Code[50])
-        {
-        }
-        field(68015; "Company Code"; Code[20])
-        {
-            //TableRelation = Employer."No.";
-        }
-        field(68016; Status; Option)
-        {
-            OptionCaption = ' ,Active,Frozen,Closed,Archived,New,Dormant,Deceased';
-            OptionMembers = " ",Active,Frozen,Closed,Archived,New,Dormant,Deceased;
-
-            trigger OnValidate()
-            begin
-                if (Status = Status::Active) or (Status = Status::New) then
-                    Blocked := Blocked::" "
-                else
-                    Blocked := Blocked::All
-
-                //"Resons for Status Change":='1';
-            end;
-        }
-        field(68017; "Account Type"; Code[20])
-        {
-            TableRelation = "Account Types".Code;
-
-            trigger OnValidate()
-            begin
-                /*IF AccountTypes.GET("Account Type") THEN BEGIN
-                AccountTypes.TESTFIELD(AccountTypes."Posting Group");
-                "Account Type Name":=AccountTypes.Description;
-                "Vendor Posting Group":=AccountTypes."Posting Group";
-                "Call Deposit" := FALSE;
-                END;*/
-
-            end;
-        }
-        field(68018; "Account Category"; Option)
-        {
-            OptionCaption = 'Single,Joint,Corporate,Group,Branch';
-            OptionMembers = Single,Joint,Corporate,Group,Branch;
-        }
-        field(68019; "FD Marked for Closure"; Boolean)
-        {
-        }
-        field(68020; "Last Withdrawal Date"; Date)
-        {
-        }
-        field(68021; "Last Overdraft Date"; Date)
-        {
-        }
-        field(68022; "Last Min. Balance Date"; Date)
-        {
-        }
-        field(68023; "Last Deposit Date"; Date)
-        {
-        }
-        field(68024; "Last Transaction Posting Date"; Date)
-        {
-        }
-        field(68025; "Date Closed"; Date)
-        {
-        }
-        field(68026; "Uncleared Cheques"; Decimal)
-        {
-            CalcFormula = sum(Transactions.Amount where("Account No" = field("No."),
-                                                         Posted = const(true),
-                                                         "Cheque Processed" = const(false),
-                                                         Type = filter("Cheque Deposit")));
-            FieldClass = FlowField;
-        }
-        field(68027; "Expected Maturity Date"; Date)
-        {
-
-            trigger OnValidate()
-            begin
-                "FD Maturity Date" := "Expected Maturity Date";
-            end;
-        }
-        field(68028; "ATM Transactions"; Decimal)
-        {
-            // CalcFormula = sum("ATM Transactions".Amount where("Account No" = field("No."),
-            //                                                    Posted = const(false)));
-            Editable = false;
-            FieldClass = FlowField;
-        }
-        field(68029; "Date of Birth"; Date)
-        {
-        }
-        field(68030; "Last Transaction Date"; Date)
-        {
-            AutoFormatType = 1;
-            CalcFormula = max("Detailed Vendor Ledg. Entry"."Posting Date" where("Vendor No." = field("No.")));
-            Caption = 'Last Transaction Date';
-            Editable = false;
-            FieldClass = FlowField;
-        }
-        field(68032; "E-Mail (Personal)"; Text[50])
-        {
-        }
-        field(68033; Section; Code[20])
-        {
-            //TableRelation = Table51507298.Field1 where (Field3=field("Company Code"));
-        }
-        field(68034; Card; Code[50])
-        {
-        }
-        field(68035; "Home Address"; Text[50])
-        {
-        }
-        field(68036; Location; Text[50])
-        {
-        }
-        field(68037; "Sub-Location"; Text[50])
-        {
-        }
-        field(68038; District; Text[50])
-        {
-        }
-        field(68039; "Resons for Status Change"; Text[200])
-        {
-        }
-        field(68040; "Closure Notice Date"; Date)
-        {
-        }
-        field(68041; "Fixed Deposit Type"; Code[20])
-        {
-            TableRelation = "Fixed Deposit Type".Code;
-
-            trigger OnValidate()
-            begin
-                /*TESTFIELD("Registration Date");
-                IF FDType.GET("Fixed Deposit Type") THEN
-                "FD Maturity Date":=CALCDATE(FDType.Duration,"Registration Date");  */
-
-            end;
-        }
-        field(68042; "Interest Earned"; Decimal)
-        {
-            CalcFormula = sum("Interest Buffer"."Interest Amount" where("Account No" = field("No.")));
-            Editable = false;
-            FieldClass = FlowField;
-        }
-        field(68043; "Untransfered Interest"; Decimal)
-        {
-            CalcFormula = sum("Interest Buffer"."Interest Amount" where("Account No" = field("No."),
-                                                                         Transferred = const(false)));
-            Editable = false;
-            FieldClass = FlowField;
-        }
-        field(68044; "FD Maturity Date"; Date)
-        {
-        }
-        field(68045; "Savings Account No."; Code[20])
-        {
-            TableRelation = Vendor."No.";
-        }
-        field(68046; "Old Account No."; Code[20])
-        {
-        }
-        field(68047; "Salary Processing"; Boolean)
-        {
-        }
-        field(68048; "Amount to Transfer"; Decimal)
-        {
-
-            trigger OnValidate()
-            begin
-                /*CALCFIELDS(Balance);
-                
-                IF "Amount to Transfer" > Balance THEN
-                ERROR('Amount cannot be more than the balance.');  */
-
-            end;
-        }
-        field(68049; Proffesion; Text[50])
-        {
-        }
-        field(68050; "Signing Instructions"; Text[250])
-        {
-        }
-        field(68051; Hide; Boolean)
-        {
-        }
-        field(68052; Gender; Option)
-        {
-            OptionCaption = ' ,Male,Female';
-            OptionMembers = " ",Male,Female;
-        }
-        field(68053; "Minimum Balance"; Decimal)
-        {
-            CalcFormula = sum("Account Types"."Minimum Balance" where(Code = field("Account Type")));
-            FieldClass = FlowField;
-        }
-        field(68054; "Excempt Transaction Charges"; Option)
-        {
-            OptionMembers = No,Yes;
-        }
-        field(68055; "Withdr. Notice Effective Date"; Date)
-        {
-        }
-        field(68056; "Withdr. Notice Date Placed"; Date)
-        {
-        }
-        field(68057; "Amount To Withdraw"; Decimal)
-        {
-        }
-        field(68058; "Factory Code/Activity"; Code[20])
-        {
-        }
-        field(68059; "Society Code"; Code[20])
-        {
-            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(0));
-        }
-        field(68060; "Bosa Application No"; Code[20])
-        {
-        }
-        field(68061; "Bosa Status"; Option)
-        {
-            OptionCaption = 'Open,Pending Approval,Approved,Released,Active,Non-Active,Suspended,Deceased,Withdrawan,Retired,Termination,Family Member,Rejected,,,BOSA';
-            OptionMembers = Open,"Pending Approval",Approved,Released,Active,"Non-Active",Suspended,Deceased,Withdrawan,Retired,Termination,"Family Member",Rejected,,,BOSA;
-        }
-        field(68062; "Fosa Application No."; Code[20])
-        {
-            //TableRelation = "Fosa Accounts Applications";
-        }
-        field(68063; Title; Code[20])
-        {
-        }
-        field(68064; "Last Name"; Text[50])
-        {
-        }
-        field(68065; "Other Names"; Text[50])
-        {
-        }
-        field(68066; "Fosa Application"; Code[20])
-        {
-        }
-        field(68067; "Account Type Name"; Text[50])
-        {
-        }
-        field(68068; "Account Charges"; Decimal)
-        {
-        }
-        field(68069; Term; Code[20])
-        {
-            TableRelation = "FD Terms";
-
-            trigger OnValidate()
-            begin
-                /*IF Terms.GET(Term) THEN BEGIN
-                Rate:=Terms."Interest Rate";
-                
-                //Period:=TermRec.Term;
-                "Expected Maturity Date":=CALCDATE(Terms.Term,"Registration Date");
-                "FD Maturity Date":="Expected Maturity Date";
-                END;     */
-
-            end;
-        }
-        field(68070; Rate; Decimal)
-        {
-        }
-        field(68071; "Product Type"; Option)
-        {
-            OptionCaption = ' ,Personal,Business';
-            OptionMembers = " ",Personal,Business;
-        }
-        field(68072; Entity; Option)
-        {
-            Editable = false;
-            OptionCaption = ' ,Sole Proprietor,Corporate,Partnership,Group,Trust,Company';
-            OptionMembers = " ","Sole Proprietor",Corporate,Partnership,Group,Trust,Company;
-        }
-        field(68073; "Overdraft Limit"; Decimal)
-        {
-        }
-        field(68074; "Overdraft Status"; Option)
-        {
-            OptionCaption = ' ,Serviced,Not Serviced,Improved,Expired';
-            OptionMembers = " ",Serviced,"Not Serviced",Improved,Expired;
-        }
-        field(68075; "Frozen Amount"; Decimal)
-        {
-        }
-        field(68076; "Class Code"; Code[20])
-        {
-            TableRelation = "Class Code";
-        }
-        field(68077; "Untranfered Interest"; Decimal)
-        {
-            Editable = false;
-        }
-        field(68078; "Date Renewed"; Date)
-        {
-        }
-        field(68079; "Neg. Interest Rate"; Decimal)
-        {
-        }
-        field(68080; "Last Interest Date"; Date)
-        {
-            CalcFormula = max("Interest Buffer"."Interest Date" where("Account No" = field("No.")));
-            FieldClass = FlowField;
-        }
-        field(68081; "Default Share Capital Charged"; Boolean)
-        {
-        }
-        field(68082; "Service Fee Date"; Date)
-        {
-            CalcFormula = max("Interest Buffer"."Interest Date" where("Account No" = field("No.")));
-            FieldClass = FlowField;
-        }
-        field(68083; "Overdraft Limit Date"; Date)
-        {
-        }
-        field(68084; "Reason for Blacklist"; Text[50])
-        {
-        }
-        field(68085; "Vendor Ctaegory"; Option)
-        {
-            OptionCaption = ' ,Citizen,Pwd,Women,Youth';
-            OptionMembers = " ",Citizen,Pwd,Women,Youth;
-        }
-        field(70076; "Building/House No"; Text[50])
+            // trigger OnValidate()
+            // begin
+            //     if RMSetup.Get then
+            //         if RMSetup."Bus. Rel. Code for Vendors" <> '' then
+            //             if (xRec."Secondary Contact" = '') and (xRec."Secondary Contact No." = '') then begin
+            //                 Modify;
+            //                 UpdateContFromVend.OnModify(Rec);
+            //                 UpdateContFromVend.InsertNewContactPerson(Rec, false);
+            //                 Modify(true);
+            //             end
+            // end;
+        }
+        field(70009; "Maximum Order Amount"; Decimal)
         {
             DataClassification = ToBeClassified;
         }
-        field(70077; Floor; Text[30])
+        field(70010; "Minimum Order Amount"; Decimal)
         {
             DataClassification = ToBeClassified;
         }
-        field(70078; "Plot No"; Code[50])
+        field(70011; "Supplier Registration No."; Code[50])
         {
             DataClassification = ToBeClassified;
         }
-        field(70079; Street; Text[50])
+        field(70012; "Registration Date"; Date)
         {
             DataClassification = ToBeClassified;
         }
-        field(70091; "Current Trade Licence No"; Code[50])
+        field(70013; "Registration Expiry Date"; Date)
         {
             DataClassification = ToBeClassified;
         }
-        field(70092; "Trade Licence Expiry Date"; Date)
+        field(70014; "Maximum Order Quantity"; Decimal)
         {
             DataClassification = ToBeClassified;
         }
-        field(70093; Registered; Option)
-        {
-            DataClassification = ToBeClassified;
-            OptionCaption = 'Yes,No';
-            OptionMembers = Yes,No;
-        }
-        field(70072; "Dealer Type"; Option)
-        {
-            DataClassification = ToBeClassified;
-            OptionCaption = 'Manufacturer,Distributor,Partner,Reseller,Other';
-            OptionMembers = Manufacturer,Distributor,Partner,Reseller,Other;
-        }
-        field(70073; "Max Value of Business"; Decimal)
+        field(70015; "Minimum Order Quantity"; Decimal)
         {
             DataClassification = ToBeClassified;
         }
-        field(70074; "Nature of Business"; Text[250])
+        field(70016; ReviewerID; Code[10])
         {
             DataClassification = ToBeClassified;
         }
-        field(70070; "Nominal Capital LCY"; Decimal)
+        field(70017; "Vendor Bank"; Text[30])
         {
             DataClassification = ToBeClassified;
         }
-        field(70071; "Issued Capital LCY"; Decimal)
+        field(70018; "Bank Branch Code"; Text[30])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70019; "SWIFT Code"; Text[30])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70020; "IBAN Code"; Text[30])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70021; "Procurement status"; Option)
+        {
+            DataClassification = ToBeClassified;
+            OptionMembers = Open,Awarded;
+        }
+        field(70022; Paye; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70023; "Net Pay"; Boolean)
         {
             DataClassification = ToBeClassified;
         }
@@ -678,56 +509,6 @@ TableExtension 52193434 tableextension52193434 extends Vendor
             DataClassification = ToBeClassified;
             Description = 'Used to record the different Business Types based on Ownership categories such as Companies, Partnerships, Sole Ownership etc. Linked to Business Type Table';
             TableRelation = "Business Types".Code;
-        }
-        field(50163; "Tax Compliance"; Code[250])
-        {
-            caption = 'Tax Compliance Certificate No.';
-        }
-        field(70053; Debarred; Boolean)
-        {
-            DataClassification = ToBeClassified;
-        }
-        field(70054; "Debarment Voucher No"; Code[20])
-        {
-            DataClassification = ToBeClassified;
-            TableRelation = "Vendor Debarment Voucher"."Document No";
-        }
-        field(70055; "Debarment Expiry Date"; Date)
-        {
-            DataClassification = ToBeClassified;
-        }
-        field(50166; "Supplier Category"; Text[200])
-        {
-            DataClassification = ToBeClassified;
-            caption = 'Procurement Category';
-            TableRelation = "Procurement Category".Code;
-        }
-        field(60003; "PIN Number"; Code[20])
-        {
-        }
-        field(70006; "Special Groups Type"; Code[50])
-        {
-            DataClassification = ToBeClassified;
-            TableRelation = "Vendor Target Groups".Code;
-        }
-        field(70068; "Vendor Group"; Option)
-        {
-            Description = 'Look-up field that is auto-populated when the Vendor Class field is defined';
-            OptionCaption = 'General,Special';
-            OptionMembers = General,Special;
-        }
-        field(70069; "Supplier Type"; Option)
-        {
-            DataClassification = ToBeClassified;
-            Description = 'Look-up field that is auto-populated when the Vendor Class field is defined';
-            OptionCaption = 'Local,Foreign';
-            OptionMembers = "Local",Foreign;
-        }
-        field(70067; "Current Vendor Class"; Code[20])
-        {
-            CalcFormula = lookup("Vendor Classification"."Vendor Category" where(Blocked = filter(false)));
-            Description = 'Lookup field mapped to the Vendor Classification Table (For most recent entries that are Open i.e. Blocked=False';
-            FieldClass = FlowField;
         }
         field(70051; "Country of Incorporation"; Code[10])
         {
@@ -757,17 +538,116 @@ TableExtension 52193434 tableextension52193434 extends Vendor
                     VATRegistrationValidation;
             end;
         }
+        field(70053; Debarred; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70054; "Debarment Voucher No"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Vendor Debarment Voucher"."Document No";
+        }
+        field(70055; "Debarment Expiry Date"; Date)
+        {
+            DataClassification = ToBeClassified;
+        }
         field(70060; "Ownership Type"; Option)
         {
             DataClassification = ToBeClassified;
             OptionCaption = ',Sole Ownership.Partnership,Registered Company';
             OptionMembers = ,"Sole Ownership.Partnership","Registered Company";
         }
-        field(70061; "Registration/Incorporation No."; Code[50])
+        field(70061; "Registration/Incorporation No."; Code[100])
         {
             DataClassification = ToBeClassified;
         }
         field(70062; "Reg/Incorporation Date"; Date)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70063; "Operations Start Date"; Date)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70064; "Tax PIN No."; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            Enabled = false;
+        }
+        field(70065; "NSSF No."; Code[20])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70066; "NHIF No."; Code[20])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70067; "Current Vendor Class"; Code[20])
+        {
+            CalcFormula = lookup("Vendor Classification"."Vendor Category" where(Blocked = filter(false)));
+            Description = 'Lookup field mapped to the Vendor Classification Table (For most recent entries that are Open i.e. Blocked=False';
+            FieldClass = FlowField;
+        }
+        field(70068; "Vendor Group"; Option)
+        {
+            Description = 'Look-up field that is auto-populated when the Vendor Class field is defined';
+            OptionCaption = 'General,Special';
+            OptionMembers = General,Special;
+        }
+        field(70069; "Supplier Type"; Option)
+        {
+            DataClassification = ToBeClassified;
+            Description = 'Look-up field that is auto-populated when the Vendor Class field is defined';
+            OptionCaption = 'Local,Foreign,Government Entity,International Firm,International Firms (with Local Joint Venture),Individual Consultants,NGOs & Community Workers';
+            OptionMembers = "Local",Foreign,"Government Entity","International Firm","International Firms with Joint","Individual Consultants",NGOs;
+        }
+        field(70070; "Nominal Capital LCY"; Decimal)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70071; "Issued Capital LCY"; Decimal)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70072; "Dealer Type"; Option)
+        {
+            DataClassification = ToBeClassified;
+            OptionCaption = 'Manufacturer,Distributor,Partner,Reseller,Other';
+            OptionMembers = Manufacturer,Distributor,Partner,Reseller,Other;
+        }
+        field(70073; "Max Value of Business"; Decimal)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70074; "Nature of Business"; Text[250])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70075; "Fixed Line Tel No"; Code[30])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70076; "Building/House No"; Text[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70077; Floor; Text[30])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70078; "Plot No"; Code[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70079; Street; Text[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70080; "Authorized Signatory Name"; Text[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70081; "Signatory Designation"; Text[50])
         {
             DataClassification = ToBeClassified;
         }
@@ -799,22 +679,322 @@ TableExtension 52193434 tableextension52193434 extends Vendor
         field(70088; "Company Size"; Code[20])
         {
             DataClassification = ToBeClassified;
-            // TableRelation = "Company Size Code".Code;
+            TableRelation = "Company Size Code".Code;
         }
-        field(50167; "Special Category"; Text[200])
+        field(70089; Trainer; Boolean)
         {
             DataClassification = ToBeClassified;
-            caption = 'Vendor Category.';
-            TableRelation = "Special Vendor Category";
         }
-        field(50160; Category; Code[200])
+        field(70090; "KNTC Agent"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70091; "Current Trade Licence No"; Code[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70092; "Trade Licence Expiry Date"; Date)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70093; Registered; Option)
+        {
+            DataClassification = ToBeClassified;
+            OptionCaption = 'Yes,No';
+            OptionMembers = Yes,No;
+        }
+        field(70094; Status; Option)
+        {
+            Caption = 'Status';
+            DataClassification = ToBeClassified;
+            Editable = false;
+            OptionCaption = 'Open,Released,Pending Approval,Pending Prepayment,In Progress';
+            OptionMembers = Open,Released,"Pending Approval","Pending Prepayment","In Progress";
+        }
+        field(70095; "Advance Customer No"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            Description = '//Custom For Judiciary(Advance Payment Request)';
+            TableRelation = Customer."No.";
+        }
+        field(70096; Garage; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70097; "Vendor Profile"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70098; "Vendor Communication Profile"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70099; "Business Profile"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70100; "Shareholders Profile"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70101; "Litigation Profile"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70102; "Past Experience Profile"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70103; "Audited Income Statement"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70104; "Audit Balance Sheet"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70105; "Key Personel"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70106; "Send Payslip By E-mail?"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70107; "Profile Complete"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70108; "No Contract"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70109; "HaveAgpo?"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+
+        field(70110; "Contact No"; Code[50])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = Contact;
+        }
+        field(70111; "Vendor OTP"; Text[10])
+        {
+            DataClassification = ToBeClassified;
+            ExtendedDatatype = Masked;
+        }
+        field(70112; "AGPO Cert. Expiry Date"; Date)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70113; "Trade Permit No."; Code[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70114; "CR12 Cert. No."; Code[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70115; "Email 2"; Text[80])
+        {
+            DataClassification = ToBeClassified;
+            ExtendedDatatype = EMail;
+        }
+        field(70116; "Tax Excempt Cert. No."; Code[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70117; "Is AGPO"; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70118; Verified; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70119; Consolidated; Boolean)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70120; "Consolidation Document No."; Code[20])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70121; "Contact Person Name"; Text[100])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70122; "Contact Person Phone"; Text[80])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70123; "Contact Person Name2"; Text[100])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70124; "Contact Person Phone2"; Text[80])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70125; "Tax Compliance Expiry Date"; Date)
         {
         }
+        field(70126; "Intl Business Reg. No."; Code[100])
+        {
+            Caption = 'International Business Reg. No.';
+        }
+        field(70127; "Intl Business Reg. Name"; Text[250])
+        {
+            Caption = 'International Business Reg. Name';
+        }
+        field(70128; "Intl Business Incop Date"; Date)
+        {
+            Caption = 'International Business Incorp. Date';
+        }
+        field(70129; "Country of Registration"; Text[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70130; "Tax Exempt Cert. No."; Code[100])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70131; "Tax Exempt Expiry"; Date)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(70134; "Taxpayer Type"; Enum "Taxpayer Type")
+        {
+            trigger OnValidate()
+            begin
+                if "PIN Number" <> '' then
+                    Validate("PIN Number");
+            end;
+        }
+        field(70135; "ID BRN"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            trigger OnValidate()
+            begin
+                if "PIN Number" <> '' then
+                    Validate("PIN Number");
+            end;
+        }
+        field(70136; "PIN Status"; Text[250])
+        {
+            DataClassification = ToBeClassified;
+            Editable = false;
+        }
+        field(70137; "Validated Name"; Text[250])
+        {
+            DataClassification = ToBeClassified;
+            Editable = false;
+        }
+            field(70138; "Payroll Group"; Option)
+        {
+            CalcFormula = lookup("Employee Posting GroupX"."Payroll Group" where(Code = field("Posting Group")));
+            Editable = false;
+            FieldClass = FlowField;
+            OptionCaption = ' ,Guards,Admin,Management';
+            OptionMembers = " ",Guards,Admin,Management;
+        }
+        field(70139; "Posting Group"; Code[20])
+        {
+            Caption = 'Employee Category';
+            NotBlank = true;
+            TableRelation = "PR Employee Posting Groups";
+            DataClassification = CustomerContent;
+            trigger OnValidate()
+            var
+                myInt: Integer;
+                EmployeeBank: Record "PR Employee Posting Groups";
+            begin
+                EmployeeBank.Reset;
+                EmployeeBank.SetRange(Code, "Posting Group");
+                if EmployeeBank.FindSet() then begin
+                    EmployeeBank.TestField("Retirement Age");
+                    // Rec. := EmployeeBank."Employee Category Type";
+                end;
+
+            end;
+        }
+
     }
 
 
+    //Unsupported feature: Code Modification on "OnRename".
 
+    //trigger OnRename()
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    //ApprovalsMgmt.OnRenameRecordInApprovalRequest(xRec.RECORDID,RECORDID);
+    DimMgt.RenameDefaultDim(DATABASE::Vendor,xRec."No.","No.");
+    SetLastModifiedDateTime;
+    IF xRec."Invoice Disc. Code" = xRec."No." THEN
+      "Invoice Disc. Code" := "No.";
+
+    CalendarManagement.RenameCustomizedBaseCalendarData(CustomizedCalendarChange."Source Type"::Vendor,"No.",xRec."No.");
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    ////ApprovalsMgmt.OnRenameRecordInApprovalRequest(xRec.RECORDID,RECORDID);
+    #2..7
+    */
+    //end;
+
+    local procedure NameBreakdown()
     var
-        UpdateContFromVend: Codeunit "VendCont-Update";
+        NamePart: array[30] of Text[100];
+        TempName: Text[250];
+        FirstName250: Text[250];
+        i: Integer;
+        NoOfParts: Integer;
+    begin
+        TempName := Name;
+        while StrPos(TempName, ' ') > 0 do begin
+            if StrPos(TempName, ' ') > 1 then begin
+                i := i + 1;
+                NamePart[i] := CopyStr(TempName, 1, StrPos(TempName, ' ') - 1);
+            end;
+            TempName := CopyStr(TempName, StrPos(TempName, ' ') + 1);
+        end;
+        i := i + 1;
+        NamePart[i] := CopyStr(TempName, 1, MaxStrLen(NamePart[i]));
+        NoOfParts := i;
+
+        "First Name" := '';
+        "Middle Name" := '';
+        "Last Name" := '';
+        for i := 1 to NoOfParts do
+            if (i = NoOfParts) and (NoOfParts > 1) then
+                "Last Name" := CopyStr(NamePart[i], 1, MaxStrLen("Last Name"))
+            else
+                if (i = NoOfParts - 1) and (NoOfParts > 2) then
+                    "Middle Name" := CopyStr(NamePart[i], 1, MaxStrLen("Middle Name"))
+                else begin
+                    FirstName250 := DelChr("First Name" + ' ' + NamePart[i], '<', ' ');
+                    "First Name" := CopyStr(FirstName250, 1, MaxStrLen("First Name"));
+                end;
+    end;
+
+    procedure GetRetainedAmountBalance(VendorNo: Code[20]; DateFilter: Text) Balance: Decimal
+    var
+        DVendLedgerEntry: Record "Detailed Vendor Ledg. Entry";
+    begin
+        DVendLedgerEntry.Reset();
+        DVendLedgerEntry.SetRange("Vendor No.", VendorNo);
+        if DateFilter <> '' then
+            DVendLedgerEntry.SetFilter("Posting Date", DateFilter);
+        DVendLedgerEntry.SetRange("Entry Type2", DVendLedgerEntry."Entry Type2"::Retention);
+        if DVendLedgerEntry.FindSet() then begin
+            DVendLedgerEntry.CalcSums(Amount);
+            Balance := -DVendLedgerEntry.Amount;
+            exit(Balance);
+        end;
+    end;
 }
 

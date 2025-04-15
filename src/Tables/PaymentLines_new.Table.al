@@ -2748,7 +2748,7 @@ Table 52193563 "Payment Lines_new"
         }
         field(53020; "Customer No"; Code[20])
         {
-            TableRelation = Customer."No." where("RefNo." = const('2'));
+            // TableRelation = Customer."No." where("RefNo." = const('2'));
         }
         field(53021; "Customer Posting Group"; Code[20])
         {

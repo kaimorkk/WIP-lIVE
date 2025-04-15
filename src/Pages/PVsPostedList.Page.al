@@ -5,7 +5,7 @@ Page 52194296 "PVs Posted List"
     Editable = false;
     PageType = List;
     SourceTable = Payments;
-    SourceTableView = where(Posted=const(true));
+    SourceTableView = where(Posted = const(true));
     UsageCategory = History;
 
     layout
@@ -14,71 +14,71 @@ Page 52194296 "PVs Posted List"
         {
             repeater(Control1000000000)
             {
-                field(No;No)
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                     ApplicationArea = Basic;
                 }
-                field(DatePosted;"Date Posted")
+                // field(DatePosted;"Date Posted")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                field(Type; Type)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Type;Type)
-                {
-                    ApplicationArea = Basic;
-                }
-                field(PayMode;"Pay Mode")
+                field(PayMode; "Pay Mode")
                 {
                     ApplicationArea = Basic;
                     LookupPageID = "Payment Modes111";
                 }
-                field(ChequeNo;"Cheque No")
+                field(ChequeNo; "Cheque No")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeDate;"Cheque Date")
+                field(ChequeDate; "Cheque Date")
                 {
                     ApplicationArea = Basic;
                 }
-                field(TotalAmount;"Total Amount")
+                field(TotalAmount; "Total Amount")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeType;"Cheque Type")
+                field(ChequeType; "Cheque Type")
                 {
                     ApplicationArea = Basic;
                 }
-                field(KBABankCode;"KBA Bank Code")
+                // field(KBABankCode;"KBA Bank Code")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                field(Payee; Payee)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Payee;Payee)
+                field(Status; Status)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Status;Status)
+                field(PayingBankAccount; "Paying Bank Account")
                 {
                     ApplicationArea = Basic;
                 }
-                field(PayingBankAccount;"Paying Bank Account")
+                // field(NetAmount;"Net Amount")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                field(Posted; Posted)
                 {
                     ApplicationArea = Basic;
                 }
-                field(NetAmount;"Net Amount")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(Posted;Posted)
-                {
-                    ApplicationArea = Basic;
-                }
-                field(EftGenerated;"Eft Generated")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(EftGenerated;"Eft Generated")
+                // {
+                //     ApplicationArea = Basic;
+                // }
             }
         }
     }

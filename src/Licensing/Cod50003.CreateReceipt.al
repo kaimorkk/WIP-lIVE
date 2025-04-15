@@ -18,7 +18,7 @@ codeunit 50003 "Create Receipt"
         CMS.TestField("Licensing Bank Code");
         PostInvoice(RecCitizen);
         ReceiptHeader.Init();
-        ReceiptHeader.Type := RecCitizen."Payment Type";
+        // ReceiptHeader.Type := RecCitizen."Payment Type";
         ReceiptHeader."Cheque No" := RecCitizen."Transaction Code";
         ReceiptHeader.Date := DT2Date(RecCitizen."Transaction Date");
         ReceiptHeader."Received From" := RecCitizen."Account Name";
@@ -28,7 +28,7 @@ codeunit 50003 "Create Receipt"
         if ReceiptHeader.Insert(true) then begin
             ReceiptLine.Init();
             ReceiptLine."Receipt No." := ReceiptHeader."No.";
-            ReceiptLine."Transaction Type" := ReceiptHeader.Type;
+            // ReceiptLine."Transaction Type" := ReceiptHeader.Type;
             ReceiptLine."Account Type" := ReceiptLine."Account Type"::Customer;
             ReceiptLine."Account No." := fnGetAccountNoFromInvoice(RecCitizen."Invoice No.");
             ReceiptLine.Validate("Account No.");

@@ -7,8 +7,8 @@ Page 52193494 "General Journal - Not Posted"
     PageType = Worksheet;
     SaveValues = true;
     SourceTable = "Gen. Journal Line";
-    SourceTableView = sorting("Document No.", "Posting Date")
-                      where(Status = filter(<> Verified));
+    // SourceTableView = sorting("Document No.", "Posting Date")
+    //                   where(Status = filter(<> Verified));
 
     layout
     {

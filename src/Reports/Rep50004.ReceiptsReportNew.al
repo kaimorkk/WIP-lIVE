@@ -18,9 +18,9 @@ report 50004 "Receipts Report New"
             column(ChequeNo; "Cheque No")
             {
             }
-            column(ExtDocumentNo; "Ext. Document No.")
-            {
-            }
+            // column(ExtDocumentNo; "Ext. Document No.")
+            // {
+            // }
             column(ChequeDate; "Cheque Date")
             {
             }
@@ -51,7 +51,7 @@ report 50004 "Receipts Report New"
             column(AmountLCY; "Amount(LCY)")
             {
             }
-            column(TotalAmount; "Total Amount")
+            column(TotalAmount; ReceiptsHeader1.Amount)
             {
             }
             column(Cashier; Cashier)
@@ -66,44 +66,44 @@ report 50004 "Receipts Report New"
             column(NumberText_2_; NumberText[2])
             {
             }
-            dataitem("Receipt Lines1";"Receipt Lines1")
+            dataitem("Receipt Lines1"; "Receipt Lines1")
             {
                 DataItemLink = "Receipt No." = field("No.");
                 DataItemTableView = sorting("Receipt No.", "Line No");
-                column(Account_Type;"Account Type")
+                column(Account_Type; "Account Type")
                 {
 
                 }
-                column(Account_No_;"Account No.")
+                column(Account_No_; "Account No.")
                 {
 
                 }
-                column(Account_Name;"Account Name")
+                column(Account_Name; "Account Name")
                 {
 
                 }
-                column(Description;Description)
+                column(Description; Description)
                 {
 
                 }
-                column(Applies_to_Doc__No;"Applies to Doc. No")
+                column(Applies_to_Doc__No; "Applies to Doc. No")
                 {
 
                 }
-                column(Applies_to_Doc__Type;"Applies-to Doc. Type")
-                {
+                // column(Applies_to_Doc__Type; "Applies-to Doc. Type")
+                // {
 
-                }
-                column(Amount_Lines;Amount)
+                // }
+                column(Amount_Lines; Amount)
                 {
 
                 }
             }
             trigger OnAfterGetRecord()
             begin
-                ReceiptsHeader1.CalcFields("Total Amount");
+                ReceiptsHeader1.CalcFields(Amount);
                 InitTextVariable;
-                FormatNoText(NumberText, "Total Amount", '');
+                FormatNoText(NumberText, Amount, '');
             end;
         }
     }

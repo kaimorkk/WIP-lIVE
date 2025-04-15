@@ -11,86 +11,86 @@ Page 52194403 "Receipts List Page"
         {
             repeater(Group)
             {
-                field(No;"No.")
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                     ApplicationArea = Basic;
                 }
-                field(PayMode;"Pay Mode")
+                field(PayMode; "Pay Mode")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeNo;"Cheque No")
+                field(ChequeNo; "Cheque No")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeDate;"Cheque Date")
+                field(ChequeDate; "Cheque Date")
                 {
                     ApplicationArea = Basic;
                 }
-                field(TotalAmount;"Total Amount")
+                // field(TotalAmount;"Total Amount")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                field(AmountLCY; "Amount(LCY)")
                 {
                     ApplicationArea = Basic;
                 }
-                field(AmountLCY;"Amount(LCY)")
+                field(BankCode; "Bank Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(BankCode;"Bank Code")
+                field(ReceivedFrom; "Received From")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ReceivedFrom;"Received From")
+                field(OnBehalfOf; "On Behalf Of")
                 {
                     ApplicationArea = Basic;
                 }
-                field(OnBehalfOf;"On Behalf Of")
+                field(Cashier; Cashier)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Cashier;Cashier)
+                field(Posted; Posted)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Posted;Posted)
+                field(PostedDate; "Posted Date")
                 {
                     ApplicationArea = Basic;
                 }
-                field(PostedDate;"Posted Date")
+                field(PostedTime; "Posted Time")
                 {
                     ApplicationArea = Basic;
                 }
-                field(PostedTime;"Posted Time")
+                field(PostedBy; "Posted By")
                 {
                     ApplicationArea = Basic;
                 }
-                field(PostedBy;"Posted By")
+                field(GlobalDimension1Code; "Global Dimension 1 Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(GlobalDimension1Code;"Global Dimension 1 Code")
+                field(GlobalDimension2Code; "Global Dimension 2 Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(GlobalDimension2Code;"Global Dimension 2 Code")
+                field(EmployerCode; "Employer Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(EmployerCode;"Employer Code")
+                field(Status; Status)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Status;Status)
-                {
-                    ApplicationArea = Basic;
-                }
-                field(Banked;Banked)
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(Banked; Banked)
+                // {
+                //     ApplicationArea = Basic;
+                // }
             }
         }
     }

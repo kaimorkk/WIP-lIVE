@@ -72,7 +72,7 @@ Table 52193672 "Prequalified Suppliers"
         }
         field(21; "Vendor No"; Code[20])
         {
-            TableRelation = Vendor where("Debtor Type" = filter("Vendor Account"));
+            // TableRelation = Vendor where("Debtor Type" = filter("Vendor Account"));
 
             trigger OnValidate()
             begin
@@ -118,10 +118,10 @@ Table 52193672 "Prequalified Suppliers"
     begin
 
         Prequalifiedlist.TestField(Prequalifiedlist."Company PIN No");
-        Vend.SetCurrentkey("PIN No");
-        Vend.SetRange(Vend."PIN No", Prequalifiedlist."Company PIN No");
+        Vend.SetCurrentkey("PIN Number");
+        Vend.SetRange(Vend."PIN Number", Prequalifiedlist."Company PIN No");
         if Vend.FindFirst then
-            Error('The Vendor %1 PIN No %2 already exists in the system', Vend.Name, Vend."PIN No");
+            Error('The Vendor %1 PIN No %2 already exists in the system', Vend.Name, Vend."PIN Number");
 
         Vend.Init;
         Vend."No." := '';
@@ -136,8 +136,8 @@ Table 52193672 "Prequalified Suppliers"
         //Vend."KBA Branch Code":=Prequalifiedlist."KBA Branch Code";
         Vend."Our Account No." := Prequalifiedlist."Bank account No";
         //Vend."Vendor Type":=Prequalifiedlist."Vendor Type";
-        Vend."PIN No" := Prequalifiedlist."Company PIN No";
-        Vend."VAT No" := Prequalifiedlist."Registration No";
+        Vend."PIN Number" := Prequalifiedlist."Company PIN No";
+        // Vend."VAT No" := Prequalifiedlist."Registration No";
         if CategoryRec.Get(Prequalifiedlist.Category) then begin
             Vend."Gen. Bus. Posting Group" := CategoryRec."Gen. Bus. Posting Group";
             Vend."VAT Bus. Posting Group" := CategoryRec."VAT Bus. Posting Group";

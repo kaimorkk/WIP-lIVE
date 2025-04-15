@@ -34,10 +34,10 @@ page 52193921 "Employee Card-HR1"
 
                     end;
                 }
-                field("PSC Employee No."; Rec."PSC Employee No.")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field("PSC Employee No."; Rec."PSC Employee No.")
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 field(Title; Rec.Title)
                 {
                     ApplicationArea = Basic;
@@ -114,18 +114,18 @@ page 52193921 "Employee Card-HR1"
                     ApplicationArea = Basic;
                     ToolTip = 'Specifies the value of the County of Origin Name field.';
                 }
-                field(Ward; Rec.Ward)
-                {
-                    ApplicationArea = Basic;
-                }
-                field(Village; Rec.Village)
-                {
-                    ApplicationArea = Basic;
-                }
-                field("Sub County"; Rec."Sub County")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(Ward; Rec.Ward)
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field(Village; Rec.Village)
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                // field("Sub County"; Rec."Sub County")
+                // {
+                //     ApplicationArea = Basic;
+                // }
 
                 // field("County of Residence"; Rec."County of Residence")
                 // {
@@ -169,12 +169,12 @@ page 52193921 "Employee Card-HR1"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Disability Cert Expiry field.';
                 }
-                field("Ethnic Origin"; Rec."Ethnic Group")
-                {
-                    Caption = 'Ethnicity';
-                    ApplicationArea = Basic;
-                    ToolTip = 'Specifies the value of the Ethnic Origin field.';
-                }
+                // field("Ethnic Origin"; Rec."Ethnic Group")
+                // {
+                //     Caption = 'Ethnicity';
+                //     ApplicationArea = Basic;
+                //     ToolTip = 'Specifies the value of the Ethnic Origin field.';
+                // }
                 field("Last Date Modified"; Rec."Last Date Modified")
                 {
                     ApplicationArea = Basic;
@@ -250,21 +250,21 @@ page 52193921 "Employee Card-HR1"
                     ApplicationArea = Basic;
                     ToolTip = 'Specifies the value of the Global Dimension 1 Code field.';
                 }
-                field("Global Dimension 1 Name"; Rec."Global Dimension 1 Name")
-                {
-                    ApplicationArea = Basic;
-                    ToolTip = 'Specifies the value of the Global Dimension 1 Name field.';
-                }
+                // field("Global Dimension 1 Name"; Rec."Global Dimension 1 Name")
+                // {
+                //     ApplicationArea = Basic;
+                //     ToolTip = 'Specifies the value of the Global Dimension 1 Name field.';
+                // }
                 field("Global Dimension 2 Code"; Rec."Global Dimension 2 Code")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Global Dimension 2 Code field.';
                 }
-                field("Global Dimension 2 Name"; Rec."Global Dimension 2 Name")
-                {
-                    ApplicationArea = Basic;
-                    ToolTip = 'Specifies the value of the Global Dimension 2 Name field.';
-                }
+                // field("Global Dimension 2 Name"; Rec."Global Dimension 2 Name")
+                // {
+                //     ApplicationArea = Basic;
+                //     ToolTip = 'Specifies the value of the Global Dimension 2 Name field.';
+                // }
                 field("Duty Station"; Rec."Current Duty Station")
                 {
                     ApplicationArea = Basic;

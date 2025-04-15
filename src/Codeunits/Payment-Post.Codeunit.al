@@ -11,6 +11,187 @@ Codeunit 52193467 "Payment- Post"
         Text000: label 'You cannot refund an amount that is greater than the what has been overpaid.\';
         Text001: label 'The refund should be %1 and not %2 as the overpayment is %3';
         Text002: label '%1 of %2 does''''nt exist on the Levy Types';
+        Text011: label 'Are you sure tou want to post Imprest Memo %1 ?';
+        Text013: label 'The Imprest Memo has already been posted';
+
+    procedure PostImprestMemo(var ImprestMemo: Record "Imprest Memo")
+    var
+        //JobPlanningLines: Record "Job Planning Line";
+        Payments: record payments;
+        JobPlanningLines: record "Imprest Voucher Lines";
+        LineNo: Integer;
+        ProjectMembers: Record "Project Members";
+        WorkType: Record "Work Type";
+        Casuals: Record Casuals;
+        OtherCosts: Record "Other Costs";
+    begin
+        if not Confirm(Text011, false, ImprestMemo."No.") then
+            exit;
+
+        with ImprestMemo do begin
+            //Check if Posted
+            if Posted then
+                Error(Text013);
+
+            //
+            //Check totals
+            ImprestMemo.CalcFields("Total Subsistence Allowance");
+            //  IF ImprestMemo."Total Subsistence Allowance"=0 THEN
+            //    ERROR(Text012);
+            // {
+            //  //Post Entries into the Job Task Lines
+            //   JobPlanningLines.RESET;
+            //   JobPlanningLines.SETRANGE("Job No.",Project);
+            //   JobPlanningLines.SETRANGE("Job Task No.","Project Task");
+            //    IF JobPlanningLines.FINDLAST THEN
+            //     LineNo:=JobPlanningLines."Line No."+1
+            //    ELSE
+            //     LineNo:=1000;
+            // }
+            //Loop through Project Members
+            ProjectMembers.Reset;
+            ProjectMembers.SetRange("Imprest Memo No.", ImprestMemo."No.");
+            ProjectMembers.SetRange(Posted, false);
+            if ProjectMembers.Find('-') then
+                repeat
+                    /*
+                     LineNo:=LineNo+1000;
+                     JobPlanningLines.INIT;
+                     JobPlanningLines."Job No.":=ImprestMemo.Project;
+                     JobPlanningLines."Job Task No.":=ImprestMemo."Project Task";
+                     JobPlanningLines."Line No.":=LineNo;
+                     JobPlanningLines.Type:=JobPlanningLines.Type::Resource;
+                     JobPlanningLines."No.":=ProjectMembers."No.";
+                     JobPlanningLines.VALIDATE("No.");
+                     JobPlanningLines."Line Type":=JobPlanningLines."Line Type"::Schedule;
+                     JobPlanningLines."Planning Date":=Date;
+                     JobPlanningLines."Planned Delivery Date":=CALCDATE(FORMAT(ProjectMembers.Delivery)+'D',Date);
+                     JobPlanningLines.Description:=ProjectMembers."Tasks to Carry Out";
+                     JobPlanningLines."Work Type Code":=ProjectMembers."Work Type";
+                     JobPlanningLines.VALIDATE("Work Type Code");
+                     JobPlanningLines.Quantity:=ProjectMembers."Time Period";
+                     IF ProjectMembers.Entitlement<>0 THEN //Cases of Personell
+                     BEGIN
+                       IF ProjectMembers."Time Period"<>0 THEN BEGIN
+                       JobPlanningLines."Unit Cost":=ProjectMembers.Entitlement/ProjectMembers."Time Period";
+                       JobPlanningLines."Unit Cost (LCY)":=ProjectMembers.Entitlement/ProjectMembers."Time Period";
+                       END
+                       ELSE BEGIN
+                         IF WorkType.GET(ProjectMembers."Work Type") THEN;
+                       JobPlanningLines."Unit Cost":=WorkType.Rate;
+                       JobPlanningLines."Unit Cost (LCY)":=WorkType.Rate;
+                       END;
+                       JobPlanningLines."Line Amount":=ProjectMembers.Entitlement;
+                       JobPlanningLines."Line Amount (LCY)":=ProjectMembers.Entitlement;
+                    END ELSE
+                    BEGIN//Cases of Machinery
+                       IF ProjectMembers."Time Period"<>0 THEN BEGIN
+                       JobPlanningLines."Unit Cost":=ProjectMembers."Expected Maintenance Cost"/ProjectMembers."Time Period";
+                       JobPlanningLines."Unit Cost (LCY)":=ProjectMembers."Expected Maintenance Cost"/ProjectMembers."Time Period";
+                       END
+                       ELSE BEGIN
+                         IF WorkType.GET(ProjectMembers."Work Type") THEN;
+                       JobPlanningLines."Unit Cost":=WorkType.Rate;
+                       JobPlanningLines."Unit Cost (LCY)":=WorkType.Rate;
+                       END;
+                       JobPlanningLines."Line Amount":=ProjectMembers."Expected Maintenance Cost";
+                        JobPlanningLines."Line Amount (LCY)":=ProjectMembers."Expected Maintenance Cost";
+                    END;
+                    IF JobPlanningLines."Line Amount"<>0 THEN
+                      BEGIN
+                       JobPlanningLines.INSERT(TRUE);
+                       */
+                    ProjectMembers.Posted := true;
+                    ProjectMembers.Modify;
+                //END;
+                until ProjectMembers.Next = 0;
+            //
+
+            //Loop Through the casuals
+            Casuals.Reset;
+            Casuals.SetRange("Imprest Memo No.", "No.");
+            Casuals.SetRange(Posted, false);
+            if Casuals.Find('-') then
+                repeat
+                    Casuals.TestField("Resource No.");
+                    /*
+                    LineNo:=LineNo+1000;
+                    JobPlanningLines.INIT;
+                    JobPlanningLines."Job No.":=ImprestMemo.Project;
+                    JobPlanningLines."Job Task No.":=ImprestMemo."Project Task";
+                    JobPlanningLines."Line No.":=LineNo;
+                    JobPlanningLines.Type:=JobPlanningLines.Type::Resource;
+                    JobPlanningLines."No.":=Casuals."Resource No.";
+                    JobPlanningLines.VALIDATE("No.");
+                    JobPlanningLines."Line Type":=JobPlanningLines."Line Type"::Schedule;
+                    JobPlanningLines."Planning Date":=Date;
+                    JobPlanningLines."Planned Delivery Date":=CALCDATE(FORMAT(Casuals."No. of Days")+'D',Date);
+                    JobPlanningLines.Description:=Casuals.Activity;
+                    JobPlanningLines."Work Type Code":=Casuals."Work Type";
+                    JobPlanningLines.VALIDATE("Work Type Code");
+                    JobPlanningLines.Quantity:=Casuals."No. of Days"*Casuals."No. Required";
+                    JobPlanningLines."Unit Cost":=Casuals.Rate;
+                    JobPlanningLines."Unit Cost (LCY)":=Casuals.Rate;
+                    JobPlanningLines."Line Amount":=Casuals.Amount;
+                    JobPlanningLines."Line Amount (LCY)":=Casuals.Amount;
+                    IF JobPlanningLines."Line Amount"<>0 THEN
+                     BEGIN
+                      JobPlanningLines.INSERT(TRUE);
+                      */
+                    Casuals.Posted := true;
+                    Casuals.Modify;
+
+                //END;
+                until Casuals.Next = 0;
+            //
+
+            //Loop Through the Miscelleneous Costs
+
+            OtherCosts.Reset;
+            OtherCosts.SetRange("Imprest Memo No.", "No.");
+            OtherCosts.SetRange(Posted, false);
+            if OtherCosts.Find('-') then
+                repeat
+                    OtherCosts.TestField("No.");
+                    /*
+                    LineNo:=LineNo+1000;
+                    JobPlanningLines.INIT;
+                    JobPlanningLines."Job No.":=ImprestMemo.Project;
+                    JobPlanningLines."Job Task No.":=ImprestMemo."Project Task";
+                    JobPlanningLines."Line No.":=LineNo;
+                    JobPlanningLines.Type:=JobPlanningLines.Type::"G/L Account";
+                    JobPlanningLines."No.":=OtherCosts."No.";
+                    JobPlanningLines.VALIDATE("No.");
+                    JobPlanningLines."Line Type":=JobPlanningLines."Line Type"::Schedule;
+                    JobPlanningLines."Planning Date":=Date;
+                    JobPlanningLines."Planned Delivery Date":=Date;
+                    JobPlanningLines.Description:=OtherCosts.Description;
+                    JobPlanningLines."Work Type Code":=OtherCosts."Work Type";
+                    //JobPlanningLines.VALIDATE("Work Type Code");
+                    JobPlanningLines.Quantity:=OtherCosts."Quantity Required";
+                    JobPlanningLines."Unit Cost":=OtherCosts."Unit Cost";
+                    JobPlanningLines."Unit Cost (LCY)":=OtherCosts."Unit Cost";
+                    JobPlanningLines."Line Amount":=OtherCosts."Line Amount";
+                    JobPlanningLines."Line Amount (LCY)":=OtherCosts."Line Amount";
+                    IF JobPlanningLines."Line Amount"<>0 THEN
+                     BEGIN
+                      JobPlanningLines.INSERT(TRUE);
+                      */
+                    OtherCosts.Posted := true;
+                    OtherCosts.Modify;
+                //END;
+                until OtherCosts.Next = 0;
+            //
+
+            Posted := true;
+            "Posted By" := UserId;
+            Modify;
+            //
+
+            //
+        end;
+
+    end;
 
 
     procedure PostPayment(PV: Record Payments)
@@ -30,874 +211,873 @@ Codeunit 52193467 "Payment- Post"
         EntryNo: Integer;
         LevyTypeRec: Record "Levy Types";
     begin
-        
-        
-        if Confirm('Are u sure u want to post the Payment Voucher No. '+PV.No+' ?')=true then begin
-        
-        //IF PV.Status<>PV.Status::Released THEN
-        /// ERROR('The Payment Voucher No %1 cannot be posted before it is fully approved',PV.No);
-        
-        /*IF PV.Posted THEN
-         ERROR('Payment Voucher %1 has been posted',PV.No);*/
-        // MESSAGE('Payment Voucher %1 has been posted',PV.No);
-        
-        PV.TestField(Date);
-        PV.TestField("Paying Bank Account");
-        PV.TestField(PV.Payee);
-        PV.TestField(PV."Pay Mode");
-        
-        if PV."Pay Mode"='CHEQUE' then begin
-        
-        PV.TestField(PV."Cheque No");
-        //PV.TESTFIELD(PV."Cheque Date");
-        end;
-        
-        //Check Lines
-          PV.CalcFields("Total Amount");
-          if PV."Total Amount"=0 then
-          Error('Amount is cannot be zero');
-          if PV."Total Amount"<>PV.Amount then
-          Error('Amount must be equal to Total amount on the Lines');
-        
-        
-          PVLines.Reset;
-          PVLines.SetRange(PVLines."PV No",PV.No);
-          PVLines.SetFilter(PVLines.Amount,'<>%1',0);
-          if not PVLines.FindLast then
-          Error('Payment voucher Lines cannot be empty');
-        
-          CMSetup.Get();
-          // Delete Lines Present on the General Journal Line
-          GenJnLine.Reset;
-          GenJnLine.SetRange(GenJnLine."Journal Template Name",CMSetup."Payment Voucher Template");
-          GenJnLine.SetRange(GenJnLine."Journal Batch Name",PV.No);
-          GenJnLine.DeleteAll;
-        
-          Batch.Init;
-          if CMSetup.Get() then
-          Batch."Journal Template Name":=CMSetup."Payment Voucher Template";
-          Batch.Name:=PV.No;
-          if not Batch.Get(Batch."Journal Template Name",Batch.Name) then
-          Batch.Insert;
-        
-        //Bank Entries
-        LineNo:=LineNo+10000;
-        PV.CalcFields(PV."Total Amount");
-        GenJnLine.Init;
-        if CMSetup.Get then
-        
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        //added by debbie to change the document no to cheque number
-        IF PV."Cheque No"<>'' THEN
-        GenJnLine."Document No.":=PV."Cheque No"
-        ELSE
-        GenJnLine."Document No.":=PV.No;
-        // GenJnLine."Document No.":=PV."Cheque No";
-        GenJnLine."Account Type":=GenJnLine."account type"::"Bank Account";
-        GenJnLine."Account No.":=PV."Paying Bank Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        // changed by Debbie
-        GenJnLine."External Document No.":= GenJnLine."Document No.";
-        GenJnLine.Description:=PV.No;
-        GenJnLine.Description:=PV.Payee;
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.Validate(GenJnLine."Currency Code");
-        if PV."Exchange Rate"<>0 then
-        GenJnLine."Currency Factor":=1/PV."Exchange Rate";
-        
-        GenJnLine.Amount:=-PV."Total Amount";
-        GenJnLine.Validate(GenJnLine.Amount);
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PV."Global Dimension 1 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PV."Global Dimension 2 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
-        //GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        GenJnLine."Posting Date":=PV.Date;
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        
-        
-        //PV Lines Entries
-        PVLines.Reset;
-        PVLines.SetRange(PVLines."PV No",PV.No);
-        if PVLines.FindFirst then begin
-        repeat
-        PVLines.Validate(PVLines.Amount);
-        LineNo:=LineNo+10000;
-        GenJnLine.Init;
-        if CMSetup.Get then
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        
-        GenJnLine."Account Type":=PVLines."Account Type";
-        GenJnLine."Account No.":=PVLines."Account No";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        
-        GenJnLine.Validate(GenJnLine."Posting Date");
-        //Added by Debbie to post cheque number as document no
-        IF PV."Cheque No"<>'' THEN
-        GenJnLine."Document No.":=PV."Cheque No"
-        ELSE
-        GenJnLine."Document No.":=PV.No;
-        //  GenJnLine."Document No.":=PV."Cheque No";
-        //GenJnLine."Document No.":=PV.No;
-        // GenJnLine."External Document No.":=PV."Cheque No" ;
-        GenJnLine."External Document No.":=GenJnLine."Document No." ;
-        GenJnLine.Description:=PVLines.Description;
-        //GenJnLine."Description 2":=PVLines.Description;
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.Validate(GenJnLine."Currency Code");
-        if PV."Exchange Rate"<>0 then
-        GenJnLine."Currency Factor":=1/PV."Exchange Rate";
-        
-        GenJnLine.Amount:=PVLines."Net Amount";
-        GenJnLine.Validate(Amount);
-        
-        if PV."Pay Mode"='CHEQUE' then
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
-        GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        if PVLines."Applies to Doc. No"<>'' then begin
-        GenJnLine."Applies-to Doc. Type":=PVLines."Applies-to Doc. Type";
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.Validate(GenJnLine."Applies-to Doc. No.");
-        end;
-        
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."gen. posting type"::" ";
-        GenJnLine.Validate("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.Validate("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.Validate("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.Validate("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.Validate("VAT Prod. Posting Group");
-        //
-        //MESSAGE('Posting date lines=%1',GenJnLine."Posting Date");
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        
-        //Post Withholding Tax
-        if PVLines."W/Tax Code"<>'' then begin
-        PVLines.Validate(PVLines.Amount);
-        LineNo:=LineNo+10000;
-        GenJnLine.Init;
-        if CMSetup.Get then
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=PVLines."Account Type";
-        GenJnLine."Account No.":=PVLines."Account No";
-        GenJnLine.Validate(GenJnLine."Account No.");
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        //Added by Debbie to post cheque number as document no
-        if PV."Cheque No"<>'' then
-        GenJnLine."Document No.":=PV."Cheque No"
-        else
-        GenJnLine."Document No.":=PV.No;
-        
-        //GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV.No;
-        GenJnLine.Description:=PVLines.Description+'-WHVAT';
-        GenJnLine.Amount:=PVLines."W/Tax Amount";
-        GenJnLine.Validate(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.Validate(GenJnLine."Currency Code");
-        
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."gen. posting type"::" ";
-        GenJnLine.Validate("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.Validate("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.Validate("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.Validate("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.Validate("VAT Prod. Posting Group");
-        //
-        if PV."Pay Mode"='CHEQUE' then
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
-        GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        /*
-        GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        */
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        
-        LineNo:=LineNo+10000;
-        GenJnLine.Init;
-        if CMSetup.Get then
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=GenJnLine."account type"::"G/L Account";
-        case PVLines."Account Type" of
-        PVLines."account type"::"G/L Account":
-        begin
-        GLAccount.Get(PVLines."Account No");
-        GLAccount.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(GLAccount."VAT Bus. Posting Group",PVLines."W/Tax Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        PVLines."account type"::Vendor:
-        begin
-        Vendor.Get(PVLines."Account No");
-        Vendor.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(Vendor."VAT Bus. Posting Group",PVLines."W/Tax Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        PVLines."account type"::Customer:
-        begin
-        Customer.Get(PVLines."Account No");
-        Customer.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(Customer."VAT Bus. Posting Group",PVLines."W/Tax Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        end;
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        //Added by Debbie to post cheque number as document no
-        if PV."Cheque No"<>'' then
-        GenJnLine."Document No.":=PV."Cheque No"
-        else
-        GenJnLine."Document No.":=PV.No;
-        
-        //GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV.No;
-        GenJnLine.Description:=PVLines.Description+'-WHVAT';
-        GenJnLine.Amount:=-PVLines."W/Tax Amount";
-        GenJnLine.Validate(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.Validate(GenJnLine."Currency Code");
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."gen. posting type"::" ";
-        GenJnLine.Validate("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.Validate("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.Validate("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.Validate("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.Validate("VAT Prod. Posting Group");
-        //
-        if PV."Pay Mode"='CHEQUE' then
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
-        GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        /*
-        GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        */
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        end;
-        //End of Posting Withholding Tax
-        //Post Payee
-        if PVLines."Payee Code"<>'' then begin
-        PVLines.Validate(PVLines.Amount);
-        LineNo:=LineNo+10000;
-        GenJnLine.Init;
-        if CMSetup.Get then
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=PVLines."Account Type";
-        GenJnLine."Account No.":=PVLines."Account No";
-        GenJnLine.Validate(GenJnLine."Account No.");
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        //Added by Debbie to post cheque number as document no
-        if PV."Cheque No"<>'' then
-        GenJnLine."Document No.":=PV."Cheque No"
-        else
-        GenJnLine."Document No.":=PV.No;
-        
-        //GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV.No;
-        GenJnLine.Description:=PVLines.Description+'-PAYE';
-        GenJnLine.Amount:=PVLines."Payee Amount";
-        GenJnLine.Validate(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.Validate(GenJnLine."Currency Code");
-        
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."gen. posting type"::" ";
-        GenJnLine.Validate("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.Validate("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.Validate("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.Validate("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.Validate("VAT Prod. Posting Group");
-        //
-        if PV."Pay Mode"='CHEQUE' then
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
-        GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        /*
-        GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        */
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        
-        LineNo:=LineNo+10000;
-        GenJnLine.Init;
-        if CMSetup.Get then
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=GenJnLine."account type"::"G/L Account";
-        case PVLines."Account Type" of
-        PVLines."account type"::"G/L Account":
-        begin
-        GLAccount.Get(PVLines."Account No");
-        GLAccount.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(GLAccount."VAT Bus. Posting Group",PVLines."Payee Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        PVLines."account type"::Vendor:
-        begin
-        Vendor.Get(PVLines."Account No");
-        Vendor.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(Vendor."VAT Bus. Posting Group",PVLines."Payee Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        PVLines."account type"::Customer:
-        begin
-        Customer.Get(PVLines."Account No");
-        Customer.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(Customer."VAT Bus. Posting Group",PVLines."Payee Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        end;
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        //Added by Debbie to post cheque number as document no
-        if PV."Cheque No"<>'' then
-        GenJnLine."Document No.":=PV."Cheque No"
-        else
-        GenJnLine."Document No.":=PV.No;
-        
-        //GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV.No;
-        GenJnLine.Description:=PVLines.Description+'-PAYE';
-        GenJnLine.Amount:=-PVLines."Payee Amount";
-        GenJnLine.Validate(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.Validate(GenJnLine."Currency Code");
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."gen. posting type"::" ";
-        GenJnLine.Validate("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.Validate("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.Validate("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.Validate("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.Validate("VAT Prod. Posting Group");
-        //
-        if PV."Pay Mode"='CHEQUE' then
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
-        GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        /*
-        GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        */
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        end;
-        //End of Posting Payee
-        
-        
-        /*
-        //Post Retention
-        IF PVLines."Retention Code"<>'' THEN BEGIN
-        PVLines.VALIDATE(PVLines.Amount);
-        LineNo:=LineNo+10000;
-        GenJnLine.INIT;
-        IF CMSetup.GET THEN
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=PVLines."Account Type";
-        GenJnLine."Account No.":=PVLines."Account No";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-         IF PV.Date=0D THEN
-          ERROR('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        //Added by Debbie to post cheque number as document no
-        IF PV."Cheque No"<>'' THEN
-        GenJnLine."Document No.":=PV."Cheque No"
-        ELSE
-        GenJnLine."Document No.":=PV.No;
-        
-        //GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV.No;
-        GenJnLine.Description:=PVLines.Description+'-Retention';
-        GenJnLine.Amount:=PVLines."Retention Amount";
-        GenJnLine.VALIDATE(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.VALIDATE(GenJnLine."Currency Code");
-        
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
-        GenJnLine.VALIDATE("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Prod. Posting Group");
-        //
-        IF PV."Pay Mode"='CHEQUE' THEN
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
-        //GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        {
-        GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        }
-        IF GenJnLine.Amount<>0 THEN
-         GenJnLine.INSERT;
-        
-        
-        
-        
-        LineNo:=LineNo+10000;
-        GenJnLine.INIT;
-        IF CMSetup.GET THEN
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=GenJnLine."Account Type"::"G/L Account";
-        CASE PVLines."Account Type" OF
-        PVLines."Account Type"::"G/L Account":
-        BEGIN
-        GLAccount.GET(PVLines."Account No");
-        GLAccount.TESTFIELD("VAT Bus. Posting Group");
-        IF VATSetup.GET(GLAccount."VAT Bus. Posting Group",PVLines."Retention Code") THEN
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-        END;
-        PVLines."Account Type"::Vendor:
-        BEGIN
-        Vendor.GET(PVLines."Account No");
-        Vendor.TESTFIELD("VAT Bus. Posting Group");
-        IF VATSetup.GET(Vendor."VAT Bus. Posting Group",PVLines."Retention Code") THEN
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-        END;
-        PVLines."Account Type"::Customer:
-        BEGIN
-        Customer.GET(PVLines."Account No");
-        Customer.TESTFIELD("VAT Bus. Posting Group");
-        IF VATSetup.GET(Customer."VAT Bus. Posting Group",PVLines."Retention Code") THEN
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-        END;
-        END;
-         IF PV.Date=0D THEN
-          ERROR('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        GenJnLine.VALIDATE(GenJnLine."Posting Date");
-        //Added by Debbie to post cheque number as document no
-        IF PV."Cheque No"<>'' THEN
-        GenJnLine."Document No.":=PV."Cheque No"
-        ELSE
-        GenJnLine."Document No.":=PV.No;
-        
-        //GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV.No;
-        GenJnLine.Description:=PVLines.Description+'-Retention';
-        GenJnLine.Amount:=-PVLines."Retention Amount";
-        GenJnLine.VALIDATE(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.VALIDATE(GenJnLine."Currency Code");
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
-        GenJnLine.VALIDATE("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Prod. Posting Group");
-        //
-        IF PV."Pay Mode"='CHEQUE' THEN
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
-        GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        {
-        GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        }
-        IF GenJnLine.Amount<>0 THEN
-         GenJnLine.INSERT;
-        END;
-        //End of Posting Retention
-        
-        
-        //Post VAT
-        IF CMSetup."Post VAT" THEN BEGIN
-        IF PV."VAT Code"<>'' THEN BEGIN
-        LineNo:=LineNo+10000;
-        GenJnLine.INIT;
-        IF CMSetup.GET THEN
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=PVLines."Account Type";
-        GenJnLine."Account No.":=PVLines."Account No";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-         IF PV.Date=0D THEN
-          ERROR('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        //Added by Debbie to post cheque number as document no
-        IF PV."Cheque No"<>'' THEN
-        GenJnLine."Document No.":=PV."Cheque No"
-        ELSE
-        GenJnLine."Document No.":=PV.No;
-        
-        //GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV.No;
-        GenJnLine.Description:=PVLines.Description+'-VAT';
-        GenJnLine.Amount:=PVLines."VAT Amount";
-        GenJnLine.VALIDATE(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.VALIDATE(GenJnLine."Currency Code");
-        
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
-        GenJnLine.VALIDATE("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Prod. Posting Group");
-        //
-        IF PV."Pay Mode"='CHEQUE' THEN
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
-        GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        {
-        GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        }
-        IF GenJnLine.Amount<>0 THEN
-         GenJnLine.INSERT;
-        
-        LineNo:=LineNo+10000;
-        GenJnLine.INIT;
-        IF CMSetup.GET THEN
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=GenJnLine."Account Type"::"G/L Account";
-        CASE PVLines."Account Type" OF
-        PVLines."Account Type"::"G/L Account":
-        BEGIN
-        GLAccount.GET(PVLines."Line No");
-        GLAccount.TESTFIELD("VAT Bus. Posting Group");
-        IF VATSetup.GET(GLAccount."VAT Bus. Posting Group",PV."VAT Code") THEN
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-        END;
-        PVLines."Account Type"::Vendor:
-        BEGIN
-        Vendor.GET(PVLines."Account No");
-        Vendor.TESTFIELD("VAT Bus. Posting Group");
-        IF VATSetup.GET(Vendor."VAT Bus. Posting Group",PV."VAT Code") THEN
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-        END;
-        PVLines."Account Type"::Customer:
-        BEGIN
-        Customer.GET(PVLines."Account No");
-        Customer.TESTFIELD("VAT Bus. Posting Group");
-        IF VATSetup.GET(Customer."VAT Bus. Posting Group",PV."VAT Code") THEN
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-        END;
-        END;
-         IF PV.Date=0D THEN
-          ERROR('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        //Added by Debbie to post cheque number as document no
-        IF PV."Cheque No"<>'' THEN
-        GenJnLine."Document No.":=PV."Cheque No"
-        ELSE
-        GenJnLine."Document No.":=PV.No;
-        
-        //GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV.No;
-        GenJnLine.Description:=PVLines.Description+'-VAT';
-        GenJnLine.Amount:=-PVLines."VAT Amount";
-        GenJnLine.VALIDATE(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.VALIDATE(GenJnLine."Currency Code");
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
-        GenJnLine.VALIDATE("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Prod. Posting Group");
-        //
-        IF PV."Pay Mode"='CHEQUE' THEN
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
-        GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        {
-        GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        }
-        IF GenJnLine.Amount<>0 THEN
-         GenJnLine.INSERT;
-        
-        END;
-        //End of Posting VAT
-        END;
-        //Post Withholding Tax
-        IF PVLines."W/Tax Code"<>'' THEN BEGIN
-        PVLines.VALIDATE(PVLines.Amount);
-        LineNo:=LineNo+10000;
-        GenJnLine.INIT;
-        IF CMSetup.GET THEN
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=PVLines."Account Type";
-        GenJnLine."Account No.":=PVLines."Account No";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-         IF PV.Date=0D THEN
-          ERROR('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        //Added by Debbie to post cheque number as document no
-        IF PV."Cheque No"<>'' THEN
-        GenJnLine."Document No.":=PV."Cheque No"
-        ELSE
-        GenJnLine."Document No.":=PV.No;
-        
-        //GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV.No;
-        GenJnLine.Description:=PVLines.Description+'-WHVAT';
-        GenJnLine.Amount:=PVLines."W/Tax Amount";
-        GenJnLine.VALIDATE(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.VALIDATE(GenJnLine."Currency Code");
-        
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
-        GenJnLine.VALIDATE("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Prod. Posting Group");
-        //
-        IF PV."Pay Mode"='CHEQUE' THEN
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
-        GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        {
-        GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        }
-        IF GenJnLine.Amount<>0 THEN
-         GenJnLine.INSERT;
-        
-        LineNo:=LineNo+10000;
-        GenJnLine.INIT;
-        IF CMSetup.GET THEN
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=GenJnLine."Account Type"::"G/L Account";
-        CASE PVLines."Account Type" OF
-        PVLines."Account Type"::"G/L Account":
-        BEGIN
-        GLAccount.GET(PVLines."Account No");
-        GLAccount.TESTFIELD("VAT Bus. Posting Group");
-        IF VATSetup.GET(GLAccount."VAT Bus. Posting Group",PVLines."W/Tax Code") THEN
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-        END;
-        PVLines."Account Type"::Vendor:
-        BEGIN
-        Vendor.GET(PVLines."Account No");
-        Vendor.TESTFIELD("VAT Bus. Posting Group");
-        IF VATSetup.GET(Vendor."VAT Bus. Posting Group",PVLines."W/Tax Code") THEN
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-        END;
-        PVLines."Account Type"::Customer:
-        BEGIN
-        Customer.GET(PVLines."Account No");
-        Customer.TESTFIELD("VAT Bus. Posting Group");
-        IF VATSetup.GET(Customer."VAT Bus. Posting Group",PVLines."W/Tax Code") THEN
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.VALIDATE(GenJnLine."Account No.");
-        END;
-        END;
-         IF PV.Date=0D THEN
-          ERROR('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        //Added by Debbie to post cheque number as document no
-        IF PV."Cheque No"<>'' THEN
-        GenJnLine."Document No.":=PV."Cheque No"
-        ELSE
-        GenJnLine."Document No.":=PV.No;
-        
-        //GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV.No;
-        GenJnLine.Description:=PVLines.Description+'-WHVAT';
-        GenJnLine.Amount:=-PVLines."W/Tax Amount";
-        GenJnLine.VALIDATE(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.VALIDATE(GenJnLine."Currency Code");
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
-        GenJnLine.VALIDATE("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.VALIDATE("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.VALIDATE("VAT Prod. Posting Group");
-        //
-        IF PV."Pay Mode"='CHEQUE' THEN
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
-        GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
-        {
-        GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        }
-        IF GenJnLine.Amount<>0 THEN
-         GenJnLine.INSERT;
-        END;*/
-        //End of Posting Withholding Tax
-        
-        until PVLines.Next=0;
-        end;
-        
-        Codeunit.Run(Codeunit::"Gen. Jnl.-Post",GenJnLine);
-        PV.Posted:=true;
-        PV."Posted By":=UserId;
-        PV."Date Posted":=Today;
-        PV."Time Posted":=Time;
-        PV.Modify;
-        
-        GLEntry.Reset;
-        GLEntry.SetRange(GLEntry."External Document No.",PV.No);
-        
-        GLEntry.SetRange(GLEntry.Reversed,false);
-        if GLEntry.FindFirst then begin
-        PV.Posted:=true;
-        PV."Posted By":=UserId;
-        PV."Date Posted":=Today;
-        PV."Time Posted":=Time;
-        PV.Modify;
-        end;
-        PV.Posted:=true;
-        PV."Posted By":=UserId;
-        PV."Date Posted":=Today;
-        PV."Time Posted":=Time;
-        PV.Modify;
-        
-        
+
+
+        if Confirm('Are u sure u want to post the Payment Voucher No. ' + PV."No." + ' ?') = true then begin
+
+            //IF PV.Status<>PV.Status::Released THEN
+            /// ERROR('The Payment Voucher No %1 cannot be posted before it is fully approved',PV."No.");
+
+            /*IF PV.Posted THEN
+             ERROR('Payment Voucher %1 has been posted',PV."No.");*/
+            // MESSAGE('Payment Voucher %1 has been posted',PV."No.");
+
+            PV.TestField(Date);
+            PV.TestField("Paying Bank Account");
+            PV.TestField(PV.Payee);
+            PV.TestField(PV."Pay Mode");
+
+            if PV."Pay Mode" = 'CHEQUE' then begin
+
+                PV.TestField(PV."Cheque No");
+                //PV.TESTFIELD(PV."Cheque Date");
+            end;
+
+            //Check Lines
+            PV.CalcFields("Total Amount");
+            if PV."Total Amount" = 0 then
+                Error('Amount is cannot be zero');
+            if PV."Total Amount" <> PV."Amount Approved" then
+                Error('Amount must be equal to Total amount on the Lines');
+
+
+            PVLines.Reset;
+            PVLines.SetRange(PVLines."PV No", PV."No.");
+            PVLines.SetFilter(PVLines.Amount, '<>%1', 0);
+            if not PVLines.FindLast then
+                Error('Payment voucher Lines cannot be empty');
+
+            CMSetup.Get();
+            // Delete Lines Present on the General Journal Line
+            GenJnLine.Reset;
+            GenJnLine.SetRange(GenJnLine."Journal Template Name", CMSetup."Payment Voucher Template");
+            GenJnLine.SetRange(GenJnLine."Journal Batch Name", PV."No.");
+            GenJnLine.DeleteAll;
+
+            Batch.Init;
+            if CMSetup.Get() then
+                Batch."Journal Template Name" := CMSetup."Payment Voucher Template";
+            Batch.Name := PV."No.";
+            if not Batch.Get(Batch."Journal Template Name", Batch.Name) then
+                Batch.Insert;
+
+            //Bank Entries
+            LineNo := LineNo + 10000;
+            PV.CalcFields(PV."Total Amount");
+            GenJnLine.Init;
+            if CMSetup.Get then
+                GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+            GenJnLine."Journal Batch Name" := PV."No.";
+            GenJnLine."Line No." := LineNo;
+            if PV.Date = 0D then
+                Error('You must specify the PV date');
+            GenJnLine."Posting Date" := PV.Date;
+            //added by debbie to change the document no to cheque number
+            IF PV."Cheque No" <> '' THEN
+                GenJnLine."Document No." := PV."Cheque No"
+            ELSE
+                GenJnLine."Document No." := PV."No.";
+            // GenJnLine."Document No.":=PV."Cheque No";
+            GenJnLine."Account Type" := GenJnLine."account type"::"Bank Account";
+            GenJnLine."Account No." := PV."Paying Bank Account";
+            GenJnLine.Validate(GenJnLine."Account No.");
+            // changed by Debbie
+            GenJnLine."External Document No." := GenJnLine."Document No.";
+            GenJnLine.Description := PV."No.";
+            GenJnLine.Description := PV.Payee;
+            GenJnLine."Currency Code" := PV."Currency Code";
+            GenJnLine.Validate(GenJnLine."Currency Code");
+            // if PV."Exchange Rate"<>0 then
+            // GenJnLine."Currency Factor":=1/PV."Exchange Rate";
+
+            GenJnLine.Amount := -PV."Total Amount";
+            GenJnLine.Validate(GenJnLine.Amount);
+            //GenJnLine."Pay Mode" := PV."Pay Mode";
+            // GenJnLine."Shortcut Dimension 1 Code":=PV."Global Dimension 1 Code";
+            GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
+            // GenJnLine."Shortcut Dimension 2 Code":=PV.;
+            // GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
+            //GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
+            GenJnLine."Posting Date" := PV.Date;
+            if GenJnLine.Amount <> 0 then
+                GenJnLine.Insert;
+
+
+            //PV Lines Entries
+            PVLines.Reset;
+            PVLines.SetRange(PVLines."PV No", PV."No.");
+            if PVLines.FindFirst then begin
+                repeat
+                    PVLines.Validate(PVLines.Amount);
+                    LineNo := LineNo + 10000;
+                    GenJnLine.Init;
+                    if CMSetup.Get then
+                        GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+                    GenJnLine."Journal Batch Name" := PV."No.";
+                    GenJnLine."Line No." := LineNo;
+                    if PV.Date = 0D then
+                        Error('You must specify the PV date');
+                    GenJnLine."Posting Date" := PV.Date;
+
+                    GenJnLine."Account Type" := PVLines."Account Type";
+                    GenJnLine."Account No." := PVLines."Account No";
+                    GenJnLine.Validate(GenJnLine."Account No.");
+
+                    GenJnLine.Validate(GenJnLine."Posting Date");
+                    //Added by Debbie to post cheque number as document no
+                    IF PV."Cheque No" <> '' THEN
+                        GenJnLine."Document No." := PV."Cheque No"
+                    ELSE
+                        GenJnLine."Document No." := PV."No.";
+                    //  GenJnLine."Document No.":=PV."Cheque No";
+                    //GenJnLine."Document No.":=PV."No.";
+                    // GenJnLine."External Document No.":=PV."Cheque No" ;
+                    GenJnLine."External Document No." := GenJnLine."Document No.";
+                    GenJnLine.Description := PVLines.Description;
+                    //GenJnLine."Description 2":=PVLines.Description;
+                    GenJnLine."Currency Code" := PV."Currency Code";
+                    GenJnLine.Validate(GenJnLine."Currency Code");
+                    // if PV."Exchange Rate" <> 0 then
+                    //     GenJnLine."Currency Factor" := 1 / PV."Exchange Rate";
+
+                    GenJnLine.Amount := PVLines."Net Amount";
+                    GenJnLine.Validate(Amount);
+
+                    if PV."Pay Mode" = 'CHEQUE' then
+                        //GenJnLine."Pay Mode" := PV."Pay Mode";
+
+                    GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
+                    //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
+                    GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
+                    //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
+                    GenJnLine."Dimension Set ID" := PVLines."Dimension Set ID";
+                    if PVLines."Applies to Doc. No" <> '' then begin
+                        GenJnLine."Applies-to Doc. Type" := PVLines."Applies-to Doc. Type";
+                        GenJnLine."Applies-to Doc. No." := PVLines."Applies to Doc. No";
+                        GenJnLine.Validate(GenJnLine."Applies-to Doc. No.");
+                    end;
+
+                    //Set these fields to blanks
+                    GenJnLine."Gen. Posting Type" := GenJnLine."gen. posting type"::" ";
+                    GenJnLine.Validate("Gen. Posting Type");
+                    GenJnLine."Gen. Bus. Posting Group" := '';
+                    GenJnLine.Validate("Gen. Bus. Posting Group");
+                    GenJnLine."Gen. Prod. Posting Group" := '';
+                    GenJnLine.Validate("Gen. Prod. Posting Group");
+                    GenJnLine."VAT Bus. Posting Group" := '';
+                    GenJnLine.Validate("VAT Bus. Posting Group");
+                    GenJnLine."VAT Prod. Posting Group" := '';
+                    GenJnLine.Validate("VAT Prod. Posting Group");
+                    //
+                    //MESSAGE('Posting date lines=%1',GenJnLine."Posting Date");
+                    if GenJnLine.Amount <> 0 then
+                        GenJnLine.Insert;
+
+                    //Post Withholding Tax
+                    if PVLines."W/Tax Code" <> '' then begin
+                        PVLines.Validate(PVLines.Amount);
+                        LineNo := LineNo + 10000;
+                        GenJnLine.Init;
+                        if CMSetup.Get then
+                            GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+                        GenJnLine."Journal Batch Name" := PV."No.";
+                        GenJnLine."Line No." := LineNo;
+                        GenJnLine."Account Type" := PVLines."Account Type";
+                        GenJnLine."Account No." := PVLines."Account No";
+                        GenJnLine.Validate(GenJnLine."Account No.");
+                        if PV.Date = 0D then
+                            Error('You must specify the PV date');
+                        GenJnLine."Posting Date" := PV.Date;
+                        //Added by Debbie to post cheque number as document no
+                        if PV."Cheque No" <> '' then
+                            GenJnLine."Document No." := PV."Cheque No"
+                        else
+                            GenJnLine."Document No." := PV."No.";
+
+                        //GenJnLine."Document No.":=PV."No.";
+                        GenJnLine."External Document No." := PV."No.";
+                        GenJnLine.Description := PVLines.Description + '-WHVAT';
+                        GenJnLine.Amount := PVLines."W/Tax Amount";
+                        GenJnLine.Validate(GenJnLine.Amount);
+                        GenJnLine."Currency Code" := PV."Currency Code";
+                        GenJnLine.Validate(GenJnLine."Currency Code");
+
+                        //Set these fields to blanks
+                        GenJnLine."Gen. Posting Type" := GenJnLine."gen. posting type"::" ";
+                        GenJnLine.Validate("Gen. Posting Type");
+                        GenJnLine."Gen. Bus. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Bus. Posting Group");
+                        GenJnLine."Gen. Prod. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Prod. Posting Group");
+                        GenJnLine."VAT Bus. Posting Group" := '';
+                        GenJnLine.Validate("VAT Bus. Posting Group");
+                        GenJnLine."VAT Prod. Posting Group" := '';
+                        GenJnLine.Validate("VAT Prod. Posting Group");
+                        //
+                        if PV."Pay Mode" = 'CHEQUE' then
+                            //GenJnLine."Pay Mode" := PV."Pay Mode";
+                        GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
+                        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
+                        GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
+                        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
+                        GenJnLine."Dimension Set ID" := PVLines."Dimension Set ID";
+                        /*
+                        GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
+                        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                        */
+                        if GenJnLine.Amount <> 0 then
+                            GenJnLine.Insert;
+
+                        LineNo := LineNo + 10000;
+                        GenJnLine.Init;
+                        if CMSetup.Get then
+                            GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+                        GenJnLine."Journal Batch Name" := PV."No.";
+                        GenJnLine."Line No." := LineNo;
+                        GenJnLine."Account Type" := GenJnLine."account type"::"G/L Account";
+                        case PVLines."Account Type" of
+                            PVLines."account type"::"G/L Account":
+                                begin
+                                    GLAccount.Get(PVLines."Account No");
+                                    GLAccount.TestField("VAT Bus. Posting Group");
+                                    if VATSetup.Get(GLAccount."VAT Bus. Posting Group", PVLines."W/Tax Code") then
+                                        GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                    GenJnLine.Validate(GenJnLine."Account No.");
+                                end;
+                            PVLines."account type"::Vendor:
+                                begin
+                                    Vendor.Get(PVLines."Account No");
+                                    Vendor.TestField("VAT Bus. Posting Group");
+                                    if VATSetup.Get(Vendor."VAT Bus. Posting Group", PVLines."W/Tax Code") then
+                                        GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                    GenJnLine.Validate(GenJnLine."Account No.");
+                                end;
+                            PVLines."account type"::Customer:
+                                begin
+                                    Customer.Get(PVLines."Account No");
+                                    Customer.TestField("VAT Bus. Posting Group");
+                                    if VATSetup.Get(Customer."VAT Bus. Posting Group", PVLines."W/Tax Code") then
+                                        GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                    GenJnLine.Validate(GenJnLine."Account No.");
+                                end;
+                        end;
+                        if PV.Date = 0D then
+                            Error('You must specify the PV date');
+                        GenJnLine."Posting Date" := PV.Date;
+                        //Added by Debbie to post cheque number as document no
+                        if PV."Cheque No" <> '' then
+                            GenJnLine."Document No." := PV."Cheque No"
+                        else
+                            GenJnLine."Document No." := PV."No.";
+
+                        //GenJnLine."Document No.":=PV."No.";
+                        GenJnLine."External Document No." := PV."No.";
+                        GenJnLine.Description := PVLines.Description + '-WHVAT';
+                        GenJnLine.Amount := -PVLines."W/Tax Amount";
+                        GenJnLine.Validate(GenJnLine.Amount);
+                        GenJnLine."Currency Code" := PV."Currency Code";
+                        GenJnLine.Validate(GenJnLine."Currency Code");
+                        //Set these fields to blanks
+                        GenJnLine."Gen. Posting Type" := GenJnLine."gen. posting type"::" ";
+                        GenJnLine.Validate("Gen. Posting Type");
+                        GenJnLine."Gen. Bus. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Bus. Posting Group");
+                        GenJnLine."Gen. Prod. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Prod. Posting Group");
+                        GenJnLine."VAT Bus. Posting Group" := '';
+                        GenJnLine.Validate("VAT Bus. Posting Group");
+                        GenJnLine."VAT Prod. Posting Group" := '';
+                        GenJnLine.Validate("VAT Prod. Posting Group");
+                        //
+                        if PV."Pay Mode" = 'CHEQUE' then
+                            //GenJnLine."Pay Mode" := PV."Pay Mode";
+                        GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
+                        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
+                        GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
+                        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
+                        GenJnLine."Dimension Set ID" := PVLines."Dimension Set ID";
+                        /*
+                        GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
+                        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                        */
+                        if GenJnLine.Amount <> 0 then
+                            GenJnLine.Insert;
+                    end;
+                    //End of Posting Withholding Tax
+                    //Post Payee
+                    if PVLines."Payee Code" <> '' then begin
+                        PVLines.Validate(PVLines.Amount);
+                        LineNo := LineNo + 10000;
+                        GenJnLine.Init;
+                        if CMSetup.Get then
+                            GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+                        GenJnLine."Journal Batch Name" := PV."No.";
+                        GenJnLine."Line No." := LineNo;
+                        GenJnLine."Account Type" := PVLines."Account Type";
+                        GenJnLine."Account No." := PVLines."Account No";
+                        GenJnLine.Validate(GenJnLine."Account No.");
+                        if PV.Date = 0D then
+                            Error('You must specify the PV date');
+                        GenJnLine."Posting Date" := PV.Date;
+                        //Added by Debbie to post cheque number as document no
+                        if PV."Cheque No" <> '' then
+                            GenJnLine."Document No." := PV."Cheque No"
+                        else
+                            GenJnLine."Document No." := PV."No.";
+
+                        //GenJnLine."Document No.":=PV."No.";
+                        GenJnLine."External Document No." := PV."No.";
+                        GenJnLine.Description := PVLines.Description + '-PAYE';
+                        GenJnLine.Amount := PVLines."Payee Amount";
+                        GenJnLine.Validate(GenJnLine.Amount);
+                        GenJnLine."Currency Code" := PV."Currency Code";
+                        GenJnLine.Validate(GenJnLine."Currency Code");
+
+                        //Set these fields to blanks
+                        GenJnLine."Gen. Posting Type" := GenJnLine."gen. posting type"::" ";
+                        GenJnLine.Validate("Gen. Posting Type");
+                        GenJnLine."Gen. Bus. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Bus. Posting Group");
+                        GenJnLine."Gen. Prod. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Prod. Posting Group");
+                        GenJnLine."VAT Bus. Posting Group" := '';
+                        GenJnLine.Validate("VAT Bus. Posting Group");
+                        GenJnLine."VAT Prod. Posting Group" := '';
+                        GenJnLine.Validate("VAT Prod. Posting Group");
+                        //
+                        if PV."Pay Mode" = 'CHEQUE' then
+                            //GenJnLine."Pay Mode" := PV."Pay Mode";
+                        GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
+                        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
+                        GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
+                        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
+                        GenJnLine."Dimension Set ID" := PVLines."Dimension Set ID";
+                        /*
+                        GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
+                        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                        */
+                        if GenJnLine.Amount <> 0 then
+                            GenJnLine.Insert;
+
+                        LineNo := LineNo + 10000;
+                        GenJnLine.Init;
+                        if CMSetup.Get then
+                            GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+                        GenJnLine."Journal Batch Name" := PV."No.";
+                        GenJnLine."Line No." := LineNo;
+                        GenJnLine."Account Type" := GenJnLine."account type"::"G/L Account";
+                        case PVLines."Account Type" of
+                            PVLines."account type"::"G/L Account":
+                                begin
+                                    GLAccount.Get(PVLines."Account No");
+                                    GLAccount.TestField("VAT Bus. Posting Group");
+                                    if VATSetup.Get(GLAccount."VAT Bus. Posting Group", PVLines."Payee Code") then
+                                        GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                    GenJnLine.Validate(GenJnLine."Account No.");
+                                end;
+                            PVLines."account type"::Vendor:
+                                begin
+                                    Vendor.Get(PVLines."Account No");
+                                    Vendor.TestField("VAT Bus. Posting Group");
+                                    if VATSetup.Get(Vendor."VAT Bus. Posting Group", PVLines."Payee Code") then
+                                        GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                    GenJnLine.Validate(GenJnLine."Account No.");
+                                end;
+                            PVLines."account type"::Customer:
+                                begin
+                                    Customer.Get(PVLines."Account No");
+                                    Customer.TestField("VAT Bus. Posting Group");
+                                    if VATSetup.Get(Customer."VAT Bus. Posting Group", PVLines."Payee Code") then
+                                        GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                    GenJnLine.Validate(GenJnLine."Account No.");
+                                end;
+                        end;
+                        if PV.Date = 0D then
+                            Error('You must specify the PV date');
+                        GenJnLine."Posting Date" := PV.Date;
+                        //Added by Debbie to post cheque number as document no
+                        if PV."Cheque No" <> '' then
+                            GenJnLine."Document No." := PV."Cheque No"
+                        else
+                            GenJnLine."Document No." := PV."No.";
+
+                        //GenJnLine."Document No.":=PV."No.";
+                        GenJnLine."External Document No." := PV."No.";
+                        GenJnLine.Description := PVLines.Description + '-PAYE';
+                        GenJnLine.Amount := -PVLines."Payee Amount";
+                        GenJnLine.Validate(GenJnLine.Amount);
+                        GenJnLine."Currency Code" := PV."Currency Code";
+                        GenJnLine.Validate(GenJnLine."Currency Code");
+                        //Set these fields to blanks
+                        GenJnLine."Gen. Posting Type" := GenJnLine."gen. posting type"::" ";
+                        GenJnLine.Validate("Gen. Posting Type");
+                        GenJnLine."Gen. Bus. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Bus. Posting Group");
+                        GenJnLine."Gen. Prod. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Prod. Posting Group");
+                        GenJnLine."VAT Bus. Posting Group" := '';
+                        GenJnLine.Validate("VAT Bus. Posting Group");
+                        GenJnLine."VAT Prod. Posting Group" := '';
+                        GenJnLine.Validate("VAT Prod. Posting Group");
+                        //
+                        if PV."Pay Mode" = 'CHEQUE' then
+                            //GenJnLine."Pay Mode" := PV."Pay Mode";
+                        GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
+                        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
+                        GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
+                        //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
+                        GenJnLine."Dimension Set ID" := PVLines."Dimension Set ID";
+                        /*
+                        GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
+                        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                        */
+                        if GenJnLine.Amount <> 0 then
+                            GenJnLine.Insert;
+                    end;
+                //End of Posting Payee
+
+
+                /*
+                //Post Retention
+                IF PVLines."Retention Code"<>'' THEN BEGIN
+                PVLines.VALIDATE(PVLines.Amount);
+                LineNo:=LineNo+10000;
+                GenJnLine.INIT;
+                IF CMSetup.GET THEN
+                GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
+                GenJnLine."Journal Batch Name":=PV."No.";
+                GenJnLine."Line No.":=LineNo;
+                GenJnLine."Account Type":=PVLines."Account Type";
+                GenJnLine."Account No.":=PVLines."Account No";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                 IF PV.Date=0D THEN
+                  ERROR('You must specify the PV date');
+                GenJnLine."Posting Date":=PV.Date;
+                //Added by Debbie to post cheque number as document no
+                IF PV."Cheque No"<>'' THEN
+                GenJnLine."Document No.":=PV."Cheque No"
+                ELSE
+                GenJnLine."Document No.":=PV."No.";
+
+                //GenJnLine."Document No.":=PV."No.";
+                GenJnLine."External Document No.":=PV."No.";
+                GenJnLine.Description:=PVLines.Description+'-Retention';
+                GenJnLine.Amount:=PVLines."Retention Amount";
+                GenJnLine.VALIDATE(GenJnLine.Amount);
+                GenJnLine."Currency Code":=PV."Currency Code";
+                GenJnLine.VALIDATE(GenJnLine."Currency Code");
+
+                //Set these fields to blanks
+                GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
+                GenJnLine.VALIDATE("Gen. Posting Type");
+                GenJnLine."Gen. Bus. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Bus. Posting Group");
+                GenJnLine."Gen. Prod. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Prod. Posting Group");
+                GenJnLine."VAT Bus. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Bus. Posting Group");
+                GenJnLine."VAT Prod. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Prod. Posting Group");
+                //
+                IF PV."Pay Mode"='CHEQUE' THEN
+                //GenJnLine."Pay Mode":=PV."Pay Mode";
+                GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
+                GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
+                GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
+                GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
+                //GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
+                {
+                GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
+                GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                }
+                IF GenJnLine.Amount<>0 THEN
+                 GenJnLine.INSERT;
+
+
+
+
+                LineNo:=LineNo+10000;
+                GenJnLine.INIT;
+                IF CMSetup.GET THEN
+                GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
+                GenJnLine."Journal Batch Name":=PV."No.";
+                GenJnLine."Line No.":=LineNo;
+                GenJnLine."Account Type":=GenJnLine."Account Type"::"G/L Account";
+                CASE PVLines."Account Type" OF
+                PVLines."Account Type"::"G/L Account":
+                BEGIN
+                GLAccount.GET(PVLines."Account No");
+                GLAccount.TESTFIELD("VAT Bus. Posting Group");
+                IF VATSetup.GET(GLAccount."VAT Bus. Posting Group",PVLines."Retention Code") THEN
+                GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                END;
+                PVLines."Account Type"::Vendor:
+                BEGIN
+                Vendor.GET(PVLines."Account No");
+                Vendor.TESTFIELD("VAT Bus. Posting Group");
+                IF VATSetup.GET(Vendor."VAT Bus. Posting Group",PVLines."Retention Code") THEN
+                GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                END;
+                PVLines."Account Type"::Customer:
+                BEGIN
+                Customer.GET(PVLines."Account No");
+                Customer.TESTFIELD("VAT Bus. Posting Group");
+                IF VATSetup.GET(Customer."VAT Bus. Posting Group",PVLines."Retention Code") THEN
+                GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                END;
+                END;
+                 IF PV.Date=0D THEN
+                  ERROR('You must specify the PV date');
+                GenJnLine."Posting Date":=PV.Date;
+                GenJnLine.VALIDATE(GenJnLine."Posting Date");
+                //Added by Debbie to post cheque number as document no
+                IF PV."Cheque No"<>'' THEN
+                GenJnLine."Document No.":=PV."Cheque No"
+                ELSE
+                GenJnLine."Document No.":=PV."No.";
+
+                //GenJnLine."Document No.":=PV."No.";
+                GenJnLine."External Document No.":=PV."No.";
+                GenJnLine.Description:=PVLines.Description+'-Retention';
+                GenJnLine.Amount:=-PVLines."Retention Amount";
+                GenJnLine.VALIDATE(GenJnLine.Amount);
+                GenJnLine."Currency Code":=PV."Currency Code";
+                GenJnLine.VALIDATE(GenJnLine."Currency Code");
+                //Set these fields to blanks
+                GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
+                GenJnLine.VALIDATE("Gen. Posting Type");
+                GenJnLine."Gen. Bus. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Bus. Posting Group");
+                GenJnLine."Gen. Prod. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Prod. Posting Group");
+                GenJnLine."VAT Bus. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Bus. Posting Group");
+                GenJnLine."VAT Prod. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Prod. Posting Group");
+                //
+                IF PV."Pay Mode"='CHEQUE' THEN
+                //GenJnLine."Pay Mode":=PV."Pay Mode";
+                GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
+                //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
+                GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
+                //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
+                GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
+                {
+                GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
+                GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                }
+                IF GenJnLine.Amount<>0 THEN
+                 GenJnLine.INSERT;
+                END;
+                //End of Posting Retention
+
+
+                //Post VAT
+                IF CMSetup."Post VAT" THEN BEGIN
+                IF PV."VAT Code"<>'' THEN BEGIN
+                LineNo:=LineNo+10000;
+                GenJnLine.INIT;
+                IF CMSetup.GET THEN
+                GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
+                GenJnLine."Journal Batch Name":=PV."No.";
+                GenJnLine."Line No.":=LineNo;
+                GenJnLine."Account Type":=PVLines."Account Type";
+                GenJnLine."Account No.":=PVLines."Account No";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                 IF PV.Date=0D THEN
+                  ERROR('You must specify the PV date');
+                GenJnLine."Posting Date":=PV.Date;
+                //Added by Debbie to post cheque number as document no
+                IF PV."Cheque No"<>'' THEN
+                GenJnLine."Document No.":=PV."Cheque No"
+                ELSE
+                GenJnLine."Document No.":=PV."No.";
+
+                //GenJnLine."Document No.":=PV."No.";
+                GenJnLine."External Document No.":=PV."No.";
+                GenJnLine.Description:=PVLines.Description+'-VAT';
+                GenJnLine.Amount:=PVLines."VAT Amount";
+                GenJnLine.VALIDATE(GenJnLine.Amount);
+                GenJnLine."Currency Code":=PV."Currency Code";
+                GenJnLine.VALIDATE(GenJnLine."Currency Code");
+
+                //Set these fields to blanks
+                GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
+                GenJnLine.VALIDATE("Gen. Posting Type");
+                GenJnLine."Gen. Bus. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Bus. Posting Group");
+                GenJnLine."Gen. Prod. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Prod. Posting Group");
+                GenJnLine."VAT Bus. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Bus. Posting Group");
+                GenJnLine."VAT Prod. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Prod. Posting Group");
+                //
+                IF PV."Pay Mode"='CHEQUE' THEN
+                //GenJnLine."Pay Mode":=PV."Pay Mode";
+                GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
+                //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
+                GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
+                //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
+                GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
+                {
+                GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
+                GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                }
+                IF GenJnLine.Amount<>0 THEN
+                 GenJnLine.INSERT;
+
+                LineNo:=LineNo+10000;
+                GenJnLine.INIT;
+                IF CMSetup.GET THEN
+                GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
+                GenJnLine."Journal Batch Name":=PV."No.";
+                GenJnLine."Line No.":=LineNo;
+                GenJnLine."Account Type":=GenJnLine."Account Type"::"G/L Account";
+                CASE PVLines."Account Type" OF
+                PVLines."Account Type"::"G/L Account":
+                BEGIN
+                GLAccount.GET(PVLines."Line No");
+                GLAccount.TESTFIELD("VAT Bus. Posting Group");
+                IF VATSetup.GET(GLAccount."VAT Bus. Posting Group",PV."VAT Code") THEN
+                GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                END;
+                PVLines."Account Type"::Vendor:
+                BEGIN
+                Vendor.GET(PVLines."Account No");
+                Vendor.TESTFIELD("VAT Bus. Posting Group");
+                IF VATSetup.GET(Vendor."VAT Bus. Posting Group",PV."VAT Code") THEN
+                GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                END;
+                PVLines."Account Type"::Customer:
+                BEGIN
+                Customer.GET(PVLines."Account No");
+                Customer.TESTFIELD("VAT Bus. Posting Group");
+                IF VATSetup.GET(Customer."VAT Bus. Posting Group",PV."VAT Code") THEN
+                GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                END;
+                END;
+                 IF PV.Date=0D THEN
+                  ERROR('You must specify the PV date');
+                GenJnLine."Posting Date":=PV.Date;
+                //Added by Debbie to post cheque number as document no
+                IF PV."Cheque No"<>'' THEN
+                GenJnLine."Document No.":=PV."Cheque No"
+                ELSE
+                GenJnLine."Document No.":=PV."No.";
+
+                //GenJnLine."Document No.":=PV."No.";
+                GenJnLine."External Document No.":=PV."No.";
+                GenJnLine.Description:=PVLines.Description+'-VAT';
+                GenJnLine.Amount:=-PVLines."VAT Amount";
+                GenJnLine.VALIDATE(GenJnLine.Amount);
+                GenJnLine."Currency Code":=PV."Currency Code";
+                GenJnLine.VALIDATE(GenJnLine."Currency Code");
+                //Set these fields to blanks
+                GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
+                GenJnLine.VALIDATE("Gen. Posting Type");
+                GenJnLine."Gen. Bus. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Bus. Posting Group");
+                GenJnLine."Gen. Prod. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Prod. Posting Group");
+                GenJnLine."VAT Bus. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Bus. Posting Group");
+                GenJnLine."VAT Prod. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Prod. Posting Group");
+                //
+                IF PV."Pay Mode"='CHEQUE' THEN
+                //GenJnLine."Pay Mode":=PV."Pay Mode";
+                GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
+                //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
+                GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
+                //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
+                GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
+                {
+                GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
+                GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                }
+                IF GenJnLine.Amount<>0 THEN
+                 GenJnLine.INSERT;
+
+                END;
+                //End of Posting VAT
+                END;
+                //Post Withholding Tax
+                IF PVLines."W/Tax Code"<>'' THEN BEGIN
+                PVLines.VALIDATE(PVLines.Amount);
+                LineNo:=LineNo+10000;
+                GenJnLine.INIT;
+                IF CMSetup.GET THEN
+                GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
+                GenJnLine."Journal Batch Name":=PV."No.";
+                GenJnLine."Line No.":=LineNo;
+                GenJnLine."Account Type":=PVLines."Account Type";
+                GenJnLine."Account No.":=PVLines."Account No";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                 IF PV.Date=0D THEN
+                  ERROR('You must specify the PV date');
+                GenJnLine."Posting Date":=PV.Date;
+                //Added by Debbie to post cheque number as document no
+                IF PV."Cheque No"<>'' THEN
+                GenJnLine."Document No.":=PV."Cheque No"
+                ELSE
+                GenJnLine."Document No.":=PV."No.";
+
+                //GenJnLine."Document No.":=PV."No.";
+                GenJnLine."External Document No.":=PV."No.";
+                GenJnLine.Description:=PVLines.Description+'-WHVAT';
+                GenJnLine.Amount:=PVLines."W/Tax Amount";
+                GenJnLine.VALIDATE(GenJnLine.Amount);
+                GenJnLine."Currency Code":=PV."Currency Code";
+                GenJnLine.VALIDATE(GenJnLine."Currency Code");
+
+                //Set these fields to blanks
+                GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
+                GenJnLine.VALIDATE("Gen. Posting Type");
+                GenJnLine."Gen. Bus. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Bus. Posting Group");
+                GenJnLine."Gen. Prod. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Prod. Posting Group");
+                GenJnLine."VAT Bus. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Bus. Posting Group");
+                GenJnLine."VAT Prod. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Prod. Posting Group");
+                //
+                IF PV."Pay Mode"='CHEQUE' THEN
+                //GenJnLine."Pay Mode":=PV."Pay Mode";
+                GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
+                //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
+                GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
+                //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
+                GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
+                {
+                GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
+                GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                }
+                IF GenJnLine.Amount<>0 THEN
+                 GenJnLine.INSERT;
+
+                LineNo:=LineNo+10000;
+                GenJnLine.INIT;
+                IF CMSetup.GET THEN
+                GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
+                GenJnLine."Journal Batch Name":=PV."No.";
+                GenJnLine."Line No.":=LineNo;
+                GenJnLine."Account Type":=GenJnLine."Account Type"::"G/L Account";
+                CASE PVLines."Account Type" OF
+                PVLines."Account Type"::"G/L Account":
+                BEGIN
+                GLAccount.GET(PVLines."Account No");
+                GLAccount.TESTFIELD("VAT Bus. Posting Group");
+                IF VATSetup.GET(GLAccount."VAT Bus. Posting Group",PVLines."W/Tax Code") THEN
+                GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                END;
+                PVLines."Account Type"::Vendor:
+                BEGIN
+                Vendor.GET(PVLines."Account No");
+                Vendor.TESTFIELD("VAT Bus. Posting Group");
+                IF VATSetup.GET(Vendor."VAT Bus. Posting Group",PVLines."W/Tax Code") THEN
+                GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                END;
+                PVLines."Account Type"::Customer:
+                BEGIN
+                Customer.GET(PVLines."Account No");
+                Customer.TESTFIELD("VAT Bus. Posting Group");
+                IF VATSetup.GET(Customer."VAT Bus. Posting Group",PVLines."W/Tax Code") THEN
+                GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
+                GenJnLine.VALIDATE(GenJnLine."Account No.");
+                END;
+                END;
+                 IF PV.Date=0D THEN
+                  ERROR('You must specify the PV date');
+                GenJnLine."Posting Date":=PV.Date;
+                //Added by Debbie to post cheque number as document no
+                IF PV."Cheque No"<>'' THEN
+                GenJnLine."Document No.":=PV."Cheque No"
+                ELSE
+                GenJnLine."Document No.":=PV."No.";
+
+                //GenJnLine."Document No.":=PV."No.";
+                GenJnLine."External Document No.":=PV."No.";
+                GenJnLine.Description:=PVLines.Description+'-WHVAT';
+                GenJnLine.Amount:=-PVLines."W/Tax Amount";
+                GenJnLine.VALIDATE(GenJnLine.Amount);
+                GenJnLine."Currency Code":=PV."Currency Code";
+                GenJnLine.VALIDATE(GenJnLine."Currency Code");
+                //Set these fields to blanks
+                GenJnLine."Gen. Posting Type":=GenJnLine."Gen. Posting Type"::" ";
+                GenJnLine.VALIDATE("Gen. Posting Type");
+                GenJnLine."Gen. Bus. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Bus. Posting Group");
+                GenJnLine."Gen. Prod. Posting Group":='';
+                GenJnLine.VALIDATE("Gen. Prod. Posting Group");
+                GenJnLine."VAT Bus. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Bus. Posting Group");
+                GenJnLine."VAT Prod. Posting Group":='';
+                GenJnLine.VALIDATE("VAT Prod. Posting Group");
+                //
+                IF PV."Pay Mode"='CHEQUE' THEN
+                //GenJnLine."Pay Mode":=PV."Pay Mode";
+                GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
+                //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
+                GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
+                //GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 2 Code");
+                GenJnLine."Dimension Set ID":=PVLines."Dimension Set ID";
+                {
+                GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
+                GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                }
+                IF GenJnLine.Amount<>0 THEN
+                 GenJnLine.INSERT;
+                END;*/
+                //End of Posting Withholding Tax
+
+                until PVLines.Next = 0;
+            end;
+
+            Codeunit.Run(Codeunit::"Gen. Jnl.-Post", GenJnLine);
+            PV.Posted := true;
+            PV."Posted By" := UserId;
+            //PV."Date Posted" := Today;
+            PV."Time Posted" := Time;
+            PV.Modify;
+
+            GLEntry.Reset;
+            GLEntry.SetRange(GLEntry."External Document No.", PV."No.");
+
+            GLEntry.SetRange(GLEntry.Reversed, false);
+            if GLEntry.FindFirst then begin
+                PV.Posted := true;
+                PV."Posted By" := UserId;
+                //PV."Date Posted" := Today;
+                PV."Time Posted" := Time;
+                PV.Modify;
+            end;
+            PV.Posted := true;
+            PV."Posted By" := UserId;
+            //PV."Date Posted" := Today;
+            PV."Time Posted" := Time;
+            PV.Modify;
+
+
         end;
 
     end;
@@ -971,9 +1151,9 @@ Codeunit 52193467 "Payment- Post"
         GenJnLine.VALIDATE(GenJnLine.Amount);
         GenJnLine."Currency Code":=LevyReceipt."Currency Code";
         GenJnLine.VALIDATE(GenJnLine."Currency Code");
-        GenJnLine."Pay Mode":=LevyReceipt."Payment Mode";
+        //GenJnLine."Pay Mode":=LevyReceipt."Payment Mode";
         IF LevyReceipt."Payment Mode"='CHEQUE' THEN
-        GenJnLine."Cheque Date":=LevyReceipt."Cheque Date";
+        //GenJnLine."Cheque Date":=LevyReceipt."Cheque Date";
         GenJnLine."Shortcut Dimension 1 Code":=LevyReceipt."Global Dimension 1 Code";
         GenJnLine.VALIDATE(GenJnLine."Shortcut Dimension 1 Code");
         GenJnLine."Shortcut Dimension 2 Code":=LevyReceipt."Global Dimension 2 Code";
@@ -1006,7 +1186,7 @@ Codeunit 52193467 "Payment- Post"
         GenJnLine.Amount:=-LevyReceiptLines.Amount;
         GenJnLine.VALIDATE(Amount);
         IF LevyReceipt."Payment Mode"='CHEQUE' THEN
-        GenJnLine."Pay Mode":=LevyReceipt."Payment Mode";
+        //GenJnLine."Pay Mode":=LevyReceipt."Payment Mode";
         GenJnLine."Currency Code":=LevyReceipt."Currency Code";
         GenJnLine.VALIDATE(GenJnLine."Currency Code");
         GenJnLine."Shortcut Dimension 1 Code":=LevyReceiptLines."Global Dimension 1 Code";
@@ -1059,386 +1239,386 @@ Codeunit 52193467 "Payment- Post"
         EntryNo: Integer;
         LevyTypeRec: Record "Levy Types";
     begin
-        
+
         /*
         IF PV.Status<>PV.Status::Released THEN
-         ERROR('The Payment Voucher No %1 cannot be posted before it is fully approved',PV.No);
+         ERROR('The Payment Voucher No %1 cannot be posted before it is fully approved',PV."No.");
          */
         if PV.Posted then
-         Error('Payment Voucher %1 has been posted',PV.No);
-        
+            Error('Payment Voucher %1 has been posted', PV."No.");
+
         PV.TestField(Date);
         PV.TestField("Paying Bank Account");
         PV.TestField(PV.Payee);
         PV.TestField(PV."Pay Mode");
-        
-        if PV."Pay Mode"='CHEQUE' then begin
-        
-        PV.TestField(PV."Cheque No");
-        //PV.TESTFIELD(PV."Cheque Date");
+
+        if PV."Pay Mode" = 'CHEQUE' then begin
+
+            PV.TestField(PV."Cheque No");
+            //PV.TESTFIELD(PV."Cheque Date");
         end;
-        
+
         //Check Lines
-          PV.CalcFields("Total Amount");
-          if PV."Total Amount"=0 then
-          Error('Amount is cannot be zero');
-          PVLines.Reset;
-          PVLines.SetRange(PVLines."PV No",PV.No);
-          if not PVLines.FindLast then
-          Error('Payment voucher Lines cannot be empty');
-        
-          CMSetup.Get();
-          // Delete Lines Present on the General Journal Line
-          GenJnLine.Reset;
-          GenJnLine.SetRange(GenJnLine."Journal Template Name",CMSetup."Payment Voucher Template");
-          GenJnLine.SetRange(GenJnLine."Journal Batch Name",PV.No);
-          GenJnLine.DeleteAll;
-        
-          Batch.Init;
-          if CMSetup.Get() then
-          Batch."Journal Template Name":=CMSetup."Payment Voucher Template";
-          Batch.Name:=PV.No;
-          if not Batch.Get(Batch."Journal Template Name",Batch.Name) then
-          Batch.Insert;
-        
+        PV.CalcFields("Total Amount");
+        if PV."Total Amount" = 0 then
+            Error('Amount is cannot be zero');
+        PVLines.Reset;
+        PVLines.SetRange(PVLines."PV No", PV."No.");
+        if not PVLines.FindLast then
+            Error('Payment voucher Lines cannot be empty');
+
+        CMSetup.Get();
+        // Delete Lines Present on the General Journal Line
+        GenJnLine.Reset;
+        GenJnLine.SetRange(GenJnLine."Journal Template Name", CMSetup."Payment Voucher Template");
+        GenJnLine.SetRange(GenJnLine."Journal Batch Name", PV."No.");
+        GenJnLine.DeleteAll;
+
+        Batch.Init;
+        if CMSetup.Get() then
+            Batch."Journal Template Name" := CMSetup."Payment Voucher Template";
+        Batch.Name := PV."No.";
+        if not Batch.Get(Batch."Journal Template Name", Batch.Name) then
+            Batch.Insert;
+
         //Bank Entries
-        LineNo:=LineNo+10000;
+        LineNo := LineNo + 10000;
         PV.CalcFields(PV."Total Amount");
         GenJnLine.Init;
         if CMSetup.Get then
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=GenJnLine."account type"::"Bank Account";
-        GenJnLine."Account No.":=PV."Paying Bank Account";
+            GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+        GenJnLine."Journal Batch Name" := PV."No.";
+        GenJnLine."Line No." := LineNo;
+        GenJnLine."Account Type" := GenJnLine."account type"::"Bank Account";
+        GenJnLine."Account No." := PV."Paying Bank Account";
         GenJnLine.Validate(GenJnLine."Account No.");
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV."Cheque No";
-        GenJnLine.Description:=PV.Payee;
-        GenJnLine.Amount:=-PV."Total Amount";
+        if PV.Date = 0D then
+            Error('You must specify the PV date');
+        GenJnLine."Posting Date" := PV.Date;
+        GenJnLine."Document No." := PV."No.";
+        GenJnLine."External Document No." := PV."Cheque No";
+        GenJnLine.Description := PV.Payee;
+        GenJnLine.Amount := -PV."Total Amount";
         GenJnLine.Validate(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
+        GenJnLine."Currency Code" := PV."Currency Code";
         GenJnLine.Validate(GenJnLine."Currency Code");
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PV."Global Dimension 1 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PV."Global Dimension 2 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
-        
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        
+        //GenJnLine."Pay Mode" := PV."Pay Mode";
+        // GenJnLine."Shortcut Dimension 1 Code" := PV."Global Dimension 1 Code";
+        // GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
+        // GenJnLine."Shortcut Dimension 2 Code" := PV."Global Dimension 2 Code";
+        // GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
+
+        if GenJnLine.Amount <> 0 then
+            GenJnLine.Insert;
+
         //PV Lines Entries
         PVLines.Reset;
-        PVLines.SetRange(PVLines."PV No",PV.No);
+        PVLines.SetRange(PVLines."PV No", PV."No.");
         if PVLines.FindFirst then begin
-        repeat
-        PVLines.Validate(PVLines.Amount);
-        LineNo:=LineNo+10000;
-        GenJnLine.Init;
-        if CMSetup.Get then
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=PVLines."Account Type";
-        GenJnLine."Account No.":=PVLines."Account No";
-        GenJnLine.Validate(GenJnLine."Account No.");
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV."Cheque No";
-        GenJnLine.Description:=PVLines.Description;
-        //GenJnLine."Description 2":=PVLines.Description;
-        GenJnLine.Amount:=PVLines."Net Amount";
-        GenJnLine.Validate(Amount);
-        if PV."Pay Mode"='CHEQUE' then
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.Validate(GenJnLine."Currency Code");
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
-        if PVLines."Applies to Doc. No"<>'' then begin
-        GenJnLine."Applies-to Doc. Type":=PVLines."Applies-to Doc. Type";
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.Validate(GenJnLine."Applies-to Doc. No.");
+            repeat
+                PVLines.Validate(PVLines.Amount);
+                LineNo := LineNo + 10000;
+                GenJnLine.Init;
+                if CMSetup.Get then
+                    GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+                GenJnLine."Journal Batch Name" := PV."No.";
+                GenJnLine."Line No." := LineNo;
+                GenJnLine."Account Type" := PVLines."Account Type";
+                GenJnLine."Account No." := PVLines."Account No";
+                GenJnLine.Validate(GenJnLine."Account No.");
+                if PV.Date = 0D then
+                    Error('You must specify the PV date');
+                GenJnLine."Posting Date" := PV.Date;
+                GenJnLine."Document No." := PV."No.";
+                GenJnLine."External Document No." := PV."Cheque No";
+                GenJnLine.Description := PVLines.Description;
+                //GenJnLine."Description 2":=PVLines.Description;
+                GenJnLine.Amount := PVLines."Net Amount";
+                GenJnLine.Validate(Amount);
+                if PV."Pay Mode" = 'CHEQUE' then
+                    //GenJnLine."Pay Mode" := PV."Pay Mode";
+                GenJnLine."Currency Code" := PV."Currency Code";
+                GenJnLine.Validate(GenJnLine."Currency Code");
+                GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
+                GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
+                GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
+                GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
+                if PVLines."Applies to Doc. No" <> '' then begin
+                    GenJnLine."Applies-to Doc. Type" := PVLines."Applies-to Doc. Type";
+                    GenJnLine."Applies-to Doc. No." := PVLines."Applies to Doc. No";
+                    GenJnLine.Validate(GenJnLine."Applies-to Doc. No.");
+                end;
+
+                //Set these fields to blanks
+                GenJnLine."Gen. Posting Type" := GenJnLine."gen. posting type"::" ";
+                GenJnLine.Validate("Gen. Posting Type");
+                GenJnLine."Gen. Bus. Posting Group" := '';
+                GenJnLine.Validate("Gen. Bus. Posting Group");
+                GenJnLine."Gen. Prod. Posting Group" := '';
+                GenJnLine.Validate("Gen. Prod. Posting Group");
+                GenJnLine."VAT Bus. Posting Group" := '';
+                GenJnLine.Validate("VAT Bus. Posting Group");
+                GenJnLine."VAT Prod. Posting Group" := '';
+                GenJnLine.Validate("VAT Prod. Posting Group");
+                //
+
+                if GenJnLine.Amount <> 0 then
+                    GenJnLine.Insert;
+
+                //Post VAT
+                if CMSetup."Post VAT" then begin
+                    if PV."VAT Code" <> '' then begin
+                        LineNo := LineNo + 10000;
+                        GenJnLine.Init;
+                        if CMSetup.Get then
+                            GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+                        GenJnLine."Journal Batch Name" := PV."No.";
+                        GenJnLine."Line No." := LineNo;
+                        GenJnLine."Account Type" := PVLines."Account Type";
+                        GenJnLine."Account No." := PVLines."Account No";
+                        GenJnLine.Validate(GenJnLine."Account No.");
+                        if PV.Date = 0D then
+                            Error('You must specify the PV date');
+                        GenJnLine."Posting Date" := PV.Date;
+                        GenJnLine."Document No." := PV."No.";
+                        GenJnLine."External Document No." := PV."Cheque No";
+                        GenJnLine.Description := PVLines.Description + '-VAT';
+                        GenJnLine.Amount := PVLines."VAT Amount";
+                        GenJnLine.Validate(GenJnLine.Amount);
+                        GenJnLine."Currency Code" := PV."Currency Code";
+                        GenJnLine.Validate(GenJnLine."Currency Code");
+
+                        //Set these fields to blanks
+                        GenJnLine."Gen. Posting Type" := GenJnLine."gen. posting type"::" ";
+                        GenJnLine.Validate("Gen. Posting Type");
+                        GenJnLine."Gen. Bus. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Bus. Posting Group");
+                        GenJnLine."Gen. Prod. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Prod. Posting Group");
+                        GenJnLine."VAT Bus. Posting Group" := '';
+                        GenJnLine.Validate("VAT Bus. Posting Group");
+                        GenJnLine."VAT Prod. Posting Group" := '';
+                        GenJnLine.Validate("VAT Prod. Posting Group");
+                        //
+                        if PV."Pay Mode" = 'CHEQUE' then
+                            //GenJnLine."Pay Mode" := PV."Pay Mode";
+                        GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
+                        GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
+                        GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
+                        GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
+                        /*
+                        GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
+                        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                        */
+                        if GenJnLine.Amount <> 0 then
+                            GenJnLine.Insert;
+
+                        LineNo := LineNo + 10000;
+                        GenJnLine.Init;
+                        if CMSetup.Get then
+                            GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+                        GenJnLine."Journal Batch Name" := PV."No.";
+                        GenJnLine."Line No." := LineNo;
+                        GenJnLine."Account Type" := GenJnLine."account type"::"G/L Account";
+                        case PVLines."Account Type" of
+                            PVLines."account type"::"G/L Account":
+                                begin
+                                    GLAccount.Get(PVLines."Line No");
+                                    GLAccount.TestField("VAT Bus. Posting Group");
+                                    if VATSetup.Get(GLAccount."VAT Bus. Posting Group", PV."VAT Code") then
+                                        GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                    GenJnLine.Validate(GenJnLine."Account No.");
+                                end;
+                            PVLines."account type"::Vendor:
+                                begin
+                                    Vendor.Get(PVLines."Account No");
+                                    Vendor.TestField("VAT Bus. Posting Group");
+                                    if VATSetup.Get(Vendor."VAT Bus. Posting Group", PV."VAT Code") then
+                                        GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                    GenJnLine.Validate(GenJnLine."Account No.");
+                                end;
+                            PVLines."account type"::Customer:
+                                begin
+                                    Customer.Get(PVLines."Account No");
+                                    Customer.TestField("VAT Bus. Posting Group");
+                                    if VATSetup.Get(Customer."VAT Bus. Posting Group", PV."VAT Code") then
+                                        GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                    GenJnLine.Validate(GenJnLine."Account No.");
+                                end;
+                        end;
+                        if PV.Date = 0D then
+                            Error('You must specify the PV date');
+                        GenJnLine."Posting Date" := PV.Date;
+                        GenJnLine."Document No." := PV."No.";
+                        GenJnLine."External Document No." := PV."Cheque No";
+                        GenJnLine.Description := PVLines.Description + '-VAT';
+                        GenJnLine.Amount := -PVLines."VAT Amount";
+                        GenJnLine.Validate(GenJnLine.Amount);
+                        GenJnLine."Currency Code" := PV."Currency Code";
+                        GenJnLine.Validate(GenJnLine."Currency Code");
+                        //Set these fields to blanks
+                        GenJnLine."Gen. Posting Type" := GenJnLine."gen. posting type"::" ";
+                        GenJnLine.Validate("Gen. Posting Type");
+                        GenJnLine."Gen. Bus. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Bus. Posting Group");
+                        GenJnLine."Gen. Prod. Posting Group" := '';
+                        GenJnLine.Validate("Gen. Prod. Posting Group");
+                        GenJnLine."VAT Bus. Posting Group" := '';
+                        GenJnLine.Validate("VAT Bus. Posting Group");
+                        GenJnLine."VAT Prod. Posting Group" := '';
+                        GenJnLine.Validate("VAT Prod. Posting Group");
+                        //
+                        if PV."Pay Mode" = 'CHEQUE' then
+                            //GenJnLine."Pay Mode" := PV."Pay Mode";
+                        GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
+                        GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
+                        GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
+                        GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
+                        /*
+                        GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
+                        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                        */
+                        if GenJnLine.Amount <> 0 then
+                            GenJnLine.Insert;
+
+                    end;
+                    //End of Posting VAT
+                end;
+                //Post Withholding Tax
+                if PVLines."W/Tax Code" <> '' then begin
+                    PVLines.Validate(PVLines.Amount);
+                    LineNo := LineNo + 10000;
+                    GenJnLine.Init;
+                    if CMSetup.Get then
+                        GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+                    GenJnLine."Journal Batch Name" := PV."No.";
+                    GenJnLine."Line No." := LineNo;
+                    GenJnLine."Account Type" := PVLines."Account Type";
+                    GenJnLine."Account No." := PVLines."Account No";
+                    GenJnLine.Validate(GenJnLine."Account No.");
+                    if PV.Date = 0D then
+                        Error('You must specify the PV date');
+                    GenJnLine."Posting Date" := PV.Date;
+                    GenJnLine."Document No." := PV."No.";
+                    GenJnLine."External Document No." := PV."Cheque No";
+                    GenJnLine.Description := PVLines.Description + '-WHVAT';
+                    GenJnLine.Amount := PVLines."W/Tax Amount";
+                    GenJnLine.Validate(GenJnLine.Amount);
+                    GenJnLine."Currency Code" := PV."Currency Code";
+                    GenJnLine.Validate(GenJnLine."Currency Code");
+
+                    //Set these fields to blanks
+                    GenJnLine."Gen. Posting Type" := GenJnLine."gen. posting type"::" ";
+                    GenJnLine.Validate("Gen. Posting Type");
+                    GenJnLine."Gen. Bus. Posting Group" := '';
+                    GenJnLine.Validate("Gen. Bus. Posting Group");
+                    GenJnLine."Gen. Prod. Posting Group" := '';
+                    GenJnLine.Validate("Gen. Prod. Posting Group");
+                    GenJnLine."VAT Bus. Posting Group" := '';
+                    GenJnLine.Validate("VAT Bus. Posting Group");
+                    GenJnLine."VAT Prod. Posting Group" := '';
+                    GenJnLine.Validate("VAT Prod. Posting Group");
+                    //
+                    if PV."Pay Mode" = 'CHEQUE' then
+                        //GenJnLine."Pay Mode" := PV."Pay Mode";
+                    GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
+                    GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
+                    GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
+                    GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
+                    /*
+                    GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
+                    GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                    GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                    */
+                    if GenJnLine.Amount <> 0 then
+                        GenJnLine.Insert;
+
+                    LineNo := LineNo + 10000;
+                    GenJnLine.Init;
+                    if CMSetup.Get then
+                        GenJnLine."Journal Template Name" := CMSetup."Payment Voucher Template";
+                    GenJnLine."Journal Batch Name" := PV."No.";
+                    GenJnLine."Line No." := LineNo;
+                    GenJnLine."Account Type" := GenJnLine."account type"::"G/L Account";
+                    case PVLines."Account Type" of
+                        PVLines."account type"::"G/L Account":
+                            begin
+                                GLAccount.Get(PVLines."Account No");
+                                GLAccount.TestField("VAT Bus. Posting Group");
+                                if VATSetup.Get(GLAccount."VAT Bus. Posting Group", PVLines."W/Tax Code") then
+                                    GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                GenJnLine.Validate(GenJnLine."Account No.");
+                            end;
+                        PVLines."account type"::Vendor:
+                            begin
+                                Vendor.Get(PVLines."Account No");
+                                Vendor.TestField("VAT Bus. Posting Group");
+                                if VATSetup.Get(Vendor."VAT Bus. Posting Group", PVLines."W/Tax Code") then
+                                    GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                GenJnLine.Validate(GenJnLine."Account No.");
+                            end;
+                        PVLines."account type"::Customer:
+                            begin
+                                Customer.Get(PVLines."Account No");
+                                Customer.TestField("VAT Bus. Posting Group");
+                                if VATSetup.Get(Customer."VAT Bus. Posting Group", PVLines."W/Tax Code") then
+                                    GenJnLine."Account No." := VATSetup."Purchase VAT Account";
+                                GenJnLine.Validate(GenJnLine."Account No.");
+                            end;
+                    end;
+                    if PV.Date = 0D then
+                        Error('You must specify the PV date');
+                    GenJnLine."Posting Date" := PV.Date;
+                    GenJnLine."Document No." := PV."No.";
+                    GenJnLine."External Document No." := PV."Cheque No";
+                    GenJnLine.Description := PVLines.Description + '-WHVAT';
+                    GenJnLine.Amount := -PVLines."W/Tax Amount";
+                    GenJnLine.Validate(GenJnLine.Amount);
+                    GenJnLine."Currency Code" := PV."Currency Code";
+                    GenJnLine.Validate(GenJnLine."Currency Code");
+                    //Set these fields to blanks
+                    GenJnLine."Gen. Posting Type" := GenJnLine."gen. posting type"::" ";
+                    GenJnLine.Validate("Gen. Posting Type");
+                    GenJnLine."Gen. Bus. Posting Group" := '';
+                    GenJnLine.Validate("Gen. Bus. Posting Group");
+                    GenJnLine."Gen. Prod. Posting Group" := '';
+                    GenJnLine.Validate("Gen. Prod. Posting Group");
+                    GenJnLine."VAT Bus. Posting Group" := '';
+                    GenJnLine.Validate("VAT Bus. Posting Group");
+                    GenJnLine."VAT Prod. Posting Group" := '';
+                    GenJnLine.Validate("VAT Prod. Posting Group");
+                    //
+                    if PV."Pay Mode" = 'CHEQUE' then
+                        //GenJnLine."Pay Mode" := PV."Pay Mode";
+                    GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
+                    GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
+                    GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
+                    GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
+                    /*
+                    GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
+                    GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
+                    GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
+                    */
+                    if GenJnLine.Amount <> 0 then
+                        GenJnLine.Insert;
+                end;
+            //End of Posting Withholding Tax
+
+            until PVLines.Next = 0;
         end;
-        
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."gen. posting type"::" ";
-        GenJnLine.Validate("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.Validate("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.Validate("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.Validate("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.Validate("VAT Prod. Posting Group");
-        //
-        
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        
-        //Post VAT
-        if CMSetup."Post VAT" then begin
-        if PV."VAT Code"<>'' then begin
-        LineNo:=LineNo+10000;
-        GenJnLine.Init;
-        if CMSetup.Get then
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=PVLines."Account Type";
-        GenJnLine."Account No.":=PVLines."Account No";
-        GenJnLine.Validate(GenJnLine."Account No.");
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV."Cheque No";
-        GenJnLine.Description:=PVLines.Description+'-VAT';
-        GenJnLine.Amount:=PVLines."VAT Amount";
-        GenJnLine.Validate(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.Validate(GenJnLine."Currency Code");
-        
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."gen. posting type"::" ";
-        GenJnLine.Validate("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.Validate("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.Validate("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.Validate("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.Validate("VAT Prod. Posting Group");
-        //
-        if PV."Pay Mode"='CHEQUE' then
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
-        /*
-        GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        */
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        
-        LineNo:=LineNo+10000;
-        GenJnLine.Init;
-        if CMSetup.Get then
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=GenJnLine."account type"::"G/L Account";
-        case PVLines."Account Type" of
-        PVLines."account type"::"G/L Account":
-        begin
-        GLAccount.Get(PVLines."Line No");
-        GLAccount.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(GLAccount."VAT Bus. Posting Group",PV."VAT Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        PVLines."account type"::Vendor:
-        begin
-        Vendor.Get(PVLines."Account No");
-        Vendor.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(Vendor."VAT Bus. Posting Group",PV."VAT Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        PVLines."account type"::Customer:
-        begin
-        Customer.Get(PVLines."Account No");
-        Customer.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(Customer."VAT Bus. Posting Group",PV."VAT Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        end;
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV."Cheque No";
-        GenJnLine.Description:=PVLines.Description+'-VAT';
-        GenJnLine.Amount:=-PVLines."VAT Amount";
-        GenJnLine.Validate(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.Validate(GenJnLine."Currency Code");
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."gen. posting type"::" ";
-        GenJnLine.Validate("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.Validate("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.Validate("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.Validate("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.Validate("VAT Prod. Posting Group");
-        //
-        if PV."Pay Mode"='CHEQUE' then
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
-        /*
-        GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        */
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        
-        end;
-        //End of Posting VAT
-        end;
-        //Post Withholding Tax
-        if PVLines."W/Tax Code"<>'' then begin
-        PVLines.Validate(PVLines.Amount);
-        LineNo:=LineNo+10000;
-        GenJnLine.Init;
-        if CMSetup.Get then
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=PVLines."Account Type";
-        GenJnLine."Account No.":=PVLines."Account No";
-        GenJnLine.Validate(GenJnLine."Account No.");
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV."Cheque No";
-        GenJnLine.Description:=PVLines.Description+'-WHVAT';
-        GenJnLine.Amount:=PVLines."W/Tax Amount";
-        GenJnLine.Validate(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.Validate(GenJnLine."Currency Code");
-        
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."gen. posting type"::" ";
-        GenJnLine.Validate("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.Validate("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.Validate("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.Validate("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.Validate("VAT Prod. Posting Group");
-        //
-        if PV."Pay Mode"='CHEQUE' then
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
-        /*
-        GenJnLine."Applies-to Doc. Type":=GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        */
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        
-        LineNo:=LineNo+10000;
-        GenJnLine.Init;
-        if CMSetup.Get then
-        GenJnLine."Journal Template Name":=CMSetup."Payment Voucher Template";
-        GenJnLine."Journal Batch Name":=PV.No;
-        GenJnLine."Line No.":=LineNo;
-        GenJnLine."Account Type":=GenJnLine."account type"::"G/L Account";
-        case PVLines."Account Type" of
-        PVLines."account type"::"G/L Account":
-        begin
-        GLAccount.Get(PVLines."Account No");
-        GLAccount.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(GLAccount."VAT Bus. Posting Group",PVLines."W/Tax Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        PVLines."account type"::Vendor:
-        begin
-        Vendor.Get(PVLines."Account No");
-        Vendor.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(Vendor."VAT Bus. Posting Group",PVLines."W/Tax Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        PVLines."account type"::Customer:
-        begin
-        Customer.Get(PVLines."Account No");
-        Customer.TestField("VAT Bus. Posting Group");
-        if VATSetup.Get(Customer."VAT Bus. Posting Group",PVLines."W/Tax Code") then
-        GenJnLine."Account No.":=VATSetup."Purchase VAT Account";
-        GenJnLine.Validate(GenJnLine."Account No.");
-        end;
-        end;
-         if PV.Date=0D then
-          Error('You must specify the PV date');
-        GenJnLine."Posting Date":=PV.Date;
-        GenJnLine."Document No.":=PV.No;
-        GenJnLine."External Document No.":=PV."Cheque No";
-        GenJnLine.Description:=PVLines.Description+'-WHVAT';
-        GenJnLine.Amount:=-PVLines."W/Tax Amount";
-        GenJnLine.Validate(GenJnLine.Amount);
-        GenJnLine."Currency Code":=PV.Currency;
-        GenJnLine.Validate(GenJnLine."Currency Code");
-        //Set these fields to blanks
-        GenJnLine."Gen. Posting Type":=GenJnLine."gen. posting type"::" ";
-        GenJnLine.Validate("Gen. Posting Type");
-        GenJnLine."Gen. Bus. Posting Group":='';
-        GenJnLine.Validate("Gen. Bus. Posting Group");
-        GenJnLine."Gen. Prod. Posting Group":='';
-        GenJnLine.Validate("Gen. Prod. Posting Group");
-        GenJnLine."VAT Bus. Posting Group":='';
-        GenJnLine.Validate("VAT Bus. Posting Group");
-        GenJnLine."VAT Prod. Posting Group":='';
-        GenJnLine.Validate("VAT Prod. Posting Group");
-        //
-        if PV."Pay Mode"='CHEQUE' then
-        GenJnLine."Pay Mode":=PV."Pay Mode";
-        GenJnLine."Shortcut Dimension 1 Code":=PVLines."Shortcut Dimension 1 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
-        GenJnLine."Shortcut Dimension 2 Code":=PVLines."Shortcut Dimension 2 Code";
-        GenJnLine.Validate(GenJnLine."Shortcut Dimension 2 Code");
-        /*
-        GenJnLine."Applies-to Doc. Type" := GenJnLine."Applies-to Doc. Type"::Invoice;
-        GenJnLine."Applies-to Doc. No.":=PVLines."Applies to Doc. No";
-        GenJnLine.VALIDATE(GenJnLine."Applies-to Doc. No.");
-        */
-        if GenJnLine.Amount<>0 then
-         GenJnLine.Insert;
-        end;
-        //End of Posting Withholding Tax
-        
-        until PVLines.Next=0;
-        end;
-        
-        Codeunit.Run(Codeunit::"Gen. Jnl.-Post Batch",GenJnLine);
+
+        Codeunit.Run(Codeunit::"Gen. Jnl.-Post Batch", GenJnLine);
         GLEntry.Reset;
-        GLEntry.SetRange(GLEntry."Document No.",PV.No);
-        GLEntry.SetRange(GLEntry.Reversed,false);
+        GLEntry.SetRange(GLEntry."Document No.", PV."No.");
+        GLEntry.SetRange(GLEntry.Reversed, false);
         if GLEntry.FindFirst then begin
-        PV.Posted:=true;
-        PV."Posted By":=UserId;
-        PV."Date Posted":=Today;
-        PV."Time Posted":=Time;
-        PV.Modify;
+            PV.Posted := true;
+            PV."Posted By" := UserId;
+            // //PV."Date Posted" := Today;
+            PV."Time Posted" := Time;
+            PV.Modify;
         end;
 
     end;

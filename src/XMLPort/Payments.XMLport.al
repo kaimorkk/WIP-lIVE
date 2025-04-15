@@ -53,7 +53,7 @@ XmlPort 50011 Payments
 
     procedure GetRec(PV: Record Payments)
     begin
-        PVNo := PV.No;
+        PVNo := PV."No.";
     end;
 }
 

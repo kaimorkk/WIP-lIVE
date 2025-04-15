@@ -140,8 +140,8 @@ page 52194341 "PR Employee Transactions"
                     Emp.Reset();
                     Emp.SetRange("No.", Rec."Employee Code");
                     if Emp.FindFirst() then begin
-                        Emp.TestField("Acting Scale");
-                        Emp.TestField("Acting Present");
+                        // Emp.TestField("Acting Scale");
+                        // Emp.TestField("Acting Present");
                         Rec.fnSuggestActingAllowances();
                     end;
                 end;

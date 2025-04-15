@@ -123,12 +123,12 @@ Codeunit 52193436 "Payment Management"
                                 Gnljnline."Document No." := CashierPayment.No;
                                 Gnljnline."Posting Date" := CashierPayment."Payment Date";
                                 Gnljnline.Description := PayLine.Description;
-                                Gnljnline."Loan No" := PayLine."Loan No.";
+                                //Gnljnline."Loan No" := PayLine."Loan No.";
                                 Gnljnline."Transaction Type" := PayLine."transaction type"::"Processing Fee";
-                                Gnljnline."Sacco Transaction Type" := PayLine.Type;
+                                //Gnljnline."Sacco Transaction Type" := PayLine.Type;
                                 Gnljnline.Amount := PayLine.Amount;
                                 Gnljnline.Validate(Gnljnline.Amount);
-                                Gnljnline."Loan No" := PayLine."Loan No.";
+                                //Gnljnline."Loan No" := PayLine."Loan No.";
                                 Gnljnline."External Document No." := "Cheque No.";
                                 Gnljnline."Currency Code" := CashierPayment."Currency Code";
                                 Gnljnline.Validate("Currency Code");
@@ -161,11 +161,11 @@ Codeunit 52193436 "Payment Management"
                             Gnljnline."Posting Date" := CashierPayment."Payment Date";
                             Gnljnline.Description := PayLine.Description;
                             Gnljnline."Transaction Type" := PayLine."Transaction Type";
-                            Gnljnline."Sacco Transaction Type" := PayLine.Type;
+                            //Gnljnline."Sacco Transaction Type" := PayLine.Type;
                             Gnljnline.Amount := PayLine.Amount;
                             // LoanDisburse."Loan Disbursement Date" := CashierPayment."Payment Date";
                             Gnljnline.Validate(Gnljnline.Amount);
-                            Gnljnline."Loan No" := PayLine."Loan No.";
+                            //Gnljnline."Loan No" := PayLine."Loan No.";
                             Gnljnline."External Document No." := "Cheque No.";
                             Gnljnline."Currency Code" := CashierPayment."Currency Code";
                             Gnljnline.Validate("Currency Code");
@@ -191,12 +191,12 @@ Codeunit 52193436 "Payment Management"
                             Gnljnline."Document No." := CashierPayment.No;
                             Gnljnline."Posting Date" := CashierPayment."Payment Date";
                             Gnljnline.Description := PayLine.Description + '-' + PayLine."Loan No.";
-                            Gnljnline."Loan No" := PayLine."Loan No.";
+                            //Gnljnline."Loan No" := PayLine."Loan No.";
                             Gnljnline."Transaction Type" := PayLine."transaction type"::Loan;
-                            Gnljnline."Sacco Transaction Type" := PayLine.Type;
+                            //Gnljnline."Sacco Transaction Type" := PayLine.Type;
                             Gnljnline.Amount := PayLine.Amount;
                             Gnljnline.Validate(Gnljnline.Amount);
-                            Gnljnline."Loan No" := PayLine."Loan No.";
+                            //Gnljnline."Loan No" := PayLine."Loan No.";
                             Gnljnline."External Document No." := "Cheque No.";
                             Gnljnline."Currency Code" := CashierPayment."Currency Code";
                             Gnljnline.Validate("Currency Code");
@@ -234,8 +234,8 @@ Codeunit 52193436 "Payment Management"
                                           Gnljnline."External Document No.":="Cheque No.";
                                           Gnljnline.VALIDATE(Gnljnline.Amount);
                                           Gnljnline."Transaction Type":=Gnljnline."Transaction Type"::"Loan Repayment";
-                                          Gnljnline."Sacco Transaction Type":=PayLine.Type;
-                                          Gnljnline."Loan No":=LoanTopUp."Loan Top Up";
+                                          //Gnljnline."Sacco Transaction Type":=PayLine.Type;
+                                          //Gnljnline."Loan No":=LoanTopUp."Loan Top Up";
                                           Gnljnline."Posting Group":=PayLine."Posting Group";
                                           Gnljnline.VALIDATE(Gnljnline."Posting Group");
                                           Gnljnline."Currency Code":=CashierPayment."Currency Code" ;
@@ -273,8 +273,8 @@ Codeunit 52193436 "Payment Management"
                                               Gnljnline."Bal. Account No.":=LoanTypes."Accrued Interest Account";
                                               Gnljnline.VALIDATE(Gnljnline."Bal. Account No.");
                                               Gnljnline."Transaction Type":=Gnljnline."Transaction Type"::"Interest Paid";
-                                              Gnljnline."Sacco Transaction Type":=Gnljnline."Sacco Transaction Type"::Repayment;
-                                              Gnljnline."Loan No":=LoanTopUp."Loan Top Up";
+                                              //Gnljnline."Sacco Transaction Type":=//Gnljnline."Sacco Transaction Type"::Repayment;
+                                              //Gnljnline."Loan No":=LoanTopUp."Loan Top Up";
                                               Gnljnline."Posting Group":=LoanType."Loan Customer Posting Group";
                                               Gnljnline.VALIDATE(Gnljnline."Posting Group");
                                               Gnljnline."Currency Code":=CashierPayment."Currency Code" ;
@@ -299,7 +299,7 @@ Codeunit 52193436 "Payment Management"
                                                     Gnljnline."Document No.":=CashierPayment.No;
                                                     Gnljnline."Posting Date":=CashierPayment."Payment Date";
                                                     Gnljnline.Description:='Commision on Loan Top Up';
-                                                    Gnljnline."Sacco Transaction Type":=Gnljnline."Sacco Transaction Type"::Other;
+                                                    //Gnljnline."Sacco Transaction Type":=//Gnljnline."Sacco Transaction Type"::Other;
                                                     TopUpComm:=(LoanTopUp."Principle Top Up") * (LoanType."Top Up Commision"/100);
                                                     Gnljnline.Amount:=TopUpComm*-1;
                                                     Gnljnline.VALIDATE(Amount);
@@ -323,7 +323,7 @@ Codeunit 52193436 "Payment Management"
                                                     Gnljnline."Document No.":=CashierPayment.No;
                                                     Gnljnline."Posting Date":=CashierPayment."Payment Date";
                                                     Gnljnline.Description:='Commision on Loan Top Up';
-                                                    Gnljnline."Sacco Transaction Type":=Gnljnline."Sacco Transaction Type"::Other;
+                                                    //Gnljnline."Sacco Transaction Type":=//Gnljnline."Sacco Transaction Type"::Other;
                                                     Gnljnline.Amount:=TopUpComm;
                                                     Gnljnline.VALIDATE(Amount);
                                                     Gnljnline."External Document No.":="Cheque No.";
@@ -364,13 +364,13 @@ Codeunit 52193436 "Payment Management"
                             //             Gnljnline."Account No." := PayLine."Account No";
                             //             Gnljnline.Validate(Gnljnline."Account No.");
                             //             Gnljnline."Transaction Type" := Gnljnline."transaction type"::"Interest Due";
-                            //             Gnljnline."Sacco Transaction Type" := PayLine.Type;
+                            //             //Gnljnline."Sacco Transaction Type" := PayLine.Type;
                             //             Gnljnline."Document No." := CashierPayment.No;
                             //             Gnljnline."Posting Date" := CashierPayment."Payment Date";
                             //             Gnljnline.Description := 'Interest Due';
                             //             // Gnljnline.Amount := Rschedule."Monthly Interest";//("Approved Amount"*Interest)/1200;
                             //             Gnljnline.Validate(Gnljnline.Amount);
-                            //             Gnljnline."Loan No" := PayLine."Loan No.";
+                            //             //Gnljnline."Loan No" := PayLine."Loan No.";
                             //             Gnljnline."Bal. Account Type" := Gnljnline."bal. account type"::"G/L Account";
                             //             // if LoanType.Get(PayLine."Loan Product Type Code") then begin
                             //             Gnljnline."Bal. Account No." := LoanType."Received Interest Account";
@@ -407,13 +407,13 @@ Codeunit 52193436 "Payment Management"
                             //             Gnljnline."Account No." := PayLine."Account No";
                             //             Gnljnline.Validate(Gnljnline."Account No.");
                             //             Gnljnline."Transaction Type" := Gnljnline."transaction type"::"Interest Due";
-                            //             Gnljnline."Sacco Transaction Type" := PayLine.Type;
+                            //             //Gnljnline."Sacco Transaction Type" := PayLine.Type;
                             //             Gnljnline."Document No." := CashierPayment.No;
                             //             Gnljnline."Posting Date" := CashierPayment."Payment Date";
                             //             Gnljnline.Description := 'Interest Due';
                             //             Gnljnline.Amount := (Rschedule."Monthly Interest" * LoanDisburse.Installments);
                             //             Gnljnline.Validate(Gnljnline.Amount);
-                            //             Gnljnline."Loan No" := PayLine."Loan No.";
+                            //             //Gnljnline."Loan No" := PayLine."Loan No.";
                             //             Gnljnline."Bal. Account Type" := Gnljnline."bal. account type"::"G/L Account";
                             //             if LoanType.Get(PayLine."Loan Product Type Code") then begin
                             //                 Gnljnline."Bal. Account No." := LoanType."Received Interest Account";
@@ -452,13 +452,13 @@ Codeunit 52193436 "Payment Management"
                             //                 Gnljnline."Account No." := PayLine."Account No";
                             //                 Gnljnline.Validate(Gnljnline."Account No.");
                             //                 Gnljnline."Transaction Type" := Gnljnline."transaction type"::Loan;
-                            //                 Gnljnline."Sacco Transaction Type" := PayLine.Type;
+                            //                 //Gnljnline."Sacco Transaction Type" := PayLine.Type;
                             //                 Gnljnline."Document No." := CashierPayment.No;
                             //                 Gnljnline."Posting Date" := CashierPayment."Payment Date";
                             //                 Gnljnline.Description := 'Part Disbursement';
                             //                 Gnljnline.Amount := (LoanDisburse."Approved Amount" - PayLine.Amount);
                             //                 Gnljnline.Validate(Gnljnline.Amount);
-                            //                 Gnljnline."Loan No" := PayLine."Loan No.";
+                            //                 //Gnljnline."Loan No" := PayLine."Loan No.";
                             //                 Gnljnline."Bal. Account Type" := Gnljnline."bal. account type"::"G/L Account";
                             //                 Gnljnline."Bal. Account No." := LoanType."Account for Part Disbursement";
                             //                 Gnljnline.Validate(Gnljnline."Bal. Account No.");
@@ -509,7 +509,7 @@ Codeunit 52193436 "Payment Management"
                                 Gnljnline."VAT Prod. Posting Group" := '';
                                 Gnljnline.Validate("VAT Prod. Posting Group");
                                 if CashierPayment."Payment Mode" = 'CHEQUE' then
-                                    //Gnljnline."Pay Mode":=CashierPayment."Payment Mode";
+                                    ////Gnljnline."Pay Mode":=CashierPayment."Payment Mode";
                                     Gnljnline."Applies-to Doc. No." := CashierPayment."Applies- To Doc No.";
                                 Gnljnline.Validate(Gnljnline."Applies-to Doc. Type");
                                 Gnljnline."Currency Code" := CashierPayment."Currency Code";
@@ -577,7 +577,7 @@ Codeunit 52193436 "Payment Management"
 
                                 //
                                 if CashierPayment."Payment Mode" = 'CHEQUE' then
-                                    //Gnljnline."Pay Mode":=PV."Pay Mode";
+                                    ////Gnljnline."Pay Mode":=PV."Pay Mode";
                                     Gnljnline."Applies-to Doc. No." := CashierPayment."Applies- To Doc No.";
                                 Gnljnline.Validate(Gnljnline."Applies-to Doc. No.");
                                 Gnljnline."Shortcut Dimension 1 Code" := PayLine."Global Dimension 1 Code";
@@ -621,7 +621,7 @@ Codeunit 52193436 "Payment Management"
                             Gnljnline.Validate("VAT Prod. Posting Group");
                             //
                             if CashierPayment."Payment Mode" = 'CHEQUE' then
-                                //GenJnLine."Pay Mode":=PV."Pay Mode";
+                                ////GenJnLine."Pay Mode":=PV."Pay Mode";
                                 Gnljnline."Applies-to Doc. No." := CashierPayment."Applies- To Doc No.";
                             Gnljnline."Currency Code" := CashierPayment."Currency Code";
                             Gnljnline.Validate("Currency Code");
@@ -686,8 +686,8 @@ Codeunit 52193436 "Payment Management"
                             Gnljnline."VAT Prod. Posting Group" := '';
                             Gnljnline.Validate("VAT Prod. Posting Group");
                             //
-                            if CashierPayment."Payment Mode" = 'CHEQUE' then
-                                Gnljnline."Pay Mode" := CashierPayment."Payment Mode";
+                            // if CashierPayment."Payment Mode" = 'CHEQUE' then
+                            // //Gnljnline."Pay Mode" := CashierPayment."Payment Mode";
                             Gnljnline."Applies-to Doc. No." := CashierPayment."Applies- To Doc No.";
                             Gnljnline."Currency Code" := CashierPayment."Currency Code";
                             Gnljnline.Validate("Currency Code");
@@ -864,9 +864,9 @@ Codeunit 52193436 "Payment Management"
             GenJnLine.Description := PV.Payee;
             GenJnLine.Amount := -PV."Total Amount";
             GenJnLine.Validate(GenJnLine.Amount);
-            GenJnLine."Pay Mode" := PV."Pay Mode";
+            //GenJnLine."Pay Mode" := PV."Pay Mode";
             if PV."Pay Mode" = 'CHEQUE' then
-                GenJnLine."Cheque Date" := PV."Cheque Date";
+                //GenJnLine."Cheque Date" := PV."Cheque Date";
             GenJnLine."Shortcut Dimension 1 Code" := PV."Global Dimension 1 Code";
             GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
             GenJnLine."Shortcut Dimension 2 Code" := PV."Global Dimension 2 Code";
@@ -896,11 +896,11 @@ Codeunit 52193436 "Payment Management"
                     GenJnLine."Document No." := PV."No.";
                     GenJnLine."External Document No." := PV."Cheque No";
                     GenJnLine.Description := PVLines.Description;
-                    GenJnLine."Cheque Date" := PV."Cheque Date";
+                    //GenJnLine."Cheque Date" := PV."Cheque Date";
                     GenJnLine.Amount := PVLines."Net Amount";
                     GenJnLine.Validate(GenJnLine.Amount);
                     if PV."Pay Mode" = 'CHEQUE' then
-                        GenJnLine."Pay Mode" := PV."Pay Mode";
+                        //GenJnLine."Pay Mode" := PV."Pay Mode";
                     GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
                     GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
                     GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
@@ -946,7 +946,7 @@ Codeunit 52193436 "Payment Management"
                             GenJnLine.Validate("VAT Prod. Posting Group");
                             //
                             if PV."Pay Mode" = 'CHEQUE' then
-                                GenJnLine."Pay Mode" := PV."Pay Mode";
+                                //GenJnLine."Pay Mode" := PV."Pay Mode";
                             GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
                             GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
                             GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 2 Code";
@@ -1011,7 +1011,7 @@ Codeunit 52193436 "Payment Management"
                             GenJnLine.Validate("VAT Prod. Posting Group");
                             //
                             if PV."Pay Mode" = 'CHEQUE' then
-                                GenJnLine."Pay Mode" := PV."Pay Mode";
+                                //GenJnLine."Pay Mode" := PV."Pay Mode";
                             GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
                             GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
                             GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 1 Code";
@@ -1058,7 +1058,7 @@ Codeunit 52193436 "Payment Management"
                         GenJnLine.Validate("VAT Prod. Posting Group");
                         //
                         if PV."Pay Mode" = 'CHEQUE' then
-                            GenJnLine."Pay Mode" := PV."Pay Mode";
+                            //GenJnLine."Pay Mode" := PV."Pay Mode";
                         GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
                         GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
                         GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 1 Code";
@@ -1123,7 +1123,7 @@ Codeunit 52193436 "Payment Management"
                         GenJnLine.Validate("VAT Prod. Posting Group");
                         //
                         if PV."Pay Mode" = 'CHEQUE' then
-                            GenJnLine."Pay Mode" := PV."Pay Mode";
+                            //GenJnLine."Pay Mode" := PV."Pay Mode";
                         GenJnLine."Shortcut Dimension 1 Code" := PVLines."Shortcut Dimension 1 Code";
                         GenJnLine.Validate(GenJnLine."Shortcut Dimension 1 Code");
                         GenJnLine."Shortcut Dimension 2 Code" := PVLines."Shortcut Dimension 1 Code";
@@ -1618,9 +1618,9 @@ Codeunit 52193436 "Payment Management"
     //                     Gnljnline."Document No." := OffSetHeader."No.";
     //                     Gnljnline."Posting Date" := Today;
     //                     Gnljnline.Description := 'Interest Paid on loan offsetting';
-    //                     Gnljnline."Loan No" := OffSetLoans."Loan No";
+    //                     //Gnljnline."Loan No" := OffSetLoans."Loan No";
     //                     //Gnljnline."Transaction Type":=PayLine."Transaction Type"::"Interest Paid";
-    //                     Gnljnline."Sacco Transaction Type" := Gnljnline."sacco transaction type"::Repayment;
+    //                     //Gnljnline."Sacco Transaction Type" := //Gnljnline."Sacco Transaction Type"::Repayment;
     //                     Gnljnline.Amount := Abs(OffSetLoans."Interest Due");
     //                     Gnljnline.Validate(Amount);
     //                     if BosaProd.Get(BosaSetup."Default Product Code") then begin
@@ -1646,9 +1646,9 @@ Codeunit 52193436 "Payment Management"
     //                     Gnljnline."Document No." := OffSetHeader."No.";
     //                     Gnljnline."Posting Date" := Today;
     //                     Gnljnline.Description := 'Interest Paid';
-    //                     Gnljnline."Loan No" := OffSetLoans."Loan No";
+    //                     //Gnljnline."Loan No" := OffSetLoans."Loan No";
     //                     Gnljnline."Transaction Type" := PayLine."transaction type"::"Interest Paid";
-    //                     Gnljnline."Sacco Transaction Type" := Gnljnline."sacco transaction type"::Repayment;
+    //                     //Gnljnline."Sacco Transaction Type" := //Gnljnline."Sacco Transaction Type"::Repayment;
     //                     Gnljnline.Amount := Abs(OffSetLoans."Interest Due") * -1;
     //                     Gnljnline.Validate(Amount);
     //                     Gnljnline."Posting Group" := BosaSetup."Posting Group - Interest Due";
@@ -1684,9 +1684,9 @@ Codeunit 52193436 "Payment Management"
     //                     Gnljnline."Document No." := OffSetHeader."No.";
     //                     Gnljnline."Posting Date" := Today;
     //                     Gnljnline.Description := 'Principal repayment on Loan Offsetting';
-    //                     Gnljnline."Loan No" := OffSetLoans."Loan No";
+    //                     //Gnljnline."Loan No" := OffSetLoans."Loan No";
     //                     //Gnljnline."Transaction Type":=PayLine."Transaction Type"::"Loan Repayment";
-    //                     Gnljnline."Sacco Transaction Type" := Gnljnline."sacco transaction type"::Repayment;
+    //                     //Gnljnline."Sacco Transaction Type" := //Gnljnline."Sacco Transaction Type"::Repayment;
     //                     Gnljnline.Amount := Abs(OffSetLoans."Outstanding Balance");
     //                     Gnljnline.Validate(Amount);
     //                     if BosaProd.Get(BosaSetup."Default Product Code") then begin
@@ -1711,9 +1711,9 @@ Codeunit 52193436 "Payment Management"
     //                     Gnljnline."Document No." := OffSetHeader."No.";
     //                     Gnljnline."Posting Date" := Today;
     //                     Gnljnline.Description := 'Offsetting Loan';
-    //                     Gnljnline."Loan No" := OffSetLoans."Loan No";
+    //                     //Gnljnline."Loan No" := OffSetLoans."Loan No";
     //                     Gnljnline."Transaction Type" := PayLine."transaction type"::"Loan Repayment";
-    //                     Gnljnline."Sacco Transaction Type" := Gnljnline."sacco transaction type"::Repayment;
+    //                     //Gnljnline."Sacco Transaction Type" := //Gnljnline."Sacco Transaction Type"::Repayment;
     //                     Gnljnline.Amount := Abs(OffSetLoans."Outstanding Balance") * -1;
     //                     Gnljnline.Validate(Amount);
     //                     // if LoanDisburse.Get(OffSetLoans."Loan No") then begin
@@ -1742,9 +1742,9 @@ Codeunit 52193436 "Payment Management"
     //                     Gnljnline."Document No." := OffSetHeader."No.";
     //                     Gnljnline."Posting Date" := Today;
     //                     Gnljnline.Description := 'Principal repayment on Loan Offsetting';
-    //                     Gnljnline."Loan No" := OffSetLoans."Loan No";
+    //                     //Gnljnline."Loan No" := OffSetLoans."Loan No";
     //                     //Gnljnline."Transaction Type":=PayLine."Transaction Type"::"Loan Repayment";
-    //                     Gnljnline."Sacco Transaction Type" := Gnljnline."sacco transaction type"::Repayment;
+    //                     //Gnljnline."Sacco Transaction Type" := //Gnljnline."Sacco Transaction Type"::Repayment;
     //                     Gnljnline.Amount := Abs(AmntRemain);
     //                     Gnljnline.Validate(Amount);
     //                     if BosaProd.Get(BosaSetup."Default Product Code") then begin
@@ -1769,9 +1769,9 @@ Codeunit 52193436 "Payment Management"
     //                     Gnljnline."Document No." := OffSetHeader."No.";
     //                     Gnljnline."Posting Date" := Today;
     //                     Gnljnline.Description := 'Offsetting Loan';
-    //                     Gnljnline."Loan No" := OffSetLoans."Loan No";
+    //                     //Gnljnline."Loan No" := OffSetLoans."Loan No";
     //                     Gnljnline."Transaction Type" := PayLine."transaction type"::"Loan Repayment";
-    //                     Gnljnline."Sacco Transaction Type" := Gnljnline."sacco transaction type"::Repayment;
+    //                     //Gnljnline."Sacco Transaction Type" := //Gnljnline."Sacco Transaction Type"::Repayment;
     //                     Gnljnline.Amount := Abs(AmntRemain) * -1;
     //                     Gnljnline.Validate(Amount);
     //                     // if LoanDisburse.Get(OffSetLoans."Loan No") then begin
@@ -1876,7 +1876,7 @@ Codeunit 52193436 "Payment Management"
     //                     Gnljnline."Document No." := ShareTransHeader."No.";
     //                     Gnljnline."Posting Date" := Today;
     //                     Gnljnline.Description := (Text001) + Format(ShareTransLines."Destination Product Code");
-    //                     Gnljnline."Sacco Transaction Type" := Gnljnline."sacco transaction type"::Contribution;
+    //                     //Gnljnline."Sacco Transaction Type" := //Gnljnline."Sacco Transaction Type"::Contribution;
     //                     Gnljnline.Amount := ShareTransLines.Amount;
     //                     Gnljnline.Validate(Amount);
     //                     if BosaProd.Get(ShareTransLines."Source Product Code") then begin
@@ -1902,7 +1902,7 @@ Codeunit 52193436 "Payment Management"
     //                     Gnljnline."Document No." := ShareTransHeader."No.";
     //                     Gnljnline."Posting Date" := Today;
     //                     Gnljnline.Description := (Text002) + Format(ShareTransLines."Source Product Code");
-    //                     Gnljnline."Sacco Transaction Type" := Gnljnline."sacco transaction type"::Contribution;
+    //                     //Gnljnline."Sacco Transaction Type" := //Gnljnline."Sacco Transaction Type"::Contribution;
     //                     Gnljnline.Amount := ShareTransLines.Amount * -1;
     //                     Gnljnline.Validate(Amount);
     //                     if BosaProd.Get(ShareTransLines."Destination Product Code") then begin

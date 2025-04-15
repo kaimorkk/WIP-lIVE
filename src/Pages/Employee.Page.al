@@ -197,7 +197,7 @@ Page 52194212 Employee
                 {
                     ApplicationArea = Basic;
                 }
-                field(PaysSSF; "Pays SSF")
+                field(PaysSSF; "Pays SSF?")
                 {
                     ApplicationArea = Basic;
                 }
@@ -217,7 +217,7 @@ Page 52194212 Employee
                 {
                     ApplicationArea = Basic;
                 }
-                field(PaidOvertime; "Paid Overtime")
+                field(PaidOvertime; Overtime)
                 {
                     ApplicationArea = Basic;
                 }
@@ -289,10 +289,10 @@ Page 52194212 Employee
                 {
                     ApplicationArea = Basic;
                 }
-                field(OpeningSSF; "Opening SSF")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(OpeningSSF; "Opening SSF")
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 field(OpeningPAYE; "Opening PAYE")
                 {
                     ApplicationArea = Basic;
@@ -357,10 +357,10 @@ Page 52194212 Employee
                 {
                     ApplicationArea = Basic;
                 }
-                field(CustomerCode; "Customer Code")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(CustomerCode; "Customer Code")
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 field(BenefitsNonCash; "Benefits-Non Cash")
                 {
                     ApplicationArea = Basic;
@@ -433,10 +433,10 @@ Page 52194212 Employee
                 {
                     ApplicationArea = Basic;
                 }
-                field(Houseallowance; "House allowance")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(Houseallowance; "House allowance")
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 field(Overtime; Overtime)
                 {
                     ApplicationArea = Basic;
@@ -553,10 +553,10 @@ Page 52194212 Employee
                 {
                     ApplicationArea = Basic;
                 }
-                field(Gender2; Gender2)
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(Gender2; Gender2)
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 field(FaxNumber; "Fax Number")
                 {
                     ApplicationArea = Basic;
@@ -653,10 +653,10 @@ Page 52194212 Employee
                 {
                     ApplicationArea = Basic;
                 }
-                field(JobSpecification; "Job Specification")
-                {
-                    ApplicationArea = Basic;
-                }
+                // field(JobSpecification; "Job Specification")
+                // {
+                //     ApplicationArea = Basic;
+                // }
                 field(Citizenship; Citizenship)
                 {
                     ApplicationArea = Basic;
@@ -665,30 +665,7 @@ Page 52194212 Employee
                 {
                     ApplicationArea = Basic;
                 }
-                field(FirstLanguageRead; "First Language Read")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(FirstLanguageWrite; "First Language Write")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(FirstLanguageSpeak; "First Language Speak")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(SecondLanguageRead; "Second Language Read")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(SecondLanguageWrite; "Second Language Write")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(SecondLanguageSpeak; "Second Language Speak")
-                {
-                    ApplicationArea = Basic;
-                }
+
                 field(PINNumber; "PIN Number")
                 {
                     ApplicationArea = Basic;

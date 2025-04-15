@@ -20,7 +20,7 @@ Table 52193643 "Transactions Type Finance"
         {
             TableRelation = if ("Account Type" = const("G/L Account")) "G/L Account"
             else if ("Account Type" = const(Customer)) Customer
-            else if ("Account Type" = const(Vendor)) Vendor where("Debtor Type" = filter("Vendor Account"))
+            // else if ("Account Type" = const(Vendor)) Vendor where("Debtor Type" = filter("Vendor Account"))
             else if ("Account Type" = const("Fixed Asset")) "Fixed Asset"
             else if ("Account Type" = const("Bank Account")) "Bank Account";
         }

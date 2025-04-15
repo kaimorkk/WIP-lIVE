@@ -10,39 +10,39 @@ Page 52193468 "My Employee List"
         {
             repeater(Control1000000000)
             {
-                field(No;"No.")
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(FirstName;"First Name")
+                field(FirstName; "First Name")
                 {
                     ApplicationArea = Basic;
                 }
-                field(MiddleName;"Middle Name")
+                field(MiddleName; "Middle Name")
                 {
                     ApplicationArea = Basic;
                 }
-                field(LastName;"Last Name")
+                field(LastName; "Last Name")
                 {
                     ApplicationArea = Basic;
                 }
-                field(JobTitle;"Job Title")
+                field(JobTitle; "Job Title")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Title;Title)
+                field(Title; Title)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Gender;Gender)
+                field(Gender; Gender)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Citizenship;Citizenship)
+                field(Citizenship; Citizenship)
                 {
                     ApplicationArea = Basic;
                 }
@@ -62,13 +62,13 @@ Page 52193468 "My Employee List"
                 var
                     EmpRec: Record Employee;
                 begin
-                    if Confirm(Text000,false) then begin
-                    CurrPage.SetSelectionFilter(EmpRec);
-                     if EmpRec.Find('-') then
-                       repeat
-                        CreateImprestAC(EmpRec);
-                       until
-                        EmpRec.Next=0;
+                    if Confirm(Text000, false) then begin
+                        CurrPage.SetSelectionFilter(EmpRec);
+                        if EmpRec.Find('-') then
+                            repeat
+                            // CreateImprestAC(EmpRec);
+                            until
+                             EmpRec.Next = 0;
                     end;
                 end;
             }

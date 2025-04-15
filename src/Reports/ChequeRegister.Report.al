@@ -32,12 +32,12 @@ Report 52193678 "Cheque Register"
             column(ChequeType_Payments; Payments."Cheque Type")
             {
             }
-            column(KBABankCode_Payments; Payments."KBA Bank Code")
-            {
-            }
-            column(ReceivedFrom_Payments; Payments."Received From")
-            {
-            }
+            // column(KBABankCode_Payments; Payments."KBA Bank Code")
+            // {
+            // }
+            // column(ReceivedFrom_Payments; Payments."Received From")
+            // {
+            // }
             column(OnBehalfOf_Payments; Payments."On Behalf Of")
             {
             }
@@ -47,18 +47,16 @@ Report 52193678 "Cheque Register"
             column(Cashier_Payments; Payments.Cashier)
             {
             }
-            column(No_Payments; Payments.No)
+            column(No_Payments; Payments."No.")
             {
             }
             column(Date_Payments; Payments.Date)
             {
             }
-            column(Amount_Payments; Payments.Amount)
+            column(Amount_Payments; Payments."Amount Approved")
             {
             }
-            column(Collected_Payments; Payments.Collected)
-            {
-            }
+
         }
     }
     requestpage

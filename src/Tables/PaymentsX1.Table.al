@@ -151,8 +151,8 @@ Table 52193692 PaymentsX1
                                 Cust.Get("Account No.");
                                 "Account Name" := Cust.Name;
                                 Payee := Cust.Name;
-                                "VAT Code" := Cust."KBA Branch Code";
-                                "Withholding Tax Code" := Cust."Withholding Tax Code";
+                                // "VAT Code" := Cust."KBA Branch Code";
+                                // "Withholding Tax Code" := Cust."Withholding Tax Code";
                                 "Global Dimension 1 Code" := Cust."Global Dimension 1 Code";
                                 "Control Ac" := Cust."Customer Posting Group";
                             end;
@@ -241,7 +241,7 @@ Table 52193692 PaymentsX1
         }
         field(28; "Paying Bank Account"; Code[20])
         {
-            TableRelation = "Bank Account"."No." where(rrrr = field("Bank Type"));
+            // TableRelation = "Bank Account"."No." where(rrrr = field("Bank Type"));
         }
         field(29; Payee; Text[100])
         {

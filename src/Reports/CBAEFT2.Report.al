@@ -16,7 +16,7 @@ Report 52193682 CBAEFT2
                 NetPay := 0;
                 NetPay := Payments."Total Amount";
                 PVLines.Reset;
-                PVLines.SetRange("PV No", Payments.No);
+                PVLines.SetRange("PV No", Payments."No.");
                 if PVLines.Find('-') then begin
                     Name := PVLines."Account Name";
                     Name := DelChr(Name, '=', '.');
@@ -125,7 +125,7 @@ Report 52193682 CBAEFT2
                 // TranferFile.WriteMode := true;
                 //TranferFile.QUERYREPLACE := TRUE;
 
-                FileName := No;
+                FileName := "No.";
                 //C:NTZDCEFT.txt
                 // TranferFile.Create('C:\eft\13554.csv');
 
@@ -200,7 +200,7 @@ Report 52193682 CBAEFT2
 
     procedure GetPV(var PV: Record Payments)
     begin
-        PV_No := PV.No;
+        PV_No := PV."No.";
     end;
 }
 

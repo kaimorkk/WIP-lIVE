@@ -19,7 +19,7 @@ Table 52193507 "Standing Orders"
         }
         field(2; "Source Account No."; Code[20])
         {
-            TableRelation = Vendor."No." where("Debtor Type" = filter("FOSA Account"));
+            // TableRelation = Vendor."No." where("Debtor Type" = filter("FOSA Account"));
 
             trigger OnValidate()
             begin
@@ -51,8 +51,8 @@ Table 52193507 "Standing Orders"
         }
         field(6; "Destination Account No."; Code[50])
         {
-            TableRelation = if ("Destination Account Type" = const(Internal)) Vendor."No." where("Debtor Type" = const("FOSA Account"))
-            else if ("Destination Account Type" = const(External)) "G/L Account";
+            // TableRelation = if ("Destination Account Type" = const(Internal)) Vendor."No." where("Debtor Type" = const("FOSA Account"))
+            // else if ("Destination Account Type" = const(External)) "G/L Account";
 
             trigger OnValidate()
             begin
@@ -91,7 +91,7 @@ Table 52193507 "Standing Orders"
         }
         field(8; "BOSA Account No."; Code[20])
         {
-            TableRelation = Customer."No." where("Customer Type" = filter(Member | FOSA));
+            // TableRelation = Customer."No." where("Customer Type" = filter(Member | FOSA));
         }
         field(9; "Effective/Start Date"; Date)
         {

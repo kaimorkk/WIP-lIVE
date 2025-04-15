@@ -32,7 +32,7 @@ Report 52193627 BullZip
             //column(CurrReport_PAGENO; Format(//ReportForNav.PageNo))
             // {
             // }
-            column(USERID; Customer.UserIDx)
+            column(USERID; userid)
             {
             }
             column(Customer__No__; Customer."No.")

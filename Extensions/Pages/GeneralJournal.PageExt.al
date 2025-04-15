@@ -142,14 +142,14 @@ PageExtension 52193441 pageextension52193441 extends "General Journal"
         }
         addafter("Payment Terms Code")
         {
-            field("Employee Code"; "Employee Code")
-            {
-                ApplicationArea = Basic;
-            }
-            field("Asset No"; "Asset No")
-            {
-                ApplicationArea = Basic;
-            }
+            // field("Employee Code"; "Employee Code")
+            // {
+            //     ApplicationArea = Basic;
+            // }
+            // field("Asset No"; "Asset No")
+            // {
+            //     ApplicationArea = Basic;
+            // }
         }
 
     }

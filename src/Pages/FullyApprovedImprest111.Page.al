@@ -2,9 +2,9 @@ Page 52193718 "Fully Approved Imprest111"
 {
     PageType = Card;
     SourceTable = "Payments HeaderFin";
-    SourceTableView = where("Payment Type"=const(Imprest),
-                            Posted=const(false),
-                            Status=filter(Released));
+    SourceTableView = where("Payment Type" = const(Imprest),
+                            Posted = const(false),
+                            Status = filter(Released));
 
     layout
     {
@@ -12,67 +12,67 @@ Page 52193718 "Fully Approved Imprest111"
         {
             group(Imprest)
             {
-                field(No;"No.")
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                     ApplicationArea = Basic;
                 }
-                field(PayMode;"Pay Mode")
+                field(PayMode; "Pay Mode")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeNo;"Cheque No")
+                field(ChequeNo; "Cheque No")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeDate;"Cheque Date")
+                field(ChequeDate; "Cheque Date")
                 {
                     ApplicationArea = Basic;
                 }
-                field(AccountType;"Account Type")
+                field(AccountType; "Account Type")
                 {
                     ApplicationArea = Basic;
                 }
-                field(AccountNo;"Account No.")
+                field(AccountNo; "Account No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(AccountName;"Account Name")
+                field(AccountName; "Account Name")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Cashier;Cashier)
+                field(Cashier; Cashier)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Posted;Posted)
+                field(Posted; Posted)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                     ApplicationArea = Basic;
                 }
-                field(PayingBankAccount;"Paying Bank Account")
+                field(PayingBankAccount; "Paying Bank Account")
                 {
                     ApplicationArea = Basic;
                 }
-                field(GlobalDimension1Code;"Global Dimension 1 Code")
+                field(GlobalDimension1Code; "Global Dimension 1 Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(GlobalDimension2Code;"Global Dimension 2 Code")
+                field(GlobalDimension2Code; "Global Dimension 2 Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ImprestAmount;"Imprest Amount")
+                field(ImprestAmount; "Imprest Amount")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Payee;Payee)
+                field(Payee; Payee)
                 {
                     ApplicationArea = Basic;
                 }
@@ -80,9 +80,9 @@ Page 52193718 "Fully Approved Imprest111"
         }
         area(factboxes)
         {
-            part("Imprest Lines";"Imprest Lines111")
+            part("Imprest Lines"; "Imprest Lines111")
             {
-                SubPageLink = No=field("No.");
+                SubPageLink = No = field("No.");
             }
         }
     }
@@ -97,7 +97,7 @@ Page 52193718 "Fully Approved Imprest111"
 
                 trigger OnAction()
                 begin
-                    
+
                     /*ImprestLine.SETRANGE(ImprestLine.No,"No.");
                     IF ImprestLine.FINDFIRST THEN BEGIN
                        REPEAT
@@ -105,7 +105,7 @@ Page 52193718 "Fully Approved Imprest111"
                        ERROR('Commit Entries before sending for approval');
                        UNTIL ImprestLine.NEXT=0;
                     END;*/
-                    
+
                     // if ApprovalsMgt.SendVisitApprovalRequest(Rec) then;
 
                 end;
@@ -133,7 +133,7 @@ Page 52193718 "Fully Approved Imprest111"
 
                 trigger OnAction()
                 begin
-                    
+
                     /*IF Status<>Status::Released THEN
                     ERROR('The document is not fully approved')
                     ELSE
@@ -173,12 +173,12 @@ Page 52193718 "Fully Approved Imprest111"
     begin
 
         with IMP do begin
-        IMP:=Rec;
-        GLSetup.Get();
-        GLSetup.TestField("Imprest Nos");
-        NoSeriesMgt.SelectSeries(GLSetup."Imprest Nos",Imprest."No. Series","No. Series");
-        Rec := IMP;
-        exit(true);
+            IMP := Rec;
+            GLSetup.Get();
+            // GLSetup.TestField("Imprest Nos");
+            // NoSeriesMgt.SelectSeries(GLSetup."Imprest Nos",Imprest."No. Series","No. Series");
+            Rec := IMP;
+            exit(true);
         end;
     end;
 }

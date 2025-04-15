@@ -756,7 +756,7 @@ codeunit 96050 "Tender Alert Processing"
             if Cust.FindFirst() then begin
                 Cust."No." := PortalUsers."User ID";
                 Cust.Name := PortalUsers."User Name";
-                Cust."Customer Type" := Cust."Customer Type"::"Tender Alert";
+                // Cust."Customer Type" := Cust."Customer Type"::"Tender Alert";
                 Cust."Phone No." := PortalUsers."Phone No.";
                 Cust."E-Mail" := PortalUsers."E-Mail";
                 Cust."Gen. Bus. Posting Group" := AlertSetup."Gen. Bus. Posting Group";
@@ -767,7 +767,7 @@ codeunit 96050 "Tender Alert Processing"
                 Cust.Init();
                 Cust."No." := PortalUsers."User ID";
                 Cust.Name := PortalUsers."User Name";
-                Cust."Customer Type" := Cust."Customer Type"::"Tender Alert";
+                // Cust."Customer Type" := Cust."Customer Type"::"Tender Alert";
                 Cust."Phone No." := PortalUsers."Phone No.";
                 Cust."E-Mail" := PortalUsers."E-Mail";
                 Cust."Gen. Bus. Posting Group" := AlertSetup."Gen. Bus. Posting Group";

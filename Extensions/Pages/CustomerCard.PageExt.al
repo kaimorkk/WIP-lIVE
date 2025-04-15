@@ -1,4 +1,4 @@
-PageExtension 52193432 pageextension52193432 extends "Customer Card" 
+PageExtension 52193432 pageextension52193432 extends "Customer Card"
 {
     layout
     {
@@ -25,20 +25,20 @@ PageExtension 52193432 pageextension52193432 extends "Customer Card"
         {
             Visible = false;
         }
-        
+
         addafter(Blocked)
         {
-            field("Customer Type";"Customer Type")
+            field("Customer Type"; "Customer Type")
             {
                 ApplicationArea = Basic;
             }
         }
         addafter("Last Date Modified")
         {
-            field("Customer Ref No";"Customer Ref No")
-            {
-                ApplicationArea = Basic;
-            }
+            // field("Customer Ref No";"Customer Ref No")
+            // {
+            //     ApplicationArea = Basic;
+            // }
         }
     }
     actions
@@ -53,9 +53,9 @@ PageExtension 52193432 pageextension52193432 extends "Customer Card"
 
     //trigger OnNewRecord(BelowxRec: Boolean)
     //begin
-        /*
-        "Customer Type":="Customer Type"::Debtor;
-        */
+    /*
+    "Customer Type":="Customer Type"::Debtor;
+    */
     //end;
 
 
@@ -64,19 +64,19 @@ PageExtension 52193432 pageextension52193432 extends "Customer Card"
     //trigger OnOpenPage()
     //>>>> ORIGINAL CODE:
     //begin
-        /*
-        ActivateFields;
-        IF NOT MapMgt.TestSetup THEN
-          MapPointVisible := FALSE;
-        */
+    /*
+    ActivateFields;
+    IF NOT MapMgt.TestSetup THEN
+      MapPointVisible := FALSE;
+    */
     //end;
     //>>>> MODIFIED CODE:
     //begin
-        /*
-        #1..3
+    /*
+    #1..3
 
-        //SETRANGE("Customer Type","Customer Type"::Debtor);
-        */
+    //SETRANGE("Customer Type","Customer Type"::Debtor);
+    */
     //end;
 
 
@@ -86,16 +86,16 @@ PageExtension 52193432 pageextension52193432 extends "Customer Card"
     //Parameters and return type have not been exported.
     //>>>> ORIGINAL CODE:
     //begin
-        /*
-        SetSocialListeningFactboxVisibility;
-        ContactEditable := "Primary Contact No." = '';
-        */
+    /*
+    SetSocialListeningFactboxVisibility;
+    ContactEditable := "Primary Contact No." = '';
+    */
     //end;
     //>>>> MODIFIED CODE:
     //begin
-        /*
-        ContactEditable := "Primary Contact No." = '';
-        */
+    /*
+    ContactEditable := "Primary Contact No." = '';
+    */
     //end;
 }
 

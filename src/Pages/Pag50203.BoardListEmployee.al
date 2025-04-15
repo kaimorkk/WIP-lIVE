@@ -5,7 +5,7 @@ page 52193899 "Board List Employee"
     PageType = List;
     SourceTable = Employee;
     UsageCategory = Lists;
-    SourceTableView = where("Employee Category Type" = const(Board));
+    // SourceTableView = where("Employee Category Type" = const(Board));
     CardPageId = "Board Card Employee";
     InsertAllowed = false;
     ModifyAllowed = false;

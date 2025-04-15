@@ -118,7 +118,7 @@ Table 52193524 "Payment Voucher"
             Caption = 'Account No.';
             TableRelation = if ("Account Type" = const("G/L Account")) "G/L Account"
             else if ("Account Type" = const(Customer)) Customer where("Customer Posting Group" = field(Grouping))
-            else if ("Account Type" = const(Vendor)) Vendor where("Creditor Type" = const(" "))
+            // else if ("Account Type" = const(Vendor)) Vendor where("Creditor Type" = const(" "))
             else if ("Account Type" = const("Bank Account")) "Bank Account"
             else if ("Account Type" = const("Fixed Asset")) "Fixed Asset"
             else if ("Account Type" = const("IC Partner")) "IC Partner";
@@ -495,7 +495,7 @@ Table 52193524 "Payment Voucher"
         }
         field(79; "FOSA Account"; Code[25])
         {
-            TableRelation = Vendor."No." where("Creditor Type" = const(Account));
+            // TableRelation = Vendor."No." where("Creditor Type" = const(Account));
         }
         field(80; Batched; Boolean)
         {

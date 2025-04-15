@@ -7,9 +7,9 @@ Page 52193495 "General Journal - Posted"
     PageType = Worksheet;
     SaveValues = true;
     SourceTable = "Gen. Journal Line";
-    SourceTableView = sorting("Document No.", "Posting Date")
-                      where(Status = const(Verified),
-                            "Journal Batch Name" = const('POSTPV'));
+    // SourceTableView = sorting("Document No.", "Posting Date")
+    //                   where(Status = const(Verified),
+    //                         "Journal Batch Name" = const('POSTPV'));
 
     layout
     {

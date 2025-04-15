@@ -9,43 +9,43 @@ Page 52193715 "Imprest Lines111"
         {
             repeater(Group)
             {
-                field(TransactionType;"Transaction Type")
+                // field(TransactionType;"Transaction Type")
+                // {
+                //     ApplicationArea = Basic;
+                // }
+                field(ExpenseType; "Expense Type")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ExpenseType;"Expense Type")
+                field(AccountNo; "Account No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(AccountNo;"Account No.")
+                field(AccountName; "Account Name")
                 {
                     ApplicationArea = Basic;
                 }
-                field(AccountName;"Account Name")
+                field(Description; Description)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Description;Description)
+                field(Amount; Amount)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Amount;Amount)
+                field(GlobalDimension1Code; "Global Dimension 1 Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(GlobalDimension1Code;"Global Dimension 1 Code")
+                field(GlobalDimension2Code; "Global Dimension 2 Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(GlobalDimension2Code;"Global Dimension 2 Code")
+                field(ActualSpent; "Actual Spent")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ActualSpent;"Actual Spent")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(RemainingAmount;"Remaining Amount")
+                field(RemainingAmount; "Remaining Amount")
                 {
                     ApplicationArea = Basic;
                 }

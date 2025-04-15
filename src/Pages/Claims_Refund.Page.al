@@ -520,7 +520,7 @@ Page 52194219 Claims_Refund
                 trigger OnAction()
                 begin
                     GLSetup.Get();
-                    Link := GLSetup."DMS Imprest Claim Link" + "No.";
+                    // Link := GLSetup."DMS Imprest Claim Link" + "No.";
                     Hyperlink(Link);
                 end;
             }

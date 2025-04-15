@@ -58,8 +58,8 @@ Table 52193578 "Micro Fin Schedule"
         }
         field(4; "Account Number"; Code[20])
         {
-            TableRelation = Vendor."No." where("Debtor Type" = const("FOSA Account"),
-                                                "Group Account" = const(false));
+            // TableRelation = Vendor."No." where("Debtor Type" = const("FOSA Account"),
+            //                                     "Group Account" = const(false));
 
             trigger OnValidate()
             begin
@@ -67,7 +67,7 @@ Table 52193578 "Micro Fin Schedule"
                 Vend.SetRange(Vend."No.", "Account Number");
                 if Vend.Find('-') then begin
                     "Account Name" := Vend.Name;
-                    "Group Code" := Vend."Group Code";
+                    // "Group Code" := Vend."Group Code";
                 end;
                 //Check if blank
                 if "Account Number" <> '' then

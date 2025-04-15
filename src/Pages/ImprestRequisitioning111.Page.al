@@ -9,67 +9,67 @@ Page 52193714 "Imprest Requisitioning111"
         {
             group(Imprest)
             {
-                field(No;"No.")
+                field(No; "No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                     ApplicationArea = Basic;
                 }
-                field(ChequeDate;"Cheque Date")
+                field(ChequeDate; "Cheque Date")
                 {
                     ApplicationArea = Basic;
                 }
-                field(AccountType;"Account Type")
+                field(AccountType; "Account Type")
                 {
                     ApplicationArea = Basic;
                 }
-                field(AccountNo;"Account No.")
+                field(AccountNo; "Account No.")
                 {
                     ApplicationArea = Basic;
                 }
-                field(AccountName;"Account Name")
+                field(AccountName; "Account Name")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Payee;Payee)
+                field(Payee; Payee)
                 {
                     ApplicationArea = Basic;
                 }
-                field(PaymentType;"Payment Type")
+                field(PaymentType; "Payment Type")
                 {
                     ApplicationArea = Basic;
                 }
-                field(Cashier;Cashier)
+                field(Cashier; Cashier)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Posted;Posted)
+                field(Posted; Posted)
                 {
                     ApplicationArea = Basic;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                     ApplicationArea = Basic;
                 }
-                field(PayingBankAccount;"Paying Bank Account")
+                field(PayingBankAccount; "Paying Bank Account")
                 {
                     ApplicationArea = Basic;
                 }
-                field(GlobalDimension1Code;"Global Dimension 1 Code")
+                field(GlobalDimension1Code; "Global Dimension 1 Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(GlobalDimension2Code;"Global Dimension 2 Code")
+                field(GlobalDimension2Code; "Global Dimension 2 Code")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ImprestAmount;"Imprest Amount")
+                field(ImprestAmount; "Imprest Amount")
                 {
                     ApplicationArea = Basic;
                 }
-                field(ImprestDeadline;"Imprest Deadline")
+                field(ImprestDeadline; "Imprest Deadline")
                 {
                     ApplicationArea = Basic;
                 }
@@ -77,9 +77,9 @@ Page 52193714 "Imprest Requisitioning111"
         }
         area(factboxes)
         {
-            part("Imprest Lines";"Imprest Lines111")
+            part("Imprest Lines"; "Imprest Lines111")
             {
-                SubPageLink = No=field("No.");
+                SubPageLink = No = field("No.");
             }
         }
     }
@@ -111,8 +111,8 @@ Page 52193714 "Imprest Requisitioning111"
                 begin
 
                     Reset;
-                    SetFilter("No.","No.");
-                    Report.Run(51508003,true,true,Rec);
+                    SetFilter("No.", "No.");
+                    Report.Run(51508003, true, true, Rec);
                     Reset;
                 end;
             }
@@ -135,12 +135,12 @@ Page 52193714 "Imprest Requisitioning111"
     begin
 
         with IMP do begin
-        IMP:=Rec;
-        GLSetup.Get();
-        GLSetup.TestField("Imprest Nos");
-        NoSeriesMgt.SelectSeries(GLSetup."Imprest Nos",Imprest."No. Series","No. Series");
-        Rec := IMP;
-        exit(true);
+            IMP := Rec;
+            GLSetup.Get();
+            // GLSetup.TestField("Imprest Nos");
+            // NoSeriesMgt.SelectSeries(GLSetup."Imprest Nos",Imprest."No. Series","No. Series");
+            Rec := IMP;
+            exit(true);
         end;
     end;
 }

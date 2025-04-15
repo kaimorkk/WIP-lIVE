@@ -23,8 +23,8 @@ Table 52193577 "Micro Fin Transactions"
         field(5; "Group Code"; Code[20])
         {
             Editable = true;
-            TableRelation = Vendor."No." where("Debtor Type" = const("FOSA Account"),
-                                                "Group Account" = const(true));
+            // TableRelation = Vendor."No." where("Debtor Type" = const("FOSA Account"),
+            //                                     "Group Account" = const(true));
 
             trigger OnValidate()
             begin
@@ -34,7 +34,7 @@ Table 52193577 "Micro Fin Transactions"
                     if MicroSubform.Find('-') then
                         MicroSubform.DeleteAll;
                     GroupMembers.Reset;
-                    GroupMembers.SetRange(GroupMembers."Group Code", "Group Code");
+                    // GroupMembers.SetRange(GroupMembers."Group Code", "Group Code");
                     if GroupMembers.Find('-') then begin
                         repeat
                             MicroSubform.Init;

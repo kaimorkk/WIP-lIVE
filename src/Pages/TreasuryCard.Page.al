@@ -3,7 +3,7 @@ Page 52193557 "Treasury Card"
     Caption = 'Treasury Card';
     PageType = Card;
     SourceTable = "Bank Account";
-    SourceTableView = where("Account Type" = const(Treasury));
+    // SourceTableView = where("Account Type" = const(Treasury));
 
     layout
     {
@@ -58,14 +58,11 @@ Page 52193557 "Treasury Card"
                 {
                     ApplicationArea = Basic;
                 }
-                field(CashierID; "Cashier ID")
-                {
-                    ApplicationArea = Basic;
-                }
-                field(MaximumTellerWithholding; "Maximum Teller Withholding")
-                {
-                    ApplicationArea = Basic;
-                }
+
+                // field(MaximumTellerWithholding; "Maximum Teller Withholding")
+                // {
+                //     ApplicationArea = Basic;
+                // }
             }
             group(Communication)
             {
@@ -262,7 +259,7 @@ Page 52193557 "Treasury Card"
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
-        "Account Type" := "account type"::Treasury;
+        // "Account Type" := "account type"::Treasury;
     end;
 
     trigger OnOpenPage()

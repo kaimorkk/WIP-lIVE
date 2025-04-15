@@ -50,34 +50,34 @@ Table 52193580 "Cheque Transactions"
         field(2; "Account No"; Code[30])
         {
             NotBlank = true;
-            TableRelation = Vendor where("Debtor Type" = const("Vendor Account"),
-                                          "Status 2" = filter(<> Closed));
+            // TableRelation = Vendor where("Debtor Type" = const("Vendor Account"),
+            //                               "Status 2" = filter(<> Closed));
 
             trigger OnValidate()
             begin
                 //CHECK ACCOUNT ACTIVITY
                 Members.Reset;
-                if Members.Get("Account No") then begin
-                    if Members."Status 2" = Members."status 2"::Dormant then begin
-                        Members."Status 2" := Members."status 2"::Active;
-                        Members.Modify;
-                    end;
-                    if Members."Status 2" = Members."status 2"::New then begin
-                    end
-                    else begin
-                        if Members."Status 2" <> Members."status 2"::Active then
-                            Error('The account is not active and therefore cannot be transacted upon.');
-                    end;
-                end;
+                // if Members.Get("Account No") then begin
+                //     if Members."Status 2" = Members."status 2"::Dormant then begin
+                //         Members."Status 2" := Members."status 2"::Active;
+                //         Members.Modify;
+                //     end;
+                //     if Members."Status 2" = Members."status 2"::New then begin
+                //     end
+                //     else begin
+                //         if Members."Status 2" <> Members."status 2"::Active then
+                //             Error('The account is not active and therefore cannot be transacted upon.');
+                //     end;
+                // end;
 
 
                 if Members.Get("Account No") then begin
                     "Account Name" := Members.Name;
                     Payee := Members.Name;
-                    "Account Type" := Members."Account Type 2";
+                    // "Account Type" := Members."Account Type 2";
                     "Currency Code" := Members."Currency Code";
                     //"ID Type":=Members."Identification Document";
-                    "ID No" := Members."ID No.";
+                    // "ID No" := Members."ID No.";
                 end;
 
                 if AccountTypes.Get("Account Type") then begin

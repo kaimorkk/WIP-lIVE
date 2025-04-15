@@ -958,7 +958,7 @@ Table 52193533 "Employee Payroll"
         }
         field(50096; "BOSA No"; Code[20])
         {
-            TableRelation = Customer."No." where("Customer Type" = const(Member));
+            // TableRelation = Customer."No." where("Customer Type" = const(Member));
         }
         field(50097; Gratuity; Decimal)
         {

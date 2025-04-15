@@ -173,6 +173,7 @@ Page 52193701 "Payment Voucher111"
         with PV do begin
             PV := Rec;
             GLSetup.Get();
+
             GLSetup.TestField(GLSetup."PV Nos");
             NoSeriesMgt.SelectSeries(GLSetup."PV Nos", PaymentVoucher."No. Series", "No. Series");
             Rec := PV;

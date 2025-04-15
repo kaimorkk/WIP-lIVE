@@ -3,153 +3,36 @@ TableExtension 52193461 tableextension52193461 extends "General Ledger Setup"
     fields
     {
 
-        //Unsupported feature: Property Deletion (Editable) on ""Global Dimension 1 Code"(Field 79)".
+        //Unsupported feature: Property Modification (CalcFormula) on ""Cust. Balances Due"(Field 44)".
 
-
-        //Unsupported feature: Property Deletion (Editable) on ""Global Dimension 2 Code"(Field 80)".
-
-
-        //Unsupported feature: Code Modification on ""Prepayment Unrealized VAT"(Field 151).OnValidate".
-
-        //trigger OnValidate()
-        //Parameters and return type have not been exported.
-        //>>>> ORIGINAL CODE:
-        //begin
-        /*
-        IF "Unrealized VAT" AND xRec."Prepayment Unrealized VAT" THEN
-          ERROR(DependentFieldActivatedErr,FIELDCAPTION("Prepayment Unrealized VAT"),FIELDCAPTION("Unrealized VAT"));
-
-        IF NOT "Prepayment Unrealized VAT" THEN BEGIN
-          VATPostingSetup.SETFILTER(
-        #6..16
-              TaxJurisdiction.Code,TaxJurisdiction.FIELDCAPTION("Unrealized VAT Type"),
-              TaxJurisdiction."Unrealized VAT Type");
-        END;
-        */
-        //end;
-        //>>>> MODIFIED CODE:
-        //begin
-        /*
-        IF "Unrealized VAT" AND xRec."Prepayment Unrealized VAT" THEN
-          ERROR(Text024,FIELDCAPTION("Prepayment Unrealized VAT"),FIELDCAPTION("Unrealized VAT"));
-        #3..19
-        */
-        //end;
-        field(50000; "PV Nos"; Code[20])
+        field(50009; "Posted Receipts No"; Code[20])
         {
-            TableRelation = "No. Series";
+            Caption = 'Receipts No';
+            DataClassification = CustomerContent;
         }
-        field(50002; "Petty Cash Nos"; Code[20])
+        field(50146; "Bank Balances"; Decimal)
         {
-            TableRelation = "No. Series";
+            AutoFormatType = 1;
+            CalcFormula = sum("Bank Account Ledger Entry"."Amount (LCY)" where("Global Dimension 1 Code" = field("Global Dimension 1 Filter"),
+                                                                                "Global Dimension 2 Code" = field("Global Dimension 2 Filter"),
+                                                                                "Posting Date" = field("Date Filter")));
+            Caption = 'Bank Balances';
+            Editable = false;
+            FieldClass = FlowField;
         }
-        field(50003; "Receipt Nos"; Code[20])
+        field(50147; "Pending L.O.P"; Decimal)
         {
-            TableRelation = "No. Series";
+            CalcFormula = sum("Purchase Line"."Outstanding Amount (LCY)" where("Shortcut Dimension 1 Code" = field("Global Dimension 1 Filter"),
+                                                                                "Shortcut Dimension 2 Code" = field("Global Dimension 2 Filter"),
+                                                                                "Expected Receipt Date" = field("Date Filter"),
+                                                                                Amount = filter(<> 0),
+                                                                                "Document Type" = filter(<> Quote)));
+            FieldClass = FlowField;
         }
-        field(50007; "File Directory"; Text[100])
-        {
-        }
-        field(50008; "Change Request No."; Code[20])
-        {
-            TableRelation = "No. Series";
-        }
-        field(50009; "Share Top Up Nos"; Code[20])
-        {
-            TableRelation = "No. Series";
-        }
-        field(51000; "Payments No"; Code[10])
-        {
-            TableRelation = "No. Series";
-        }
-        field(51001; "Withholding Agent"; Boolean)
-        {
-        }
-        field(51002; "Cash Limit"; Decimal)
-        {
-        }
-        field(51003; "Default Bank Account"; Code[10])
-        {
-            TableRelation = "Bank Account";
-        }
-        field(51004; "Default Cash Account"; Code[10])
-        {
-            TableRelation = "Bank Account";
-        }
-        field(51005; "Attachments Path"; Text[250])
-        {
-        }
-        field(51006; "Current Budget"; Code[100])
+        field(50148; "Current Budget"; Code[20])
         {
             TableRelation = "G/L Budget Name".Name;
-        }
-        field(51007; "Commissioner Letters"; Text[250])
-        {
-        }
-        field(51008; "DMS Imprest Claim Link"; Text[250])
-        {
-        }
-        field(51009; "DMS PV Link"; Text[250])
-        {
-        }
-        field(51010; "DMS Imprest Link"; Text[250])
-        {
-        }
-        field(51011; "Remittance Sender Name"; Text[30])
-        {
-        }
-        field(51012; "Remittance Sender Address"; Text[80])
-        {
-        }
-        field(51013; "Claim Nos"; Code[20])
-        {
-        }
-        field(51014; "Imprest Nos"; Code[20])
-        {
-        }
-        field(51015; "Levy Nos"; Code[20])
-        {
-            TableRelation = "No. Series";
-        }
-        field(51016; "Receipt No"; Code[20])
-        {
-            TableRelation = "No. Series";
-        }
-        field(51017; "Current Budget Start Date"; Date)
-        {
-        }
-        field(51018; "Current Budget End Date"; Date)
-        {
-        }
-        field(51019; "EFT File Path"; Code[30])
-        {
-        }
-        field(51020; "Journal Numbers"; Code[10])
-        {
-            TableRelation = "No. Series";
-        }
-        field(68000; "Company Bankers Cheque Account"; Code[30])
-        {
-            TableRelation = "G/L Account";
-        }
-        field(68001; "Internal Salary Tr No"; Code[10])
-        {
-        }
-        field(68002; "Cheque Control Account"; Code[20])
-        {
-            TableRelation = "G/L Account"."No.";
-        }
-        field(68003; "Payment Vouchers No"; Code[20])
-        {
-            TableRelation = "No. Series".Code;
-        }
-        field(68004; "Petty Cash Payments No"; Code[20])
-        {
-            TableRelation = "No. Series".Code;
-        }
-        field(68005; "PV LIne Nos"; Code[20])
-        {
-            TableRelation = "No. Series".Code;
+            DataClassification = CustomerContent;
         }
         field(59002; "Service Nos."; Code[10])
         {
@@ -201,9 +84,88 @@ TableExtension 52193461 tableextension52193461 extends "General Ledger Setup"
             DataClassification = CustomerContent;
             TableRelation = "No. Series";
         }
+        field(86000; "Imprest Nos"; Code[60])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(86001; "Current Budget Start Date"; Date)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(86003; "Receipt Nos"; Code[50])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(86004; "Current Budget End Date"; Date)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(86005; "DMS PV Link"; Code[100])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(86006; "PV Nos"; Code[50])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(86007; "Receipt No"; Code[40])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(86008; "Cash Limit"; Decimal)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(86009; "Payments No"; Code[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(860010; "Payment Vouchers No"; Code[50])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(860011; "Petty Cash Payments No"; Code[40])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(860012; "Company Bankers Cheque Account"; Code[30])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(860013; "Levy Nos"; Code[40])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(860014; "Claim Nos"; Code[50])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(860015; "Change Request No."; Code[50])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(860016; "Attachments Path"; Text[400])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(860017; "Petty Cash Nos"; Code[50])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(8600018; "Journal Numbers"; Code[50])
+        {
+            DataClassification = ToBeClassified;
+        }
     }
-
-    var
-        Text024: label 'You cannot change the contents of the %1 field because the %2 is activated.';
 }
 

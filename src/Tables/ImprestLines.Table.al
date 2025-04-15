@@ -1,79 +1,79 @@
-Table 52193642 "Imprest Lines"
+ 
+
+   #pragma warning disable AA0005, AA0008, AA0018, AA0021, AA0072, AA0137, AA0201, AA0206, AA0218, AA0228, AL0254, AL0424, AS0011, AW0006 // ForNAV settings
+table 52193642 "Imprest Lines"
 {
+    DrillDownPageID = "Imprest Lines";
+    LookupPageID = "Imprest Lines";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;No;Code[20])
+        field(1; No; Code[20])
         {
-            TableRelation = "Payments HeaderFin";
+            TableRelation = Payments;
         }
-        field(2;"Line No";Integer)
+        field(2; "Line No"; Integer)
         {
             AutoIncrement = true;
         }
-        field(3;"Account Type";Option)
+        field(3; "Account Type"; Option)
         {
-            OptionCaption = 'G/L Account,Customer,Vendor,Bank Account,Fixed Asset,IC Partner';
-            OptionMembers = "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset","IC Partner";
+            OptionCaption = 'G/L Account,Customer,Vendor,Bank Account,Fixed Asset,IC Partner,Employee';
+            OptionMembers = "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset","IC Partner",Employee;
         }
-        field(4;"Account No.";Code[20])
+        field(4; "Account No."; Code[20])
         {
-
-            trigger OnLookup()
-            begin
-
-                case "Account Type" of
-                 "account type"::"G/L Account":
-                  begin
-                   if Page.RunModal(18,GLAccount)=Action::LookupOK then begin
-                      GLAccount.TestField(GLAccount."Direct Posting",true);
-                     "Account No.":=GLAccount."No.";
-                     "Account Name":=GLAccount.Name;
-                   end;
-                  end;
-                 "account type"::Customer:
-                  begin
-                   if Page.RunModal(22,Customer)=Action::LookupOK then begin
-                     "Account No.":=Customer."No.";
-                     "Account Name":=Customer.Name;
-                   end;
-                  end;
-                  "account type"::Vendor:
-                  begin
-                   if Page.RunModal(27,Vendor)=Action::LookupOK then begin
-                    "Account No.":=Vendor."No.";
-                    "Account Name":=Vendor.Name;
-                   end;
-                  end;
-                  "account type"::"Bank Account":
-                  begin
-                   if Page.RunModal(371,Bank)=Action::LookupOK then begin
-                     "Account No.":=Bank."No.";
-                     "Account Name":=Bank.Name;
-                   end;
-                  end;
-                  "account type"::"Fixed Asset":
-                  begin
-                   if Page.RunModal(5601,FixedAsset)=Action::LookupOK then begin
-                     "Account No.":=FixedAsset."No.";
-                     "Account Name":=FixedAsset.Description;
-                   end;
-                  end;
-                 end;
-            end;
+            TableRelation = if ("Account Type" = const("G/L Account")) "G/L Account"
+            else
+            if ("Account Type" = const("Fixed Asset")) "Fixed Asset"
+            else
+            if ("Account Type" = const(Customer)) Customer
+            else
+            if ("Account Type" = const("Bank Account")) "Bank Account Ledger Entry"
+            else
+            if ("Account Type" = const(Vendor)) Vendor;
 
             trigger OnValidate()
             begin
+                case "Account Type" of
+                    "account type"::"G/L Account":
+                        begin
+                            GLAccount.Get("Account No.");
+                            GLAccount.TestField("Direct Posting", true);
+                            "Account Name" := GLAccount.Name;
+                        end;
+                    "account type"::Vendor:
+                        begin
+                            Vendor.Get("Account No.");
+                            "Account Name" := Vendor.Name;
+                        end;
+                    "account type"::Customer:
+                        begin
+                            Customer.Get("Account No.");
+                            "Account Name" := Customer.Name;
+                        end;
+                    "account type"::"Bank Account":
+                        begin
+                            Bank.Get("Account No.");
+                            "Account Name" := Bank.Name;
+                        end;
+                    "account type"::"Fixed Asset":
+                        begin
+                            FixedAsset.Get("Account No.");
+                            "Account Name" := FixedAsset.Description;
+                        end;
+                end;
                 Validate(Amount);
             end;
         }
-        field(5;"Account Name";Text[100])
+        field(5; "Account Name"; Text[100])
         {
         }
-        field(6;Description;Text[200])
+        field(6; Description; Text[200])
         {
         }
-        field(7;Amount;Decimal)
+        field(7; Amount; Decimal)
         {
 
             trigger OnValidate()
@@ -83,128 +83,515 @@ Table 52193642 "Imprest Lines"
                 BudgetAmount: Decimal;
                 Expenses: Decimal;
                 BudgetAvailable: Decimal;
-                Committments: Record "Commitment Entries";
+                Committments: Record "Committment Entries";
                 CommittedAmount: Decimal;
-                CommitmentEntries: Record "Commitment Entries";
-                ImprestHeader: Record "Payments HeaderFin";
+                CommitmentEntries: Record "Committment Entries";
+                ImprestHeader: Record Payments;
                 TotalCommittedAmount: Decimal;
             begin
-                       //Confirm the Amount to be issued does not exceed the budget and amount Committed
-                        //Get Budget for the G/L
-                        GenLedSetup.Get;
-                        GLAccount.SetFilter(GLAccount."Budget Filter",GenLedSetup."Current Budget");
-                        GLAccount.SetRange(GLAccount."No.","Account No.");
-                       //Get budget amount avaliable
-                       GLAccount.SetRange(GLAccount."Date Filter",GenLedSetup."Current Budget Start Date",GenLedSetup."Current Budget End Date");
-                        if GLAccount.Find('-') then begin
-                         GLAccount.CalcFields(GLAccount."Budgeted Amount",GLAccount."Net Change");
-                         BudgetAmount:=GLAccount."Budgeted Amount";
-                         Expenses:=GLAccount."Net Change";
-                         BudgetAvailable:=GLAccount."Budgeted Amount"-GLAccount."Net Change";
-                        end;
-                     //Get committed Amount
-                     CommittedAmount:=0;
-                     CommitmentEntries.Reset;
-                     CommitmentEntries.SetCurrentkey(CommitmentEntries.Account);
-                     CommitmentEntries.SetRange(CommitmentEntries.Account,"Account No.");
-                
-                      ImprestHeader.Reset;
-                      ImprestHeader.SetRange(ImprestHeader."No.",No);
-                      if ImprestHeader.Find('-')then begin
-                       if ImprestHeader.Date=0D then
-                        Error('Please insert the imprest date');
-                        CommitmentEntries.SetRange(CommitmentEntries."Commitment Date",GenLedSetup."Current Budget Start Date",
+                CashMgt.Get;
+                if CashMgt."Check for Committment" then begin
+                    //Confirm the Amount to be issued does not exceed the budget and amount Committed
+                    //Get Budget for the G/L
+                    CashMgt.Get;
+                    GLAccount.SetFilter(GLAccount."Budget Filter", CashMgt."Current Budget");
+                    GLAccount.SetRange(GLAccount."No.", "Account No.");
+                    //Get budget amount avaliable
+                    GLAccount.SetRange(GLAccount."Date Filter", CashMgt."Current Budget Start Date", CashMgt."Current Budget End Date");
+                    if GLAccount.Find('-') then begin
+                        GLAccount.CalcFields(GLAccount."Budgeted Amount", GLAccount."Net Change");
+                        BudgetAmount := GLAccount."Budgeted Amount";
+                        Expenses := GLAccount."Net Change";
+                        BudgetAvailable := GLAccount."Budgeted Amount" - GLAccount."Net Change";
+                    end;
+                    //Get committed Amount
+                    CommittedAmount := 0;
+                    CommitmentEntries.Reset;
+                    CommitmentEntries.SetCurrentkey(CommitmentEntries.Account);
+                    CommitmentEntries.SetRange(CommitmentEntries.Account, "Account No.");
+
+                    ImprestHeader.Reset;
+                    ImprestHeader.SetRange(ImprestHeader."No.", No);
+                    if ImprestHeader.Find('-') then begin
+                        if ImprestHeader.Date = 0D then
+                            Error(Text000);
+                        CommitmentEntries.SetRange(CommitmentEntries."Commitment Date", CashMgt."Current Budget Start Date",
                                                   ImprestHeader.Date);
                         CommitmentEntries.CalcSums(CommitmentEntries."Committed Amount");
-                        CommittedAmount:=CommitmentEntries."Committed Amount";
-                
+                        CommittedAmount := CommitmentEntries."Committed Amount";
+
                         /*IF LineBudget(No,"Account No.","Line No")THEN
                            MESSAGE('Line No %1 has been included in the Budget',"Line No")
                         ELSE*/
-                
-                        /*IF Rec."Account Type" = "Account Type"::"G/L Account" THEN
-                          IF CommittedAmount + Amount>BudgetAvailable THEN
-                             ERROR('You have Exceeded Budget for G/L Account No %1 By %2 Budget Available %3 CommittedAmount %4'
-                            ,"Account No.",
-                             ABS(BudgetAvailable - (CommittedAmount+Amount)),BudgetAvailable,CommittedAmount);*/
-                
-                      end;
+                        /*
+                     IF Rec."Account Type" = "Account Type"::"G/L Account" THEN
+                         IF CommittedAmount + Amount>BudgetAvailable THEN
+                             ERROR(Text001,"Account No.",ABS(BudgetAvailable - (CommittedAmount+Amount)),BudgetAvailable,CommittedAmount);
+                    END;*/
+                    end;
+                end;
 
             end;
         }
-        field(8;"Applies- to Doc. No.";Code[20])
+        field(8; "Applies- to Doc. No."; Code[20])
         {
         }
-        field(9;"Global Dimension 1 Code";Code[20])
+        field(9; "Global Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,1,1';
-            TableRelation = "Dimension Value".Code where ("Global Dimension No."=const(1));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
-        field(10;"Global Dimension 2 Code";Code[20])
+        field(10; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
-            TableRelation = "Dimension Value".Code where ("Global Dimension No."=const(2));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
         }
-        field(11;"Actual Spent";Decimal)
+        field(11; "Actual Spent"; Decimal)
         {
 
             trigger OnValidate()
             begin
-                "Remaining Amount":=Amount-"Actual Spent";
+                //Insert currency calculations
+
+                PVHeader.Reset;
+                PVHeader.SetRange("No.", No);
+                if PVHeader.FindFirst then begin
+                    if PVHeader."Currency Code" <> '' then begin
+                        GenLedSetup.Get;
+                        //CashMgt.GET;
+                        "Actual Spent LCY" := ROUND(CurrExchRate.ExchangeAmtFCYToLCY(PVHeader.Date, PVHeader."Currency Code", "Actual Spent", PVHeader."Currency Factor"),
+                            GenLedSetup."Inv. Rounding Precision (LCY)");
+                        "Remaining Amount" := Amount - "Actual Spent" - "Cash Receipt Amount";
+
+                        "Remaining Amount LCY" := ROUND(CurrExchRate.ExchangeAmtFCYToLCY(PVHeader.Date, PVHeader."Currency Code", "Remaining Amount", PVHeader."Currency Factor"),
+                              GenLedSetup."Inv. Rounding Precision (LCY)");
+                    end else begin
+                        "Actual Spent LCY" := "Actual Spent";
+                        "Remaining Amount" := Amount - "Actual Spent" - "Cash Receipt Amount";
+                        "Remaining Amount LCY" := "Remaining Amount";
+                    end;
+                end
+
+
+                /*IF "Remaining Amount"<0 THEN
+                  ERROR('Remaining amount must not be less than 0');*/
+
             end;
         }
-        field(12;"Remaining Amount";Decimal)
+        field(12; "Remaining Amount"; Decimal)
         {
         }
-        field(13;Committed;Boolean)
+        field(13; Committed; Boolean)
         {
         }
-        field(14;"Transaction Type";Code[20])
+        field(14; "Advance Type"; Code[20])
         {
-            TableRelation = "Transactions Type Finance";
+            TableRelation = "Receipts and Payment Types1" where("Appear on Imprest?" = filter(true));
 
             trigger OnValidate()
             begin
-                if TransType.Get("Transaction Type") then begin
-                   "Account Type":=TransType."Account Type";
-                   "Account No.":=TransType."Account No.";
-                   "Account Name":=TransType."Transaction Name";
-                   end;
+                if TransType.Get("Advance Type") then begin
+                    "Account Type" := TransType."Account Type";
+                    "Account No." := TransType."G/L Account";
+                    Validate("Account No.");
+                    Description := TransType."Transation Remarks";
+                end;
                 Validate(Amount);
             end;
         }
-        field(15;"Currency Code";Code[20])
+        field(15; "Currency Code"; Code[20])
         {
             TableRelation = Currency;
         }
-        field(16;"Currency Factor";Decimal)
+        field(16; "Currency Factor"; Decimal)
+        {
+            DecimalPlaces = 0 : 6;
+        }
+        field(17; "Amount LCY"; Decimal)
         {
         }
-        field(17;"Amount LCY";Decimal)
-        {
-        }
-        field(18;"Expense Type";Option)
+        field(18; "Expense Type"; Option)
         {
             OptionCaption = 'Accountable Expenses,Non-Accountable Expenses';
             OptionMembers = "Accountable Expenses","Non-Accountable Expenses";
+        }
+        field(19; "Work Type"; Code[20])
+        {
+            TableRelation = "Work Type";
+        }
+        field(20; "Resource No."; Code[20])
+        {
+            TableRelation = Resource;
+        }
+        field(21; "Task No."; Code[20])
+        {
+            TableRelation = "Job Task"."Job Task No." where("Job Task Type" = const(Posting),
+                                                             "Job No." = field(Project));
+        }
+        field(22; Project; Code[20])
+        {
+            CalcFormula = lookup(Payments.Project where("No." = field(No)));
+            FieldClass = FlowField;
+        }
+        field(23; "Due Date"; Date)
+        {
+        }
+        field(24; "Imprest Holder"; Code[20])
+        {
+            Editable = false;
+            TableRelation = Customer."No.";
+
+            trigger OnValidate()
+            begin
+                /*
+                ImprestHeader.RESET;
+                ImprestHeader.SETRANGE(ImprestHeader."No.",No);
+                IF ImprestHeader.FIND('-') THEN
+                REPEAT
+                "Imprest Holder":=ImprestHeader."Account No.";
+                  UNTIL ImprestLines.NEXT=0;
+                  */
+            end;
+        }
+        field(42; "Job No."; Code[20])
+        {
+            CalcFormula = lookup(Payments.Project where("No." = field(No)));
+            FieldClass = FlowField;
+            TableRelation = Job;
+        }
+        field(54; Purpose; Text[250])
+        {
+            NotBlank = true;
+        }
+        field(79; "Budgetary Control A/C"; Boolean)
+        {
+        }
+        field(88; Destination; Code[20])
+        {
+            // TableRelation = "Split Header";
+
+            trigger OnValidate()
+            begin
+                /*
+                IF Master.GET(No) AND Subsistence THEN
+                IF Cust.GET(Master."Account No.") THEN
+                IF HREmp.GET(Cust."Staff No.") THEN BEGIN
+                LocalT.GET(Destination);
+                CASE HREmp.Grade OF
+                 LocalT.FIELDNAME(LocalT."1"):
+                      "Daily Rate":=LocalT."1";
+                 LocalT.FIELDNAME(LocalT."2"):
+                       "Daily Rate":=LocalT."2";
+                 LocalT.FIELDNAME(LocalT."3"):
+                       "Daily Rate":=LocalT."3";
+                 LocalT.FIELDNAME(LocalT."4"):
+                       "Daily Rate":=LocalT."4";
+                 LocalT.FIELDNAME(LocalT."5"):
+                       "Daily Rate":=LocalT."5";
+                 LocalT.FIELDNAME(LocalT."6"):
+                       "Daily Rate":=LocalT."6";
+                 LocalT.FIELDNAME(LocalT."7"):
+                       "Daily Rate":=LocalT."7";
+                 LocalT.FIELDNAME(LocalT."8"):
+                       "Daily Rate":=LocalT."8";
+                 LocalT.FIELDNAME(LocalT."9"):
+                       "Daily Rate":=LocalT."9";
+                 LocalT.FIELDNAME(LocalT."10"):
+                       "Daily Rate":=LocalT."10";
+                 LocalT.FIELDNAME(LocalT."11"):
+                       "Daily Rate":=LocalT."11";
+                 LocalT.FIELDNAME(LocalT."12"):
+                       "Daily Rate":=LocalT."12";
+                 LocalT.FIELDNAME(LocalT.A):
+                       "Daily Rate":=LocalT.A;
+                 LocalT.FIELDNAME(LocalT.B):
+                       "Daily Rate":=LocalT.B;
+                 LocalT.FIELDNAME(LocalT.C):
+                       "Daily Rate":=LocalT.C;
+                 LocalT.FIELDNAME(LocalT.D):
+                       "Daily Rate":=LocalT.D;
+                 LocalT.FIELDNAME(LocalT.E):
+                       "Daily Rate":=LocalT.E;
+                 LocalT.FIELDNAME(LocalT.F):
+                       "Daily Rate":=LocalT.F;
+                 LocalT.FIELDNAME(LocalT.G):
+                       "Daily Rate":=LocalT.G;
+                 LocalT.FIELDNAME(LocalT.H):
+                       "Daily Rate":=LocalT.H;
+                 LocalT.FIELDNAME(LocalT.I):
+                       "Daily Rate":=LocalT.I;
+                 LocalT.FIELDNAME(LocalT.J):
+                       "Daily Rate":=LocalT.J;
+                 LocalT.FIELDNAME(LocalT.K):
+                      "Daily Rate":=LocalT.K;
+                 LocalT.FIELDNAME(LocalT.L):
+                       "Daily Rate":=LocalT.L;
+                 LocalT.FIELDNAME(LocalT.M):
+                       "Daily Rate":=LocalT.M;
+                 LocalT.FIELDNAME(LocalT.N):
+                       "Daily Rate":=LocalT.N;
+                 LocalT.FIELDNAME(LocalT.O):
+                       "Daily Rate":=LocalT.O;
+                 LocalT.FIELDNAME(LocalT.P):
+                       "Daily Rate":=LocalT.P;
+                 LocalT.FIELDNAME(LocalT.Q):
+                       "Daily Rate":=LocalT.Q;
+                 LocalT.FIELDNAME(LocalT.R):
+                      "Daily Rate":=LocalT.R;
+                 LocalT.FIELDNAME(LocalT.S):
+                      "Daily Rate":=LocalT.S;
+                 LocalT.FIELDNAME(LocalT.T):
+                       "Daily Rate":=LocalT.T;
+                END;
+                //MODIFY;
+                END;
+                */
+
+            end;
+        }
+        field(89; "Daily Rate"; Decimal)
+        {
+        }
+        field(90; "No. of Days"; Integer)
+        {
+
+            trigger OnValidate()
+            begin
+                /*
+                Amount:="No. of Days"*"Daily Rate";
+                VALIDATE(Amount);
+                */
+
+            end;
+        }
+        field(91; Subsistence; Boolean)
+        {
+        }
+        field(92; "Cash Receipt Amount"; Decimal)
+        {
+
+            trigger OnValidate()
+            begin
+                Validate("Actual Spent");
+            end;
+        }
+        // field(93; "Receipt No."; Code[20])
+        // {
+        //     // TableRelation = "Receipt Lines1"."Receipt No." where("Account No." = field("Employee No."));
+        //     TableRelation = "Receipt Lines1"."Receipt No." where("Applies to Doc. No" = field("Applies- to Doc. No.") );
+
+
+        //     trigger OnValidate()
+        //     begin
+        //         ReceiptRec.Reset;
+        //         ReceiptRec.SetRange("No.", "Receipt No.");
+        //         if ReceiptRec.FindFirst then
+        //             ReceiptRec.CalcFields(Amount);
+        //         "Cash Receipt Amount" := ReceiptRec.Amount;
+        //         "Fully Allocated" := true;
+        //         Validate("Cash Receipt Amount");
+        //     end;
+        // }
+
+        field(93; "Receipt No."; Code[20])
+        {
+
+
+            trigger OnLookup()
+            var
+                ReceiptPage: integer;
+                ReceiptLines: Record "Receipt Lines1";
+                Result: Boolean;
+            begin
+                ReceiptPage := 57074;
+                ReceiptLines.Reset();
+                ReceiptLines.SetRange("Applies to Doc. No", "Applies- to Doc. No.");
+                if ReceiptLines.FindFirst() then begin
+                    ReceiptRec.Reset();
+                    ReceiptRec.SetRange("No.", ReceiptLines."Receipt No.");
+                    ReceiptRec.SetRange(posted, true);
+                    ReceiptRec.SetRange("Receipt Type", ReceiptRec."Receipt Type"::Surrender);
+                    if Page.RunModal(ReceiptPage, ReceiptRec) = Action::LookupOK then begin
+                        "Receipt No." := ReceiptRec."No.";
+                        Validate("Receipt No.");
+
+                    end;
+
+                end;
+
+
+            end;
+
+            trigger OnValidate()
+            var
+            begin
+                ReceiptRec.Reset();
+                ReceiptRec.SetRange("No.", "Receipt No.");
+                if ReceiptRec.FindFirst() then
+                    ReceiptRec.CalcFields(Amount);
+
+                "Cash Receipt Amount" := ReceiptRec.Amount;
+                "Fully Allocated" := true;
+                Validate("Cash Receipt Amount");
+            end;
+        }
+
+        field(94; "Fully Allocated"; Boolean)
+        {
+        }
+        field(1001; "Job Task No."; Code[20])
+        {
+            Caption = 'Job Task No.';
+            TableRelation = "Job Task"."Job Task No." where("Job No." = field("Job No."));
+
+            trigger OnValidate()
+            begin
+                /*IF "Job Task No." <> xRec."Job Task No." THEN
+                  VALIDATE("Job Planning Line No.",0);
+                IF "Job Task No." = '' THEN BEGIN
+                  "Job Quantity" := 0;
+                  "Job Currency Factor" := 0;
+                  "Job Currency Code" := '';
+                  "Job Unit Price" := 0;
+                  "Job Total Price" := 0;
+                  "Job Line Amount" := 0;
+                  "Job Line Discount Amount" := 0;
+                  "Job Unit Cost" := 0;
+                  "Job Total Cost" := 0;
+                  "Job Line Discount %" := 0;
+                
+                  "Job Unit Price (LCY)" := 0;
+                  "Job Total Price (LCY)" := 0;
+                  "Job Line Amount (LCY)" := 0;
+                  "Job Line Disc. Amount (LCY)" := 0;
+                  "Job Unit Cost (LCY)" := 0;
+                  "Job Total Cost (LCY)" := 0;
+                  EXIT;
+                END;
+                
+                IF JobTaskIsSet THEN BEGIN
+                  CreateTempJobJnlLine;
+                  CopyDimensionsFromJobTaskLine;
+                  UpdatePricesFromJobJnlLine;
+                END;
+                */
+
+            end;
+        }
+        field(1004; "Job Quantity"; Decimal)
+        {
+            AccessByPermission = TableData Job = R;
+            Caption = 'Job Quantity';
+            DecimalPlaces = 0 : 5;
+
+            trigger OnValidate()
+            begin
+                /*IF JobTaskIsSet THEN BEGIN
+                  IF "Job Planning Line No." <> 0 THEN
+                    VALIDATE("Job Planning Line No.");
+                  CreateTempJobJnlLine;
+                  UpdatePricesFromJobJnlLine;
+                END;
+                */
+
+            end;
+        }
+        field(50000; Status; Option)
+        {
+            CalcFormula = lookup(Payments.Status where("No." = field(No)));
+            Editable = true;
+            FieldClass = FlowField;
+            OptionCaption = 'Open,Pending Approval,Pending Prepayment,Released,Rejected,,Closed';
+            OptionMembers = Open,"Pending Approval","Pending Prepayment",Released,Rejected,Closed;
+        }
+        field(50001; "Job Task Description"; Text[250])
+        {
+            Caption = 'Job Task Description';
+            Editable = false;
+        }
+        field(50002; "Payment Type"; Option)
+        {
+            CalcFormula = lookup(Payments."Payment Type" where("No." = field(No)));
+            FieldClass = FlowField;
+            OptionCaption = 'Payment Voucher,Imprest,Staff Claim,Imprest Surrender,Petty Cash,Bank Transfer,Petty Cash Surrender';
+            OptionMembers = "Payment Voucher",Imprest,"Staff Claim","Imprest Surrender","Petty Cash","Bank Transfer","Petty Cash Surrender";
+        }
+        field(50003; "Actual Spent LCY"; Decimal)
+        {
+            Editable = true;
+
+            trigger OnValidate()
+            begin
+                "Remaining Amount" := Amount - "Actual Spent" - "Cash Receipt Amount";
+                /*IF "Remaining Amount"<0 THEN
+                  ERROR('Remaining amount must not be less than 0');*/
+
+            end;
+        }
+        field(50004; "Remaining Amount LCY"; Decimal)
+        {
+            Editable = false;
+        }
+        field(50005; "Employee No."; Code[30])
+        {
+            TableRelation = Employee;
+        }
+        field(50006; "Dimension Set ID"; Integer)
+        {
+            DataClassification = ToBeClassified;
+            Editable = false;
+        }
+        field(50007; "Vote Item"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "G/L Account"."No.";
+        }
+
+        field(50069; "Bounced Payment Type"; Option)
+        {
+            DataClassification = ToBeClassified;
+            OptionCaption = 'Payment Voucher,Imprest,Staff Claim,Imprest Surrender,Petty Cash,Bank Transfer,Petty Cash Surrender,Surrender,Standing Imprest,Salary Advance,Payment Voucher Reversal,Imprest Reversal,Staff Claim Reversal,Imprest Surrender Reversal,Petty Cash Reversal,Bank Transfer Reversal,Petty Cash Surrender Reversal,Surrender Reversal,Standing Imprest Reversal,Salary Advance Reversal,Standing Imprest Surrender,AIE,Warrant Voucher,Payment Schedule,Car Loan,Special Imprest';
+            OptionMembers = "Payment Voucher",Imprest,"Staff Claim","Imprest Surrender","Petty Cash","Bank Transfer","Petty Cash Surrender",Surrender,"Standing Imprest","Salary Advance","Payment Voucher Reversal","Imprest Reversal","Staff Claim Reversal","Imprest Surrender Reversal","Petty Cash Reversal","Bank Transfer Reversal","Petty Cash Surrender Reversal","Surrender Reversal","Standing Imprest Reversal","Salary Advance Reversal","Standing Imprest Surrender",AIE,"Warrant Voucher","Payment Schedule","Car Loan","Special Imprest"," ";
+        }
+
+        field(50070; "Bounced Pv Type"; Enum "PV Type")
+        {
+
+        }
+        field(50071; "Bounced Pv No"; Code[20])
+        {
+
         }
     }
 
     keys
     {
-        key(Key1;No,"Line No")
+        key(Key1; No, "Line No")
         {
             Clustered = true;
-            SumIndexFields = Amount,"Actual Spent","Remaining Amount";
-        }
-        key(Key2;"Expense Type")
-        {
         }
     }
 
     fieldgroups
     {
     }
+
+    trigger OnDelete()
+    begin
+        //RESTRICT DELETE OF APPROVED LINES ON IMPREST DAVID
+        /*TESTFIELD(Status,Status::Open);
+        UpdateEntries(Rec);*/
+
+    end;
+
+    trigger OnModify()
+    begin
+        //Ushindi...Only modify lines if Imprest is OPEN
+        // IF ImprestHeader.GET(No) THEN BEGIN
+        //   IF ImprestHeader.Status=ImprestHeader.Status::"Pending Approval"
+        //     THEN ERROR('%1 is Pending Approval, You are not allowed to modify it!',No);
+        // END;
+    end;
 
     var
         GLAccount: Record "G/L Account";
@@ -215,30 +602,90 @@ Table 52193642 "Imprest Lines"
         CustLedger: Record "Cust. Ledger Entry";
         CustLedger1: Record "Cust. Ledger Entry";
         Amt: Decimal;
-        ImprestHeader: Record "Payments HeaderFin";
-        TransType: Record "Transactions Type Finance";
-
-
-    procedure LineBudget(var CommittNo: Code[20];var No: Code[20];var LineNo: Integer) Exists: Boolean
-    var
-        GLAccount: Record "G/L Account";
+        ImprestHeader: Record Payments;
+        TransType: Record "Receipts and Payment Types1";
+        CashMgt: Record "Cash Management Setup";
+        Text000: label 'Please insert the imprest date';
+        Text001: label 'You have Exceeded Budget for G/L Account No %1 By %2 Budget Available %3 CommittedAmount %4';
+        ReceiptRec: Record "Receipts Header1";
+        Text002: label 'You cannot delete this document! Document number No. %1 Is already approved or pending approval.';
+        PVHeader: Record Payments;
         GenLedSetup: Record "General Ledger Setup";
-        ImprestHeader: Record "Payments HeaderFin";
-    begin
-        GenLedSetup.Get;
-        GLAccount.SetFilter(GLAccount."Budget Filter",GenLedSetup."Current Budget");
-        GLAccount.SetRange(GLAccount."No.","Account No.");
+        CurrExchRate: Record "Currency Exchange Rate";
 
-        ImprestHeader.Reset;
-        ImprestHeader.SetRange(ImprestHeader."No.",No);
 
-        Exists:=false;
-        Rec.Reset;
-        Rec.SetRange(No,ImprestHeader."No.");
-        Rec.SetRange("Account No.",GLAccount."No.");
-        Rec.SetRange("Line No",LineNo);
-        if Rec.Find('-') then
-        Exists:=true;
-    end;
+    // procedure UpdateEntries(ImpLines: Record "Imprest Lines")
+    // var
+    //     ProjectMembers: Record "Project Members";
+    //     LineNo: Integer;
+    //     ProjectMembers2: Record "Project Members";
+    //     Casuals: Record Casuals;
+    //     OtherCosts: Record "Other Costs";
+    //     PaymentRec: Record Payments;
+    // begin
+    //     if PaymentRec.Get(ImpLines.No) then;
+    //     //Fetch Imprest Line based on Employee
+    //     ProjectMembers.Reset;
+    //     ProjectMembers.SetRange("No.", PaymentRec."Account No.");
+    //     ProjectMembers.SetRange(Posted, true);
+    //     ProjectMembers.SetRange(Linked, true);
+    //     if ProjectMembers.Find('-') then begin
+    //         repeat
+    //             if not ProjectMembers."Project Lead" then//Check whether Project lead or not
+    //              begin
+    //                 if (ProjectMembers."Work Type" = ImpLines."Work Type") and (ProjectMembers."No." = ImpLines."Resource No.") then begin
+    //                     ProjectMembers.Linked := false;
+    //                     //ProjectMembers.MODIFY;
+    //                 end;
+    //             end else begin
+
+    //                 //Insert Machinery Costs
+    //                 ProjectMembers2.Reset;
+    //                 ProjectMembers2.SetRange(Type, ProjectMembers2.Type::Machine);
+    //                 ProjectMembers2.SetRange(Posted, true);
+    //                 ProjectMembers2.SetRange(Linked, true);
+    //                 if ProjectMembers2.Find('-') then
+    //                     repeat
+    //                         if (ProjectMembers."Work Type" = ImpLines."Work Type") and (ProjectMembers2."No." = ImpLines."Resource No.") then begin
+    //                             ProjectMembers2.Linked := false;
+    //                             ProjectMembers2.Modify;
+    //                         end;
+    //                     until ProjectMembers2.Next = 0;
+
+    //                 //Insert Casuals
+    //                 Casuals.Reset;
+    //                 Casuals.SetRange("Imprest Memo No.", ProjectMembers."Imprest Memo No.");
+    //                 Casuals.SetRange(Posted, true);
+    //                 Casuals.SetRange(Linked, true);
+    //                 if Casuals.Find('-') then
+    //                     repeat
+    //                         if (Casuals."Work Type" = ImpLines."Work Type") and (Casuals."Resource No." = ImpLines."Resource No.") then begin
+    //                             Casuals.Linked := false;
+    //                             Casuals.Modify;
+    //                         end;
+    //                     until Casuals.Next = 0;
+    //                 //
+
+    //                 //Insert Other Costs
+    //                 OtherCosts.Reset;
+    //                 OtherCosts.SetRange("Imprest Memo No.", ProjectMembers."Imprest Memo No.");
+    //                 OtherCosts.SetRange(Posted, true);
+    //                 OtherCosts.SetRange(Linked, true);
+    //                 if OtherCosts.Find('-') then
+    //                     repeat
+    //                         if OtherCosts."No." = ImpLines."Account No." then begin
+    //                             OtherCosts.Linked := false;
+    //                             OtherCosts.Modify;
+    //                         end;
+    //                     until OtherCosts.Next = 0;
+    //                 //
+    //             end;
+    //             if (ProjectMembers."Work Type" = ImpLines."Work Type") and (ProjectMembers."No." = ImpLines."Resource No.") then begin
+    //                 ProjectMembers.Linked := false;
+    //                 ProjectMembers.Modify;
+    //             end;
+    //         until ProjectMembers.Next = 0;
+    //     end;
+    // end;
 }
 

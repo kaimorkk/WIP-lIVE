@@ -116,6 +116,28 @@ TableExtension 52193525 tableextension52193525 extends "Sales & Receivables Setu
             DataClassification = CustomerContent;
             TableRelation = "No. Series";
         }
+        field(86000; "Delegation Nos"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = "No. Series";
+        }
+        field(86001; "Car Loan Int. Due Acc."; Code[20])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = "G/L Account"."No." where("Direct Posting" = const(true));
+        }
+        field(86002; "Litigant Nos"; Code[20])
+        {
+            Caption = 'Litigant Nos';
+            DataClassification = CustomerContent;
+            TableRelation = "No. Series";
+        }
+        field(86003; "Child Maintenance P. Group"; Code[20])
+        {
+            Caption = 'Child Maintenance P. Group';
+            DataClassification = CustomerContent;
+            TableRelation = "Customer Posting Group";
+        }
     }
 }
 

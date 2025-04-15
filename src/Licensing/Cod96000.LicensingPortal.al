@@ -2113,7 +2113,7 @@ codeunit 96000 "Licensing Portal"
             if Cust.FindFirst() then begin
                 Cust."No." := PortalUsers."User ID";
                 Cust.Name := PortalUsers.FullName();
-                Cust."Customer Type" := Cust."Customer Type"::Licensing;
+                // Cust."Customer Type" := Cust."Customer Type"::Licensing;
                 Cust."Phone No." := PortalUsers."Phone No.";
                 Cust."E-Mail" := PortalUsers."E-Mail";
                 Cust."Gen. Bus. Posting Group" := LicenceSetup."Gen. Bus. Posting Group";
@@ -2124,7 +2124,7 @@ codeunit 96000 "Licensing Portal"
                 Cust.Init();
                 Cust."No." := PortalUsers."User ID";
                 Cust.Name := PortalUsers.FullName();
-                Cust."Customer Type" := Cust."Customer Type"::Licensing;
+                // Cust."Customer Type" := Cust."Customer Type"::Licensing;
                 Cust."Phone No." := PortalUsers."Phone No.";
                 Cust."E-Mail" := PortalUsers."E-Mail";
                 Cust."Gen. Bus. Posting Group" := LicenceSetup."Gen. Bus. Posting Group";
